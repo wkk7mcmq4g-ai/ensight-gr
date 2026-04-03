@@ -11,6 +11,7 @@ import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
 import DataClarity from "./pages/DataClarity";
+import DataClarityAssessment from "./pages/DataClarityAssessment";
 
 const queryClient = new QueryClient();
 
