@@ -14,6 +14,7 @@ const Layout = () => (
       <Outlet />
     </main>
     <Footer />
+    <BackToTop />
   </div>
 );
 
