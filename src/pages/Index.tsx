@@ -81,8 +81,7 @@ const Index = () => {
         )}
 
         <div className="text-center mt-12 font-mono-label text-[11px] text-ordinal-faint tracking-[1px]">
-          <span className="font-sans font-black text-[13px] text-ordinal-dim lowercase">ordinal</span>
-          {' '}&middot; Athens, Greece
+          <span className="font-sans font-bold text-[13px] text-ordinal-dim">ensight</span>
         </div>
       </div>
     </div>
