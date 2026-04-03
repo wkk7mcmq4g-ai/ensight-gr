@@ -95,7 +95,7 @@ const sectors = [
 const DataClarity = () => (
   <div>
     {/* ═══ HERO ═══ */}
-    <section className="relative min-h-[70vh] bg-[hsl(270,40%,6%)] overflow-hidden flex items-center px-6 md:px-12 pt-32 pb-20">
+    <section className="relative bg-[hsl(270,40%,6%)] overflow-hidden flex items-center px-6 md:px-12 pt-28 pb-14">
       {/* Animated grid */}
       <div className="absolute inset-0 opacity-100" style={{
         backgroundImage: 'linear-gradient(rgba(79,70,229,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(79,70,229,0.06) 1px, transparent 1px)',
