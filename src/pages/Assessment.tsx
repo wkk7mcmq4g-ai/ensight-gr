@@ -59,7 +59,7 @@ const Assessment = () => {
           Costing You?
         </h1>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[520px] mx-auto">
-          Answer 10 questions about your operations. Get your Process Debt Score and an estimate of what operational inefficiency costs your organisation each year.
+          Answer 14 questions about your operations. Get your Process Debt Score and an estimate of what operational inefficiency costs your organisation each year.
         </p>
       </header>
 
