@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import BackToTop from './BackToTop';
 
 const Layout = () => (
   <div className="relative min-h-screen">
@@ -13,6 +14,7 @@ const Layout = () => (
       <Outlet />
     </main>
     <Footer />
+    <BackToTop />
   </div>
 );
 
