@@ -1,10 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { Info, X } from 'lucide-react';
-import { questions } from '@/data/questions';
+import { questions, categoryRecommendations, type QuestionCategory } from '@/data/questions';
 
 interface ResultsProps {
   answers: Record<string, number | null>;
   onRestart: () => void;
+}
+
+interface CategoryResult {
+  category: QuestionCategory;
+  items: { label: string; score: number }[];
+  avgScore: number;
+  recommendation: string;
 }
 
 const Results = ({ answers, onRestart }: ResultsProps) => {
@@ -14,16 +21,23 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   // Calculate scores
   let totalScore = 0;
   let maxScore = 0;
-  const breakdown: { label: string; score: number }[] = [];
+  const categoryMap = new Map<QuestionCategory, { label: string; score: number; max: number }[]>();
 
   questions.forEach((q) => {
-    if (q.type === 'number') return;
+    if (q.type === 'number' || !q.category) return;
     const ans = answers[q.id];
     if (ans == null || !q.options) return;
     const opt = q.options[ans];
+    const qMax = Math.max(...q.options.map((o) => o.score));
     totalScore += opt.score;
-    maxScore += 3;
-    breakdown.push({ label: q.label.replace(/\?$/, ''), score: opt.score });
+    maxScore += qMax;
+
+    if (!categoryMap.has(q.category)) categoryMap.set(q.category, []);
+    categoryMap.get(q.category)!.push({
+      label: q.label.replace(/\?$/, ''),
+      score: opt.score,
+      max: qMax,
+    });
   });
 
   const pct = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
@@ -32,6 +46,30 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   const wasteFactor = (pct / 100) * 0.3;
   const annualCost = Math.round(teamSize * avgCost * wasteFactor);
   const costFormatted = '€' + annualCost.toLocaleString('en');
+
+  // Build category results
+  const categories: CategoryResult[] = [];
+  const categoryOrder: QuestionCategory[] = [
+    'Communication',
+    'People Dependencies',
+    'Visibility',
+    'Automation',
+    'Scalability',
+    'Customer Impact',
+    'Decision Making',
+  ];
+
+  categoryOrder.forEach((cat) => {
+    const items = categoryMap.get(cat);
+    if (!items || items.length === 0) return;
+    const avg = items.reduce((s, i) => s + i.score, 0) / items.reduce((s, i) => s + i.max, 0);
+    categories.push({
+      category: cat,
+      items: items.map((i) => ({ label: i.label, score: i.score })),
+      avgScore: avg,
+      recommendation: categoryRecommendations[cat],
+    });
+  });
 
   let level: 'low' | 'medium' | 'high';
   let levelLabel: string;
@@ -47,12 +85,12 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
     level = 'medium';
     levelLabel = 'Moderate Process Debt';
     headline = 'Significant Capacity to Recover';
-    desc = 'Your organisation has accumulated meaningful process debt. Inefficiencies are likely costing you more than you realise, and they\u2019re compounding as you grow. A structured operational review would reveal exactly where capacity is trapped and how to unlock it.';
+    desc = 'Your organisation has accumulated meaningful process debt. Inefficiencies are likely costing you more than you realise, and they're compounding as you grow. A structured operational review would reveal exactly where capacity is trapped and how to unlock it.';
   } else {
     level = 'high';
     levelLabel = 'High Process Debt';
     headline = 'Your Operations Need Urgent Attention';
-    desc = 'Your organisation is carrying substantial process debt. A large portion of your team\u2019s time and your operating budget is being consumed by inefficiency that\u2019s invisible because it feels \u201Cnormal.\u201D This compounds every month you wait.';
+    desc = 'Your organisation is carrying substantial process debt. A large portion of your team's time and your operating budget is being consumed by inefficiency that's invisible because it feels "normal." This compounds every month you wait.';
   }
 
   const colorMap = {
@@ -87,6 +125,18 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
     return 'At Risk';
   };
 
+  const categoryStatusClass = (avg: number) => {
+    if (avg <= 0.15) return 'text-ordinal-green';
+    if (avg >= 0.7) return 'text-ordinal-pink';
+    return 'text-ordinal-amber';
+  };
+  const categoryStatusLabel = (avg: number) => {
+    if (avg <= 0.15) return 'Good';
+    if (avg >= 0.7) return 'Critical';
+    return 'At Risk';
+  };
+
+  const scoredQuestionCount = questions.filter((q) => q.type !== 'number').length;
   const mailtoHref = `mailto:hello@ordinal.co?subject=Operational X-Ray Enquiry&body=Hi, I just completed the ordinal Process Debt Assessment (score: ${pct}). I'd like to learn more about the Operational X-Ray.`;
 
   return (
@@ -135,7 +185,7 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
         {showMethodology && (
           <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2 animate-fade-up">
             <p className="font-semibold text-ordinal-faint">How we calculate this:</p>
-            <p>Each of the 9 operational questions scores 0 (good), 1–2 (moderate), or 3 (critical), giving a max score of 27.</p>
+            <p>Each of the {scoredQuestionCount} operational questions scores 0 (good), 1–2 (moderate), or 3 (critical), giving a max score of {maxScore}.</p>
             <p><span className="text-ordinal-faint">Process Debt %</span> = your total score ÷ max score × 100</p>
             <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % × 0.30 (capped at 30% of payroll)</p>
             <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people × €40,000 avg cost × {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
@@ -152,17 +202,34 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
         </div>
       </div>
 
-      {/* Breakdown Card */}
+      {/* Categorized Breakdown */}
       <div className="animate-fade-up bg-card border border-border rounded-lg p-8 mb-6" style={{ animationDelay: '0.24s', opacity: 0 }}>
-        <h3 className="text-lg font-bold mb-4">Your Breakdown</h3>
-        {breakdown.map((item, i) => (
-          <div key={i} className={`flex justify-between items-center py-3.5 ${i < breakdown.length - 1 ? 'border-b border-border' : ''}`}>
-            <span className="text-[13px] text-ordinal-body flex-1 pr-3">{item.label}</span>
-            <span className={`font-mono-label text-[10px] font-semibold px-3 py-1 rounded-full tracking-[1px] flex-shrink-0 ${badgeClass(item.score)}`}>
-              {badgeLabel(item.score)}
-            </span>
-          </div>
-        ))}
+        <h3 className="text-lg font-bold mb-5">Your Breakdown</h3>
+        <div className="space-y-6">
+          {categories.map((cat) => (
+            <div key={cat.category}>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-sm font-bold uppercase tracking-wider text-ordinal-faint">{cat.category}</h4>
+                <span className={`font-mono-label text-[10px] font-semibold tracking-[1px] ${categoryStatusClass(cat.avgScore)}`}>
+                  {categoryStatusLabel(cat.avgScore)}
+                </span>
+              </div>
+              {cat.items.map((item, i) => (
+                <div key={i} className={`flex justify-between items-center py-3 ${i < cat.items.length - 1 ? 'border-b border-border' : ''}`}>
+                  <span className="text-[13px] text-ordinal-body flex-1 pr-3">{item.label}</span>
+                  <span className={`font-mono-label text-[10px] font-semibold px-3 py-1 rounded-full tracking-[1px] flex-shrink-0 ${badgeClass(item.score)}`}>
+                    {badgeLabel(item.score)}
+                  </span>
+                </div>
+              ))}
+              {cat.avgScore > 0.15 && (
+                <p className="mt-2 text-xs text-ordinal-dim leading-relaxed pl-0.5 border-l-2 border-ordinal-amber/30 ml-1 pl-3">
+                  💡 {cat.recommendation}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* CTA Card */}
