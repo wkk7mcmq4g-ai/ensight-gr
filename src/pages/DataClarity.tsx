@@ -367,12 +367,12 @@ const DataClarity = () => (
             Start with the Data Clarity Assessment. Fixed fee, 1–2 weeks, and a clear verdict on what your data infrastructure can support — and what needs to change before it can support more.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a
-              href="mailto:hello@ensight.co?subject=Data Clarity Assessment"
+            <Link
+              to="/data-clarity-assessment"
               className="bg-[#10B981] text-white text-[15px] font-bold px-8 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(16,185,129,0.25)] hover:bg-[#059669] hover:-translate-y-0.5 transition-all no-underline"
             >
-              Book Your Assessment
-            </a>
+              Take the Free Assessment
+            </Link>
             <a
               href="mailto:hello@ensight.co?subject=Data Clarity Information"
               className="text-white text-[15px] font-semibold px-8 py-3.5 rounded-xl border border-white/15 hover:bg-white/5 transition-all no-underline"
