@@ -1,87 +1,42 @@
 
 
-# Plan: Apply All Five Enhancements
+# Plan: Add "Data Clarity" Product Page
 
 ## Summary
-Implement all five previously suggested features: (1) email capture before results, (2) social sharing on results, (3) About/Team page, (4) case study pages, and (5) enhanced assessment animations.
+Convert the uploaded HTML page into a new React route at `/data-clarity`, fully integrated into the existing app with shared layout, navbar, and footer.
 
----
+## What gets built
 
-## 1. Email Capture Gate Before Results
+A dedicated **Data Clarity** product page with these sections (all extracted from the uploaded HTML):
 
-**New file**: `src/components/assessment/EmailCapture.tsx`
-- Simple card component with name + email fields and a "Skip" link
-- On submit or skip, calls a callback to proceed to results
-- Stores captured data in component state (no backend needed for now)
+1. **Hero** — dark background with animated grid, headline ("Your data exists. The clarity doesn't."), subtitle, two CTAs, and three animated metric cards (Revenue MTD, Net Margin, ABC tier)
+2. **Problem** — 4-card grid (no real-time visibility, no single truth, unallocated costs, scattered data)
+3. **The Service** — three numbered components: Assessment → Analytics Build → Retainer, each with deliverables and feature lists
+4. **Assessment Scoring** — dark section with 5 dimension cards (Data Availability, Consistency, Cost Visibility, System Integration, Reporting Maturity) plus 3 verdict tiers (Build-Ready / Foundation First / Not Viable Yet)
+5. **How It Connects** — flow diagram showing Operational Clarity → Data Clarity pipeline
+6. **Who This Is For** — 3 sector cards (Manufacturing, Tourism, Financial Services)
+7. **CTA** — dark section with "Book Your Assessment" and contact info
 
-**Edit**: `src/pages/Assessment.tsx`
-- Add a new state `showEmailCapture` between quiz completion and results
-- When last question answered, show `EmailCapture` instead of `Results`
-- On submit/skip, transition to `Results`
+## Files changed
 
-## 2. Social Sharing Buttons on Results
+### New: `src/pages/DataClarity.tsx`
+- Full React component with all 7 sections above
+- Uses `framer-motion` for scroll-reveal animations (matching existing `AnimatedSection` patterns)
+- Styled with Tailwind, reusing existing color tokens where possible and adding Data Clarity accent colors (cyan `#06B6D4`, electric indigo `#4F46E5`)
+- Responsive grid layouts matching the uploaded design
 
-**Edit**: `src/components/assessment/Results.tsx`
-- Add LinkedIn and Twitter/X share buttons in the Actions section alongside Download PDF and Retake
-- LinkedIn: share URL with pre-filled text about Process Debt score
-- Twitter/X: `https://twitter.com/intent/tweet?text=...&url=...`
-- Use `lucide-react` icons or inline SVG for LinkedIn and X logos
-- Share text: "I just scored {pct} on the Process Debt Assessment by Ensight. Find out your score:"
+### Edit: `src/App.tsx`
+- Add route: `/data-clarity` → `<DataClarity />`
 
-## 3. About/Team Page
+### Edit: `src/components/layout/Navbar.tsx`
+- Add "Data Clarity" to `navLinks` array, linking to `/data-clarity`
 
-**New file**: `src/pages/About.tsx`
-- Hero section with company story (Ensight, Athens)
-- Team bios section with photo placeholders, names, titles, short bios
-- Values/approach section highlighting the operational methodology
-- Styled consistently with the existing dark-themed design
+### Edit: `src/components/layout/Footer.tsx`
+- Add "Data Clarity" link in footer navigation
 
-**Edit**: `src/App.tsx` - Add `/about` route
-
-**Edit**: `src/components/layout/Navbar.tsx` - Add "About" nav link
-
-**Edit**: `src/components/layout/Footer.tsx` - Add "About" footer link
-
-## 4. Case Study Pages
-
-**New file**: `src/pages/CaseStudies.tsx`
-- Overview page with 3 cards (Tourism, Financial Services, Manufacturing)
-- Each card links to a detail view
-
-**New file**: `src/pages/CaseStudyDetail.tsx`
-- Dynamic page using URL param for case ID
-- Sections: Challenge, Approach, Results (before/after metrics), Timeline
-- Data stored in a local array/object (no backend)
-
-**New file**: `src/data/caseStudies.ts`
-- Data for all 3 case studies with sector, challenge, approach, metrics, timeline
-
-**Edit**: `src/App.tsx` - Add `/case-studies` and `/case-studies/:id` routes
-
-**Edit**: `src/components/layout/Navbar.tsx` - Add "Case Studies" nav link
-
-**Edit**: `src/components/layout/Footer.tsx` - Add "Case Studies" footer link
-
-## 5. Enhanced Assessment Animations
-
-**Edit**: `src/components/assessment/Results.tsx`
-- Add animated counter for the cost estimate (count up from 0 to final value over ~1.5s)
-- Add a subtle confetti/sparkle burst when results first load (use a lightweight CSS animation or a small utility, no heavy library)
-- Add staggered fade-in for category breakdown items using framer-motion
-
-**Edit**: `src/components/assessment/QuestionCard.tsx`
-- Already has framer-motion transitions; enhance with slightly more polished easing
-
-**Edit**: `src/components/assessment/ProgressBar.tsx`
-- Add smooth animated fill transition (CSS transition on width)
-
----
-
-## Technical Notes
-
-- No backend or Supabase needed; all data is local/static
-- Social sharing uses native URL intent links (no third-party SDKs)
-- Framer-motion already installed; will reuse for new animations
-- All new pages follow existing patterns: section-based layout, AnimatedSection wrappers, same color tokens and typography
-- About and Case Studies pages will use the existing `Layout` wrapper with Navbar/Footer
+## Technical notes
+- No new dependencies needed — uses existing framer-motion and Tailwind
+- The page uses the shared `Layout` wrapper (navbar + footer) rather than the standalone nav from the HTML
+- CSS animations (grid pan, blob pulse, metric card slides) will be implemented via Tailwind arbitrary values and framer-motion
+- All content is static — no backend needed
 
