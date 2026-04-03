@@ -9,6 +9,7 @@ const Index = () => {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number | null>>({});
   const [showResults, setShowResults] = useState(false);
+  const [direction, setDirection] = useState(1);
 
   const total = questions.length;
   const question = questions[current];
@@ -27,6 +28,7 @@ const Index = () => {
   }, [question.id]);
 
   const goNext = () => {
+    setDirection(1);
     if (current < total - 1) {
       setCurrent((c) => c + 1);
     } else {
@@ -36,7 +38,10 @@ const Index = () => {
   };
 
   const goBack = () => {
-    if (current > 0) setCurrent((c) => c - 1);
+    if (current > 0) {
+      setDirection(-1);
+      setCurrent((c) => c - 1);
+    }
   };
 
   return (
@@ -54,7 +59,9 @@ const Index = () => {
 
             <QuestionCard
               question={question}
+              questionIndex={current}
               answer={answer}
+              direction={direction}
               onSelectOption={handleSelectOption}
               onNumberInput={handleNumberInput}
             />
