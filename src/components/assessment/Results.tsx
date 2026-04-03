@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Info, X } from 'lucide-react';
+import { Info, X, Download } from 'lucide-react';
 import { questions, categoryRecommendations, type QuestionCategory } from '@/data/questions';
+import { generatePDF } from '@/utils/generatePDF';
 
 interface ResultsProps {
   answers: Record<string, number | null>;
@@ -247,8 +248,25 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
         </a>
       </div>
 
-      {/* Restart */}
-      <div className="text-center mt-8">
+      {/* Actions */}
+      <div className="flex items-center justify-center gap-6 mt-8">
+        <button
+          onClick={() =>
+            generatePDF({
+              pct,
+              levelLabel,
+              headline,
+              desc,
+              costFormatted,
+              teamSize,
+              categories,
+            })
+          }
+          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold text-sm shadow-md hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <Download size={16} />
+          Download PDF Report
+        </button>
         <button
           onClick={onRestart}
           className="text-sm text-ordinal-dim hover:text-foreground transition-colors underline underline-offset-4"
