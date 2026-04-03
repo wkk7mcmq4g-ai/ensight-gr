@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Info, X } from 'lucide-react';
 import { questions } from '@/data/questions';
 
 interface ResultsProps {
