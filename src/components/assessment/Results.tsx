@@ -54,7 +54,7 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   }
 
   const colorMap = {
-    low: { text: 'text-ordinal-green', stroke: 'hsl(160, 84%, 39%)', bg: 'bg-ordinal-green', topBar: 'bg-ordinal-green' },
+    low: { text: 'text-ordinal-green', stroke: 'hsl(270, 80%, 50%)', bg: 'bg-ordinal-green', topBar: 'bg-ordinal-green' },
     medium: { text: 'text-ordinal-amber', stroke: 'hsl(38, 92%, 50%)', bg: 'bg-ordinal-amber', topBar: 'bg-ordinal-amber' },
     high: { text: 'text-ordinal-pink', stroke: 'hsl(330, 81%, 60%)', bg: 'bg-ordinal-pink', topBar: 'bg-ordinal-pink' },
   };

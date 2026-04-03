@@ -47,8 +47,8 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       {/* Background blobs */}
-      <div className="fixed -top-[30%] -right-[15%] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(79,70,229,0.05)_0%,transparent_60%)] pointer-events-none z-0" />
-      <div className="fixed -bottom-[25%] -left-[10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.04)_0%,transparent_60%)] pointer-events-none z-0" />
+      <div className="fixed -top-[30%] -right-[15%] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(100,0,200,0.06)_0%,transparent_60%)] pointer-events-none z-0" />
+      <div className="fixed -bottom-[25%] -left-[10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(140,50,220,0.04)_0%,transparent_60%)] pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-[720px] mx-auto px-6 pt-10 pb-20 md:px-6">
         <Header />
