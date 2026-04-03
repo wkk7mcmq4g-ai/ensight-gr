@@ -3,6 +3,7 @@ import { questions } from '@/data/questions';
 
 interface ResultsProps {
   answers: Record<string, number | null>;
+  onRestart: () => void;
 }
 
 const Results = ({ answers }: ResultsProps) => {
