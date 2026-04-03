@@ -1,5 +1,6 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
+import georgeAvatar from '@/assets/george-kondylis.png';
 
 const team = [
   {
@@ -90,11 +91,14 @@ const About = () => (
       <div className="max-w-[360px] mx-auto">
         {team.map((t) => (
           <div key={t.name} className="bg-card border border-border rounded-lg p-7 text-center">
-            <div className="w-20 h-20 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-electric-glow">
-                {t.name.split(' ').map((n) => n[0]).join('')}
-              </span>
-            </div>
+            <img
+              src={georgeAvatar}
+              alt={t.name}
+              className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+              loading="lazy"
+              width={512}
+              height={512}
+            />
             <h3 className="text-base font-bold mb-1">{t.name}</h3>
             <div className="font-mono-label text-[10px] text-electric-glow tracking-[1px] uppercase mb-3">
               {t.role}
