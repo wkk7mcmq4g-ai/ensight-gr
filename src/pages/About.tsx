@@ -1,22 +1,8 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 
-const team = [
-  {
-    name: 'Alexandros Maris',
-    role: 'Founder & Lead Consultant',
-    bio: 'Former operations director with 15+ years transforming how mid-market companies work. Obsessed with eliminating invisible waste.',
-  },
-  {
-    name: 'Elena Papadopoulos',
-    role: 'Senior Process Architect',
-    bio: 'Systems thinker and workflow designer. Turns chaotic operations into repeatable, scalable processes.',
-  },
-  {
-    name: 'Nikos Stavrou',
-    role: 'Data & Analytics Lead',
-    bio: 'Turns operational data into actionable insight. Builds the dashboards that replace guesswork with clarity.',
-  },
+const team: { name: string; role: string; bio: string }[] = [
+  // TODO: Add real team members
 ];
 
 const values = [
