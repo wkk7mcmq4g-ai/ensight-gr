@@ -1,64 +1,87 @@
 
 
-## Plan: Enhance Assessment with New Questions, Mid-Range Scoring & Categorized Results
+# Plan: Apply All Five Enhancements
 
-### Summary
-Add 4 new questions, introduce mid-range (score 2) options to existing questions, group results into thematic categories with recommendations, and update the results page accordingly.
-
----
-
-### 1. Add 4 New Questions to `src/data/questions.ts`
-
-Add a `category` field to the `Question` interface. Assign categories to all questions:
-
-| Category | Questions |
-|---|---|
-| **Communication** | whatsapp (existing) |
-| **People Dependencies** | human_router (existing), onboarding (new) |
-| **Visibility** | invisible_queue, status_meetings (existing) |
-| **Automation** | copy_paste, manual_hours (existing), rework (new) |
-| **Scalability** | scaling, approvals, failed_tool (existing) |
-| **Customer Impact** | customer_impact (new) |
-| **Decision Making** | data_decisions (new) |
-
-**New questions:**
-1. **Onboarding** — "How long does it take a new hire to become fully productive?" (Under 2 weeks / 1–3 months / 3+ months)
-2. **Rework/Errors** — "How often does your team redo work due to miscommunication or unclear processes?" (Rarely / Occasionally / Frequently)
-3. **Customer Impact** — "Do operational inefficiencies ever visibly affect your customers?" (Never / Sometimes / Regularly)
-4. **Data-Driven Decisions** — "How does management typically make operational decisions?" (Data-driven dashboards / Mix of data and gut / Mostly intuition and experience)
-
-All new questions get 3 options with scores 0, 2, 3.
-
-### 2. Add Mid-Range Options to Existing Questions
-
-Update existing 3-option questions to include a score-2 middle option where currently only 0/1/3 exists. This improves scoring granularity. Example for `whatsapp`:
-- Score 0: Structured system with audit trails
-- Score 1: Mostly email, with some informal messaging
-- **Score 2: Mix of tools — some structured, some chat-based** (new)
-- Score 3: Heavily reliant on WhatsApp/Viber
-
-Update `maxScore` calculation in Results to use actual max per question instead of hardcoded 3.
-
-### 3. Update Results with Categories & Recommendations — `src/components/assessment/Results.tsx`
-
-- Group breakdown items by category
-- Show category headers with an overall category status (Good/At Risk/Critical based on average score)
-- Add a short actionable recommendation per category when score is At Risk or Critical
-- Update methodology text to reflect 14 questions and new max score
-
-### 4. Update Progress & Assessment Page — `src/pages/Assessment.tsx`
-
-- Assessment description text updated from "10 questions" to "14 questions"
-- No other structural changes needed (already uses `questions.length` for total)
+## Summary
+Implement all five previously suggested features: (1) email capture before results, (2) social sharing on results, (3) About/Team page, (4) case study pages, and (5) enhanced assessment animations.
 
 ---
 
-### Technical Details
+## 1. Email Capture Gate Before Results
 
-**Files modified:**
-- `src/data/questions.ts` — Add `category` to interface, add 4 questions, add mid-range options
-- `src/components/assessment/Results.tsx` — Categorized breakdown, dynamic max score, recommendations
-- `src/pages/Assessment.tsx` — Update description copy
+**New file**: `src/components/assessment/EmailCapture.tsx`
+- Simple card component with name + email fields and a "Skip" link
+- On submit or skip, calls a callback to proceed to results
+- Stores captured data in component state (no backend needed for now)
 
-**No new dependencies required.**
+**Edit**: `src/pages/Assessment.tsx`
+- Add a new state `showEmailCapture` between quiz completion and results
+- When last question answered, show `EmailCapture` instead of `Results`
+- On submit/skip, transition to `Results`
+
+## 2. Social Sharing Buttons on Results
+
+**Edit**: `src/components/assessment/Results.tsx`
+- Add LinkedIn and Twitter/X share buttons in the Actions section alongside Download PDF and Retake
+- LinkedIn: share URL with pre-filled text about Process Debt score
+- Twitter/X: `https://twitter.com/intent/tweet?text=...&url=...`
+- Use `lucide-react` icons or inline SVG for LinkedIn and X logos
+- Share text: "I just scored {pct} on the Process Debt Assessment by Ensight. Find out your score:"
+
+## 3. About/Team Page
+
+**New file**: `src/pages/About.tsx`
+- Hero section with company story (Ensight, Athens)
+- Team bios section with photo placeholders, names, titles, short bios
+- Values/approach section highlighting the operational methodology
+- Styled consistently with the existing dark-themed design
+
+**Edit**: `src/App.tsx` - Add `/about` route
+
+**Edit**: `src/components/layout/Navbar.tsx` - Add "About" nav link
+
+**Edit**: `src/components/layout/Footer.tsx` - Add "About" footer link
+
+## 4. Case Study Pages
+
+**New file**: `src/pages/CaseStudies.tsx`
+- Overview page with 3 cards (Tourism, Financial Services, Manufacturing)
+- Each card links to a detail view
+
+**New file**: `src/pages/CaseStudyDetail.tsx`
+- Dynamic page using URL param for case ID
+- Sections: Challenge, Approach, Results (before/after metrics), Timeline
+- Data stored in a local array/object (no backend)
+
+**New file**: `src/data/caseStudies.ts`
+- Data for all 3 case studies with sector, challenge, approach, metrics, timeline
+
+**Edit**: `src/App.tsx` - Add `/case-studies` and `/case-studies/:id` routes
+
+**Edit**: `src/components/layout/Navbar.tsx` - Add "Case Studies" nav link
+
+**Edit**: `src/components/layout/Footer.tsx` - Add "Case Studies" footer link
+
+## 5. Enhanced Assessment Animations
+
+**Edit**: `src/components/assessment/Results.tsx`
+- Add animated counter for the cost estimate (count up from 0 to final value over ~1.5s)
+- Add a subtle confetti/sparkle burst when results first load (use a lightweight CSS animation or a small utility, no heavy library)
+- Add staggered fade-in for category breakdown items using framer-motion
+
+**Edit**: `src/components/assessment/QuestionCard.tsx`
+- Already has framer-motion transitions; enhance with slightly more polished easing
+
+**Edit**: `src/components/assessment/ProgressBar.tsx`
+- Add smooth animated fill transition (CSS transition on width)
+
+---
+
+## Technical Notes
+
+- No backend or Supabase needed; all data is local/static
+- Social sharing uses native URL intent links (no third-party SDKs)
+- Framer-motion already installed; will reuse for new animations
+- All new pages follow existing patterns: section-based layout, AnimatedSection wrappers, same color tokens and typography
+- About and Case Studies pages will use the existing `Layout` wrapper with Navbar/Footer
 
