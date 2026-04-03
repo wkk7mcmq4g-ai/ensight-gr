@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Info, X } from 'lucide-react';
 import { questions } from '@/data/questions';
 
 interface ResultsProps {
@@ -8,6 +9,7 @@ interface ResultsProps {
 
 const Results = ({ answers, onRestart }: ResultsProps) => {
   const ringRef = useRef<SVGCircleElement>(null);
+  const [showMethodology, setShowMethodology] = useState(false);
 
   // Calculate scores
   let totalScore = 0;
@@ -119,9 +121,28 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
 
       {/* Cost Card */}
       <div className="animate-fade-up bg-gradient-to-br from-[#111118] to-[#1a1a2e] rounded-lg p-10 text-center mb-6 border border-[#2a2a3e]" style={{ animationDelay: '0.12s', opacity: 0 }}>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-ordinal-dim mb-3">
+        <div className="flex items-center justify-center gap-2 font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-ordinal-dim mb-3">
           Estimated Annual Cost of Inefficiency
+          <button
+            onClick={() => setShowMethodology(!showMethodology)}
+            className="relative text-ordinal-dim hover:text-ordinal-faint transition-colors"
+            aria-label="How is this calculated?"
+          >
+            {showMethodology ? <X size={14} /> : <Info size={14} />}
+          </button>
         </div>
+
+        {showMethodology && (
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2 animate-fade-up">
+            <p className="font-semibold text-ordinal-faint">How we calculate this:</p>
+            <p>Each of the 9 operational questions scores 0 (good), 1–2 (moderate), or 3 (critical), giving a max score of 27.</p>
+            <p><span className="text-ordinal-faint">Process Debt %</span> = your total score ÷ max score × 100</p>
+            <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % × 0.30 (capped at 30% of payroll)</p>
+            <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people × €40,000 avg cost × {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
+            <p className="text-ordinal-dim/70 italic">This is a directional estimate based on cross-industry benchmarks, not a precise audit.</p>
+          </div>
+        )}
+
         <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-ordinal-pink-bright via-ordinal-amber to-ordinal-green-bright bg-clip-text text-transparent mb-3">
           {costFormatted}
         </div>
