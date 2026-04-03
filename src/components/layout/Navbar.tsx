@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import ensightLogo from '@/assets/ensight-logo.png';
 
@@ -13,9 +13,16 @@ const navLinks = [
   { label: 'About', href: '/about' },
 ];
 
+const assessmentOptions = [
+  { label: 'Process Debt', desc: 'Operational efficiency audit', href: '/assessment' },
+  { label: 'Data Clarity', desc: 'Data readiness check', href: '/data-clarity-assessment' },
+];
+
 const Navbar = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleAnchorClick = (href: string) => {
     setMobileOpen(false);
@@ -27,6 +34,17 @@ const Navbar = () => {
       }, 100);
     }
   };
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
 
   return (
     <>
@@ -50,12 +68,40 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/assessment"
-            className="font-mono-label text-[11px] font-medium tracking-[1px] text-white bg-ordinal-green px-5 py-2.5 rounded-[10px] shadow-[0_4px_12px_rgba(16,185,129,0.15)] hover:bg-ordinal-green-bright hover:-translate-y-px hover:shadow-[0_4px_20px_rgba(16,185,129,0.25)] transition-all"
-          >
-            Free Assessment
-          </Link>
+
+          {/* Assessment dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setDropdownOpen((v) => !v)}
+              className="inline-flex items-center gap-1.5 font-mono-label text-[11px] font-medium tracking-[1px] text-white bg-ordinal-green px-5 py-2.5 rounded-[10px] shadow-[0_4px_12px_rgba(16,185,129,0.15)] hover:bg-ordinal-green-bright hover:-translate-y-px hover:shadow-[0_4px_20px_rgba(16,185,129,0.25)] transition-all"
+            >
+              Free Assessment
+              <ChevronDown size={14} className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -4, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -4, scale: 0.97 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 top-full mt-2 w-[240px] bg-card border border-border rounded-xl shadow-xl overflow-hidden"
+                >
+                  {assessmentOptions.map((opt) => (
+                    <Link
+                      key={opt.href}
+                      to={opt.href}
+                      onClick={() => setDropdownOpen(false)}
+                      className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
+                    >
+                      <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                      <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -88,13 +134,20 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/assessment"
-              onClick={() => setMobileOpen(false)}
-              className="font-mono-label text-[11px] font-medium tracking-[1px] text-white bg-ordinal-green px-5 py-3 rounded-[10px] text-center mt-2 no-underline"
-            >
-              Free Assessment
-            </Link>
+            <div className="mt-2 space-y-2">
+              <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
+              {assessmentOptions.map((opt) => (
+                <Link
+                  key={opt.href}
+                  to={opt.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-3 bg-card border border-border rounded-xl no-underline"
+                >
+                  <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                  <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                </Link>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
