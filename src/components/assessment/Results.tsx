@@ -3,9 +3,10 @@ import { questions } from '@/data/questions';
 
 interface ResultsProps {
   answers: Record<string, number | null>;
+  onRestart: () => void;
 }
 
-const Results = ({ answers }: ResultsProps) => {
+const Results = ({ answers, onRestart }: ResultsProps) => {
   const ringRef = useRef<SVGCircleElement>(null);
 
   // Calculate scores
@@ -156,6 +157,16 @@ const Results = ({ answers }: ResultsProps) => {
         >
           Book Your X-Ray Briefing
         </a>
+      </div>
+
+      {/* Restart */}
+      <div className="text-center mt-8">
+        <button
+          onClick={onRestart}
+          className="text-sm text-ordinal-dim hover:text-foreground transition-colors underline underline-offset-4"
+        >
+          Retake Assessment
+        </button>
       </div>
     </div>
   );

@@ -77,7 +77,7 @@ const Index = () => {
             </div>
           </>
         ) : (
-          <Results answers={answers} />
+          <Results answers={answers} onRestart={() => { setAnswers({}); setCurrent(0); setShowResults(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />
         )}
 
         <div className="text-center mt-12 font-mono-label text-[11px] text-ordinal-faint tracking-[1px]">
