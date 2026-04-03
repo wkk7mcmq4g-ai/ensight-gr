@@ -358,6 +358,23 @@ const DataClarityResults = ({
 
       {/* Actions */}
       <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+        <button
+          onClick={() =>
+            generateDataClarityPDF({
+              pct: readinessPct,
+              verdictLabel,
+              headline,
+              desc,
+              costFormatted,
+              teamSize,
+              categories,
+            })
+          }
+          className="inline-flex items-center gap-2 px-5 py-3 bg-card border border-border text-foreground rounded-xl font-semibold text-sm hover:bg-accent hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <Download size={15} />
+          Download PDF
+        </button>
         <a
           href={linkedinUrl}
           target="_blank"
