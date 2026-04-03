@@ -9,6 +9,7 @@ const Index = () => {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number | null>>({});
   const [showResults, setShowResults] = useState(false);
+  const [direction, setDirection] = useState(1);
 
   const total = questions.length;
   const question = questions[current];
