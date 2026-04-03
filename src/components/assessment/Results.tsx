@@ -158,6 +158,16 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
           Book Your X-Ray Briefing
         </a>
       </div>
+
+      {/* Restart */}
+      <div className="text-center mt-8">
+        <button
+          onClick={onRestart}
+          className="text-sm text-ordinal-dim hover:text-foreground transition-colors underline underline-offset-4"
+        >
+          Retake Assessment
+        </button>
+      </div>
     </div>
   );
 };
