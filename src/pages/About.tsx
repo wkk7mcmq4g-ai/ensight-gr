@@ -1,8 +1,12 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 
-const team: { name: string; role: string; bio: string }[] = [
-  // TODO: Add real team members
+const team = [
+  {
+    name: 'George Kondylis',
+    role: 'Data Analytics Specialist',
+    bio: 'Transforms raw operational data into clear, actionable insight. George specialises in uncovering hidden patterns that reveal where organisations are losing capacity — and how to get it back.',
+  },
 ];
 
 const values = [
@@ -83,8 +87,21 @@ const About = () => (
     {/* Team */}
     <AnimatedSection className="mb-16">
       <h2 className="text-xl font-bold mb-6 text-center">The Team</h2>
-      <div className="bg-card border border-dashed border-border rounded-lg p-12 text-center">
-        <p className="text-ordinal-dim text-sm">Team bios coming soon.</p>
+      <div className="max-w-[360px] mx-auto">
+        {team.map((t) => (
+          <div key={t.name} className="bg-card border border-border rounded-lg p-7 text-center">
+            <div className="w-20 h-20 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
+              <span className="text-2xl font-bold text-electric-glow">
+                {t.name.split(' ').map((n) => n[0]).join('')}
+              </span>
+            </div>
+            <h3 className="text-base font-bold mb-1">{t.name}</h3>
+            <div className="font-mono-label text-[10px] text-electric-glow tracking-[1px] uppercase mb-3">
+              {t.role}
+            </div>
+            <p className="text-sm text-ordinal-body leading-relaxed">{t.bio}</p>
+          </div>
+        ))}
       </div>
     </AnimatedSection>
 
