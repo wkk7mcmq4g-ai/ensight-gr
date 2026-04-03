@@ -1,12 +1,22 @@
 
 
-# Make Data Clarity Hero Section Shorter
+# Add PDF Download to Data Clarity Assessment Results
 
-## Change
-In `src/pages/DataClarity.tsx` line 98, the hero section uses `min-h-screen` which forces it to fill the full viewport height. I'll replace it with a fixed, shorter height.
+## Summary
+Add a "Download PDF" button to the Data Clarity Assessment results, mirroring the Process Debt PDF but adapted for data readiness content.
 
-### File: `src/pages/DataClarity.tsx` (line 98)
-- Change `min-h-screen` to `min-h-[70vh]` — this reduces the hero from 100vh to roughly 70% of viewport, making it feel appropriately sized without being cramped.
+## Changes
 
-One-line change.
+### New: `src/utils/generateDataClarityPDF.ts`
+- Clone the structure from `generatePDF.ts` but adapt for Data Clarity:
+  - Title: "Data Readiness Report"
+  - Score label uses verdict tiers (Build-Ready / Foundation First / Not Viable Yet)
+  - Category breakdown includes weight percentages
+  - CTA references "Data Clarity Assessment" instead of "Operational X-Ray"
+  - Filename: `Data-Readiness-Report-{pct}pct.pdf`
+
+### Edit: `src/pages/DataClarityAssessment.tsx` (Actions section, ~line 359)
+- Add a "Download PDF" button before the LinkedIn share button
+- Wire it to call `generateDataClarityPDF()` with the results data (readinessPct, verdictLabel, headline, desc, costFormatted, teamSize, categories)
+- Same styling as the Process Debt download button
 
