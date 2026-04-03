@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Info, X, Download, Share2 } from 'lucide-react';
+import { generateDataClarityPDF } from '@/utils/generateDataClarityPDF';
 import { Link } from 'react-router-dom';
 import ProgressBar from '@/components/assessment/ProgressBar';
 import QuestionCard from '@/components/assessment/QuestionCard';
