@@ -1,8 +1,8 @@
 const steps = [
-  { num: '01', title: 'Diagnose', time: '1–2 WEEKS', desc: 'Embed with your team. Map how work actually flows. Quantify the cost of every bottleneck. Deliver the Operational X-Ray.', color: 'text-primary' },
-  { num: '02', title: 'Redesign', time: '1–2 WEEKS', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership. No technology yet.', color: 'text-ordinal-cyan' },
-  { num: '03', title: 'Build', time: '4–12 WEEKS', desc: 'Now we implement. Custom platforms, automation, integrations — built around your redesigned processes.', color: 'text-electric-bright' },
-  { num: '04', title: 'Embed', time: '4–8 WEEKS', desc: 'We stay. Monitor adoption. Manage resistance. Train your team. We don't leave until it's working.', color: 'text-ordinal-green' },
+  { num: '01', title: 'Diagnose', time: '1\u20132 WEEKS', desc: 'Embed with your team. Map how work actually flows. Quantify the cost of every bottleneck. Deliver the Operational X-Ray.', color: 'text-primary' },
+  { num: '02', title: 'Redesign', time: '1\u20132 WEEKS', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership. No technology yet.', color: 'text-ordinal-cyan' },
+  { num: '03', title: 'Build', time: '4\u201312 WEEKS', desc: "Now we implement. Custom platforms, automation, integrations \u2014 built around your redesigned processes.", color: 'text-electric-bright' },
+  { num: '04', title: 'Embed', time: '4\u20138 WEEKS', desc: "We stay. Monitor adoption. Manage resistance. Train your team. We don\u2019t leave until it\u2019s working.", color: 'text-ordinal-green' },
 ];
 
 const barColors = ['bg-primary', 'bg-ordinal-cyan', 'bg-electric-bright', 'bg-ordinal-green'];
@@ -10,13 +10,13 @@ const barColors = ['bg-primary', 'bg-ordinal-cyan', 'bg-electric-bright', 'bg-or
 const FrameworkSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="method">
     <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-      // Our Method
+      {"// Our Method"}
     </div>
     <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
       The Operational Clarity Framework
     </h2>
     <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
-      Four stages. Process first, technology second. We never touch a platform until we understand — and have redesigned — the operation it's meant to support.
+      Four stages. Process first, technology second. We never touch a platform until we understand — and have redesigned — the operation it{"'"}s meant to support.
     </p>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {steps.map((s, i) => (

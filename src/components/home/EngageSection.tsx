@@ -2,23 +2,23 @@ const engagements = [
   {
     tag: 'Recommended',
     title: 'Operational X-Ray',
-    meta: '1–2 weeks · Fixed fee',
-    desc: 'We embed with your team, map real workflows, quantify bottleneck costs, and deliver a prioritised roadmap. Standalone value even if you don't proceed further.',
+    meta: '1\u20132 weeks \u00b7 Fixed fee',
+    desc: "We embed with your team, map real workflows, quantify bottleneck costs, and deliver a prioritised roadmap. Standalone value even if you don\u2019t proceed further.",
     barColor: 'bg-primary',
     showTag: true,
   },
   {
     tag: '',
     title: 'Quick Win',
-    meta: '4–6 weeks · Outcome-linked',
-    desc: 'One high-impact problem solved. Proof before commitment. We're willing to tie our fee to the measurable outcome.',
+    meta: '4\u20136 weeks \u00b7 Outcome-linked',
+    desc: "One high-impact problem solved. Proof before commitment. We\u2019re willing to tie our fee to the measurable outcome.",
     barColor: 'bg-ordinal-green',
     showTag: false,
   },
   {
     tag: '',
     title: 'Full Transformation',
-    meta: '10–24 weeks · Scoped from X-Ray',
+    meta: '10\u201324 weeks \u00b7 Scoped from X-Ray',
     desc: 'All four framework stages. End-to-end accountability from diagnosis to adopted, working solution. Scoped collaboratively from X-Ray findings.',
     barColor: 'bg-ordinal-cyan',
     showTag: false,
@@ -28,13 +28,13 @@ const engagements = [
 const EngageSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="start">
     <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-      // Three Ways to Start
+      {"// Three Ways to Start"}
     </div>
     <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
       Low risk. High trust.
     </h2>
     <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
-      We know that committing to a transformation with a new partner involves risk. That's why we designed our model to be low-risk from the start.
+      We know that committing to a transformation with a new partner involves risk. That{"'"}s why we designed our model to be low-risk from the start.
     </p>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {engagements.map((e, i) => (
