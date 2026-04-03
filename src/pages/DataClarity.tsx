@@ -106,8 +106,8 @@ const DataClarity = () => (
       <div className="absolute -top-[200px] -right-[100px] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.08)_0%,transparent_60%)]" />
       <div className="absolute -bottom-[150px] left-[100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(79,70,229,0.07)_0%,transparent_60%)]" />
 
-      <div className="relative z-10 max-w-[1200px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-center">
-        <div>
+      <div className="relative z-10 max-w-[1200px] mx-auto w-full">
+        <div className="max-w-[640px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -157,34 +157,6 @@ const DataClarity = () => (
               See how it works
             </a>
           </motion.div>
-        </div>
-
-        {/* Metric cards */}
-        <div className="flex flex-col gap-3.5">
-          {metrics.map((m, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease, delay: 0.3 + i * 0.15 }}
-              className="bg-[#1C1B2E] border border-white/[0.07] rounded-[14px] p-5 relative overflow-hidden hover:-translate-x-1 hover:border-[#06B6D4]/30 transition-all"
-            >
-              <div className={`absolute top-0 left-0 w-[3px] h-full ${m.color}`} />
-              <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-[#8888A0] mb-2">{m.label}</div>
-              <div className="text-[32px] font-black text-white tracking-tight leading-none mb-2">{m.value}</div>
-              <div className={`text-xs font-bold inline-flex items-center gap-1 ${m.up ? 'text-[#10B981]' : 'text-[#EC4899]'}`}>
-                {m.delta}
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/[0.04]">
-                <motion.div
-                  className={`h-full ${m.color} rounded-sm`}
-                  initial={{ width: 0 }}
-                  animate={{ width: m.barW }}
-                  transition={{ duration: 1.5, ease, delay: 0.8 + i * 0.15 }}
-                />
-              </div>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
