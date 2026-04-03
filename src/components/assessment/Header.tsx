@@ -1,8 +1,9 @@
+import ensightLogo from '@/assets/ensight-logo.png';
+
 const Header = () => (
   <header className="text-center mb-12">
-    <div className="text-2xl font-black lowercase tracking-tight mb-8">
-      ordinal
-      <span className="inline-block w-[7px] h-[7px] bg-ordinal-green rounded-full ml-[1px] relative -top-[3px] shadow-[0_0_10px_rgba(16,185,129,0.3)]" />
+    <div className="mb-8">
+      <img src={ensightLogo} alt="Ensight" className="h-10 mx-auto" />
     </div>
     <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-electric-glow font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
       <span className="w-[6px] h-[6px] bg-electric-bright rounded-full shadow-[0_0_8px_rgba(99,102,241,0.5)]" />
