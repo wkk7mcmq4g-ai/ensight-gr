@@ -11,6 +11,7 @@ const Footer = () => (
       <Link to="/#method" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Method</Link>
       <Link to="/#results" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Results</Link>
       <Link to="/case-studies" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Case Studies</Link>
+      <Link to="/data-clarity" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Data Clarity</Link>
       <Link to="/about" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">About</Link>
       <Link to="/assessment" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Assessment</Link>
     </div>

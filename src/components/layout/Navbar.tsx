@@ -9,6 +9,7 @@ const navLinks = [
   { label: 'Method', href: '/#method' },
   { label: 'Results', href: '/#results' },
   { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Data Clarity', href: '/data-clarity' },
   { label: 'About', href: '/about' },
 ];
 
