@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import ensightLogo from '@/assets/ensight-logo.png';
 
 const navLinks = [
@@ -10,12 +13,16 @@ const navLinks = [
 
 const Navbar = () => {
   const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleAnchorClick = (href: string) => {
+    setMobileOpen(false);
     const [path, hash] = href.split('#');
     if (location.pathname === (path || '/') && hash) {
-      const el = document.getElementById(hash);
-      el?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        el?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
   };
 
@@ -29,6 +36,7 @@ const Navbar = () => {
           <img src={ensightLogo} alt="Ensight" className="h-8" />
         </Link>
 
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
@@ -48,16 +56,46 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile: just the CTA */}
-        <div className="md:hidden">
-          <Link
-            to="/assessment"
-            className="font-mono-label text-[11px] font-medium tracking-[1px] text-white bg-ordinal-green px-4 py-2 rounded-[10px]"
-          >
-            Assessment
-          </Link>
-        </div>
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden p-2 text-foreground"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
+
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 md:hidden"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => handleAnchorClick(link.href)}
+                className="text-foreground text-base font-medium py-2 border-b border-border/50 last:border-0"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              to="/assessment"
+              onClick={() => setMobileOpen(false)}
+              className="font-mono-label text-[11px] font-medium tracking-[1px] text-white bg-ordinal-green px-5 py-3 rounded-[10px] text-center mt-2 no-underline"
+            >
+              Free Assessment
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
