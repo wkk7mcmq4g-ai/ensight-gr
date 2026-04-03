@@ -9,6 +9,7 @@ interface ResultsProps {
 
 const Results = ({ answers, onRestart }: ResultsProps) => {
   const ringRef = useRef<SVGCircleElement>(null);
+  const [showMethodology, setShowMethodology] = useState(false);
 
   // Calculate scores
   let totalScore = 0;
