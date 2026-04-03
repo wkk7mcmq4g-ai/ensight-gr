@@ -6,10 +6,12 @@ const Footer = () => (
     <Link to="/">
       <img src={ensightLogo} alt="Ensight" className="h-6" />
     </Link>
-    <div className="flex gap-6">
+    <div className="flex flex-wrap gap-6">
       <Link to="/#problems" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Services</Link>
       <Link to="/#method" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Method</Link>
       <Link to="/#results" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Results</Link>
+      <Link to="/case-studies" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Case Studies</Link>
+      <Link to="/about" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">About</Link>
       <Link to="/assessment" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Assessment</Link>
     </div>
     <div className="font-mono-label text-[10px] text-ordinal-faint tracking-[1px]">

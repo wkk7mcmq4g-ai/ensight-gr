@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Info, X, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Info, X, Download, Share2 } from 'lucide-react';
 import { questions, categoryRecommendations, type QuestionCategory } from '@/data/questions';
 import { generatePDF } from '@/utils/generatePDF';
 
@@ -14,6 +15,23 @@ interface CategoryResult {
   avgScore: number;
   recommendation: string;
 }
+
+// Animated counter hook
+const useAnimatedCounter = (target: number, duration = 1500) => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const start = performance.now();
+    const step = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(target * eased));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [target, duration]);
+  return count;
+};
 
 const Results = ({ answers, onRestart }: ResultsProps) => {
   const ringRef = useRef<SVGCircleElement>(null);
@@ -46,6 +64,10 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   const wasteFactor = (pct / 100) * 0.3;
   const annualCost = Math.round(teamSize * avgCost * wasteFactor);
   const costFormatted = '\u20AC' + annualCost.toLocaleString('en');
+
+  // Animated values
+  const animatedPct = useAnimatedCounter(pct);
+  const animatedCost = useAnimatedCounter(annualCost);
 
   const categories: CategoryResult[] = [];
   const categoryOrder: QuestionCategory[] = [
@@ -81,17 +103,17 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
     level = 'low';
     levelLabel = 'Low Process Debt';
     headline = 'Your Operations Are in Good Shape';
-    desc = 'Your organisation shows relatively low levels of process debt. There may still be optimisation opportunities, but your foundation is solid. A targeted review could help you find the remaining 10-15% of efficiency gains.';
+    desc = 'Your organisation shows relatively low levels of process debt. There may still be optimisation opportunities, but your foundation is solid.';
   } else if (pct <= 55) {
     level = 'medium';
     levelLabel = 'Moderate Process Debt';
     headline = 'Significant Capacity to Recover';
-    desc = 'Your organisation has accumulated meaningful process debt. Inefficiencies are likely costing you more than you realise, and they are compounding as you grow. A structured operational review would reveal exactly where capacity is trapped and how to unlock it.';
+    desc = 'Your organisation has accumulated meaningful process debt. Inefficiencies are likely costing you more than you realise, and they are compounding as you grow.';
   } else {
     level = 'high';
     levelLabel = 'High Process Debt';
     headline = 'Your Operations Need Urgent Attention';
-    desc = 'Your organisation is carrying substantial process debt. A large portion of your team\'s time and your operating budget is being consumed by inefficiency that is invisible because it feels normal. This compounds every month you wait.';
+    desc = 'Your organisation is carrying substantial process debt. A large portion of your team\'s time and your operating budget is being consumed by inefficiency.';
   }
 
   const colorMap = {
@@ -140,10 +162,43 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   const scoredQuestionCount = questions.filter((q) => q.type !== 'number').length;
   const mailtoHref = `mailto:hello@ordinal.co?subject=Operational X-Ray Enquiry&body=Hi, I just completed the ordinal Process Debt Assessment (score: ${pct}). I'd like to learn more about the Operational X-Ray.`;
 
+  const shareUrl = typeof window !== 'undefined' ? window.location.origin + '/assessment' : '';
+  const shareText = `I just scored ${pct} on the Process Debt Assessment by Ensight. Find out your score:`;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+
   return (
     <div>
+      {/* Confetti sparkle burst */}
+      <div className="relative">
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1.5 h-1.5 rounded-full"
+            style={{
+              left: '50%',
+              top: '50%',
+              background: ['hsl(270,80%,60%)', 'hsl(160,84%,39%)', 'hsl(38,92%,50%)', 'hsl(330,81%,60%)'][i % 4],
+            }}
+            initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+            animate={{
+              x: Math.cos((i * 30 * Math.PI) / 180) * (80 + Math.random() * 60),
+              y: Math.sin((i * 30 * Math.PI) / 180) * (80 + Math.random() * 60),
+              opacity: 0,
+              scale: 0,
+            }}
+            transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+          />
+        ))}
+      </div>
+
       {/* Score Card */}
-      <div className="animate-fade-up bg-card border border-border rounded-lg p-12 text-center mb-6 relative overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-card border border-border rounded-lg p-12 text-center mb-6 relative overflow-hidden"
+      >
         <div className={`absolute top-0 left-0 right-0 h-1 ${colors.topBar}`} />
         <div className={`font-mono-label text-[11px] font-semibold tracking-[3px] uppercase mb-4 ${colors.text}`}>
           {levelLabel}
@@ -163,15 +218,20 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
             />
           </svg>
           <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl font-black ${colors.text}`}>
-            {pct}
+            {animatedPct}
           </div>
         </div>
         <h2 className="text-xl font-bold mb-2">{headline}</h2>
         <p className="text-[15px] text-ordinal-body leading-relaxed max-w-[500px] mx-auto">{desc}</p>
-      </div>
+      </motion.div>
 
       {/* Cost Card */}
-      <div className="animate-fade-up bg-gradient-to-br from-[#111118] to-[#1a1a2e] rounded-lg p-10 text-center mb-6 border border-[#2a2a3e]" style={{ animationDelay: '0.12s', opacity: 0 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.12 }}
+        className="bg-gradient-to-br from-[#111118] to-[#1a1a2e] rounded-lg p-10 text-center mb-6 border border-[#2a2a3e]"
+      >
         <div className="flex items-center justify-center gap-2 font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-ordinal-dim mb-3">
           Estimated Annual Cost of Inefficiency
           <button
@@ -184,31 +244,45 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
         </div>
 
         {showMethodology && (
-          <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2 animate-fade-up">
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2"
+          >
             <p className="font-semibold text-ordinal-faint">How we calculate this:</p>
             <p>Each of the {scoredQuestionCount} operational questions scores 0 (good), 1-2 (moderate), or 3 (critical), giving a max score of {maxScore}.</p>
             <p><span className="text-ordinal-faint">Process Debt %</span> = your total score / max score x 100</p>
             <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % x 0.30 (capped at 30% of payroll)</p>
             <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people x {'\u20AC'}40,000 avg cost x {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
             <p className="text-ordinal-dim/70 italic">This is a directional estimate based on cross-industry benchmarks, not a precise audit.</p>
-          </div>
+          </motion.div>
         )}
 
         <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-ordinal-pink-bright via-ordinal-amber to-ordinal-green-bright bg-clip-text text-transparent mb-3">
-          {costFormatted}
+          {'\u20AC'}{animatedCost.toLocaleString('en')}
         </div>
         <div className="text-xs text-ordinal-dim leading-relaxed">
           Based on {teamSize} people and your Process Debt Score of {pct}.<br />
           Directional estimate using cross-industry research benchmarks.
         </div>
-      </div>
+      </motion.div>
 
       {/* Categorized Breakdown */}
-      <div className="animate-fade-up bg-card border border-border rounded-lg p-8 mb-6" style={{ animationDelay: '0.24s', opacity: 0 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.24 }}
+        className="bg-card border border-border rounded-lg p-8 mb-6"
+      >
         <h3 className="text-lg font-bold mb-5">Your Breakdown</h3>
         <div className="space-y-6">
-          {categories.map((cat) => (
-            <div key={cat.category}>
+          {categories.map((cat, catIndex) => (
+            <motion.div
+              key={cat.category}
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 + catIndex * 0.08 }}
+            >
               <div className="flex items-center justify-between mb-3">
                 <h4 className="text-sm font-bold uppercase tracking-wider text-ordinal-faint">{cat.category}</h4>
                 <span className={`font-mono-label text-[10px] font-semibold tracking-[1px] ${categoryStatusClass(cat.avgScore)}`}>
@@ -228,13 +302,18 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
                   {'\uD83D\uDCA1'} {cat.recommendation}
                 </p>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* CTA Card */}
-      <div className="animate-fade-up bg-card border border-border rounded-lg p-10 text-center relative overflow-hidden" style={{ animationDelay: '0.36s', opacity: 0 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.36 }}
+        className="bg-card border border-border rounded-lg p-10 text-center relative overflow-hidden"
+      >
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
         <h3 className="text-[22px] font-bold mb-3">Want to See the Real Numbers?</h3>
         <p className="text-[15px] text-ordinal-body leading-relaxed mb-6 max-w-[440px] mx-auto">
@@ -246,10 +325,10 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
         >
           Book Your X-Ray Briefing
         </a>
-      </div>
+      </motion.div>
 
       {/* Actions */}
-      <div className="flex items-center justify-center gap-6 mt-8">
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
         <button
           onClick={() =>
             generatePDF({
@@ -265,8 +344,29 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
           className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold text-sm shadow-md hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-200"
         >
           <Download size={16} />
-          Download PDF Report
+          Download PDF
         </button>
+
+        {/* Social share buttons */}
+        <a
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-3 bg-[#0A66C2] text-white rounded-xl font-semibold text-sm hover:bg-[#004182] hover:-translate-y-0.5 transition-all duration-200 no-underline"
+        >
+          <Share2 size={15} />
+          LinkedIn
+        </a>
+        <a
+          href={twitterUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-3 bg-foreground text-background rounded-xl font-semibold text-sm hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
+        >
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          Post
+        </a>
+
         <button
           onClick={onRestart}
           className="text-sm text-ordinal-dim hover:text-foreground transition-colors underline underline-offset-4"

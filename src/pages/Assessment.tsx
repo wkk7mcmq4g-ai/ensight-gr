@@ -1,12 +1,14 @@
 import { useState, useCallback } from 'react';
 import ProgressBar from '@/components/assessment/ProgressBar';
 import QuestionCard from '@/components/assessment/QuestionCard';
+import EmailCapture from '@/components/assessment/EmailCapture';
 import Results from '@/components/assessment/Results';
 import { questions } from '@/data/questions';
 
 const Assessment = () => {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number | null>>({});
+  const [showEmailCapture, setShowEmailCapture] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [direction, setDirection] = useState(1);
 
@@ -31,7 +33,7 @@ const Assessment = () => {
     if (current < total - 1) {
       setCurrent((c) => c + 1);
     } else {
-      setShowResults(true);
+      setShowEmailCapture(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -41,6 +43,12 @@ const Assessment = () => {
       setDirection(-1);
       setCurrent((c) => c - 1);
     }
+  };
+
+  const proceedToResults = () => {
+    setShowEmailCapture(false);
+    setShowResults(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -63,7 +71,15 @@ const Assessment = () => {
         </p>
       </header>
 
-      {!showResults ? (
+      {showEmailCapture ? (
+        <EmailCapture
+          onSubmit={(_name, _email) => {
+            // Could store/send lead data here in the future
+            proceedToResults();
+          }}
+          onSkip={proceedToResults}
+        />
+      ) : !showResults ? (
         <>
           <ProgressBar current={current} total={total} />
 
@@ -94,7 +110,7 @@ const Assessment = () => {
           </div>
         </>
       ) : (
-        <Results answers={answers} onRestart={() => { setAnswers({}); setCurrent(0); setShowResults(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />
+        <Results answers={answers} onRestart={() => { setAnswers({}); setCurrent(0); setShowResults(false); setShowEmailCapture(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />
       )}
     </div>
   );
