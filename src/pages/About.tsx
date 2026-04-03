@@ -119,12 +119,6 @@ const About = () => (
         >
           Take the Assessment
         </a>
-        <a
-          href="mailto:hello@ordinal.co?subject=Operational X-Ray Enquiry"
-          className="inline-block text-ordinal-dim hover:text-foreground text-sm font-medium transition-colors underline underline-offset-4"
-        >
-          Contact Us
-        </a>
       </div>
     </AnimatedSection>
   </div>
