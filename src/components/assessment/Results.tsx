@@ -80,7 +80,7 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
     level = 'low';
     levelLabel = 'Low Process Debt';
     headline = 'Your Operations Are in Good Shape';
-    desc = 'Your organisation shows relatively low levels of process debt. There may still be optimisation opportunities, but your foundation is solid. A targeted review could help you find the remaining 10–15% of efficiency gains.';
+    desc = 'Your organisation shows relatively low levels of process debt. There may still be optimisation opportunities, but your foundation is solid. A targeted review could help you find the remaining 10-15% of efficiency gains.';
   } else if (pct <= 55) {
     level = 'medium';
     levelLabel = 'Moderate Process Debt';
@@ -185,7 +185,7 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
         {showMethodology && (
           <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2 animate-fade-up">
             <p className="font-semibold text-ordinal-faint">How we calculate this:</p>
-            <p>Each of the {scoredQuestionCount} operational questions scores 0 (good), 1–2 (moderate), or 3 (critical), giving a max score of {maxScore}.</p>
+            <p>Each of the {scoredQuestionCount} operational questions scores 0 (good), 1-2 (moderate), or 3 (critical), giving a max score of {maxScore}.</p>
             <p><span className="text-ordinal-faint">Process Debt %</span> = your total score ÷ max score × 100</p>
             <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % × 0.30 (capped at 30% of payroll)</p>
             <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people × €40,000 avg cost × {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
@@ -237,7 +237,7 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
         <h3 className="text-[22px] font-bold mb-3">Want to See the Real Numbers?</h3>
         <p className="text-[15px] text-ordinal-body leading-relaxed mb-6 max-w-[440px] mx-auto">
-          This estimate is based on industry averages. Our Operational X-Ray embeds with your team for 1–2 weeks and shows you exactly where capacity is trapped and how to unlock it.
+          This estimate is based on industry averages. Our Operational X-Ray embeds with your team for 1-2 weeks and shows you exactly where capacity is trapped and how to unlock it.
         </p>
         <a
           href={mailtoHref}
