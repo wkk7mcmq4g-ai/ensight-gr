@@ -57,7 +57,7 @@ const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
           Your responses produce a composite Data Readiness Score and a specific verdict on your readiness
           to build a management analytics system.
         </p>
-        <div className="grid grid-cols-5 gap-2 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-6">
           {DIMS.map((d) => (
             <div key={d.id} className="bg-background border border-border rounded-xl p-3 text-center">
               <div className="font-mono-label text-[9px] tracking-[1px] text-ordinal-dim mb-1">
