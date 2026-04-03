@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const ease = [0.22, 1, 0.36, 1];
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const HeroSection = () => (
   <section className="min-h-screen px-6 md:px-12 pt-40 pb-20 flex flex-col justify-center max-w-[1200px] mx-auto relative overflow-hidden">

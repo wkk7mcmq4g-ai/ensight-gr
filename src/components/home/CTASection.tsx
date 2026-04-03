@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const ease = [0.22, 1, 0.36, 1];
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const CTASection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24 text-center">
