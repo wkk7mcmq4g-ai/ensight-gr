@@ -83,24 +83,9 @@ const About = () => (
     {/* Team */}
     <AnimatedSection className="mb-16">
       <h2 className="text-xl font-bold mb-6 text-center">The Team</h2>
-      <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {team.map((t) => (
-          <StaggerItem key={t.name}>
-            <div className="bg-card border border-border rounded-lg p-7 text-center">
-              <div className="w-20 h-20 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-electric-glow">
-                  {t.name.split(' ').map((n) => n[0]).join('')}
-                </span>
-              </div>
-              <h3 className="text-base font-bold mb-1">{t.name}</h3>
-              <div className="font-mono-label text-[10px] text-electric-glow tracking-[1px] uppercase mb-3">
-                {t.role}
-              </div>
-              <p className="text-sm text-ordinal-body leading-relaxed">{t.bio}</p>
-            </div>
-          </StaggerItem>
-        ))}
-      </StaggerChildren>
+      <div className="bg-card border border-dashed border-border rounded-lg p-12 text-center">
+        <p className="text-ordinal-dim text-sm">Team bios coming soon.</p>
+      </div>
     </AnimatedSection>
 
     {/* CTA */}
