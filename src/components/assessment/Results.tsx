@@ -18,7 +18,6 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   const ringRef = useRef<SVGCircleElement>(null);
   const [showMethodology, setShowMethodology] = useState(false);
 
-  // Calculate scores
   let totalScore = 0;
   let maxScore = 0;
   const categoryMap = new Map<QuestionCategory, { label: string; score: number; max: number }[]>();
@@ -45,9 +44,8 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   const avgCost = 40000;
   const wasteFactor = (pct / 100) * 0.3;
   const annualCost = Math.round(teamSize * avgCost * wasteFactor);
-  const costFormatted = '€' + annualCost.toLocaleString('en');
+  const costFormatted = '\u20AC' + annualCost.toLocaleString('en');
 
-  // Build category results
   const categories: CategoryResult[] = [];
   const categoryOrder: QuestionCategory[] = [
     'Communication',
@@ -62,7 +60,9 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
   categoryOrder.forEach((cat) => {
     const items = categoryMap.get(cat);
     if (!items || items.length === 0) return;
-    const avg = items.reduce((s, i) => s + i.score, 0) / items.reduce((s, i) => s + i.max, 0);
+    const totalCatScore = items.reduce((s, i) => s + i.score, 0);
+    const totalCatMax = items.reduce((s, i) => s + i.max, 0);
+    const avg = totalCatMax > 0 ? totalCatScore / totalCatMax : 0;
     categories.push({
       category: cat,
       items: items.map((i) => ({ label: i.label, score: i.score })),
@@ -85,12 +85,12 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
     level = 'medium';
     levelLabel = 'Moderate Process Debt';
     headline = 'Significant Capacity to Recover';
-    desc = 'Your organisation has accumulated meaningful process debt. Inefficiencies are likely costing you more than you realise, and they're compounding as you grow. A structured operational review would reveal exactly where capacity is trapped and how to unlock it.';
+    desc = 'Your organisation has accumulated meaningful process debt. Inefficiencies are likely costing you more than you realise, and they are compounding as you grow. A structured operational review would reveal exactly where capacity is trapped and how to unlock it.';
   } else {
     level = 'high';
     levelLabel = 'High Process Debt';
     headline = 'Your Operations Need Urgent Attention';
-    desc = 'Your organisation is carrying substantial process debt. A large portion of your team's time and your operating budget is being consumed by inefficiency that's invisible because it feels "normal." This compounds every month you wait.';
+    desc = 'Your organisation is carrying substantial process debt. A large portion of your team\'s time and your operating budget is being consumed by inefficiency that is invisible because it feels normal. This compounds every month you wait.';
   }
 
   const colorMap = {
@@ -186,9 +186,9 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
           <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2 animate-fade-up">
             <p className="font-semibold text-ordinal-faint">How we calculate this:</p>
             <p>Each of the {scoredQuestionCount} operational questions scores 0 (good), 1-2 (moderate), or 3 (critical), giving a max score of {maxScore}.</p>
-            <p><span className="text-ordinal-faint">Process Debt %</span> = your total score ÷ max score × 100</p>
-            <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % × 0.30 (capped at 30% of payroll)</p>
-            <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people × €40,000 avg cost × {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
+            <p><span className="text-ordinal-faint">Process Debt %</span> = your total score / max score x 100</p>
+            <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % x 0.30 (capped at 30% of payroll)</p>
+            <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people x {'\u20AC'}40,000 avg cost x {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
             <p className="text-ordinal-dim/70 italic">This is a directional estimate based on cross-industry benchmarks, not a precise audit.</p>
           </div>
         )}
@@ -223,8 +223,8 @@ const Results = ({ answers, onRestart }: ResultsProps) => {
                 </div>
               ))}
               {cat.avgScore > 0.15 && (
-                <p className="mt-2 text-xs text-ordinal-dim leading-relaxed pl-0.5 border-l-2 border-ordinal-amber/30 ml-1 pl-3">
-                  💡 {cat.recommendation}
+                <p className="mt-2 text-xs text-ordinal-dim leading-relaxed border-l-2 border-ordinal-amber/30 ml-1 pl-3">
+                  {'\uD83D\uDCA1'} {cat.recommendation}
                 </p>
               )}
             </div>
