@@ -103,6 +103,19 @@ const DimensionPage = ({
   canNext: boolean;
 }) => {
   const answered = Object.keys(dimAnswers).length;
+  const questionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleSelect = (qi: number, score: number) => {
+    onSelect(qi, score);
+    // Find next unanswered question and scroll to it
+    const nextUnanswered = dim.questions.findIndex((_, i) => i > qi && dimAnswers[i] === undefined);
+    if (nextUnanswered !== -1) {
+      setTimeout(() => {
+        questionRefs.current[nextUnanswered]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 150);
+    }
+  };
+
   return (
     <motion.div
       key={dim.id}
@@ -128,7 +141,7 @@ const DimensionPage = ({
 
           {/* Questions */}
           {dim.questions.map((q, qi) => (
-            <div key={qi}>
+            <div key={qi} ref={(el) => { questionRefs.current[qi] = el; }}>
               {qi > 0 && <div className="h-px bg-border my-5" />}
               <div>
                 <div className="font-mono-label text-[10px] text-ordinal-dim mb-1.5">
@@ -142,7 +155,7 @@ const DimensionPage = ({
                       <button
                         key={opt.score}
                         type="button"
-                        onClick={() => onSelect(qi, opt.score)}
+                        onClick={() => handleSelect(qi, opt.score)}
                         className={`flex items-start gap-3 px-3.5 py-3 border rounded-xl text-left text-[13px] leading-snug transition-all duration-150 cursor-pointer ${
                           selected
                             ? 'border-[#06B6D4] bg-[#06B6D4]/5'
