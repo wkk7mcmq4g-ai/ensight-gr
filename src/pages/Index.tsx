@@ -59,7 +59,9 @@ const Index = () => {
 
             <QuestionCard
               question={question}
+              questionIndex={current}
               answer={answer}
+              direction={direction}
               onSelectOption={handleSelectOption}
               onNumberInput={handleNumberInput}
             />
