@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Info, X } from 'lucide-react';
+import { Info, X, Download } from 'lucide-react';
 import { questions, categoryRecommendations, type QuestionCategory } from '@/data/questions';
+import { generatePDF } from '@/utils/generatePDF';
 
 interface ResultsProps {
   answers: Record<string, number | null>;
