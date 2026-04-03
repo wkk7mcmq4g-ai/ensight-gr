@@ -10,6 +10,7 @@ import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
+import DataClarity from "./pages/DataClarity";
 
 const queryClient = new QueryClient();
 
