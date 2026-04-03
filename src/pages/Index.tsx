@@ -28,6 +28,7 @@ const Index = () => {
   }, [question.id]);
 
   const goNext = () => {
+    setDirection(1);
     if (current < total - 1) {
       setCurrent((c) => c + 1);
     } else {
@@ -37,7 +38,10 @@ const Index = () => {
   };
 
   const goBack = () => {
-    if (current > 0) setCurrent((c) => c - 1);
+    if (current > 0) {
+      setDirection(-1);
+      setCurrent((c) => c - 1);
+    }
   };
 
   return (
