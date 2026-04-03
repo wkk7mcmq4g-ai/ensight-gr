@@ -1,8 +1,12 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 
-const team: { name: string; role: string; bio: string }[] = [
-  // TODO: Add real team members
+const team = [
+  {
+    name: 'George Kondylis',
+    role: 'Data Analytics Specialist',
+    bio: 'Transforms raw operational data into clear, actionable insight. George specialises in uncovering hidden patterns that reveal where organisations are losing capacity — and how to get it back.',
+  },
 ];
 
 const values = [
