@@ -6,7 +6,7 @@ interface ResultsProps {
   onRestart: () => void;
 }
 
-const Results = ({ answers }: ResultsProps) => {
+const Results = ({ answers, onRestart }: ResultsProps) => {
   const ringRef = useRef<SVGCircleElement>(null);
 
   // Calculate scores
