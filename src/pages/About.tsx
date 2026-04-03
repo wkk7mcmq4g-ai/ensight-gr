@@ -1,6 +1,6 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
-import georgeAvatar from '@/assets/george-kondylis.png';
+import georgeAvatar from '@/assets/george-kondylis.jpg';
 
 const team = [
   {
