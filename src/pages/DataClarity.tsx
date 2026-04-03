@@ -4,12 +4,6 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
-const metrics = [
-  { label: 'Revenue MTD', value: '€13.8M', delta: '▲ +16.7% vs prior year', up: true, color: 'bg-[#06B6D4]', barW: '73%' },
-  { label: 'Net Margin — Client A', value: '68.2%', delta: '▲ +1.4pp vs budget', up: true, color: 'bg-[#10B981]', barW: '68%' },
-  { label: 'ABC — C-tier clients', value: '14', delta: '▼ Generating 4% of net profit', up: false, color: 'bg-[#4F46E5]', barW: '52%' },
-];
-
 const problems = [
   { emoji: '⏱', title: 'No real-time visibility', desc: 'Performance data lives in reports assembled weekly or monthly. By the time a problem is visible, it has already compounded. Decisions are made on last month\'s numbers at best.', color: 'bg-[#4F46E5]' },
   { emoji: '🗂', title: 'No single version of truth', desc: 'Finance, sales, and operations each produce different numbers for the same metric. Meetings become reconciliation exercises. Nobody knows whose figures to trust.', color: 'bg-[#06B6D4]' },
