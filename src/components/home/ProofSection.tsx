@@ -6,21 +6,21 @@ const proofs = [
     metric: '~60%',
     desc: 'reduction in manual processing',
     detail: 'Fragmented systems replaced with a single servicing platform. Daily reconciliation tasks eliminated. Real-time portfolio visibility enabled.',
-    bg: 'bg-gradient-to-br from-[#6A30BF] to-[#3D1A78]',
+    bg: 'bg-gradient-to-br from-primary to-primary/80',
   },
   {
     sector: 'Non-Profit',
     metric: '100%',
     desc: 'programme visibility',
     detail: 'Siloed programmes unified under a single CRM. Compliance tracking structured across the organisation. Reporting centralised.',
-    bg: 'bg-gradient-to-br from-electric-bright to-[#6A30BF]',
+    bg: 'bg-gradient-to-br from-electric-bright to-primary',
   },
   {
     sector: 'Financial Reporting',
     metric: 'Days → Min',
     desc: 'reporting turnaround',
     detail: 'Manual data extraction and reconciliation replaced with automated pipelines. Real-time dashboards delivering consistent, accurate insights.',
-    bg: 'bg-gradient-to-br from-ordinal-green to-[#059669]',
+    bg: 'bg-gradient-to-br from-ordinal-green to-ordinal-green-bright',
   },
 ];
 
