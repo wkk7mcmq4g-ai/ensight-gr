@@ -1,51 +1,38 @@
 
 
-# Rebuild Process Debt Assessment to Match Data Clarity Style
+# Add a Services Page & Reorganise Navigation
 
-## Summary
-Align the Process Debt Assessment with the same UX patterns used in the Data Clarity Assessment: intro screen, grouped-by-category pages, upgraded results layout, and improved scoring model.
+## Why
+The current site scatters service information across homepage sections (EngageSection, FrameworkSection) and a standalone Data Clarity page. A dedicated Services page creates a clear entry point for prospects evaluating what Ensight offers.
 
 ## Changes
 
-### 1. Refactor `src/data/questions.ts`
-- Group questions by category (7 categories, 2 questions each = 14 scored questions + 1 number input for team size)
-- Add category metadata (weight, description) similar to `DIMS` in the Data Clarity data file
-- Add verdict tiers with specific next-steps text per tier (Low / Moderate / High Process Debt)
-- Add helper functions: `categoryScore`, `compositeScore`, `getVerdict`, `categoryComplete`, `allCategoriesComplete`
-- Keep the 0–3 scoring scale (higher = worse) since it's semantically correct for "debt"
+### 1. Create `src/pages/Services.tsx`
+A single page combining:
+- **Hero** — "What We Do" with a one-liner positioning statement
+- **Three service cards** — Operational X-Ray, Quick Win, Full Transformation (pulled from EngageSection data but with more detail: who it's for, what's included, typical outcomes)
+- **Data Clarity section** — positioned as a standalone product/tool with a link to `/data-clarity`
+- **The Framework** — the 4-step method (Diagnose → Redesign → Build → Embed) shown as a horizontal timeline or reused from FrameworkSection
+- **CTA** — "Not sure where to start? Book an X-Ray Briefing"
 
-### 2. Rebuild `src/pages/Assessment.tsx`
-**Intro Screen** — card showing the 7 categories with weights, question count, and estimated time. "Begin Assessment" button.
+### 2. Update Navigation (`src/components/layout/Navbar.tsx`)
+Replace the current nav links with a cleaner structure:
+- **Services** → `/services`
+- **Case Studies** → `/case-studies`
+- **About** → `/about`
+- **Free Assessment** (dropdown, unchanged)
 
-**Category Pages** — one page per category showing 2 questions together (same layout as Data Clarity dimension pages). Includes:
-- Category name and description header
-- Segmented progress bar (7 segments)
-- Auto-scroll to next unanswered question
-- Back / Next navigation
+Remove the homepage anchor links (Problems, Method, Results) from the top nav — they clutter the menu and are only relevant on the homepage. The homepage sections remain scrollable; they just don't need dedicated nav slots.
 
-**Team Size** — shown as its own step before results (or as part of intro)
+### 3. Add Route (`src/App.tsx`)
+Add `/services` route pointing to the new Services page.
 
-**Results View** — rebuilt to match Data Clarity layout:
-- Side-by-side: score ring (left) + verdict box (right)
-- Category bar chart showing per-category scores with color coding
-- Flags section listing Critical and At Risk categories
-- Numbered next steps specific to the verdict tier
-- Cost estimate card (kept, with methodology toggle)
-- CTA card for Operational X-Ray
-- Download PDF + social share buttons
+### 4. Update Homepage Links
+Update any CTAs on the homepage that reference services to link to `/services` where appropriate (e.g., EngageSection cards could link to the services page for more detail).
 
-### 3. Update `src/utils/generatePDF.ts`
-- Update to reflect new results layout (bar chart, flags, next steps)
-- Match the structure of the Data Clarity PDF generator
-
-### 4. Remove old components no longer needed
-- `src/components/assessment/QuestionCard.tsx` — replaced by inline category page
-- `src/components/assessment/ProgressBar.tsx` — replaced by segment bar
-- `src/components/assessment/Results.tsx` — replaced by inline results in Assessment.tsx
-- `src/components/assessment/EmailCapture.tsx` — can be kept or moved inline
-
-### Technical Notes
-- Reuse the same UI patterns (motion animations, card styles, bar chart) from `DataClarityAssessment.tsx`
-- The team size input moves to either the intro screen or a dedicated first step before categories
-- Email capture remains optional between completion and results
+## What stays the same
+- Homepage sections (EngageSection, FrameworkSection, etc.) remain on the homepage
+- Data Clarity page stays as its own page
+- Case Studies, About pages unchanged
+- Assessment flows unchanged
 
