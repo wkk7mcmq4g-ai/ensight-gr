@@ -88,7 +88,7 @@ const Services = () => (
       <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {services.map((s, i) => (
           <StaggerItem key={i}>
-            <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
+            <div className="group bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
               <div className={`absolute top-0 left-0 w-full h-[3px] ${s.barColor}`} />
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -99,7 +99,7 @@ const Services = () => (
                   )}
                   <h3 className="text-xl font-extrabold">{s.title}</h3>
                 </div>
-                <s.icon className={`${s.iconColor} opacity-30 shrink-0`} size={32} strokeWidth={1.5} />
+                <s.icon className={`${s.iconColor} opacity-30 shrink-0 transition-all duration-300 group-hover:opacity-60 group-hover:scale-110`} size={32} strokeWidth={1.5} />
               </div>
               <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{s.meta}</div>
               <div className="space-y-3 text-sm text-ordinal-body leading-relaxed flex-1">
@@ -131,11 +131,11 @@ const Services = () => (
       <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {steps.map((s, i) => (
           <StaggerItem key={i}>
-            <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full">
+             <div className="group bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full">
               <div className={`absolute top-0 left-0 w-full h-[3px] ${barColors[i]}`} />
               <div className="flex items-center justify-between mb-3">
                 <div className="font-mono-label text-xs font-semibold text-ordinal-dim">{s.num}</div>
-                <s.icon className={`${s.color} opacity-25`} size={24} strokeWidth={1.5} />
+                <s.icon className={`${s.color} opacity-25 transition-all duration-300 group-hover:opacity-50 group-hover:scale-110`} size={24} strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-extrabold mb-1">{s.title}</h3>
               <div className={`font-mono-label text-[10px] font-medium mb-3 ${s.color}`}>{s.time}</div>
