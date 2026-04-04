@@ -1,41 +1,58 @@
 
-# Professional Visual Refinements
 
-## 1. Color palette — Desaturate purple (`index.css`)
-- Primary: `270 70% 40%` → `268 45% 32%` (deeper, more muted)
-- Electric-bright: `270 80% 50%` → `268 50% 42%`
-- Reduce saturation on all ordinal accent colors
-- Body text slightly darker for better readability
+# Final Professional Polish
 
-## 2. Border radius — Sharpen (`index.css`)
-- `--radius: 1rem` → `--radius: 0.5rem` (consulting-sharp, not SaaS-round)
+After reviewing the full codebase, here are the remaining issues that still read as "startup template" rather than professional consulting:
 
-## 3. Typography weights — Restrain
-Across all section components:
-- `font-black` → `font-bold`
-- `font-extrabold` → `font-semibold` (on headings)
-- Keep one `font-bold` level for H1 hero only
+## Issues Found
 
-## 4. Remove `// LABEL` monospace pattern
-Replace `font-mono-label text-[10px] ... {"// What We Do"}` with clean uppercase sans-serif labels:
-- Remove `font-mono-label`, use regular font
-- Remove `//` prefix
-- Files: ValuePillarsSection, HowWeHelpSection, HeroSection (if applicable), Services page sections
+1. **Duplicate heading text** — HowWeHelpSection has label "How We Help" AND h2 "How we help" (redundant, inconsistent casing)
+2. **SelectedWorkSection** — same issue: label "Selected Work" + h2 "Selected Work"
+3. **CTA form inputs still use `rounded-xl`** — should be `rounded-lg` to match the sharpened 0.5rem system
+4. **Hero CTA button uses `rounded-xl`** — same issue
+5. **CTA button says "font-bold"** — should be `font-semibold` for consistency (only H1 gets bold)
+6. **QuoteSection quote uses `font-bold`** — should be `font-semibold` or even `font-medium italic` for editorial feel
+7. **Background blobs in Layout** — the purple radial gradients are a SaaS pattern; consulting sites use cleaner backgrounds
+8. **No QuoteSection in Home page flow** — it exists but isn't used on the homepage
+9. **Mobile nav still uses `font-mono-label`** for group labels ("Services", "Free Assessments")
+10. **Footer copyright missing** — professional sites always include © year
 
-## 5. Navbar gradient bar
-- Replace rainbow gradient (`from-[#3D1A78] via-primary to-ordinal-green`) with single muted primary color line
+## Plan
 
-## 6. Card accent bars
-- Keep colored top bars but make them thinner (3px → 2px) and more muted
-- Alternatively: remove entirely for cleaner look
+### 1. Fix duplicate section headings
+- **HowWeHelpSection**: Change h2 to a descriptive subtitle like "Technology that fits your operations" instead of repeating the label
+- **SelectedWorkSection**: Change h2 to "Engagements that delivered" or similar
 
-## Files changed
+### 2. Standardize border radius across all components
+- Replace remaining `rounded-xl` with `rounded-lg` in: CTASection inputs/button, HeroSection CTA button, EngageSection tag badge, mobile nav cards
+
+### 3. Refine typography consistency
+- CTA button: `font-bold` → `font-semibold`
+- QuoteSection: make it `font-medium italic` for a more editorial blockquote feel
+
+### 4. Remove background blobs from Layout
+- Delete the two fixed radial-gradient divs — clean white/off-white background is more authoritative
+
+### 5. Add QuoteSection to homepage
+- Insert between ProofSection and AboutSection as a visual break
+
+### 6. Clean up mobile nav mono labels
+- Remove `font-mono-label` from the two group headers in Navbar mobile menu
+
+### 7. Add footer copyright
+- Add `© {year} Ensight. All rights reserved.` to Footer
+
+## Files Changed
+
 | File | Change |
 |------|--------|
-| `src/index.css` | Desaturate palette, reduce radius |
-| `src/components/home/ValuePillarsSection.tsx` | Font weights, remove monospace label |
-| `src/components/home/HowWeHelpSection.tsx` | Font weights, remove monospace label |
-| `src/components/home/HeroSection.tsx` | Font weight refinement |
-| `src/components/layout/Navbar.tsx` | Simplify gradient bar |
-| `src/pages/Services.tsx` | Font weights, remove monospace labels |
-| Other section components | Same pattern where applicable |
+| `src/components/home/HowWeHelpSection.tsx` | Fix duplicate heading |
+| `src/components/home/SelectedWorkSection.tsx` | Fix duplicate heading |
+| `src/components/home/CTASection.tsx` | `rounded-xl` → `rounded-lg`, font-bold → font-semibold |
+| `src/components/home/HeroSection.tsx` | `rounded-xl` → `rounded-lg` on CTA |
+| `src/components/home/QuoteSection.tsx` | Font weight to medium italic |
+| `src/components/layout/Layout.tsx` | Remove background blobs |
+| `src/components/layout/Navbar.tsx` | Remove `font-mono-label` from mobile menu |
+| `src/components/layout/Footer.tsx` | Add copyright line |
+| `src/pages/Home.tsx` | Add QuoteSection between Proof and About |
+
