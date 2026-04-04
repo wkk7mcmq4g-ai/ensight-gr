@@ -13,6 +13,7 @@ import BeforeYouAutomate from '@/components/home/BeforeYouAutomate';
 import QuoteSection from '@/components/home/QuoteSection';
 import EngageSection from '@/components/home/EngageSection';
 import CTASection from '@/components/home/CTASection';
+import FreeAuditSection from '@/components/home/FreeAuditSection';
 
 const Home = () => (
   <>
@@ -39,6 +40,7 @@ const Home = () => (
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <EngageSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <FreeAuditSection />
     <CTASection />
   </>
 );
