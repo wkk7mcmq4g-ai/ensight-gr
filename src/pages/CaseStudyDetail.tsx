@@ -28,14 +28,14 @@ const CaseStudyDetail = () => {
           <ArrowLeft size={14} /> All Case Studies
         </Link>
 
-        <div className="font-mono-label text-[10px] font-medium text-electric-glow tracking-[3px] uppercase mb-4">
+        <div className="text-[10px] font-medium text-primary tracking-[3px] uppercase mb-4">
           {cs.sector}
         </div>
-        <h1 className="text-[clamp(26px,4.5vw,40px)] font-extrabold leading-[1.15] tracking-tight mb-3">
+        <h1 className="text-[clamp(26px,4.5vw,40px)] font-bold leading-[1.15] tracking-tight mb-3">
           {cs.title}
         </h1>
         <p className="text-lg text-ordinal-body leading-relaxed mb-4">{cs.subtitle}</p>
-        <div className="font-mono-label text-[11px] text-ordinal-dim tracking-[1px] mb-10">
+        <div className="text-[11px] text-ordinal-dim tracking-[1px] mb-10">
           Timeline: {cs.timeline}
         </div>
       </AnimatedSection>
