@@ -5,8 +5,8 @@ import georgeAvatar from '@/assets/george-kondylis.jpg';
 const team = [
   {
     name: 'George Kondylis',
-    role: 'Data Analytics Specialist',
-    bio: 'Transforms raw operational data into clear, actionable insight. George specialises in uncovering hidden patterns that reveal where organisations are losing capacity — and how to get it back.',
+    role: 'Founder & Principal',
+    bio: 'Direct operational experience across tourism, financial services, and manufacturing/export. George built Ensight on one observation: most companies don\'t have a technology problem — they have a process problem. The Operational X-Ray methodology exists to make that visible, fast.',
   },
 ];
 
