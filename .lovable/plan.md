@@ -1,45 +1,55 @@
 
-Status summary
 
-- Your project is published and publicly accessible, so publishing settings are not the blocker.
-- In Lovable, “Setting up” means domain ownership has already been verified and SSL certificate issuance has started.
-- After 1 hour, this can still be normal. Lovable docs say DNS/SSL can take up to 72 hours in some cases.
+# Broaden Homepage + Create Dedicated Operational Transformation Page
 
-What to check now
+## Overview
+Move the current homepage content (bottleneck-focused) to a new `/operational-transformation` route. Replace the homepage with a broader, higher-level page that positions Ensight as a technology & data transformation partner. Update navigation accordingly.
 
-1. Verify DNS records at your registrar
-   - Root domain `@` → A record → `185.158.133.1`
-   - `www` → A record → `185.158.133.1`
-   - `_lovable` → TXT record → the exact verification value Lovable showed you
+## New Homepage (`/`)
 
-2. Look for conflicting records
-   - Remove old A/AAAA/CNAME records for the same hostnames (`@` or `www`) that point somewhere else
-   - If `www` has a CNAME to another provider, that can block activation
+### Hero
+- **Headline**: "We transform how organisations work with technology and data."
+- **Subtitle**: "Strategy, platforms, automation, and analytics — designed around how your business actually operates."
+- Single "Learn More" button scrolling to value pillars.
 
-3. If you use Cloudflare or another proxy
-   - Make sure you connected the domain using Lovable’s proxy-compatible setup
-   - If not, reconnect the domain and enable “Domain uses Cloudflare or a similar proxy” in the advanced section
+### Value Pillars section (replaces ProblemsSection on homepage)
+4 positive capability cards in a grid:
+- **Digital Transformation** — Redesign processes and systems for efficiency and scale.
+- **Data & Analytics** — Turn fragmented data into clear, actionable insight.
+- **Custom Platforms** — Purpose-built applications that replace spreadsheets and manual workflows.
+- **Automation & Integration** — Connect systems, eliminate repetitive tasks, scale without headcount.
 
-4. Check certificate blockers
-   - If your DNS has CAA records, make sure they allow Let’s Encrypt
-   - This is a common reason a domain stays stuck before later turning to “Failed”
+### Remaining sections
+Keep: HowWeHelpSection, SelectedWorkSection, ProofSection, AboutSection, EngageSection, CTASection (with softened "challenge" copy instead of "bottleneck").
 
-5. Wait a bit longer, then escalate if needed
-   - If it stays on “Setting up” for several more hours, keep monitoring
-   - If it is still stuck near the 72-hour mark, contact Lovable support with:
-     - your domain name
-     - a screenshot of your DNS records
-     - the current Lovable domain status
+## New Operational Transformation page (`/operational-transformation`)
 
-Technical details
+A new page that reuses the current bottleneck-focused components:
+- Current HeroSection (with "operational bottlenecks" messaging)
+- ProblemsSection (6 pain-point cards)
+- HowWeHelpSection
+- SelectedWorkSection
+- EngageSection
+- CTASection
 
-```text
-Published status: Yes
-Visibility: Public
-Meaning of “Setting up”: DNS verified, SSL provisioning in progress
-Normal max wait in docs: up to 72 hours
-```
+Essentially the current `Home.tsx` content moved to a dedicated page.
 
-Best next action
+## Navigation update
 
-- Compare your live DNS exactly against the Lovable domain setup screen, especially `@`, `www`, `_lovable`, and any Cloudflare/proxy settings. If you want, I can help you sanity-check the DNS record list you currently have.
+Update `Navbar.tsx` service options:
+- "Operational Transformation" → `/operational-transformation`
+- "Data Clarity" → `/data-clarity` (unchanged)
+
+## Files changed
+
+| File | Change |
+|------|--------|
+| `src/pages/Home.tsx` | New broader homepage with value pillars instead of ProblemsSection, updated hero |
+| `src/components/home/HeroSection.tsx` | Broaden headline/subtitle |
+| `src/components/home/ValuePillarsSection.tsx` | **New file** — 4 capability cards |
+| `src/pages/OperationalTransformation.tsx` | **New file** — current homepage content (old hero + problems + all sections) |
+| `src/components/home/OpTransformHero.tsx` | **New file** — the current bottleneck-focused hero (extracted from current HeroSection) |
+| `src/components/home/CTASection.tsx` | Soften subtitle copy |
+| `src/components/layout/Navbar.tsx` | Update "Operational Transformation" link to `/operational-transformation` |
+| `src/App.tsx` | Add `/operational-transformation` route |
+
