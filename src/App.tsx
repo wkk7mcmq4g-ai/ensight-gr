@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import DataClarity from "./pages/DataClarity";
 import DataClarityAssessment from "./pages/DataClarityAssessment";
 import OperationalTransformation from "./pages/OperationalTransformation";
+import Services from "./pages/Services";
 
 const queryClient = new QueryClient();
 
