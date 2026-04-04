@@ -55,14 +55,16 @@ const ValuePillarsSection = () => (
         <StaggerItem key={i}>
           <Link
             to={p.link}
-            className="block bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all group h-full no-underline"
+            className="block bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 ease-out group h-full no-underline"
           >
-            <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
-            <p.icon size={24} strokeWidth={1.5} className={`${p.iconColor} mb-4`} />
+            <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color} transition-all duration-300 group-hover:h-[3px]`} />
+            <div className="mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5">
+              <p.icon size={24} strokeWidth={1.5} className={`${p.iconColor} transition-all duration-300 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]`} />
+            </div>
             <h3 className="text-base font-semibold mb-1.5 text-foreground">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed mb-3">{p.desc}</p>
-            <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-              Learn more <ArrowRight size={12} />
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
+              Learn more <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </Link>
         </StaggerItem>
