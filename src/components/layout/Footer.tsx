@@ -22,6 +22,9 @@ const Footer = () => (
       <div className="text-[10px] text-ordinal-faint tracking-[1px]">
         Athens, Greece
       </div>
+      <div className="text-[10px] text-ordinal-faint tracking-[1px]">
+        © {new Date().getFullYear()} Ensight. All rights reserved.
+      </div>
     </div>
   </footer>
 );

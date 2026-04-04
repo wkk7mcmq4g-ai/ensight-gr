@@ -72,7 +72,7 @@ const CTASection = () => {
           />
           <button
             type="submit"
-            className="bg-white text-primary text-base font-bold px-9 py-4 rounded-xl shadow-lg hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-xl transition-all self-start"
+            className="bg-white text-primary text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-xl transition-all self-start"
           >
             Send Message
           </button>

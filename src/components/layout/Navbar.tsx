@@ -196,14 +196,14 @@ const Navbar = () => {
                   key={opt.href}
                   to={opt.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 bg-card border border-border rounded-xl no-underline"
-                >
-                  <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                  <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+                   className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
+                 >
+                   <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                   <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                 </Link>
+               ))}
+             </div>
+           </motion.div>
         )}
       </AnimatePresence>
     </>
