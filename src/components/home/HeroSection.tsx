@@ -10,7 +10,7 @@ const HeroSection = () => (
       transition={{ duration: 0.7, ease, delay: 0.15 }}
       className="text-[clamp(34px,6vw,68px)] font-black leading-[1.08] tracking-tight mb-6 max-w-[800px] text-foreground"
     >
-      We build systems that eliminate operational bottlenecks.
+      We transform how organisations work with technology and data.
     </motion.h1>
 
     <motion.p
