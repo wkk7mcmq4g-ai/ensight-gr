@@ -160,7 +160,7 @@ const Services = () => (
         {offerings.map((o, i) => (
           <AnimatedSection key={i} delay={i * 0.08}>
             <div className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-md hover:border-ordinal-faint transition-all">
-              <div className={`h-[3px] ${o.barColor}`} />
+              <div className={`h-[2px] ${o.barColor}`} />
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 p-7 md:p-8">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
