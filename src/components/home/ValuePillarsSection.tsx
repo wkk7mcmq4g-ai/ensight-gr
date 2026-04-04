@@ -1,34 +1,38 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Workflow, BarChart3, Code2, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const pillars = [
   {
-    icon: '🔄',
+    icon: Workflow,
     title: 'Digital Transformation',
     desc: 'Redesign processes and systems for efficiency and scale.',
     color: 'bg-primary',
+    iconColor: 'text-primary',
     link: '/operational-transformation',
   },
   {
-    icon: '📊',
+    icon: BarChart3,
     title: 'Data & Analytics',
     desc: 'Turn fragmented data into clear, actionable insight.',
     color: 'bg-ordinal-cyan',
+    iconColor: 'text-ordinal-cyan',
     link: '/data-clarity',
   },
   {
-    icon: '🛠️',
+    icon: Code2,
     title: 'Custom Platforms',
     desc: 'Purpose-built applications that replace spreadsheets and manual workflows.',
     color: 'bg-ordinal-pink',
+    iconColor: 'text-electric-bright',
     link: '/case-studies',
   },
   {
-    icon: '⚡',
+    icon: Zap,
     title: 'Automation & Integration',
     desc: 'Connect systems, eliminate repetitive tasks, scale without headcount.',
     color: 'bg-ordinal-green',
+    iconColor: 'text-ordinal-green',
     link: '/operational-transformation',
   },
 ];
