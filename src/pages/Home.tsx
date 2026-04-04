@@ -4,6 +4,7 @@ import StatStrip from '@/components/home/StatStrip';
 import ProblemsSection from '@/components/home/ProblemsSection';
 import HowWeHelpSection from '@/components/home/HowWeHelpSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
+import AboutSection from '@/components/home/AboutSection';
 import ProofSection from '@/components/home/ProofSection';
 import FrameworkSection from '@/components/home/FrameworkSection';
 import BeforeYouAutomate from '@/components/home/BeforeYouAutomate';
@@ -22,6 +23,7 @@ const Home = () => (
     <HowWeHelpSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <SelectedWorkSection />
+    <AboutSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <ProofSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
