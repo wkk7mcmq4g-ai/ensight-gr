@@ -1,55 +1,28 @@
 
 
-# Streamline Homepage to ~8 Sections
+# Consolidate CTAs to Two
 
-## Current state (16 sections)
-HeroSection → PainPointsSection → StatStrip → ProblemsSection → HowWeHelpSection → SelectedWorkSection → AboutSection → ProofSection → FrameworkSection → HowWeWorkSection → BeforeAfterSection → BeforeYouAutomate → QuoteSection → EngageSection → FreeAuditSection → CTASection
+## Current CTA inventory (7 total)
+- **Hero**: "Book a Call" (mailto) + "See Use Cases" (link to /case-studies)
+- **EngageSection**: 3× "Get started" mailto links on each card
+- **CTASection**: "Book a 30-minute Strategy Call" (mailto) + "Contact Us" (link to /contact)
 
-## Proposed flow (8 sections)
+## Target: 2 CTAs
 
-```text
-1. HeroSection          — keep as-is
-2. ProblemsSection      — the "Six Signs" cards (merge PainPoints into this)
-3. HowWeHelpSection     — what we do (4 service cards)
-4. SelectedWorkSection  — case studies
-5. ProofSection         — metrics/proof points
-6. AboutSection         — who we are
-7. EngageSection        — three ways to start
-8. CTASection           — final CTA
-```
+### 1. Hero — single "Learn More" button
+Replace the two hero buttons with one "Learn More" that smooth-scrolls to `#solutions` (the HowWeHelpSection). Removes the immediate sales pressure; the hero becomes purely informational.
 
-## Sections removed
-- **PainPointsSection** — redundant with ProblemsSection; fold the "if this sounds familiar" intro line into ProblemsSection's header
-- **StatStrip** — standalone stat bar feels salesy; key numbers already live in ProofSection
-- **FrameworkSection** — too detailed for homepage; can live on Services page
-- **HowWeWorkSection** — similar overlap with EngageSection; move to Services if needed
-- **BeforeAfterSection** — visual but repetitive; proof points already convey the transformation
-- **BeforeYouAutomate** — guarantee language is too pitch-heavy for boutique tone
-- **QuoteSection** — can be re-added later if a real client testimonial is available
-- **FreeAuditSection** — lead-gen tactic; conflicts with boutique positioning
+### 2. Final section — "Get in Touch" contact form
+Replace the current CTASection (two mailto/link buttons) with an inline contact form containing: Name, Email, Message, and a Submit button. On submit, opens a `mailto:hello@ensight.gr` with the form data pre-filled (no backend needed). Keeps the purple background for visual weight.
 
-## File changes
+### 3. EngageSection — remove per-card CTAs
+Remove the "Get started →" links from each engagement card. The cards become informational only, reducing noise. Users who are ready will scroll to the contact form below.
 
-### 1. `src/pages/Home.tsx`
-Strip down to 8 sections with thin dividers between select sections:
-```
-HeroSection
-ProblemsSection
-divider
-HowWeHelpSection
-divider
-SelectedWorkSection
-divider
-ProofSection
-divider
-AboutSection
-EngageSection
-CTASection
-```
+## Files changed
 
-### 2. `src/components/home/ProblemsSection.tsx`
-Add a brief intro line before the cards: "If any of this sounds familiar, your organisation has accumulated process debt." This absorbs PainPointsSection's purpose.
-
-### 3. No other component files modified
-The removed sections' files stay in the codebase (no deletion) — they're simply no longer imported. This keeps them available if you want to re-add or move them to other pages later.
+| File | Change |
+|------|--------|
+| `src/components/home/HeroSection.tsx` | Replace 2 buttons with single "Learn More" anchor to `#solutions` |
+| `src/components/home/EngageSection.tsx` | Remove the `<a>Get started</a>` link from each card |
+| `src/components/home/CTASection.tsx` | Replace buttons with a Name/Email/Message contact form; submit opens mailto with pre-filled data |
 
