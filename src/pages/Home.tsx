@@ -2,6 +2,7 @@ import HeroSection from '@/components/home/HeroSection';
 import LogoStripSection from '@/components/home/LogoStripSection';
 import ValuePillarsSection from '@/components/home/ValuePillarsSection';
 import HowWeHelpSection from '@/components/home/HowWeHelpSection';
+import BeforeAfterSection from '@/components/home/BeforeAfterSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import ProofSection from '@/components/home/ProofSection';
 import QuoteSection from '@/components/home/QuoteSection';
@@ -17,6 +18,8 @@ const Home = () => (
     <ValuePillarsSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeHelpSection />
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <BeforeAfterSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <SelectedWorkSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
