@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ScanSearch, Zap, Layers, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
 
 const services = [
   {
