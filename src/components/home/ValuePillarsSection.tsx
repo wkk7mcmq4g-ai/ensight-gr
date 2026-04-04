@@ -8,7 +8,7 @@ const pillars = [
     title: 'Digital Transformation',
     desc: 'Redesign processes and systems for efficiency and scale.',
     color: 'bg-primary',
-    iconColor: 'text-primary',
+    hsl: 'hsl(var(--primary))',
     link: '/operational-transformation',
   },
   {
@@ -16,7 +16,7 @@ const pillars = [
     title: 'Data & Analytics',
     desc: 'Turn fragmented data into clear, actionable insight.',
     color: 'bg-ordinal-cyan',
-    iconColor: 'text-ordinal-cyan',
+    hsl: 'hsl(var(--ordinal-cyan))',
     link: '/data-clarity',
   },
   {
@@ -24,7 +24,7 @@ const pillars = [
     title: 'Custom Platforms',
     desc: 'Purpose-built applications that replace spreadsheets and manual workflows.',
     color: 'bg-ordinal-pink',
-    iconColor: 'text-electric-bright',
+    hsl: 'hsl(var(--electric-bright))',
     link: '/case-studies',
   },
   {
@@ -32,7 +32,7 @@ const pillars = [
     title: 'Automation & Integration',
     desc: 'Connect systems, eliminate repetitive tasks, scale without headcount.',
     color: 'bg-ordinal-green',
-    iconColor: 'text-ordinal-green',
+    hsl: 'hsl(var(--ordinal-green))',
     link: '/operational-transformation',
   },
 ];

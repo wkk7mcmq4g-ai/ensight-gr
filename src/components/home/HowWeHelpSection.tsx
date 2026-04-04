@@ -2,10 +2,10 @@ import { Monitor, Users, BarChart3, Zap } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 
 const solutions = [
-  { icon: Monitor, title: 'Custom Applications', desc: 'We build systems that replace spreadsheets and manual workflows.', color: 'bg-primary' },
-  { icon: Users, title: 'CRM & Workflows', desc: 'Manage operations, approvals, and compliance in one unified system.', color: 'bg-ordinal-cyan' },
-  { icon: BarChart3, title: 'Data & Reporting', desc: 'Real-time dashboards and reporting using Power BI and SQL.', color: 'bg-electric-bright' },
-  { icon: Zap, title: 'Automation & Integration', desc: 'Connect systems and automate processes using APIs and AI.', color: 'bg-ordinal-green' },
+  { icon: Monitor, title: 'Custom Applications', desc: 'We build systems that replace spreadsheets and manual workflows.', color: 'bg-primary', hsl: 'hsl(var(--primary))' },
+  { icon: Users, title: 'CRM & Workflows', desc: 'Manage operations, approvals, and compliance in one unified system.', color: 'bg-ordinal-cyan', hsl: 'hsl(var(--ordinal-cyan))' },
+  { icon: BarChart3, title: 'Data & Reporting', desc: 'Real-time dashboards and reporting using Power BI and SQL.', color: 'bg-electric-bright', hsl: 'hsl(var(--electric-bright))' },
+  { icon: Zap, title: 'Automation & Integration', desc: 'Connect systems and automate processes using APIs and AI.', color: 'bg-ordinal-green', hsl: 'hsl(var(--ordinal-green))' },
 ];
 
 const HowWeHelpSection = () => (
