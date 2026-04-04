@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { ArrowRight, Workflow, BarChart3, Code2, Zap, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
 import CTASection from '@/components/home/CTASection';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
