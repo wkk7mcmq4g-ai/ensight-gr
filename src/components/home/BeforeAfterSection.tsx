@@ -45,7 +45,7 @@ const BeforeAfterSection = () => (
       </StaggerItem>
 
       <StaggerItem>
-        <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 h-full">
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40">
           <div className="flex items-center gap-2 mb-6">
             <CheckCircle2 className="text-ordinal-green" size={22} />
             <h3 className="text-xl font-extrabold">After</h3>
