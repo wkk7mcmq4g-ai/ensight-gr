@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ScanSearch, Zap, Layers, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
 
 const services = [
   {
+    icon: ScanSearch,
     tag: 'Recommended',
     title: 'Operational X-Ray',
     meta: '1–2 weeks · Fixed fee',
@@ -11,9 +12,11 @@ const services = [
     includes: 'Workflow mapping, bottleneck quantification, stakeholder interviews, prioritised roadmap.',
     outcome: 'A clear, costed picture of where time and money are leaking — and what to fix first.',
     barColor: 'bg-primary',
+    iconColor: 'text-primary',
     showTag: true,
   },
   {
+    icon: Zap,
     tag: '',
     title: 'Quick Win',
     meta: '4–6 weeks · Outcome-linked',
@@ -21,9 +24,11 @@ const services = [
     includes: 'One high-impact problem scoped, redesigned, and solved end-to-end.',
     outcome: 'Measurable improvement you can point to. We tie our fee to the result.',
     barColor: 'bg-ordinal-green',
+    iconColor: 'text-ordinal-green',
     showTag: false,
   },
   {
+    icon: Layers,
     tag: '',
     title: 'Full Transformation',
     meta: '10–24 weeks · Scoped from X-Ray',
@@ -31,15 +36,16 @@ const services = [
     includes: 'All four framework stages — diagnosis through to embedded, adopted solution.',
     outcome: 'A fundamentally better operation with the team trained and the system working.',
     barColor: 'bg-ordinal-cyan',
+    iconColor: 'text-ordinal-cyan',
     showTag: false,
   },
 ];
 
 const steps = [
-  { num: '01', title: 'Diagnose', time: '1–2 WEEKS', desc: 'Embed with your team. Map how work actually flows. Quantify the cost of every bottleneck.', color: 'text-primary' },
-  { num: '02', title: 'Redesign', time: '1–2 WEEKS', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership.', color: 'text-ordinal-cyan' },
-  { num: '03', title: 'Build', time: '4–12 WEEKS', desc: 'Custom platforms, automation, integrations — built around your redesigned processes.', color: 'text-electric-bright' },
-  { num: '04', title: 'Embed', time: '4–8 WEEKS', desc: "Monitor adoption. Manage resistance. Train your team. We don't leave until it's working.", color: 'text-ordinal-green' },
+  { num: '01', icon: Stethoscope, title: 'Diagnose', time: '1–2 WEEKS', desc: 'Embed with your team. Map how work actually flows. Quantify the cost of every bottleneck.', color: 'text-primary' },
+  { num: '02', icon: PenTool, title: 'Redesign', time: '1–2 WEEKS', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership.', color: 'text-ordinal-cyan' },
+  { num: '03', icon: Hammer, title: 'Build', time: '4–12 WEEKS', desc: 'Custom platforms, automation, integrations — built around your redesigned processes.', color: 'text-electric-bright' },
+  { num: '04', icon: Users, title: 'Embed', time: '4–8 WEEKS', desc: "Monitor adoption. Manage resistance. Train your team. We don't leave until it's working.", color: 'text-ordinal-green' },
 ];
 
 const barColors = ['bg-primary', 'bg-ordinal-cyan', 'bg-electric-bright', 'bg-ordinal-green'];
@@ -84,12 +90,17 @@ const Services = () => (
           <StaggerItem key={i}>
             <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
               <div className={`absolute top-0 left-0 w-full h-[3px] ${s.barColor}`} />
-              {s.showTag && (
-                <div className="inline-block self-start font-mono-label text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-primary-foreground px-2.5 py-1 rounded-md mb-4">
-                  {s.tag}
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  {s.showTag && (
+                    <div className="inline-block font-mono-label text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-primary-foreground px-2.5 py-1 rounded-md mb-3">
+                      {s.tag}
+                    </div>
+                  )}
+                  <h3 className="text-xl font-extrabold">{s.title}</h3>
                 </div>
-              )}
-              <h3 className="text-xl font-extrabold mb-2">{s.title}</h3>
+                <s.icon className={`${s.iconColor} opacity-30 shrink-0`} size={32} strokeWidth={1.5} />
+              </div>
               <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{s.meta}</div>
               <div className="space-y-3 text-sm text-ordinal-body leading-relaxed flex-1">
                 <p><span className="font-semibold text-foreground">Who it's for:</span> {s.who}</p>
@@ -122,7 +133,10 @@ const Services = () => (
           <StaggerItem key={i}>
             <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full">
               <div className={`absolute top-0 left-0 w-full h-[3px] ${barColors[i]}`} />
-              <div className="font-mono-label text-xs font-semibold text-ordinal-dim mb-3">{s.num}</div>
+              <div className="flex items-center justify-between mb-3">
+                <div className="font-mono-label text-xs font-semibold text-ordinal-dim">{s.num}</div>
+                <s.icon className={`${s.color} opacity-25`} size={24} strokeWidth={1.5} />
+              </div>
               <h3 className="text-xl font-extrabold mb-1">{s.title}</h3>
               <div className={`font-mono-label text-[10px] font-medium mb-3 ${s.color}`}>{s.time}</div>
               <p className="text-sm text-ordinal-body leading-relaxed">{s.desc}</p>
