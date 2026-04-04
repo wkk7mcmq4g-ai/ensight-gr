@@ -5,6 +5,7 @@ import QuoteSection from '@/components/home/QuoteSection';
 import ProofSection from '@/components/home/ProofSection';
 import EngageSection from '@/components/home/EngageSection';
 import CTASection from '@/components/home/CTASection';
+import DataClarityTeaser from '@/components/home/DataClarityTeaser';
 
 const Home = () => (
   <>
@@ -12,11 +13,13 @@ const Home = () => (
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <ProblemsSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <EngageSection />
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <FrameworkSection />
     <QuoteSection />
     <ProofSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
-    <EngageSection />
+    <DataClarityTeaser />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <CTASection />
   </>
