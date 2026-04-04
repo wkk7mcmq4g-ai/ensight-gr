@@ -34,7 +34,7 @@ const CTASection = () => (
       className="flex gap-3 justify-center flex-wrap"
     >
       <a
-        href="mailto:hello@ensight.co?subject=X-Ray Briefing"
+        href="mailto:hello@ensight.gr?subject=X-Ray Briefing"
         className="bg-ordinal-green text-white text-base font-bold px-9 py-4 rounded-xl shadow-[0_4px_16px_rgba(16,185,129,0.15)] hover:bg-ordinal-green-bright hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(16,185,129,0.2)] transition-all no-underline"
       >
         Book Your X-Ray Briefing

@@ -33,7 +33,7 @@ const HeroSection = () => (
       transition={{ duration: 0.6, ease, delay: 0.35 }}
       className="text-lg text-ordinal-body leading-relaxed max-w-[560px] mb-7"
     >
-      Most transformations fail because they start with tech. We start with how your operation actually works — then fix what's broken.
+      70% of transformations fail because they start with technology. We start with how your operation actually works — mapping what's broken, redesigning it, then building what's missing.
     </motion.p>
 
     <motion.div
@@ -43,7 +43,7 @@ const HeroSection = () => (
       className="flex gap-3 flex-wrap"
     >
       <a
-        href="mailto:hello@ensight.co?subject=X-Ray Briefing"
+        href="mailto:hello@ensight.gr?subject=X-Ray Briefing"
         className="bg-ordinal-green text-white text-base font-bold px-7 py-3 md:px-9 md:py-4 rounded-xl shadow-[0_4px_16px_rgba(16,185,129,0.15)] hover:bg-ordinal-green-bright hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(16,185,129,0.2)] transition-all no-underline"
       >
         Start with an X-Ray
@@ -62,7 +62,7 @@ const HeroSection = () => (
       transition={{ duration: 0.6, delay: 0.65 }}
       className="text-sm text-ordinal-dim mt-5"
     >
-      For ops-led teams in logistics, professional services, and healthcare who've outgrown spreadsheets and workarounds.
+      For mid-sized businesses in Southern Europe whose operations have outgrown their systems.
     </motion.p>
   </section>
 );
