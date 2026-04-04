@@ -30,17 +30,15 @@ const HeroSection = () => (
       className="flex gap-3 flex-wrap"
     >
       <a
-        href="mailto:hello@ensight.gr?subject=Book a Call"
+        href="#solutions"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' });
+        }}
         className="bg-primary text-primary-foreground text-base font-bold px-7 py-3 md:px-9 md:py-4 rounded-xl shadow-[0_4px_16px_hsl(var(--primary)/0.15)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.2)] transition-all no-underline"
       >
-        Book a Call
+        Learn More
       </a>
-      <Link
-        to="/case-studies"
-        className="bg-card text-foreground text-base font-semibold px-7 py-3 md:px-9 md:py-4 rounded-xl border border-border hover:bg-muted hover:border-muted-foreground/20 transition-all no-underline"
-      >
-        See Use Cases
-      </Link>
     </motion.div>
   </section>
 );
