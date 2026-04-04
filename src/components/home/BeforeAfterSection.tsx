@@ -33,10 +33,6 @@ const BeforeAfterSection = () => (
           <ArrowRight size={20} />
         </div>
       </div>
-      <div className="flex md:hidden justify-center my-4">
-        <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
-          <ArrowDown size={20} />
-        </div>
       </div>
 
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
