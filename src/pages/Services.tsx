@@ -88,7 +88,7 @@ const Services = () => (
       <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {services.map((s, i) => (
           <StaggerItem key={i}>
-            <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
+            <div className="group bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
               <div className={`absolute top-0 left-0 w-full h-[3px] ${s.barColor}`} />
               <div className="flex items-start justify-between mb-4">
                 <div>
