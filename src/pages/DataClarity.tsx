@@ -87,10 +87,10 @@ const flowNodes = [
   { num: 'C', name: 'Partner', sub: 'Monthly Retainer', tag: 'Data Clarity', tagColor: 'bg-[#10B981]/10 text-[#10B981]', numColor: 'text-[#10B981]', highlight: true },
 ];
 
-const sectors = [
-  { emoji: '🏭', title: 'Manufacturing & Export', desc: 'Complex supply chains, multi-stage cost structures, and client portfolios where margin varies wildly by order type, destination, and volume. You need to know which products and clients are actually profitable — not just which generate the most revenue.' },
-  { emoji: '✈️', title: 'Tourism & Hospitality', desc: 'Seasonal demand, fleet and resource utilisation, booking channel mix, and partner performance — all of which affect profitability and none of which are visible in a standard P&L.' },
-  { emoji: '🏦', title: 'Financial Services', desc: 'Client profitability, product mix, compliance cost allocation, and AUM concentration risk — these are the decisions that define a financial services firm\'s strategy.' },
+const sectors: { icon: LucideIcon; title: string; desc: string; hsl: string }[] = [
+  { icon: Factory, title: 'Manufacturing & Export', desc: 'Complex supply chains, multi-stage cost structures, and client portfolios where margin varies wildly by order type, destination, and volume. You need to know which products and clients are actually profitable — not just which generate the most revenue.', hsl: '#4F46E5' },
+  { icon: Plane, title: 'Tourism & Hospitality', desc: 'Seasonal demand, fleet and resource utilisation, booking channel mix, and partner performance — all of which affect profitability and none of which are visible in a standard P&L.', hsl: '#06B6D4' },
+  { icon: Landmark, title: 'Financial Services', desc: 'Client profitability, product mix, compliance cost allocation, and AUM concentration risk — these are the decisions that define a financial services firm\'s strategy.', hsl: '#10B981' },
 ];
 
 const DataClarity = () => (
