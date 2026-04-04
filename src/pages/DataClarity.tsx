@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Clock, FolderSync, BarChart3, Database, Factory, Plane, Landmark, type LucideIcon } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
-const problems = [
-  { emoji: '⏱', title: 'No real-time visibility', desc: 'Performance data lives in reports assembled weekly or monthly. By the time a problem is visible, it has already compounded. Decisions are made on last month\'s numbers at best.', color: 'bg-[#4F46E5]' },
-  { emoji: '🗂', title: 'No single version of truth', desc: 'Finance, sales, and operations each produce different numbers for the same metric. Meetings become reconciliation exercises. Nobody knows whose figures to trust.', color: 'bg-[#06B6D4]' },
-  { emoji: '📊', title: 'Costs that aren\'t allocated', desc: 'Gross margin is known. Net margin per client and product is not. Indirect costs sit in an undifferentiated overhead bucket. Pricing decisions are made without knowing the real cost to serve.', color: 'bg-[#7C3AED]' },
-  { emoji: '📁', title: 'Data scattered everywhere', desc: 'The information exists — in three accounting systems, six spreadsheets, and a booking platform that doesn\'t talk to anything else. Getting an answer requires hours of manual assembly.', color: 'bg-[#F59E0B]' },
+const problems: { icon: LucideIcon; title: string; desc: string; color: string; hsl: string }[] = [
+  { icon: Clock, title: 'No real-time visibility', desc: 'Performance data lives in reports assembled weekly or monthly. By the time a problem is visible, it has already compounded. Decisions are made on last month\'s numbers at best.', color: 'bg-[#4F46E5]', hsl: '#4F46E5' },
+  { icon: FolderSync, title: 'No single version of truth', desc: 'Finance, sales, and operations each produce different numbers for the same metric. Meetings become reconciliation exercises. Nobody knows whose figures to trust.', color: 'bg-[#06B6D4]', hsl: '#06B6D4' },
+  { icon: BarChart3, title: 'Costs that aren\'t allocated', desc: 'Gross margin is known. Net margin per client and product is not. Indirect costs sit in an undifferentiated overhead bucket. Pricing decisions are made without knowing the real cost to serve.', color: 'bg-[#7C3AED]', hsl: '#7C3AED' },
+  { icon: Database, title: 'Data scattered everywhere', desc: 'The information exists — in three accounting systems, six spreadsheets, and a booking platform that doesn\'t talk to anything else. Getting an answer requires hours of manual assembly.', color: 'bg-[#F59E0B]', hsl: '#F59E0B' },
 ];
 
 const components = [
@@ -86,10 +87,10 @@ const flowNodes = [
   { num: 'C', name: 'Partner', sub: 'Monthly Retainer', tag: 'Data Clarity', tagColor: 'bg-[#10B981]/10 text-[#10B981]', numColor: 'text-[#10B981]', highlight: true },
 ];
 
-const sectors = [
-  { emoji: '🏭', title: 'Manufacturing & Export', desc: 'Complex supply chains, multi-stage cost structures, and client portfolios where margin varies wildly by order type, destination, and volume. You need to know which products and clients are actually profitable — not just which generate the most revenue.' },
-  { emoji: '✈️', title: 'Tourism & Hospitality', desc: 'Seasonal demand, fleet and resource utilisation, booking channel mix, and partner performance — all of which affect profitability and none of which are visible in a standard P&L.' },
-  { emoji: '🏦', title: 'Financial Services', desc: 'Client profitability, product mix, compliance cost allocation, and AUM concentration risk — these are the decisions that define a financial services firm\'s strategy.' },
+const sectors: { icon: LucideIcon; title: string; desc: string; hsl: string }[] = [
+  { icon: Factory, title: 'Manufacturing & Export', desc: 'Complex supply chains, multi-stage cost structures, and client portfolios where margin varies wildly by order type, destination, and volume. You need to know which products and clients are actually profitable — not just which generate the most revenue.', hsl: '#4F46E5' },
+  { icon: Plane, title: 'Tourism & Hospitality', desc: 'Seasonal demand, fleet and resource utilisation, booking channel mix, and partner performance — all of which affect profitability and none of which are visible in a standard P&L.', hsl: '#06B6D4' },
+  { icon: Landmark, title: 'Financial Services', desc: 'Client profitability, product mix, compliance cost allocation, and AUM concentration risk — these are the decisions that define a financial services firm\'s strategy.', hsl: '#10B981' },
 ];
 
 const DataClarity = () => (
@@ -180,7 +181,12 @@ const DataClarity = () => (
           <StaggerItem key={i}>
             <div className="bg-card border border-border rounded-2xl p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full">
               <div className={`absolute top-0 left-0 w-full h-[3px] ${p.color}`} />
-              <div className="text-[28px] mb-3">{p.emoji}</div>
+              <div
+                className="mb-3 w-10 h-10 rounded-md flex items-center justify-center"
+                style={{ backgroundColor: `${p.hsl}15`, color: p.hsl }}
+              >
+                <p.icon size={20} strokeWidth={1.5} />
+              </div>
               <h3 className="text-base font-bold mb-1.5">{p.title}</h3>
               <p className="text-sm text-ordinal-body leading-relaxed">{p.desc}</p>
             </div>
@@ -344,7 +350,12 @@ const DataClarity = () => (
         {sectors.map((s, i) => (
           <StaggerItem key={i}>
             <div className="bg-card border border-border rounded-2xl p-7 h-full hover:-translate-y-1 hover:shadow-md transition-all">
-              <div className="text-[28px] mb-3">{s.emoji}</div>
+              <div
+                className="mb-3 w-10 h-10 rounded-md flex items-center justify-center"
+                style={{ backgroundColor: `${s.hsl}15`, color: s.hsl }}
+              >
+                <s.icon size={20} strokeWidth={1.5} />
+              </div>
               <h3 className="text-base font-bold mb-2">{s.title}</h3>
               <p className="text-sm text-ordinal-body leading-relaxed">{s.desc}</p>
             </div>
