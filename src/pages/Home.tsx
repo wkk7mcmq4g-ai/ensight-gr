@@ -1,4 +1,5 @@
 import HeroSection from '@/components/home/HeroSection';
+import PainPointsSection from '@/components/home/PainPointsSection';
 import StatStrip from '@/components/home/StatStrip';
 import ProblemsSection from '@/components/home/ProblemsSection';
 import ProofSection from '@/components/home/ProofSection';
@@ -11,6 +12,7 @@ import CTASection from '@/components/home/CTASection';
 const Home = () => (
   <>
     <HeroSection />
+    <PainPointsSection />
     <StatStrip />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <ProblemsSection />
