@@ -148,7 +148,7 @@ const Services = () => (
         <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
           {"What We Do"}
         </div>
-        <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+        <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
           Four areas of expertise
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
