@@ -11,6 +11,7 @@ const Layout = () => {
 
   return (
     <div className="relative min-h-screen">
+      <ScrollToTop />
       <Navbar />
       <main className="relative z-10">
         <AnimatePresence mode="wait">
