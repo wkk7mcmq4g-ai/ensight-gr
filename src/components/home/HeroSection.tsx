@@ -11,7 +11,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease, delay: 0.15 }}
-          className="text-[clamp(34px,6vw,68px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
+          className="text-[clamp(28px,6vw,68px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
         >
           We transform how organisations work with technology and data.
         </motion.h1>
@@ -20,7 +20,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease, delay: 0.3 }}
-          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[600px] mb-7"
+          className="text-base md:text-xl text-muted-foreground leading-relaxed max-w-[600px] mb-7"
         >
           Strategy, platforms, automation, and analytics — designed around how your business actually operates.
         </motion.p>
@@ -37,7 +37,7 @@ const HeroSection = () => (
               e.preventDefault();
               document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-primary text-primary-foreground text-base font-semibold px-7 py-3 md:px-9 md:py-4 rounded-lg shadow-[0_4px_16px_hsl(var(--primary)/0.15)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.2)] transition-all no-underline"
+            className="bg-primary text-primary-foreground text-sm md:text-base font-semibold px-6 py-3 md:px-9 md:py-4 rounded-lg shadow-[0_4px_16px_hsl(var(--primary)/0.15)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.2)] transition-all no-underline"
           >
             Learn More
           </a>
