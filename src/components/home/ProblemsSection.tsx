@@ -1,13 +1,13 @@
 import { MessageSquare, Brain, Eye, ClipboardCopy, CalendarClock, TrendingUp, type LucideIcon } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 
-const problems: { icon: LucideIcon; title: string; desc: string; color: string }[] = [
-  { icon: MessageSquare, title: 'The WhatsApp Organisation', desc: "Decisions, approvals, and critical updates flowing through chat groups with no structure and no audit trail.", color: 'bg-electric-bright' },
-  { icon: Brain, title: 'The Human Router', desc: "One person holds the operation together. When they're out, everything slows or stops.", color: 'bg-ordinal-cyan' },
-  { icon: Eye, title: 'The Invisible Queue', desc: "Work piles up and nobody sees it until it's a crisis. Requests sit in inboxes for days.", color: 'bg-primary' },
-  { icon: ClipboardCopy, title: 'The Copy-Paste Economy', desc: "Staff manually moving data between systems. The waste isn't in the tools — it's in the gaps between them.", color: 'bg-ordinal-pink' },
-  { icon: CalendarClock, title: 'The Meeting Trap', desc: "Weekly meetings that exist only because management has no other way to find out what's happening.", color: 'bg-ordinal-amber' },
-  { icon: TrendingUp, title: 'Growth by Headcount', desc: "Every new client means more admin. You're scaling linearly when you should be scaling smart.", color: 'bg-ordinal-green' },
+const problems: { icon: LucideIcon; title: string; desc: string; color: string; iconColor: string }[] = [
+  { icon: MessageSquare, title: 'The WhatsApp Organisation', desc: "Decisions, approvals, and critical updates flowing through chat groups with no structure and no audit trail.", color: 'bg-electric-bright', iconColor: 'hsl(var(--electric-bright))' },
+  { icon: Brain, title: 'The Human Router', desc: "One person holds the operation together. When they're out, everything slows or stops.", color: 'bg-ordinal-cyan', iconColor: 'hsl(var(--ordinal-cyan))' },
+  { icon: Eye, title: 'The Invisible Queue', desc: "Work piles up and nobody sees it until it's a crisis. Requests sit in inboxes for days.", color: 'bg-primary', iconColor: 'hsl(var(--primary))' },
+  { icon: ClipboardCopy, title: 'The Copy-Paste Economy', desc: "Staff manually moving data between systems. The waste isn't in the tools — it's in the gaps between them.", color: 'bg-ordinal-pink', iconColor: 'hsl(var(--ordinal-pink))' },
+  { icon: CalendarClock, title: 'The Meeting Trap', desc: "Weekly meetings that exist only because management has no other way to find out what's happening.", color: 'bg-ordinal-amber', iconColor: 'hsl(var(--ordinal-amber))' },
+  { icon: TrendingUp, title: 'Growth by Headcount', desc: "Every new client means more admin. You're scaling linearly when you should be scaling smart.", color: 'bg-ordinal-green', iconColor: 'hsl(var(--ordinal-green))' },
 ];
 
 const ProblemsSection = () => (
