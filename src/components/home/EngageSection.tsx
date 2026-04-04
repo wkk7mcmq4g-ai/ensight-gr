@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 
@@ -55,9 +54,9 @@ const EngageSection = () => (
             <h3 className="text-xl font-extrabold mb-2">{e.title}</h3>
             <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
             <p className="text-sm text-ordinal-body leading-relaxed mb-4">{e.desc}</p>
-              <Link to="/services" className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary/80 transition-colors no-underline mt-auto">
+              <a href="#method" className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary/80 transition-colors no-underline mt-auto">
                 Learn more <ArrowRight size={12} />
-              </Link>
+              </a>
           </div>
         </StaggerItem>
       ))}
