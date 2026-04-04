@@ -57,7 +57,7 @@ const ValuePillarsSection = () => (
             to={p.link}
             className="block bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all group h-full no-underline"
           >
-            <div className={`absolute top-0 left-0 w-full h-[3px] ${p.color}`} />
+            <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
             <p.icon size={24} strokeWidth={1.5} className={`${p.iconColor} mb-4`} />
             <h3 className="text-base font-bold mb-1.5 text-foreground">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed mb-3">{p.desc}</p>
