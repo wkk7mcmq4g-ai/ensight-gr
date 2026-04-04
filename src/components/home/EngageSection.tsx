@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 

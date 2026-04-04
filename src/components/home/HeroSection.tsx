@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const HeroSection = () => (
-  <section className="min-h-screen px-6 md:px-12 pt-40 pb-20 flex flex-col justify-center max-w-[1200px] mx-auto relative overflow-hidden">
+  <section className="px-6 md:px-12 pt-32 pb-16 flex flex-col justify-center max-w-[1200px] mx-auto relative overflow-hidden">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -56,29 +56,14 @@ const HeroSection = () => (
       </Link>
     </motion.div>
 
-    <motion.div
+    <motion.p
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.7 }}
-      className="flex gap-12 mt-[72px] pt-9 border-t border-border flex-wrap"
+      transition={{ duration: 0.6, delay: 0.65 }}
+      className="text-sm text-ordinal-dim mt-8"
     >
-      {[
-        { num: '92%', label: 'Reduction in\nscheduling time', color: 'text-ordinal-green' },
-        { num: '60%', label: 'Faster client\nonboarding', color: 'text-electric-bright' },
-        { num: '70%', label: 'Transformation\nfailure rate (BCG)', color: 'text-ordinal-pink' },
-        { num: '10–24', label: 'Weeks, end-to-end\ntransformation', color: 'text-ordinal-cyan' },
-      ].map((stat, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease, delay: 0.8 + i * 0.1 }}
-        >
-          <div className={`text-4xl font-black leading-none ${stat.color}`}>{stat.num}</div>
-          <div className="text-[13px] text-ordinal-dim mt-1.5 leading-snug whitespace-pre-line">{stat.label}</div>
-        </motion.div>
-      ))}
-    </motion.div>
+      For ops-led teams in logistics, professional services, and healthcare who've outgrown spreadsheets and workarounds.
+    </motion.p>
   </section>
 );
 
