@@ -74,6 +74,7 @@ const BeforeAfterSection = () => (
         </div>
       </StaggerItem>
     </StaggerChildren>
+    </div>
 
     <AnimatedSection className="text-center">
       <p className="text-base text-ordinal-body leading-relaxed">
