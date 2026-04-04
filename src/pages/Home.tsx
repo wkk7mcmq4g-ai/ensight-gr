@@ -32,6 +32,8 @@ const Home = () => (
     <FrameworkSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeWorkSection />
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <BeforeAfterSection />
     <BeforeYouAutomate />
     <QuoteSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
