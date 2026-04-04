@@ -20,7 +20,7 @@ const proofs = [
     metric: 'Days → Min',
     desc: 'reporting turnaround',
     detail: 'Manual data extraction and reconciliation replaced with automated pipelines. Real-time dashboards delivering consistent, accurate insights.',
-    bg: 'bg-gradient-to-br from-ordinal-green to-[#059669]',
+    bg: 'bg-gradient-to-br from-ordinal-green to-ordinal-green-bright',
   },
 ];
 
