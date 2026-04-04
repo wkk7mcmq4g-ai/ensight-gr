@@ -350,7 +350,12 @@ const DataClarity = () => (
         {sectors.map((s, i) => (
           <StaggerItem key={i}>
             <div className="bg-card border border-border rounded-2xl p-7 h-full hover:-translate-y-1 hover:shadow-md transition-all">
-              <div className="text-[28px] mb-3">{s.emoji}</div>
+              <div
+                className="mb-3 w-10 h-10 rounded-md flex items-center justify-center"
+                style={{ backgroundColor: `${s.hsl}15`, color: s.hsl }}
+              >
+                <s.icon size={20} strokeWidth={1.5} />
+              </div>
               <h3 className="text-base font-bold mb-2">{s.title}</h3>
               <p className="text-sm text-ordinal-body leading-relaxed">{s.desc}</p>
             </div>
