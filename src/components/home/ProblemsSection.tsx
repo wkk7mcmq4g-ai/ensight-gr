@@ -1,12 +1,13 @@
+import { MessageSquare, Brain, Eye, ClipboardCopy, CalendarClock, TrendingUp, type LucideIcon } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 
-const problems = [
-  { emoji: '💬', title: 'The WhatsApp Organisation', desc: "Decisions, approvals, and critical updates flowing through chat groups with no structure and no audit trail.", color: 'bg-electric-bright' },
-  { emoji: '🧠', title: 'The Human Router', desc: "One person holds the operation together. When they're out, everything slows or stops.", color: 'bg-ordinal-cyan' },
-  { emoji: '👻', title: 'The Invisible Queue', desc: "Work piles up and nobody sees it until it's a crisis. Requests sit in inboxes for days.", color: 'bg-primary' },
-  { emoji: '📋', title: 'The Copy-Paste Economy', desc: "Staff manually moving data between systems. The waste isn't in the tools — it's in the gaps between them.", color: 'bg-ordinal-pink' },
-  { emoji: '🗓️', title: 'The Meeting Trap', desc: "Weekly meetings that exist only because management has no other way to find out what's happening.", color: 'bg-ordinal-amber' },
-  { emoji: '📈', title: 'Growth by Headcount', desc: "Every new client means more admin. You're scaling linearly when you should be scaling smart.", color: 'bg-ordinal-green' },
+const problems: { icon: LucideIcon; title: string; desc: string; color: string }[] = [
+  { icon: MessageSquare, title: 'The WhatsApp Organisation', desc: "Decisions, approvals, and critical updates flowing through chat groups with no structure and no audit trail.", color: 'bg-electric-bright' },
+  { icon: Brain, title: 'The Human Router', desc: "One person holds the operation together. When they're out, everything slows or stops.", color: 'bg-ordinal-cyan' },
+  { icon: Eye, title: 'The Invisible Queue', desc: "Work piles up and nobody sees it until it's a crisis. Requests sit in inboxes for days.", color: 'bg-primary' },
+  { icon: ClipboardCopy, title: 'The Copy-Paste Economy', desc: "Staff manually moving data between systems. The waste isn't in the tools — it's in the gaps between them.", color: 'bg-ordinal-pink' },
+  { icon: CalendarClock, title: 'The Meeting Trap', desc: "Weekly meetings that exist only because management has no other way to find out what's happening.", color: 'bg-ordinal-amber' },
+  { icon: TrendingUp, title: 'Growth by Headcount', desc: "Every new client means more admin. You're scaling linearly when you should be scaling smart.", color: 'bg-ordinal-green' },
 ];
 
 const ProblemsSection = () => (
@@ -27,7 +28,9 @@ const ProblemsSection = () => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all group h-full">
             <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
-            <div className="text-[28px] mb-3">{p.emoji}</div>
+            <div className="mb-3 text-primary/80">
+              <p.icon size={24} strokeWidth={1.5} />
+            </div>
             <h3 className="text-base font-bold mb-1.5">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed">{p.desc}</p>
           </div>
