@@ -1,20 +1,22 @@
 
 
-# Add "Free Operational Audit" Section
+# Update Case Studies with Real Content
 
-## New file: `src/components/home/FreeAuditSection.tsx`
+## 1. Update `src/data/caseStudies.ts`
 
-- Mono-label: `// Free Audit`
-- Headline: "Free Operational Audit"
-- Subtitle: "Identify inefficiencies and opportunities in your business"
-- Intro paragraph followed by a styled checklist of 4 deliverables using `CheckCircle2` icons in `text-ordinal-green`
-- Primary CTA button: "Request Free Audit" — prominent, styled like the CTA section's primary button (`bg-primary text-primary-foreground`, large padding, rounded-xl, shadow)
-- **Standout design**: Use a subtle highlighted background (`bg-muted/30`) on the full section to differentiate it from surrounding sections
-- Content centered, max-width constrained for readability
-- Use `AnimatedSection` for entrance animations
-- Consistent section styling: `max-w-[1200px] mx-auto px-6 md:px-12 py-24`
+Replace the three placeholder case studies with the real data provided:
 
-## Edit: `src/pages/Home.tsx`
+- **Loan Servicing Platform** (sector: "Financial Services") — context as challenge, approach steps, outcomes as metrics (60% reduction in manual processing, eliminated reconciliation tasks, real-time visibility)
+- **Charity CRM System** (sector: "Non-Profit") — context as challenge, approach steps, outcomes as metrics (centralised management, improved compliance, org-wide reporting)
+- **Financial Reporting Automation** (sector: "Financial Services") — context as challenge, approach steps, outcomes as metrics (days→minutes reporting, improved accuracy, real-time insights)
 
-Insert `<FreeAuditSection />` after `<EngageSection />` divider (line 41), before the final `<CTASection />`. This places the audit offer as a high-value lead magnet just before the closing CTA.
+## 2. Update `src/components/home/SelectedWorkSection.tsx`
+
+Update the inline case study summaries to match the new tone — more understated, consultancy-appropriate bullet points reflecting the real outcomes provided.
+
+## 3. Update `src/components/home/ProofSection.tsx`
+
+Align the three proof point cards with the real case study data so the metrics and descriptions are consistent (e.g. "60% reduction in manual processing" for Loan Servicing, "days to minutes" for Financial Reporting).
+
+All three files will be updated to use consistent, factual copy derived from the user's provided content.
 
