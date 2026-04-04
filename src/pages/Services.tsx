@@ -148,9 +148,13 @@ const Services = () => (
       </StaggerChildren>
     </section>
 
+    <HowWeWorkSection />
+
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
 
-    {/* Data Clarity */}
+    <BeforeAfterSection />
+
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
