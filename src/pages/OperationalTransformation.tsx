@@ -1,5 +1,6 @@
 import OpTransformHero from '@/components/home/OpTransformHero';
 import ProblemsSection from '@/components/home/ProblemsSection';
+import BeforeAfterCards from '@/components/home/BeforeAfterCards';
 import HowWeHelpSection from '@/components/home/HowWeHelpSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import EngageSection from '@/components/home/EngageSection';
@@ -9,6 +10,8 @@ const OperationalTransformation = () => (
   <>
     <OpTransformHero />
     <ProblemsSection />
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <BeforeAfterCards />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeHelpSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
