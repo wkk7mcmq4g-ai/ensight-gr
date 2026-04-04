@@ -1,26 +1,18 @@
 
 
-# Update Hero Section Content & Styling
+# Add "How We Help" Section
 
-## Changes to `src/components/home/HeroSection.tsx`
+## New file: `src/components/home/HowWeHelpSection.tsx`
 
-### Content updates
-- **Remove** the pill/badge ("Operational Transformation")
-- **Headline**: "We build systems that eliminate operational bottlenecks."
-  - No gradient span — solid white/foreground, `font-black`
-- **Subheading**: "Custom platforms, automation, and reporting solutions that replace spreadsheets, manual workflows, and disconnected systems."
-- **Primary CTA**: "Book a Call" → links to `mailto:hello@ensight.gr?subject=Book a Call`
-- **Secondary CTA**: "See Use Cases" → links to `/case-studies`
-- **Remove** the "For mid-sized businesses…" footer line
+Create a section with:
+- Mono-label tag: `// How We Help`
+- Headline: "How we help"
+- 4-column responsive grid (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`)
+- Cards matching existing card style (bg-card, border, rounded-lg, shadow-sm, hover lift) with a subtle top accent bar in muted tones
+- Icons from lucide-react: `Monitor` (Custom Applications), `Users` (CRM & Workflows), `BarChart3` (Data & Reporting), `Zap` (Automation & Integration)
+- Use `AnimatedSection` + `StaggerChildren`/`StaggerItem` for entrance animations, consistent with ProblemsSection and FrameworkSection
 
-### Styling adjustments
-- Keep left-aligned layout (`flex-col`, no `text-center`)
-- Headline: bump max-width to ~800px, keep `font-black`, `leading-[1.08]`, `tracking-tight`
-- Subheading: `text-lg md:text-xl`, `text-muted-foreground`, `max-w-[600px]`
-- Primary button: solid `bg-primary text-white`, clean shadow, no green
-- Secondary button: outlined style (unchanged approach, `bg-card border`)
-- Keep existing motion animations and easing
+## Edit: `src/pages/Home.tsx`
 
-### Files changed
-- `src/components/home/HeroSection.tsx` only
+Insert `<HowWeHelpSection />` after `<ProblemsSection />` (after line 18's divider), with a divider above it.
 
