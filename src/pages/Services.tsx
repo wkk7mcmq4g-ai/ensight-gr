@@ -42,10 +42,10 @@ const services = [
 ];
 
 const steps = [
-  { num: '01', title: 'Diagnose', time: '1–2 WEEKS', desc: 'Embed with your team. Map how work actually flows. Quantify the cost of every bottleneck.', color: 'text-primary' },
-  { num: '02', title: 'Redesign', time: '1–2 WEEKS', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership.', color: 'text-ordinal-cyan' },
-  { num: '03', title: 'Build', time: '4–12 WEEKS', desc: 'Custom platforms, automation, integrations — built around your redesigned processes.', color: 'text-electric-bright' },
-  { num: '04', title: 'Embed', time: '4–8 WEEKS', desc: "Monitor adoption. Manage resistance. Train your team. We don't leave until it's working.", color: 'text-ordinal-green' },
+  { num: '01', icon: Stethoscope, title: 'Diagnose', time: '1–2 WEEKS', desc: 'Embed with your team. Map how work actually flows. Quantify the cost of every bottleneck.', color: 'text-primary' },
+  { num: '02', icon: PenTool, title: 'Redesign', time: '1–2 WEEKS', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership.', color: 'text-ordinal-cyan' },
+  { num: '03', icon: Hammer, title: 'Build', time: '4–12 WEEKS', desc: 'Custom platforms, automation, integrations — built around your redesigned processes.', color: 'text-electric-bright' },
+  { num: '04', icon: Users, title: 'Embed', time: '4–8 WEEKS', desc: "Monitor adoption. Manage resistance. Train your team. We don't leave until it's working.", color: 'text-ordinal-green' },
 ];
 
 const barColors = ['bg-primary', 'bg-ordinal-cyan', 'bg-electric-bright', 'bg-ordinal-green'];
