@@ -13,7 +13,7 @@ const proofs = [
     metric: '100%',
     desc: 'programme visibility',
     detail: 'Siloed programmes unified under a single CRM. Compliance tracking structured across the organisation. Reporting centralised.',
-    bg: 'bg-gradient-to-br from-electric-bright to-[#6A30BF]',
+    bg: 'bg-gradient-to-br from-electric-bright to-primary',
   },
   {
     sector: 'Financial Reporting',
