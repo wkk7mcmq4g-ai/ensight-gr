@@ -166,7 +166,7 @@ const Navbar = () => {
             className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 md:hidden"
           >
             <div className="space-y-1">
-              <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-1">Services</div>
+              <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Services</div>
               {serviceOptions.map((opt) => (
                 <Link
                   key={opt.href}
