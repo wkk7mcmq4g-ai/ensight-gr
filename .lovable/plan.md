@@ -1,19 +1,26 @@
 
 
-# Trim the Hero Section
-
-The hero already had the stats bar removed previously. The remaining changes focus on tightening spacing and making copy punchier for mobile.
+# Update Hero Section Content & Styling
 
 ## Changes to `src/components/home/HeroSection.tsx`
 
-### Reduce padding
-- Change `pt-32 pb-16` to `pt-24 pb-10 md:pt-32 md:pb-16` so mobile gets less vertical whitespace
-- Reduce `mb-7` on the pill to `mb-5`, `mb-9` on the subhead to `mb-7`, `mt-8` on the "who we work with" line to `mt-5`
+### Content updates
+- **Remove** the pill/badge ("Operational Transformation")
+- **Headline**: "We build systems that eliminate operational bottlenecks."
+  - No gradient span — solid white/foreground, `font-black`
+- **Subheading**: "Custom platforms, automation, and reporting solutions that replace spreadsheets, manual workflows, and disconnected systems."
+- **Primary CTA**: "Book a Call" → links to `mailto:hello@ensight.gr?subject=Book a Call`
+- **Secondary CTA**: "See Use Cases" → links to `/case-studies`
+- **Remove** the "For mid-sized businesses…" footer line
 
-### Make copy punchier
-- Shorten the subhead paragraph from the verbose 2-sentence version to: *"Most transformations fail because they start with tech. We start with how your operation actually works — then fix what's broken."*
-- Reduce CTA button padding on mobile: `px-7 py-3 md:px-9 md:py-4`
+### Styling adjustments
+- Keep left-aligned layout (`flex-col`, no `text-center`)
+- Headline: bump max-width to ~800px, keep `font-black`, `leading-[1.08]`, `tracking-tight`
+- Subheading: `text-lg md:text-xl`, `text-muted-foreground`, `max-w-[600px]`
+- Primary button: solid `bg-primary text-white`, clean shadow, no green
+- Secondary button: outlined style (unchanged approach, `bg-card border`)
+- Keep existing motion animations and easing
 
-### Mobile headline size
-- Adjust clamp from `clamp(40px,6vw,68px)` to `clamp(34px,6vw,68px)` so it doesn't crowd small screens
+### Files changed
+- `src/components/home/HeroSection.tsx` only
 
