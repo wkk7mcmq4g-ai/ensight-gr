@@ -19,7 +19,7 @@ const ProblemsSection = () => (
         The Six Signs of Process Debt
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
-        If three or more of these sound familiar, your organisation has accumulated process debt — and it{"'"}s compounding every month.
+        If any of this sounds familiar, your organisation has accumulated process debt — and it{"'"}s compounding every month.
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
