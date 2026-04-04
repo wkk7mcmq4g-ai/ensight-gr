@@ -115,7 +115,7 @@ const Services = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.1 }}
-        className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3"
+        className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3"
       >
         {"// Services"}
       </motion.div>
