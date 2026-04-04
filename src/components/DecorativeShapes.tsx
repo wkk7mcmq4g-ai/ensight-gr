@@ -73,7 +73,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   // Default: dots variant
   return (
     <div ref={ref} className={wrapperClass} aria-hidden>
-      <motion.svg viewBox="0 0 360 300" className="absolute -top-4 right-0 w-[320px] h-[280px] opacity-[0.2]" style={{ y, rotate }}>
+      <motion.svg viewBox="0 0 360 300" className="absolute -top-4 right-0 w-[320px] h-[280px] opacity-[0.3]" style={{ y, rotate }}>
         {dots.map((dot, i) => (
           <motion.circle key={i} cx={dot.x} cy={dot.y} r={dot.size} fill="hsl(var(--primary))" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: [0, 0.6, 0.35], scale: [0, 1.2, 1] }} transition={{ duration: 1.5, delay: 0.4 + dot.delay, ease }} />
         ))}
