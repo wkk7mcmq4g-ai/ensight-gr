@@ -123,7 +123,7 @@ const Services = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease, delay: 0.15 }}
-        className="text-[clamp(32px,5vw,52px)] font-black tracking-tight leading-[1.1] mb-4"
+        className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-4"
       >
         Technology and data,{' '}
         <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
