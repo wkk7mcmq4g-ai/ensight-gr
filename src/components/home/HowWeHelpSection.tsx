@@ -23,7 +23,12 @@ const HowWeHelpSection = () => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all h-full">
             <div className={`absolute top-0 left-0 w-full h-[2px] ${s.color}`} />
-            <s.icon size={28} className="text-muted-foreground mb-4" />
+            <div
+              className="mb-4 w-10 h-10 rounded-md flex items-center justify-center"
+              style={{ backgroundColor: `${s.hsl}15`, color: s.hsl }}
+            >
+              <s.icon size={20} strokeWidth={1.5} />
+            </div>
             <h3 className="text-base font-semibold mb-1.5">{s.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed">{s.desc}</p>
           </div>
