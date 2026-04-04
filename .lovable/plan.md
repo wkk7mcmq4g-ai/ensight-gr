@@ -1,58 +1,41 @@
 
+# Site Polish — From 7.5 to 9/10
 
-# Final Professional Polish
+## 1. Hero visual balance
+The right half of the hero is empty. Add a subtle abstract graphic — a grid of floating, gently animated dots or a minimal geometric pattern using SVG/framer-motion — to fill the space without competing with the headline.
 
-After reviewing the full codebase, here are the remaining issues that still read as "startup template" rather than professional consulting:
+## 2. Client logo strip
+Add a "Trusted by" logo strip directly below the hero. Use 4–5 greyscale placeholder logos (generated as subtle, abstract company marks) with a muted label like "Trusted by teams across financial services, non-profits, and professional services."
 
-## Issues Found
+## 3. Fix hero CTA visibility
+The "Learn More" button appears to be rendering but may be lost visually. Verify it's visible and increase contrast/spacing if needed.
 
-1. **Duplicate heading text** — HowWeHelpSection has label "How We Help" AND h2 "How we help" (redundant, inconsistent casing)
-2. **SelectedWorkSection** — same issue: label "Selected Work" + h2 "Selected Work"
-3. **CTA form inputs still use `rounded-xl`** — should be `rounded-lg` to match the sharpened 0.5rem system
-4. **Hero CTA button uses `rounded-xl`** — same issue
-5. **CTA button says "font-bold"** — should be `font-semibold` for consistency (only H1 gets bold)
-6. **QuoteSection quote uses `font-bold`** — should be `font-semibold` or even `font-medium italic` for editorial feel
-7. **Background blobs in Layout** — the purple radial gradients are a SaaS pattern; consulting sites use cleaner backgrounds
-8. **No QuoteSection in Home page flow** — it exists but isn't used on the homepage
-9. **Mobile nav still uses `font-mono-label`** for group labels ("Services", "Free Assessments")
-10. **Footer copyright missing** — professional sites always include © year
+## 4. Layout variation between sections
+Break the repeating label → heading → grid rhythm:
+- **About section**: Convert to an asymmetric two-column layout (text left, a branded visual/pattern right)
+- **QuoteSection**: Already inserted — confirms it's breaking the rhythm as intended
 
-## Plan
+## 5. Add editorial imagery
+Generate and place 1–2 tasteful abstract/workspace images:
+- One in the About section (right column of the new two-column layout)
+- Subtle, muted, consulting-appropriate (not stock-photo-generic)
 
-### 1. Fix duplicate section headings
-- **HowWeHelpSection**: Change h2 to a descriptive subtitle like "Technology that fits your operations" instead of repeating the label
-- **SelectedWorkSection**: Change h2 to "Engagements that delivered" or similar
-
-### 2. Standardize border radius across all components
-- Replace remaining `rounded-xl` with `rounded-lg` in: CTASection inputs/button, HeroSection CTA button, EngageSection tag badge, mobile nav cards
-
-### 3. Refine typography consistency
-- CTA button: `font-bold` → `font-semibold`
-- QuoteSection: make it `font-medium italic` for a more editorial blockquote feel
-
-### 4. Remove background blobs from Layout
-- Delete the two fixed radial-gradient divs — clean white/off-white background is more authoritative
-
-### 5. Add QuoteSection to homepage
-- Insert between ProofSection and AboutSection as a visual break
-
-### 6. Clean up mobile nav mono labels
-- Remove `font-mono-label` from the two group headers in Navbar mobile menu
-
-### 7. Add footer copyright
-- Add `© {year} Ensight. All rights reserved.` to Footer
+## 6. Real contact form with Lovable Cloud
+Replace the `mailto:` hack with a proper form submission:
+- Enable Lovable Cloud
+- Create a `contact_submissions` table (name, email, message, created_at)
+- Submit form data to the database
+- Show a success toast on submission
+- Add input validation with zod
 
 ## Files Changed
 
 | File | Change |
 |------|--------|
-| `src/components/home/HowWeHelpSection.tsx` | Fix duplicate heading |
-| `src/components/home/SelectedWorkSection.tsx` | Fix duplicate heading |
-| `src/components/home/CTASection.tsx` | `rounded-xl` → `rounded-lg`, font-bold → font-semibold |
-| `src/components/home/HeroSection.tsx` | `rounded-xl` → `rounded-lg` on CTA |
-| `src/components/home/QuoteSection.tsx` | Font weight to medium italic |
-| `src/components/layout/Layout.tsx` | Remove background blobs |
-| `src/components/layout/Navbar.tsx` | Remove `font-mono-label` from mobile menu |
-| `src/components/layout/Footer.tsx` | Add copyright line |
-| `src/pages/Home.tsx` | Add QuoteSection between Proof and About |
-
+| `src/components/home/HeroSection.tsx` | Add abstract visual element on the right, verify CTA visibility |
+| `src/components/home/LogoStripSection.tsx` | **New** — greyscale logo strip with label |
+| `src/components/home/AboutSection.tsx` | Asymmetric two-column layout with image |
+| `src/components/home/CTASection.tsx` | Replace mailto with Lovable Cloud form submission + zod validation |
+| `src/pages/Home.tsx` | Insert LogoStripSection after hero |
+| Lovable Cloud | Enable, create `contact_submissions` table |
+| Generated assets | Abstract hero visual, about section image, placeholder logos |
