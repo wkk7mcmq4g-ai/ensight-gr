@@ -4,6 +4,7 @@ import { ArrowRight, ScanSearch, Zap, Layers, Stethoscope, PenTool, Hammer, User
 
 const services = [
   {
+    icon: ScanSearch,
     tag: 'Recommended',
     title: 'Operational X-Ray',
     meta: '1–2 weeks · Fixed fee',
@@ -11,9 +12,11 @@ const services = [
     includes: 'Workflow mapping, bottleneck quantification, stakeholder interviews, prioritised roadmap.',
     outcome: 'A clear, costed picture of where time and money are leaking — and what to fix first.',
     barColor: 'bg-primary',
+    iconColor: 'text-primary',
     showTag: true,
   },
   {
+    icon: Zap,
     tag: '',
     title: 'Quick Win',
     meta: '4–6 weeks · Outcome-linked',
@@ -21,9 +24,11 @@ const services = [
     includes: 'One high-impact problem scoped, redesigned, and solved end-to-end.',
     outcome: 'Measurable improvement you can point to. We tie our fee to the result.',
     barColor: 'bg-ordinal-green',
+    iconColor: 'text-ordinal-green',
     showTag: false,
   },
   {
+    icon: Layers,
     tag: '',
     title: 'Full Transformation',
     meta: '10–24 weeks · Scoped from X-Ray',
@@ -31,6 +36,7 @@ const services = [
     includes: 'All four framework stages — diagnosis through to embedded, adopted solution.',
     outcome: 'A fundamentally better operation with the team trained and the system working.',
     barColor: 'bg-ordinal-cyan',
+    iconColor: 'text-ordinal-cyan',
     showTag: false,
   },
 ];
