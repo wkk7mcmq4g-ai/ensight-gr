@@ -1,23 +1,19 @@
 
 
-# Homepage Content Refinement
+# Trim the Hero Section
 
-## Changes
+The hero already had the stats bar removed previously. The remaining changes focus on tightening spacing and making copy punchier for mobile.
 
-### 1. Trim the Hero (`src/components/home/HeroSection.tsx`)
-- Remove `min-h-screen`, use `pt-32 pb-16`
-- Remove the stats bar at the bottom (duplicates Proof section)
-- Add a one-liner "Who we work with" line below the CTAs: *"For ops-led teams in logistics, professional services, and healthcare who've outgrown spreadsheets and workarounds."*
+## Changes to `src/components/home/HeroSection.tsx`
 
-### 2. Reorder sections (`src/pages/Home.tsx`)
-New flow: Hero → Problems → Framework → Engage → Quote → Proof → CTA
-- Move Framework before Engage (explain *how* before *how to start*)
-- Remove DataClarityTeaser and its divider
+### Reduce padding
+- Change `pt-32 pb-16` to `pt-24 pb-10 md:pt-32 md:pb-16` so mobile gets less vertical whitespace
+- Reduce `mb-7` on the pill to `mb-5`, `mb-9` on the subhead to `mb-7`, `mt-8` on the "who we work with" line to `mt-5`
 
-### 3. Fix broken links (`src/components/home/EngageSection.tsx`)
-- Change `Link to="/services"` to `<a href="#method">` so "Learn more" scrolls to the Framework section
+### Make copy punchier
+- Shorten the subhead paragraph from the verbose 2-sentence version to: *"Most transformations fail because they start with tech. We start with how your operation actually works — then fix what's broken."*
+- Reduce CTA button padding on mobile: `px-7 py-3 md:px-9 md:py-4`
 
-### Technical Details
-**Files edited:** `HeroSection.tsx`, `Home.tsx`, `EngageSection.tsx`
-**Files unchanged:** All other pages, Navbar dropdown, Footer
+### Mobile headline size
+- Adjust clamp from `clamp(40px,6vw,68px)` to `clamp(34px,6vw,68px)` so it doesn't crowd small screens
 
