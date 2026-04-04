@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { ArrowRight, Workflow, BarChart3, Code2, Zap, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
 import CTASection from '@/components/home/CTASection';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -110,7 +111,8 @@ const engagements = [
 const Services = () => (
   <>
     {/* Hero */}
-    <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14">
+    <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14 relative overflow-hidden">
+      <DecorativeShapes variant="grid" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

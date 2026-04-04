@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { ArrowRight } from 'lucide-react';
 import { caseStudies } from '@/data/caseStudies';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const CaseStudies = () => (
-  <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20">
+  <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
+    <DecorativeShapes variant="minimal" />
     <AnimatedSection className="text-center mb-14">
       <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
         <span className="w-[6px] h-[6px] bg-primary rounded-full" />

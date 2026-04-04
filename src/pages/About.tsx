@@ -1,6 +1,7 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 import georgeAvatar from '@/assets/george-kondylis.jpg';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const team = [
   {
@@ -34,7 +35,8 @@ const values = [
 ];
 
 const About = () => (
-  <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20">
+  <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
+    <DecorativeShapes variant="circles" />
     {/* Hero */}
     <AnimatedSection className="text-center mb-20">
       <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
