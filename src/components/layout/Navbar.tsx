@@ -190,7 +190,7 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="mt-2 space-y-2">
-              <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
+              <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
               {assessmentOptions.map((opt) => (
                 <Link
                   key={opt.href}
