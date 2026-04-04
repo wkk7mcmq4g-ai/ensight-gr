@@ -15,16 +15,16 @@ const LogoStripSection = () => (
     <p className="text-[11px] font-medium tracking-[2px] uppercase text-ordinal-dim text-center mb-8">
       Trusted by teams across financial services, non-profits, and professional services
     </p>
-    <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap opacity-40 grayscale">
+    <div className="flex items-center justify-center gap-10 md:gap-14 flex-wrap opacity-70">
       {logos.map((logo, i) => (
         <img
           key={i}
           src={logo.src}
           alt={logo.alt}
-          className="h-8 md:h-10 w-auto object-contain"
+          className="h-10 md:h-12 w-auto object-contain"
           loading="lazy"
-          width={80}
-          height={40}
+          width={100}
+          height={48}
         />
       ))}
     </div>
