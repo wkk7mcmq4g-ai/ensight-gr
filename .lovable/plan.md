@@ -1,22 +1,55 @@
 
 
-# Update Case Studies with Real Content
+# Streamline Homepage to ~8 Sections
 
-## 1. Update `src/data/caseStudies.ts`
+## Current state (16 sections)
+HeroSection → PainPointsSection → StatStrip → ProblemsSection → HowWeHelpSection → SelectedWorkSection → AboutSection → ProofSection → FrameworkSection → HowWeWorkSection → BeforeAfterSection → BeforeYouAutomate → QuoteSection → EngageSection → FreeAuditSection → CTASection
 
-Replace the three placeholder case studies with the real data provided:
+## Proposed flow (8 sections)
 
-- **Loan Servicing Platform** (sector: "Financial Services") — context as challenge, approach steps, outcomes as metrics (60% reduction in manual processing, eliminated reconciliation tasks, real-time visibility)
-- **Charity CRM System** (sector: "Non-Profit") — context as challenge, approach steps, outcomes as metrics (centralised management, improved compliance, org-wide reporting)
-- **Financial Reporting Automation** (sector: "Financial Services") — context as challenge, approach steps, outcomes as metrics (days→minutes reporting, improved accuracy, real-time insights)
+```text
+1. HeroSection          — keep as-is
+2. ProblemsSection      — the "Six Signs" cards (merge PainPoints into this)
+3. HowWeHelpSection     — what we do (4 service cards)
+4. SelectedWorkSection  — case studies
+5. ProofSection         — metrics/proof points
+6. AboutSection         — who we are
+7. EngageSection        — three ways to start
+8. CTASection           — final CTA
+```
 
-## 2. Update `src/components/home/SelectedWorkSection.tsx`
+## Sections removed
+- **PainPointsSection** — redundant with ProblemsSection; fold the "if this sounds familiar" intro line into ProblemsSection's header
+- **StatStrip** — standalone stat bar feels salesy; key numbers already live in ProofSection
+- **FrameworkSection** — too detailed for homepage; can live on Services page
+- **HowWeWorkSection** — similar overlap with EngageSection; move to Services if needed
+- **BeforeAfterSection** — visual but repetitive; proof points already convey the transformation
+- **BeforeYouAutomate** — guarantee language is too pitch-heavy for boutique tone
+- **QuoteSection** — can be re-added later if a real client testimonial is available
+- **FreeAuditSection** — lead-gen tactic; conflicts with boutique positioning
 
-Update the inline case study summaries to match the new tone — more understated, consultancy-appropriate bullet points reflecting the real outcomes provided.
+## File changes
 
-## 3. Update `src/components/home/ProofSection.tsx`
+### 1. `src/pages/Home.tsx`
+Strip down to 8 sections with thin dividers between select sections:
+```
+HeroSection
+ProblemsSection
+divider
+HowWeHelpSection
+divider
+SelectedWorkSection
+divider
+ProofSection
+divider
+AboutSection
+EngageSection
+CTASection
+```
 
-Align the three proof point cards with the real case study data so the metrics and descriptions are consistent (e.g. "60% reduction in manual processing" for Loan Servicing, "days to minutes" for Financial Reporting).
+### 2. `src/components/home/ProblemsSection.tsx`
+Add a brief intro line before the cards: "If any of this sounds familiar, your organisation has accumulated process debt." This absorbs PainPointsSection's purpose.
 
-All three files will be updated to use consistent, factual copy derived from the user's provided content.
+### 3. No other component files modified
+The removed sections' files stay in the codebase (no deletion) — they're simply no longer imported. This keeps them available if you want to re-add or move them to other pages later.
 
