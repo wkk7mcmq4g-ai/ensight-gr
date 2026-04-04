@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { ArrowRight } from 'lucide-react';
 import { caseStudies } from '@/data/caseStudies';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const CaseStudies = () => (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20">
