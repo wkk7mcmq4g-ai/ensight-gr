@@ -31,10 +31,10 @@ const caseStudies = [
 const SelectedWorkSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="work">
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        {"// Selected Work"}
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        Selected Work
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-12">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-12">
         Selected Work
       </h2>
     </AnimatedSection>
@@ -42,7 +42,7 @@ const SelectedWorkSection = () => (
       {caseStudies.map((cs, i) => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all h-full">
-            <h3 className="text-lg font-bold mb-4">{cs.title}</h3>
+            <h3 className="text-lg font-semibold mb-4">{cs.title}</h3>
             <ul className="space-y-3">
               {cs.points.map((point, j) => (
                 <li key={j} className="flex items-start gap-2.5 text-sm text-ordinal-body leading-relaxed">

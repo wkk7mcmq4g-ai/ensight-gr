@@ -12,10 +12,10 @@ const problems = [
 const ProblemsSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="problems">
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        {"// Sound Familiar?"}
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        Sound Familiar?
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         The Six Signs of Process Debt
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -26,7 +26,7 @@ const ProblemsSection = () => (
       {problems.map((p, i) => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all group h-full">
-            <div className={`absolute top-0 left-0 w-full h-[3px] ${p.color}`} />
+            <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
             <div className="text-[28px] mb-3">{p.emoji}</div>
             <h3 className="text-base font-bold mb-1.5">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed">{p.desc}</p>

@@ -14,7 +14,7 @@ const PainPointsSection = () => (
   <section className="bg-muted/50 border-y border-border">
     <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-16 md:py-20">
       <AnimatedSection>
-        <h2 className="text-[clamp(22px,3.5vw,34px)] font-extrabold tracking-tight leading-[1.15] mb-10 text-foreground">
+        <h2 className="text-[clamp(22px,3.5vw,34px)] font-semibold tracking-tight leading-[1.15] mb-10 text-foreground">
           If any of this sounds familiar…
         </h2>
 

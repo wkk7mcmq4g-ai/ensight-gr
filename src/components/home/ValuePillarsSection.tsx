@@ -40,10 +40,10 @@ const pillars = [
 const ValuePillarsSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="pillars">
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        {"// What We Do"}
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        What We Do
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         Four Pillars of Impact
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -57,9 +57,9 @@ const ValuePillarsSection = () => (
             to={p.link}
             className="block bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all group h-full no-underline"
           >
-            <div className={`absolute top-0 left-0 w-full h-[3px] ${p.color}`} />
+            <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
             <p.icon size={24} strokeWidth={1.5} className={`${p.iconColor} mb-4`} />
-            <h3 className="text-base font-bold mb-1.5 text-foreground">{p.title}</h3>
+            <h3 className="text-base font-semibold mb-1.5 text-foreground">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed mb-3">{p.desc}</p>
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
               Learn more <ArrowRight size={12} />

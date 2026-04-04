@@ -6,11 +6,11 @@ import { caseStudies } from '@/data/caseStudies';
 const CaseStudies = () => (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20">
     <AnimatedSection className="text-center mb-14">
-      <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-electric-glow font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
-        <span className="w-[6px] h-[6px] bg-electric-bright rounded-full shadow-[0_0_8px_hsl(var(--electric-bright)/0.5)]" />
+      <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
+        <span className="w-[6px] h-[6px] bg-primary rounded-full" />
         Case Studies
       </div>
-      <h1 className="text-[clamp(28px,5vw,48px)] font-extrabold leading-[1.1] tracking-tight mb-5">
+      <h1 className="text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-tight mb-5">
         Real Results,{' '}
         <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
           Measured in Weeks

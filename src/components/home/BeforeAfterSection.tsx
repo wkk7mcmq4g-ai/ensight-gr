@@ -18,10 +18,10 @@ const afterItems = [
 const BeforeAfterSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        {"// Transformation"}
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        Transformation
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-12">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-12">
         From complexity to clarity
       </h2>
     </AnimatedSection>
@@ -39,7 +39,7 @@ const BeforeAfterSection = () => (
           <div className="bg-muted/40 border border-border rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-border/80">
             <div className="flex items-center gap-2 mb-6">
               <XCircle className="text-destructive" size={22} />
-              <h3 className="text-xl font-extrabold">Before</h3>
+              <h3 className="text-xl font-semibold">Before</h3>
             </div>
             <ul className="space-y-4">
               {beforeItems.map((item) => (
@@ -63,7 +63,7 @@ const BeforeAfterSection = () => (
           <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40">
             <div className="flex items-center gap-2 mb-6">
               <CheckCircle2 className="text-ordinal-green" size={22} />
-              <h3 className="text-xl font-extrabold">After</h3>
+              <h3 className="text-xl font-semibold">After</h3>
             </div>
             <ul className="space-y-4">
               {afterItems.map((item) => (

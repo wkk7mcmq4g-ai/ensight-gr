@@ -1,20 +1,41 @@
 
+# Professional Visual Refinements
 
-# Replace Emoji Icons with Professional Lucide Icons
+## 1. Color palette — Desaturate purple (`index.css`)
+- Primary: `270 70% 40%` → `268 45% 32%` (deeper, more muted)
+- Electric-bright: `270 80% 50%` → `268 50% 42%`
+- Reduce saturation on all ordinal accent colors
+- Body text slightly darker for better readability
 
-## Problem
-The homepage Value Pillars section uses emoji icons (🔄, 📊, 🛠️, ⚡) which look childish and inconsistent with the rest of the site, which uses clean Lucide stroke icons.
+## 2. Border radius — Sharpen (`index.css`)
+- `--radius: 1rem` → `--radius: 0.5rem` (consulting-sharp, not SaaS-round)
 
-## Changes
+## 3. Typography weights — Restrain
+Across all section components:
+- `font-black` → `font-bold`
+- `font-extrabold` → `font-semibold` (on headings)
+- Keep one `font-bold` level for H1 hero only
 
-### `src/components/home/ValuePillarsSection.tsx`
-- Replace emoji strings with Lucide icon components (matching the Services page pattern):
-  - Digital Transformation: `Workflow` (same as Services page)
-  - Data & Analytics: `BarChart3`
-  - Custom Platforms: `Code2`
-  - Automation & Integration: `Zap`
-- Render icons as proper Lucide components with `size={24}`, `strokeWidth={1.5}`, and color classes matching each pillar's accent color
-- This aligns the homepage with the Services page, which already uses these exact Lucide icons for the same four areas
+## 4. Remove `// LABEL` monospace pattern
+Replace `font-mono-label text-[10px] ... {"// What We Do"}` with clean uppercase sans-serif labels:
+- Remove `font-mono-label`, use regular font
+- Remove `//` prefix
+- Files: ValuePillarsSection, HowWeHelpSection, HeroSection (if applicable), Services page sections
 
-No other files need changes — the Services page, HowWeHelp section, and methodology cards already use Lucide icons correctly.
+## 5. Navbar gradient bar
+- Replace rainbow gradient (`from-[#3D1A78] via-primary to-ordinal-green`) with single muted primary color line
 
+## 6. Card accent bars
+- Keep colored top bars but make them thinner (3px → 2px) and more muted
+- Alternatively: remove entirely for cleaner look
+
+## Files changed
+| File | Change |
+|------|--------|
+| `src/index.css` | Desaturate palette, reduce radius |
+| `src/components/home/ValuePillarsSection.tsx` | Font weights, remove monospace label |
+| `src/components/home/HowWeHelpSection.tsx` | Font weights, remove monospace label |
+| `src/components/home/HeroSection.tsx` | Font weight refinement |
+| `src/components/layout/Navbar.tsx` | Simplify gradient bar |
+| `src/pages/Services.tsx` | Font weights, remove monospace labels |
+| Other section components | Same pattern where applicable |

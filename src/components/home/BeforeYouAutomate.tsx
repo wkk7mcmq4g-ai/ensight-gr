@@ -18,10 +18,10 @@ const BeforeYouAutomate = () => (
 
           {/* Content */}
           <div className="flex-1">
-            <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-              // Our Guarantee
+            <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+              Our Guarantee
             </div>
-            <h2 className="text-[clamp(22px,3.5vw,34px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+            <h2 className="text-[clamp(22px,3.5vw,34px)] font-semibold tracking-tight leading-[1.15] mb-4">
               The "Before You Automate" Guarantee
             </h2>
             <p className="text-base text-ordinal-body leading-relaxed mb-5 max-w-[640px]">

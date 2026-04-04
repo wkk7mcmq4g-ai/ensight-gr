@@ -31,10 +31,10 @@ const engagements = [
 const EngageSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="start">
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        {"// Three Ways to Start"}
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        Three Ways to Start
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         Low risk. High trust.
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -45,14 +45,14 @@ const EngageSection = () => (
       {engagements.map((e, i) => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
-            <div className={`absolute top-0 left-0 w-full h-[3px] ${e.barColor}`} />
+            <div className={`absolute top-0 left-0 w-full h-[2px] ${e.barColor}`} />
             {e.showTag && (
-              <div className="inline-block font-mono-label text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-white px-2.5 py-1 rounded-md mb-4">
+              <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-white px-2.5 py-1 rounded mb-4">
                 {e.tag}
               </div>
             )}
-            <h3 className="text-xl font-extrabold mb-2">{e.title}</h3>
-            <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
+            <h3 className="text-xl font-semibold mb-2">{e.title}</h3>
+            <div className="text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
             <p className="text-sm text-ordinal-body leading-relaxed">{e.desc}</p>
           </div>
         </StaggerItem>

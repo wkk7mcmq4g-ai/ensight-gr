@@ -27,10 +27,10 @@ const proofs = [
 const ProofSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="results">
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        // Proof Points
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        Proof Points
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         Real Results. Measured.
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -41,8 +41,8 @@ const ProofSection = () => (
       {proofs.map((p, i) => (
         <StaggerItem key={i}>
           <div className={`${p.bg} rounded-lg p-8 text-white h-full`}>
-            <div className="font-mono-label text-[9px] tracking-[2px] uppercase opacity-60 mb-3">{p.sector}</div>
-            <div className="text-5xl font-black leading-none mb-1">{p.metric}</div>
+            <div className="text-[9px] tracking-[2px] uppercase opacity-60 mb-3">{p.sector}</div>
+            <div className="text-5xl font-bold leading-none mb-1">{p.metric}</div>
             <div className="text-base font-semibold opacity-90 mb-3">{p.desc}</div>
             <div className="text-[13px] leading-relaxed opacity-65">{p.detail}</div>
           </div>

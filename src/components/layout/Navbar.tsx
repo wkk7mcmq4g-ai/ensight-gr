@@ -57,7 +57,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#3D1A78] via-primary to-ordinal-green z-[100]" />
+      <div className="fixed top-0 left-0 right-0 h-[2px] bg-primary z-[100]" />
 
       <nav className="fixed top-1 left-0 right-0 z-[99] px-6 md:px-12 py-4 flex justify-between items-center bg-background/90 backdrop-blur-2xl border-b border-border">
         <Link to="/">
@@ -114,7 +114,7 @@ const Navbar = () => {
           <div className="relative" ref={assessmentRef}>
             <button
               onClick={() => { setAssessmentOpen((v) => !v); setServicesOpen(false); }}
-              className="inline-flex items-center gap-1.5 font-mono-label text-[11px] font-medium tracking-[1px] text-white bg-ordinal-green px-5 py-2.5 rounded-[10px] shadow-[0_4px_12px_rgba(16,185,129,0.15)] hover:bg-ordinal-green-bright hover:-translate-y-px hover:shadow-[0_4px_20px_rgba(16,185,129,0.25)] transition-all"
+              className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-primary px-5 py-2.5 rounded-lg shadow-sm hover:bg-primary/90 hover:-translate-y-px transition-all"
             >
               Free Assessment
               <ChevronDown size={14} className={`transition-transform duration-200 ${assessmentOpen ? 'rotate-180' : ''}`} />

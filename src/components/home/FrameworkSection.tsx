@@ -12,10 +12,10 @@ const barColors = ['bg-primary', 'bg-ordinal-cyan', 'bg-electric-bright', 'bg-or
 const FrameworkSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="method">
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        {"// Our Method"}
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        Our Method
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         The Operational Clarity Framework
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -26,10 +26,10 @@ const FrameworkSection = () => (
       {steps.map((s, i) => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full">
-            <div className={`absolute top-0 left-0 w-full h-[3px] ${barColors[i]}`} />
-            <div className="font-mono-label text-xs font-semibold text-ordinal-dim mb-3">{s.num}</div>
-            <h3 className="text-xl font-extrabold mb-1">{s.title}</h3>
-            <div className={`font-mono-label text-[10px] font-medium mb-3 ${s.color}`}>{s.time}</div>
+            <div className={`absolute top-0 left-0 w-full h-[2px] ${barColors[i]}`} />
+            <div className="text-xs font-semibold text-ordinal-dim mb-3">{s.num}</div>
+            <h3 className="text-xl font-semibold mb-1">{s.title}</h3>
+            <div className={`text-[10px] font-medium mb-3 ${s.color}`}>{s.time}</div>
             <p className="text-sm text-ordinal-body leading-relaxed">{s.desc}</p>
           </div>
         </StaggerItem>

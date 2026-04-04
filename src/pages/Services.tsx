@@ -115,15 +115,15 @@ const Services = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.1 }}
-        className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3"
+        className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3"
       >
-        {"// Services"}
+        {"Services"}
       </motion.div>
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease, delay: 0.15 }}
-        className="text-[clamp(32px,5vw,52px)] font-black tracking-tight leading-[1.1] mb-4"
+        className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-4"
       >
         Technology and data,{' '}
         <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
@@ -145,10 +145,10 @@ const Services = () => (
     {/* Service Offerings */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-          {"// What We Do"}
+        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          {"What We Do"}
         </div>
-        <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+        <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
           Four areas of expertise
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -160,13 +160,13 @@ const Services = () => (
         {offerings.map((o, i) => (
           <AnimatedSection key={i} delay={i * 0.08}>
             <div className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-md hover:border-ordinal-faint transition-all">
-              <div className={`h-[3px] ${o.barColor}`} />
+              <div className={`h-[2px] ${o.barColor}`} />
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 p-7 md:p-8">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <o.icon className={`${o.iconColor} shrink-0`} size={24} strokeWidth={1.5} />
                     <div>
-                      <h3 className="text-xl font-extrabold">{o.title}</h3>
+                      <h3 className="text-xl font-semibold">{o.title}</h3>
                       <p className="text-xs text-ordinal-dim">{o.subtitle}</p>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ const Services = () => (
                   </Link>
                 </div>
                 <div className="bg-muted rounded-lg p-5">
-                  <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-3">Includes</div>
+                  <div className="text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-3">Includes</div>
                   <ul className="space-y-2.5">
                     {o.features.map((f, j) => (
                       <li key={j} className="text-sm text-ordinal-body leading-relaxed flex gap-2">
@@ -201,10 +201,10 @@ const Services = () => (
     {/* Methodology */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-          {"// Our Method"}
+        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          {"Our Method"}
         </div>
-        <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+        <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
           Process first. Technology second.
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -215,12 +215,12 @@ const Services = () => (
         {methodology.map((s, i) => (
           <StaggerItem key={i}>
             <div className="group bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full">
-              <div className={`absolute top-0 left-0 w-full h-[3px] ${s.bar}`} />
+              <div className={`absolute top-0 left-0 w-full h-[2px] ${s.bar}`} />
               <div className="flex items-center justify-between mb-3">
-                <div className="font-mono-label text-xs font-semibold text-ordinal-dim">{s.num}</div>
+                <div className="text-xs font-semibold text-ordinal-dim">{s.num}</div>
                 <s.icon className={`${s.color} opacity-25 transition-all duration-300 group-hover:opacity-50 group-hover:scale-110`} size={24} strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-extrabold mb-1">{s.title}</h3>
+              <h3 className="text-xl font-semibold mb-1">{s.title}</h3>
               <p className="text-sm text-ordinal-body leading-relaxed">{s.desc}</p>
             </div>
           </StaggerItem>
@@ -233,10 +233,10 @@ const Services = () => (
     {/* Engagement Models */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-          {"// Three Ways to Start"}
+        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          {"Three Ways to Start"}
         </div>
-        <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
+        <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
           Low risk. High trust.
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
@@ -247,14 +247,14 @@ const Services = () => (
         {engagements.map((e, i) => (
           <StaggerItem key={i}>
             <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
-              <div className={`absolute top-0 left-0 w-full h-[3px] ${e.barColor}`} />
+              <div className={`absolute top-0 left-0 w-full h-[2px] ${e.barColor}`} />
               {e.showTag && (
-                <div className="inline-block font-mono-label text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-primary-foreground px-2.5 py-1 rounded-md mb-4 self-start">
+                <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-primary-foreground px-2.5 py-1 rounded mb-4 self-start">
                   {e.tag}
                 </div>
               )}
-              <h3 className="text-xl font-extrabold mb-2">{e.title}</h3>
-              <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
+              <h3 className="text-xl font-semibold mb-2">{e.title}</h3>
+              <div className="text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
               <p className="text-sm text-ordinal-body leading-relaxed">{e.desc}</p>
             </div>
           </StaggerItem>

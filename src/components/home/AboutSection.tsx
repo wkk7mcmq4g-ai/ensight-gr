@@ -4,10 +4,10 @@ const AboutSection = () => (
   <section className="bg-muted/30 py-24" id="about">
     <div className="max-w-[1200px] mx-auto px-6 md:px-12">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-          {"// About"}
+        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          About
         </div>
-        <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-10 max-w-[680px]">
+        <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-10 max-w-[680px]">
           Built by experience, not theory
         </h2>
       </AnimatedSection>
