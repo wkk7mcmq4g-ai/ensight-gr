@@ -23,7 +23,7 @@ const LogoStripSection = () => (
           key={i}
           src={logo.src}
           alt={logo.alt}
-          className="h-10 md:h-12 w-[120px] md:w-[140px] object-contain opacity-50 hover:opacity-90 transition-opacity duration-300"
+          className="h-12 md:h-14 w-[150px] md:w-[180px] object-contain opacity-50 hover:opacity-90 transition-opacity duration-300"
           loading="lazy"
           width={100}
           height={48}
