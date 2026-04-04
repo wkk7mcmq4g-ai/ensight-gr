@@ -28,7 +28,9 @@ const ProblemsSection = () => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all group h-full">
             <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
-            <div className="text-[28px] mb-3">{p.emoji}</div>
+            <div className="mb-3 text-primary/80">
+              <p.icon size={24} strokeWidth={1.5} />
+            </div>
             <h3 className="text-base font-bold mb-1.5">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed">{p.desc}</p>
           </div>
