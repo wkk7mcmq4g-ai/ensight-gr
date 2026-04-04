@@ -179,7 +179,7 @@ const Services = () => (
                   </Link>
                 </div>
                 <div className="bg-muted rounded-lg p-5">
-                  <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-3">Includes</div>
+                  <div className="text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-3">Includes</div>
                   <ul className="space-y-2.5">
                     {o.features.map((f, j) => (
                       <li key={j} className="text-sm text-ordinal-body leading-relaxed flex gap-2">
