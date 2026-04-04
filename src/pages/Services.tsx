@@ -99,7 +99,7 @@ const Services = () => (
                   )}
                   <h3 className="text-xl font-extrabold">{s.title}</h3>
                 </div>
-                <s.icon className={`${s.iconColor} opacity-30 shrink-0`} size={32} strokeWidth={1.5} />
+                <s.icon className={`${s.iconColor} opacity-30 shrink-0 transition-all duration-300 group-hover:opacity-60 group-hover:scale-110`} size={32} strokeWidth={1.5} />
               </div>
               <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{s.meta}</div>
               <div className="space-y-3 text-sm text-ordinal-body leading-relaxed flex-1">
