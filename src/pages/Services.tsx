@@ -166,7 +166,7 @@ const Services = () => (
                   <div className="flex items-center gap-3 mb-3">
                     <o.icon className={`${o.iconColor} shrink-0`} size={24} strokeWidth={1.5} />
                     <div>
-                      <h3 className="text-xl font-extrabold">{o.title}</h3>
+                      <h3 className="text-xl font-semibold">{o.title}</h3>
                       <p className="text-xs text-ordinal-dim">{o.subtitle}</p>
                     </div>
                   </div>
