@@ -1,25 +1,23 @@
 
-# Merge Services into Homepage & Add Nav Dropdown
 
-## 1. New Homepage (`/`)
-Merge the current homepage and Services page into one landing page:
-- **Hero** — Keep current homepage hero (compelling hook)
-- **Problems Section** — Keep as-is
-- **Service Cards** — The three engagement tiers (X-Ray, Quick Win, Full Transformation) from Services page
-- **Framework** — The 4-step method (Diagnose → Redesign → Build → Embed)
-- **Data Clarity teaser** — Brief section linking to `/data-clarity`
-- **Proof/Quote sections** — Keep social proof
-- **CTA** — "Book Your X-Ray Briefing"
+# Homepage Content Refinement
 
-## 2. Services Nav → Dropdown
-Replace the "Services" nav link with a dropdown containing:
-- **Operational Transformation** → scrolls to the service cards/framework section on homepage
-- **Data Clarity** → links to `/data-clarity`
+## Changes
 
-## 3. Remove `/services` route
-The dedicated Services page is no longer needed since its content lives on the homepage.
+### 1. Trim the Hero (`src/components/home/HeroSection.tsx`)
+- Remove `min-h-screen`, use `pt-32 pb-16`
+- Remove the stats bar at the bottom (duplicates Proof section)
+- Add a one-liner "Who we work with" line below the CTAs: *"For ops-led teams in logistics, professional services, and healthcare who've outgrown spreadsheets and workarounds."*
 
-## What stays the same
-- Case Studies, About, Assessment pages unchanged
-- Data Clarity page unchanged
-- Footer unchanged
+### 2. Reorder sections (`src/pages/Home.tsx`)
+New flow: Hero → Problems → Framework → Engage → Quote → Proof → CTA
+- Move Framework before Engage (explain *how* before *how to start*)
+- Remove DataClarityTeaser and its divider
+
+### 3. Fix broken links (`src/components/home/EngageSection.tsx`)
+- Change `Link to="/services"` to `<a href="#method">` so "Learn more" scrolls to the Framework section
+
+### Technical Details
+**Files edited:** `HeroSection.tsx`, `Home.tsx`, `EngageSection.tsx`
+**Files unchanged:** All other pages, Navbar dropdown, Footer
+
