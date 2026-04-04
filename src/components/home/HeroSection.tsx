@@ -29,10 +29,10 @@ const HeroSection = () => (
       className="flex gap-3 flex-wrap"
     >
       <a
-        href="#solutions"
+        href="#pillars"
         onClick={(e) => {
           e.preventDefault();
-          document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
         }}
         className="bg-primary text-primary-foreground text-base font-bold px-7 py-3 md:px-9 md:py-4 rounded-xl shadow-[0_4px_16px_hsl(var(--primary)/0.15)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.2)] transition-all no-underline"
       >
