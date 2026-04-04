@@ -1,5 +1,5 @@
 import HeroSection from '@/components/home/HeroSection';
-import ProblemsSection from '@/components/home/ProblemsSection';
+import ValuePillarsSection from '@/components/home/ValuePillarsSection';
 import HowWeHelpSection from '@/components/home/HowWeHelpSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import ProofSection from '@/components/home/ProofSection';
@@ -10,7 +10,7 @@ import CTASection from '@/components/home/CTASection';
 const Home = () => (
   <>
     <HeroSection />
-    <ProblemsSection />
+    <ValuePillarsSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeHelpSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
