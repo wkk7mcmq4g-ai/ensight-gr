@@ -1,5 +1,5 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
-import { XCircle, CheckCircle2 } from 'lucide-react';
+import { XCircle, CheckCircle2, ArrowRight, ArrowDown } from 'lucide-react';
 
 const beforeItems = [
   'Disconnected systems and spreadsheets',
@@ -25,6 +25,19 @@ const BeforeAfterSection = () => (
         From complexity to clarity
       </h2>
     </AnimatedSection>
+
+    <div className="relative">
+      {/* Arrow indicator between cards */}
+      <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+        <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          <ArrowRight size={20} />
+        </div>
+      </div>
+      <div className="flex md:hidden justify-center my-4">
+        <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          <ArrowDown size={20} />
+        </div>
+      </div>
 
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
       <StaggerItem>
