@@ -42,7 +42,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   if (variant === 'circles') {
     return (
       <div ref={ref} className={wrapperClass} aria-hidden>
-        <motion.svg viewBox="0 0 400 400" className="absolute -top-10 -right-10 w-[360px] h-[360px] opacity-[0.15]" style={{ y, rotate }}>
+        <motion.svg viewBox="0 0 400 400" className="absolute -top-10 -right-10 w-[360px] h-[360px] opacity-[0.25]" style={{ y, rotate }}>
           {[80, 140, 200].map((r, i) => (
             <motion.circle key={i} cx={200} cy={200} r={r} fill="none" stroke="hsl(var(--primary))" strokeWidth={0.8} initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 0.6, scale: 1 }} transition={{ duration: 1.4, delay: 0.4 + i * 0.25, ease }} />
           ))}
