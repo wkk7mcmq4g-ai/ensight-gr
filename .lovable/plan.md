@@ -1,20 +1,19 @@
 
 
-# Add "How We Work" Process Section
+# Add "From Complexity to Clarity" Before/After Section
 
-## New file: `src/components/home/HowWeWorkSection.tsx`
+## New file: `src/components/home/BeforeAfterSection.tsx`
 
-- Mono-label: `// How We Work`
-- Headline: "How we work"
-- Subtitle: "A structured approach from problem to solution"
-- 4-step horizontal layout on desktop (`grid-cols-4`), vertical stack on mobile
-- Each step: numbered circle (01–04) with accent color, bold title, description text
-- Connecting line between steps: a horizontal `bg-border` line running behind the step numbers on desktop (using absolute positioning), hidden on mobile
-- Step accent colors cycling through existing palette: `primary`, `ordinal-cyan`, `electric-bright`, `ordinal-green`
+- Mono-label: `// Transformation`
+- Headline: "From complexity to clarity"
+- Two-column grid (`grid-cols-1 md:grid-cols-2 gap-6`)
+- **Left card ("Before")**: `bg-muted/40` subtle darker feel, border, rounded-xl. Title in bold with `XCircle` icon (lucide, `text-destructive`). Bullet points with `XCircle` icons at 16px.
+- **Right card ("After")**: `bg-primary/5` lighter/accent feel, `border-primary/20`, rounded-xl. Title in bold with `CheckCircle2` icon (`text-ordinal-green`). Bullet points with `CheckCircle2` icons at 16px.
+- Bottom tagline centered below the grid: "We transform fragmented operations into streamlined, scalable systems." in `text-ordinal-body`
 - Use `AnimatedSection` + `StaggerChildren`/`StaggerItem` for entrance animations
-- Clean consulting style: generous whitespace, `text-sm text-ordinal-body` descriptions
+- Consistent section styling: `max-w-[1200px] mx-auto px-6 md:px-12 py-24`
 
 ## Edit: `src/pages/Home.tsx`
 
-Insert `<HowWeWorkSection />` after `<FrameworkSection />` (line 30), with a divider before it. This places the process steps logically after the framework methodology.
+Insert `<BeforeAfterSection />` after `<HowWeWorkSection />` (line 33), before `<BeforeYouAutomate />`, with a divider between them. This logically flows: how we work → what the transformation looks like → our guarantee.
 
