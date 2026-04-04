@@ -5,11 +5,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import ensightLogo from '@/assets/ensight-logo.png';
 
 const navLinks = [
-  { label: 'Problems', href: '/#problems' },
-  { label: 'Method', href: '/#method' },
-  { label: 'Results', href: '/#results' },
+  { label: 'Services', href: '/services' },
   { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Data Clarity', href: '/data-clarity' },
   { label: 'About', href: '/about' },
 ];
 

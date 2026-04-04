@@ -12,6 +12,7 @@ import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
 import DataClarity from "./pages/DataClarity";
 import DataClarityAssessment from "./pages/DataClarityAssessment";
+import Services from "./pages/Services";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/data-clarity" element={<DataClarity />} />
             <Route path="/data-clarity-assessment" element={<DataClarityAssessment />} />
+            <Route path="/services" element={<Services />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
