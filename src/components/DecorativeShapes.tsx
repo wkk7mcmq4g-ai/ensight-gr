@@ -30,7 +30,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   if (variant === 'minimal') {
     return (
       <div ref={ref} className={wrapperClass} aria-hidden>
-        <motion.svg viewBox="0 0 400 400" className="absolute top-0 right-0 w-[320px] h-[320px] opacity-[0.12]" style={{ y, rotate }}>
+        <motion.svg viewBox="0 0 400 400" className="absolute top-0 right-0 w-[320px] h-[320px] opacity-[0.22]" style={{ y, rotate }}>
           <motion.circle cx={200} cy={200} r={120} fill="none" stroke="hsl(var(--primary))" strokeWidth={1} initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.5, ease }} />
           <motion.circle cx={200} cy={200} r={60} fill="none" stroke="hsl(var(--primary))" strokeWidth={1} initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.8, ease }} />
           <motion.rect x={160} y={160} width={80} height={80} rx={4} fill="none" stroke="hsl(var(--primary))" strokeWidth={1} initial={{ opacity: 0, rotate: -15 }} animate={{ opacity: 1, rotate: 0 }} transition={{ duration: 1, delay: 1.1, ease }} />
@@ -42,7 +42,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   if (variant === 'circles') {
     return (
       <div ref={ref} className={wrapperClass} aria-hidden>
-        <motion.svg viewBox="0 0 400 400" className="absolute -top-10 -right-10 w-[360px] h-[360px] opacity-[0.15]" style={{ y, rotate }}>
+        <motion.svg viewBox="0 0 400 400" className="absolute -top-10 -right-10 w-[360px] h-[360px] opacity-[0.25]" style={{ y, rotate }}>
           {[80, 140, 200].map((r, i) => (
             <motion.circle key={i} cx={200} cy={200} r={r} fill="none" stroke="hsl(var(--primary))" strokeWidth={0.8} initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 0.6, scale: 1 }} transition={{ duration: 1.4, delay: 0.4 + i * 0.25, ease }} />
           ))}
@@ -56,7 +56,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   if (variant === 'grid') {
     return (
       <div ref={ref} className={wrapperClass} aria-hidden>
-        <motion.svg viewBox="0 0 360 360" className="absolute top-0 right-0 w-[300px] h-[300px] opacity-[0.12]" style={{ y }}>
+        <motion.svg viewBox="0 0 360 360" className="absolute top-0 right-0 w-[300px] h-[300px] opacity-[0.2]" style={{ y }}>
           {[0, 60, 120, 180, 240, 300, 360].map((pos, i) => (
             <motion.line key={`h-${i}`} x1={0} y1={pos} x2={360} y2={pos} stroke="hsl(var(--primary))" strokeWidth={0.5} initial={{ opacity: 0 }} animate={{ opacity: 0.4 }} transition={{ duration: 0.8, delay: 0.3 + i * 0.08, ease }} />
           ))}
@@ -73,7 +73,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   // Default: dots variant
   return (
     <div ref={ref} className={wrapperClass} aria-hidden>
-      <motion.svg viewBox="0 0 360 300" className="absolute -top-4 right-0 w-[320px] h-[280px] opacity-[0.2]" style={{ y, rotate }}>
+      <motion.svg viewBox="0 0 360 300" className="absolute -top-4 right-0 w-[320px] h-[280px] opacity-[0.3]" style={{ y, rotate }}>
         {dots.map((dot, i) => (
           <motion.circle key={i} cx={dot.x} cy={dot.y} r={dot.size} fill="hsl(var(--primary))" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: [0, 0.6, 0.35], scale: [0, 1.2, 1] }} transition={{ duration: 1.5, delay: 0.4 + dot.delay, ease }} />
         ))}
