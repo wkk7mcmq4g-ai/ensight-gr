@@ -1,5 +1,5 @@
-import logoHms from '@/assets/logo-hms.jpg';
-import logoQsix from '@/assets/logo-qsix.ico';
+import logoHms from '@/assets/logo-hms.png';
+import logoQsix from '@/assets/logo-qsix.png';
 import logoLoux from '@/assets/logo-loux.png';
 import logoMat from '@/assets/logo-myathenstransfers.png';
 import logoVm from '@/assets/logo-volunteering-matters.png';
