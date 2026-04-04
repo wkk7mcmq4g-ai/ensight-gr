@@ -12,10 +12,10 @@ const FreeAuditSection = () => (
   <section className="bg-muted/30">
     <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection className="max-w-[680px] mx-auto text-center">
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-          {"// Free Audit"}
+        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          Free Audit
         </div>
-        <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-3">
+        <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-3">
           Free Operational Audit
         </h2>
         <p className="text-lg text-ordinal-body leading-relaxed mb-8">

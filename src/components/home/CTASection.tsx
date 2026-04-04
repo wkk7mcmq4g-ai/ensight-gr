@@ -23,7 +23,7 @@ const CTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease }}
-          className="text-[clamp(28px,4.5vw,44px)] font-black tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center"
+          className="text-[clamp(28px,4.5vw,44px)] font-bold tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center"
         >
           Get in Touch
         </motion.h2>

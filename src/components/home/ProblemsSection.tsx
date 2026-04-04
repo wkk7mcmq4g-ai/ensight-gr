@@ -26,7 +26,7 @@ const ProblemsSection = () => (
       {problems.map((p, i) => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all group h-full">
-            <div className={`absolute top-0 left-0 w-full h-[3px] ${p.color}`} />
+            <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
             <div className="text-[28px] mb-3">{p.emoji}</div>
             <h3 className="text-base font-bold mb-1.5">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed">{p.desc}</p>

@@ -42,7 +42,7 @@ const SelectedWorkSection = () => (
       {caseStudies.map((cs, i) => (
         <StaggerItem key={i}>
           <div className="bg-card border border-border rounded-lg p-7 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-ordinal-faint transition-all h-full">
-            <h3 className="text-lg font-bold mb-4">{cs.title}</h3>
+            <h3 className="text-lg font-semibold mb-4">{cs.title}</h3>
             <ul className="space-y-3">
               {cs.points.map((point, j) => (
                 <li key={j} className="flex items-start gap-2.5 text-sm text-ordinal-body leading-relaxed">

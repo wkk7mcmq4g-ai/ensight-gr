@@ -18,7 +18,7 @@ const DataClarityTeaser = () => (
           </p>
           <Link
             to="/data-clarity"
-            className="inline-flex items-center gap-2 font-mono-label text-[11px] font-medium tracking-[1px] text-primary-foreground bg-primary px-6 py-3 rounded-[10px] shadow-sm hover:bg-primary/90 hover:-translate-y-px transition-all no-underline"
+            className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[1px] text-primary-foreground bg-primary px-6 py-3 rounded-lg shadow-sm hover:bg-primary/90 hover:-translate-y-px transition-all no-underline"
           >
             Explore Data Clarity
             <ArrowRight size={14} />

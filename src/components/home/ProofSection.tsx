@@ -41,8 +41,8 @@ const ProofSection = () => (
       {proofs.map((p, i) => (
         <StaggerItem key={i}>
           <div className={`${p.bg} rounded-lg p-8 text-white h-full`}>
-            <div className="font-mono-label text-[9px] tracking-[2px] uppercase opacity-60 mb-3">{p.sector}</div>
-            <div className="text-5xl font-black leading-none mb-1">{p.metric}</div>
+            <div className="text-[9px] tracking-[2px] uppercase opacity-60 mb-3">{p.sector}</div>
+            <div className="text-5xl font-bold leading-none mb-1">{p.metric}</div>
             <div className="text-base font-semibold opacity-90 mb-3">{p.desc}</div>
             <div className="text-[13px] leading-relaxed opacity-65">{p.detail}</div>
           </div>

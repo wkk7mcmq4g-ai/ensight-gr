@@ -59,7 +59,7 @@ const ValuePillarsSection = () => (
           >
             <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color}`} />
             <p.icon size={24} strokeWidth={1.5} className={`${p.iconColor} mb-4`} />
-            <h3 className="text-base font-bold mb-1.5 text-foreground">{p.title}</h3>
+            <h3 className="text-base font-semibold mb-1.5 text-foreground">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed mb-3">{p.desc}</p>
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
               Learn more <ArrowRight size={12} />
