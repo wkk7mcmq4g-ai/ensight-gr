@@ -56,7 +56,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   if (variant === 'grid') {
     return (
       <div ref={ref} className={wrapperClass} aria-hidden>
-        <motion.svg viewBox="0 0 360 360" className="absolute top-0 right-0 w-[300px] h-[300px] opacity-[0.12]" style={{ y }}>
+        <motion.svg viewBox="0 0 360 360" className="absolute top-0 right-0 w-[300px] h-[300px] opacity-[0.2]" style={{ y }}>
           {[0, 60, 120, 180, 240, 300, 360].map((pos, i) => (
             <motion.line key={`h-${i}`} x1={0} y1={pos} x2={360} y2={pos} stroke="hsl(var(--primary))" strokeWidth={0.5} initial={{ opacity: 0 }} animate={{ opacity: 0.4 }} transition={{ duration: 0.8, delay: 0.3 + i * 0.08, ease }} />
           ))}
