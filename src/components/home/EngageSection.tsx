@@ -53,10 +53,7 @@ const EngageSection = () => (
             )}
             <h3 className="text-xl font-extrabold mb-2">{e.title}</h3>
             <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
-            <p className="text-sm text-ordinal-body leading-relaxed mb-4">{e.desc}</p>
-              <a href="mailto:hello@ensight.gr?subject=X-Ray Briefing" className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary/80 transition-colors no-underline mt-auto">
-                Get started <ArrowRight size={12} />
-              </a>
+            <p className="text-sm text-ordinal-body leading-relaxed">{e.desc}</p>
           </div>
         </StaggerItem>
       ))}
