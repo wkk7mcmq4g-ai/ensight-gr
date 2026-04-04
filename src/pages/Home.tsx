@@ -21,6 +21,8 @@ const Home = () => (
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeHelpSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <SelectedWorkSection />
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <ProofSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <FrameworkSection />
