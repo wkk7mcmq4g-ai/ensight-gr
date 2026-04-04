@@ -12,7 +12,7 @@ import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
 import DataClarity from "./pages/DataClarity";
 import DataClarityAssessment from "./pages/DataClarityAssessment";
-
+import OperationalTransformation from "./pages/OperationalTransformation";
 
 const queryClient = new QueryClient();
 
