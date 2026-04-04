@@ -90,12 +90,17 @@ const Services = () => (
           <StaggerItem key={i}>
             <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
               <div className={`absolute top-0 left-0 w-full h-[3px] ${s.barColor}`} />
-              {s.showTag && (
-                <div className="inline-block self-start font-mono-label text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-primary-foreground px-2.5 py-1 rounded-md mb-4">
-                  {s.tag}
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  {s.showTag && (
+                    <div className="inline-block font-mono-label text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-primary-foreground px-2.5 py-1 rounded-md mb-3">
+                      {s.tag}
+                    </div>
+                  )}
+                  <h3 className="text-xl font-extrabold">{s.title}</h3>
                 </div>
-              )}
-              <h3 className="text-xl font-extrabold mb-2">{s.title}</h3>
+                <s.icon className={`${s.iconColor} opacity-30 shrink-0`} size={32} strokeWidth={1.5} />
+              </div>
               <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{s.meta}</div>
               <div className="space-y-3 text-sm text-ordinal-body leading-relaxed flex-1">
                 <p><span className="font-semibold text-foreground">Who it's for:</span> {s.who}</p>
