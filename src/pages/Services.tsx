@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
+import HowWeWorkSection from '@/components/home/HowWeWorkSection';
+import BeforeAfterSection from '@/components/home/BeforeAfterSection';
 import { ArrowRight, ScanSearch, Zap, Layers, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
 
 const services = [
@@ -146,9 +148,13 @@ const Services = () => (
       </StaggerChildren>
     </section>
 
+    <HowWeWorkSection />
+
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
 
-    {/* Data Clarity */}
+    <BeforeAfterSection />
+
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
