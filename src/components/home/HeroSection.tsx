@@ -19,7 +19,7 @@ const HeroSection = () => (
       transition={{ duration: 0.6, ease, delay: 0.3 }}
       className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[600px] mb-7"
     >
-      Custom platforms, automation, and reporting solutions that replace spreadsheets, manual workflows, and disconnected systems.
+      Strategy, platforms, automation, and analytics — designed around how your business actually operates.
     </motion.p>
 
     <motion.div
