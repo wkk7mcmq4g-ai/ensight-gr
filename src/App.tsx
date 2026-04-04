@@ -33,6 +33,7 @@ const App = () => (
             <Route path="/data-clarity" element={<DataClarity />} />
             <Route path="/data-clarity-assessment" element={<DataClarityAssessment />} />
             <Route path="/operational-transformation" element={<OperationalTransformation />} />
+            <Route path="/services" element={<Services />} />
 
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

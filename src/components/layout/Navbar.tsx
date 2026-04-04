@@ -10,8 +10,9 @@ const navLinks = [
 ];
 
 const serviceOptions = [
+  { label: 'All Services', desc: 'See everything we offer', href: '/services' },
   { label: 'Operational Transformation', desc: 'Process-first change for mid-market teams', href: '/operational-transformation' },
-  { label: 'Data Clarity', desc: 'Assess your data readiness', href: '/data-clarity' },
+  { label: 'Data Clarity', desc: 'Management analytics & data readiness', href: '/data-clarity' },
 ];
 
 const assessmentOptions = [
