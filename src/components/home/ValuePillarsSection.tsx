@@ -8,7 +8,7 @@ const pillars = [
     title: 'Digital Transformation',
     desc: 'Redesign processes and systems for efficiency and scale.',
     color: 'bg-primary',
-    iconColor: 'text-primary',
+    hsl: 'hsl(var(--primary))',
     link: '/operational-transformation',
   },
   {
@@ -16,7 +16,7 @@ const pillars = [
     title: 'Data & Analytics',
     desc: 'Turn fragmented data into clear, actionable insight.',
     color: 'bg-ordinal-cyan',
-    iconColor: 'text-ordinal-cyan',
+    hsl: 'hsl(var(--ordinal-cyan))',
     link: '/data-clarity',
   },
   {
@@ -24,7 +24,7 @@ const pillars = [
     title: 'Custom Platforms',
     desc: 'Purpose-built applications that replace spreadsheets and manual workflows.',
     color: 'bg-ordinal-pink',
-    iconColor: 'text-electric-bright',
+    hsl: 'hsl(var(--electric-bright))',
     link: '/case-studies',
   },
   {
@@ -32,7 +32,7 @@ const pillars = [
     title: 'Automation & Integration',
     desc: 'Connect systems, eliminate repetitive tasks, scale without headcount.',
     color: 'bg-ordinal-green',
-    iconColor: 'text-ordinal-green',
+    hsl: 'hsl(var(--ordinal-green))',
     link: '/operational-transformation',
   },
 ];
@@ -58,8 +58,11 @@ const ValuePillarsSection = () => (
             className="block bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 ease-out group h-full no-underline"
           >
             <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color} transition-all duration-300 group-hover:h-[3px]`} />
-            <div className="mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5">
-              <p.icon size={24} strokeWidth={1.5} className={`${p.iconColor} transition-all duration-300 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]`} />
+            <div
+              className="mb-4 w-10 h-10 rounded-md flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5"
+              style={{ backgroundColor: `${p.hsl}15`, color: p.hsl }}
+            >
+              <p.icon size={20} strokeWidth={1.5} />
             </div>
             <h3 className="text-base font-semibold mb-1.5 text-foreground">{p.title}</h3>
             <p className="text-sm text-ordinal-body leading-relaxed mb-3">{p.desc}</p>
