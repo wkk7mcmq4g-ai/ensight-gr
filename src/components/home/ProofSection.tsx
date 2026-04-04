@@ -6,7 +6,7 @@ const proofs = [
     metric: '~60%',
     desc: 'reduction in manual processing',
     detail: 'Fragmented systems replaced with a single servicing platform. Daily reconciliation tasks eliminated. Real-time portfolio visibility enabled.',
-    bg: 'bg-gradient-to-br from-[#6A30BF] to-[#3D1A78]',
+    bg: 'bg-gradient-to-br from-primary to-primary/80',
   },
   {
     sector: 'Non-Profit',
