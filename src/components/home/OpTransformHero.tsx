@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const OpTransformHero = () => (
   <section className="px-6 md:px-12 pt-24 pb-10 md:pt-32 md:pb-16 flex flex-col justify-center max-w-[1200px] mx-auto relative overflow-hidden">
+    <DecorativeShapes variant="dots" />
     <motion.h1
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}

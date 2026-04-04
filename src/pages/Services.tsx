@@ -111,7 +111,8 @@ const engagements = [
 const Services = () => (
   <>
     {/* Hero */}
-    <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14">
+    <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14 relative overflow-hidden">
+      <DecorativeShapes variant="grid" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
