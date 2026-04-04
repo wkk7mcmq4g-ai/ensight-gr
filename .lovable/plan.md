@@ -1,19 +1,20 @@
 
 
-# Add "From Complexity to Clarity" Before/After Section
+# Add "Free Operational Audit" Section
 
-## New file: `src/components/home/BeforeAfterSection.tsx`
+## New file: `src/components/home/FreeAuditSection.tsx`
 
-- Mono-label: `// Transformation`
-- Headline: "From complexity to clarity"
-- Two-column grid (`grid-cols-1 md:grid-cols-2 gap-6`)
-- **Left card ("Before")**: `bg-muted/40` subtle darker feel, border, rounded-xl. Title in bold with `XCircle` icon (lucide, `text-destructive`). Bullet points with `XCircle` icons at 16px.
-- **Right card ("After")**: `bg-primary/5` lighter/accent feel, `border-primary/20`, rounded-xl. Title in bold with `CheckCircle2` icon (`text-ordinal-green`). Bullet points with `CheckCircle2` icons at 16px.
-- Bottom tagline centered below the grid: "We transform fragmented operations into streamlined, scalable systems." in `text-ordinal-body`
-- Use `AnimatedSection` + `StaggerChildren`/`StaggerItem` for entrance animations
+- Mono-label: `// Free Audit`
+- Headline: "Free Operational Audit"
+- Subtitle: "Identify inefficiencies and opportunities in your business"
+- Intro paragraph followed by a styled checklist of 4 deliverables using `CheckCircle2` icons in `text-ordinal-green`
+- Primary CTA button: "Request Free Audit" — prominent, styled like the CTA section's primary button (`bg-primary text-primary-foreground`, large padding, rounded-xl, shadow)
+- **Standout design**: Use a subtle highlighted background (`bg-muted/30`) on the full section to differentiate it from surrounding sections
+- Content centered, max-width constrained for readability
+- Use `AnimatedSection` for entrance animations
 - Consistent section styling: `max-w-[1200px] mx-auto px-6 md:px-12 py-24`
 
 ## Edit: `src/pages/Home.tsx`
 
-Insert `<BeforeAfterSection />` after `<HowWeWorkSection />` (line 33), before `<BeforeYouAutomate />`, with a divider between them. This logically flows: how we work → what the transformation looks like → our guarantee.
+Insert `<FreeAuditSection />` after `<EngageSection />` divider (line 41), before the final `<CTASection />`. This places the audit offer as a high-value lead magnet just before the closing CTA.
 
