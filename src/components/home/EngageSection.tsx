@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 
 const engagements = [
@@ -43,7 +45,7 @@ const EngageSection = () => (
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {engagements.map((e, i) => (
         <StaggerItem key={i}>
-          <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full">
+          <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
             <div className={`absolute top-0 left-0 w-full h-[3px] ${e.barColor}`} />
             {e.showTag && (
               <div className="inline-block font-mono-label text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-white px-2.5 py-1 rounded-md mb-4">
@@ -52,7 +54,10 @@ const EngageSection = () => (
             )}
             <h3 className="text-xl font-extrabold mb-2">{e.title}</h3>
             <div className="font-mono-label text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
-            <p className="text-sm text-ordinal-body leading-relaxed">{e.desc}</p>
+            <p className="text-sm text-ordinal-body leading-relaxed mb-4">{e.desc}</p>
+              <Link to="/services" className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary/80 transition-colors no-underline mt-auto">
+                Learn more <ArrowRight size={12} />
+              </Link>
           </div>
         </StaggerItem>
       ))}
