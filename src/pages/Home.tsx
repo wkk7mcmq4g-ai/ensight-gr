@@ -2,6 +2,7 @@ import HeroSection from '@/components/home/HeroSection';
 import PainPointsSection from '@/components/home/PainPointsSection';
 import StatStrip from '@/components/home/StatStrip';
 import ProblemsSection from '@/components/home/ProblemsSection';
+import HowWeHelpSection from '@/components/home/HowWeHelpSection';
 import ProofSection from '@/components/home/ProofSection';
 import FrameworkSection from '@/components/home/FrameworkSection';
 import BeforeYouAutomate from '@/components/home/BeforeYouAutomate';
@@ -16,6 +17,8 @@ const Home = () => (
     <StatStrip />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <ProblemsSection />
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <HowWeHelpSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <ProofSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
