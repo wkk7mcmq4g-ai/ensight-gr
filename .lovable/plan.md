@@ -1,19 +1,17 @@
 
 
-# Add "Selected Work" Section
+# Add "About" Section to Homepage
 
-## New file: `src/components/home/SelectedWorkSection.tsx`
+## New file: `src/components/home/AboutSection.tsx`
 
-Create a section with:
-- Mono-label: `// Selected Work`
-- Headline: "Selected Work"
-- 3-column responsive grid (`grid-cols-1 md:grid-cols-3 gap-4`)
-- Cards using existing style (bg-card, border, rounded-lg, p-7/p-8, shadow-sm, hover lift)
-- Each card: title in bold, then a `ul` with 3 bullet points using a small check or dot icon (e.g. `CheckCircle2` from lucide at 16px, `text-ordinal-green`)
-- Content exactly as specified for the three case studies
-- Use `AnimatedSection` + `StaggerChildren`/`StaggerItem` for entrance animations
+- Mono-label: `// About`
+- Headline: "Built by experience, not theory"
+- Three paragraphs as provided, wrapped in a narrower container (`max-w-[680px]`) for readability
+- Use `bg-muted/30` or subtle background to differentiate
+- Use `AnimatedSection` for entrance animation
+- Professional, clean typography: `text-[15px] text-ordinal-body leading-relaxed`
 
 ## Edit: `src/pages/Home.tsx`
 
-Insert `<SelectedWorkSection />` after `<HowWeHelpSection />` (line 21), with a divider between them. The existing divider on line 22 moves after SelectedWork, before ProofSection.
+Insert `<AboutSection />` after `<SelectedWorkSection />` (line 24), with a divider before `<ProofSection />`.
 
