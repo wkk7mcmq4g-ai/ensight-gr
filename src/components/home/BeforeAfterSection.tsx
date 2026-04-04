@@ -39,7 +39,7 @@ const BeforeAfterSection = () => (
           <div className="bg-muted/40 border border-border rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-border/80">
             <div className="flex items-center gap-2 mb-6">
               <XCircle className="text-destructive" size={22} />
-              <h3 className="text-xl font-extrabold">Before</h3>
+              <h3 className="text-xl font-semibold">Before</h3>
             </div>
             <ul className="space-y-4">
               {beforeItems.map((item) => (
