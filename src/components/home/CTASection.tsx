@@ -34,7 +34,7 @@ const CTASection = () => {
           transition={{ duration: 0.5, ease, delay: 0.1 }}
           className="text-[17px] text-primary-foreground/80 leading-relaxed max-w-[480px] mx-auto mb-10 text-center"
         >
-          Tell us about the bottleneck you'd like to solve. We'll get back to you within one business day.
+          Tell us about the challenge you're working on. We'll get back to you within one business day.
         </motion.p>
         <motion.form
           initial={{ opacity: 0, y: 20 }}
