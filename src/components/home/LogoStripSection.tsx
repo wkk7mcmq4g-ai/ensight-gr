@@ -1,9 +1,12 @@
-import logo1 from '@/assets/logo-placeholder-1.png';
-import logo2 from '@/assets/logo-placeholder-2.png';
-import logo4 from '@/assets/logo-placeholder-4.png';
-import logo5 from '@/assets/logo-placeholder-5.png';
+import logoHms from '@/assets/logo-hms.jpg';
+import logoQsix from '@/assets/logo-qsix.ico';
+import logoLoux from '@/assets/logo-loux.png';
 
-const logos = [logo1, logo2, logo4, logo5];
+const logos = [
+  { src: logoHms, alt: 'HMS' },
+  { src: logoQsix, alt: 'QSIX' },
+  { src: logoLoux, alt: 'Loux' },
+];
 
 const LogoStripSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-12">
@@ -14,8 +17,8 @@ const LogoStripSection = () => (
       {logos.map((logo, i) => (
         <img
           key={i}
-          src={logo}
-          alt={`Client ${i + 1}`}
+          src={logo.src}
+          alt={logo.alt}
           className="h-8 md:h-10 w-auto object-contain"
           loading="lazy"
           width={80}
