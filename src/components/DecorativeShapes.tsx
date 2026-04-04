@@ -30,7 +30,7 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   if (variant === 'minimal') {
     return (
       <div ref={ref} className={wrapperClass} aria-hidden>
-        <motion.svg viewBox="0 0 400 400" className="absolute top-0 right-0 w-[320px] h-[320px] opacity-[0.12]" style={{ y, rotate }}>
+        <motion.svg viewBox="0 0 400 400" className="absolute top-0 right-0 w-[320px] h-[320px] opacity-[0.22]" style={{ y, rotate }}>
           <motion.circle cx={200} cy={200} r={120} fill="none" stroke="hsl(var(--primary))" strokeWidth={1} initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.5, ease }} />
           <motion.circle cx={200} cy={200} r={60} fill="none" stroke="hsl(var(--primary))" strokeWidth={1} initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.8, ease }} />
           <motion.rect x={160} y={160} width={80} height={80} rx={4} fill="none" stroke="hsl(var(--primary))" strokeWidth={1} initial={{ opacity: 0, rotate: -15 }} animate={{ opacity: 1, rotate: 0 }} transition={{ duration: 1, delay: 1.1, ease }} />
