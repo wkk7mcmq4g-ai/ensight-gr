@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import BackToTop from './BackToTop';
 import PageTransition from './PageTransition';
+import ScrollToTop from './ScrollToTop';
 
 const Layout = () => {
   const location = useLocation();
