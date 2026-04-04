@@ -35,7 +35,7 @@ const SelectedWorkSection = () => (
         Selected Work
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-12">
-        Selected Work
+        Engagements that delivered
       </h2>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">

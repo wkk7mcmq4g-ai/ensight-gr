@@ -166,15 +166,15 @@ const Navbar = () => {
             className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 md:hidden"
           >
             <div className="space-y-1">
-              <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-1">Services</div>
+              <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Services</div>
               {serviceOptions.map((opt) => (
                 <Link
                   key={opt.href}
                   to={opt.href}
                   onClick={() => handleAnchorClick(opt.href)}
-                  className="block px-4 py-3 bg-card border border-border rounded-xl no-underline"
-                >
-                  <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                   className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
+                 >
+                   <div className="text-sm font-bold text-foreground">{opt.label}</div>
                   <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
                 </Link>
               ))}
@@ -190,20 +190,20 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="mt-2 space-y-2">
-              <div className="font-mono-label text-[9px] tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
+              <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
               {assessmentOptions.map((opt) => (
                 <Link
                   key={opt.href}
                   to={opt.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 bg-card border border-border rounded-xl no-underline"
-                >
-                  <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                  <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+                   className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
+                 >
+                   <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                   <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                 </Link>
+               ))}
+             </div>
+           </motion.div>
         )}
       </AnimatePresence>
     </>

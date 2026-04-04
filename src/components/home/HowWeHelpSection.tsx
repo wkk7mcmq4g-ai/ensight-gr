@@ -15,7 +15,7 @@ const HowWeHelpSection = () => (
         How We Help
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-12">
-        How we help
+        Technology that fits your operations
       </h2>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
