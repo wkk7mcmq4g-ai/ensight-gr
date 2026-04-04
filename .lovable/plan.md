@@ -1,18 +1,19 @@
 
 
-# Add "How We Help" Section
+# Add "Selected Work" Section
 
-## New file: `src/components/home/HowWeHelpSection.tsx`
+## New file: `src/components/home/SelectedWorkSection.tsx`
 
 Create a section with:
-- Mono-label tag: `// How We Help`
-- Headline: "How we help"
-- 4-column responsive grid (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`)
-- Cards matching existing card style (bg-card, border, rounded-lg, shadow-sm, hover lift) with a subtle top accent bar in muted tones
-- Icons from lucide-react: `Monitor` (Custom Applications), `Users` (CRM & Workflows), `BarChart3` (Data & Reporting), `Zap` (Automation & Integration)
-- Use `AnimatedSection` + `StaggerChildren`/`StaggerItem` for entrance animations, consistent with ProblemsSection and FrameworkSection
+- Mono-label: `// Selected Work`
+- Headline: "Selected Work"
+- 3-column responsive grid (`grid-cols-1 md:grid-cols-3 gap-4`)
+- Cards using existing style (bg-card, border, rounded-lg, p-7/p-8, shadow-sm, hover lift)
+- Each card: title in bold, then a `ul` with 3 bullet points using a small check or dot icon (e.g. `CheckCircle2` from lucide at 16px, `text-ordinal-green`)
+- Content exactly as specified for the three case studies
+- Use `AnimatedSection` + `StaggerChildren`/`StaggerItem` for entrance animations
 
 ## Edit: `src/pages/Home.tsx`
 
-Insert `<HowWeHelpSection />` after `<ProblemsSection />` (after line 18's divider), with a divider above it.
+Insert `<SelectedWorkSection />` after `<HowWeHelpSection />` (line 21), with a divider between them. The existing divider on line 22 moves after SelectedWork, before ProofSection.
 
