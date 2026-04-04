@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const QuoteSection = () => (
-  <div className="bg-gradient-to-br from-[#3D1A78] via-primary to-[#A26AE9] py-20 px-6 md:px-12 text-center overflow-hidden">
+  <div className="bg-primary py-20 px-6 md:px-12 text-center overflow-hidden">
     <motion.blockquote
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
