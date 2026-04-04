@@ -5,25 +5,25 @@ const caseStudies = [
   {
     title: 'Loan Servicing Platform',
     points: [
-      'Built a custom end-to-end loan servicing system',
-      'Automated reporting and reconciliation processes',
-      'Reduced manual workload and improved operational efficiency',
+      'Replaced fragmented systems with a single servicing platform',
+      'Reduced manual processing effort by approximately 60%',
+      'Enabled real-time portfolio visibility and reporting',
     ],
   },
   {
     title: 'Charity CRM System',
     points: [
-      'Designed a multi-programme CRM platform',
-      'Implemented compliance tracking (DBS, training, references)',
-      'Enabled organisation-wide reporting and visibility',
+      'Unified programme management across the organisation',
+      'Structured compliance tracking and oversight',
+      'Enabled organisation-wide reporting',
     ],
   },
   {
     title: 'Financial Reporting Automation',
     points: [
-      'Replaced manual reporting processes with automated pipelines',
-      'Delivered real-time dashboards and insights',
-      'Improved speed and accuracy of decision-making',
+      'Reduced reporting time from days to minutes',
+      'Improved data accuracy and consistency',
+      'Enabled real-time insights for decision-making',
     ],
   },
 ];

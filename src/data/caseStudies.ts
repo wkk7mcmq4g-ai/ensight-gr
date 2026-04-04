@@ -11,45 +11,62 @@ export interface CaseStudy {
   quoteAuthor?: string;
 }
 
-// TODO: Add real case study data
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'tourism',
-    sector: 'Tourism & Hospitality',
-    title: 'Case Study Coming Soon',
-    subtitle: 'Details to be added.',
-    challenge: 'Details coming soon.',
-    approach: ['Details coming soon.'],
-    metrics: [
-      { label: 'Metric 1', before: '—', after: 'TBD' },
-      { label: 'Metric 2', before: '—', after: 'TBD' },
-    ],
-    timeline: 'TBD',
-  },
-  {
-    id: 'financial-services',
+    id: 'loan-servicing',
     sector: 'Financial Services',
-    title: 'Case Study Coming Soon',
-    subtitle: 'Details to be added.',
-    challenge: 'Details coming soon.',
-    approach: ['Details coming soon.'],
-    metrics: [
-      { label: 'Metric 1', before: '—', after: 'TBD' },
-      { label: 'Metric 2', before: '—', after: 'TBD' },
+    title: 'Loan Servicing Platform',
+    subtitle: 'Custom end-to-end servicing system replacing fragmented processes.',
+    challenge:
+      'A growing loan portfolio was managed through fragmented systems and manual processes, limiting visibility and operational efficiency.',
+    approach: [
+      'Mapped existing workflows and identified manual bottlenecks',
+      'Designed and implemented a custom servicing platform',
+      'Integrated data, workflows, and reporting into a single system',
     ],
-    timeline: 'TBD',
+    metrics: [
+      { label: 'Manual Processing', before: 'Extensive', after: '~60% reduction' },
+      { label: 'Reconciliation', before: 'Daily manual tasks', after: 'Eliminated' },
+      { label: 'Portfolio Visibility', before: 'Fragmented', after: 'Real-time' },
+    ],
+    timeline: '12 weeks',
   },
   {
-    id: 'manufacturing',
-    sector: 'Manufacturing',
-    title: 'Case Study Coming Soon',
-    subtitle: 'Details to be added.',
-    challenge: 'Details coming soon.',
-    approach: ['Details coming soon.'],
-    metrics: [
-      { label: 'Metric 1', before: '—', after: 'TBD' },
-      { label: 'Metric 2', before: '—', after: 'TBD' },
+    id: 'charity-crm',
+    sector: 'Non-Profit',
+    title: 'Charity CRM System',
+    subtitle: 'Unified platform for programme management, compliance, and reporting.',
+    challenge:
+      'Multiple programmes were managed independently, with limited visibility and inconsistent compliance tracking.',
+    approach: [
+      'Assessed programme workflows and compliance requirements',
+      'Designed a unified CRM platform across all programmes',
+      'Implemented compliance tracking and organisation-wide reporting',
     ],
-    timeline: 'TBD',
+    metrics: [
+      { label: 'Programme Management', before: 'Siloed', after: 'Centralised' },
+      { label: 'Compliance Tracking', before: 'Inconsistent', after: 'Structured oversight' },
+      { label: 'Reporting', before: 'Per-programme', after: 'Organisation-wide' },
+    ],
+    timeline: '10 weeks',
+  },
+  {
+    id: 'financial-reporting',
+    sector: 'Financial Services',
+    title: 'Financial Reporting Automation',
+    subtitle: 'Automated pipelines and dashboards replacing manual data extraction.',
+    challenge:
+      'Reporting relied on manual data extraction and reconciliation across multiple sources.',
+    approach: [
+      'Audited existing reporting processes and data sources',
+      'Implemented automated data pipelines',
+      'Built real-time reporting dashboards',
+    ],
+    metrics: [
+      { label: 'Reporting Time', before: 'Days', after: 'Minutes' },
+      { label: 'Data Accuracy', before: 'Error-prone', after: 'Consistent' },
+      { label: 'Insights', before: 'Periodic', after: 'Real-time' },
+    ],
+    timeline: '8 weeks',
   },
 ];

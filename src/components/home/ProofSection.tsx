@@ -2,24 +2,24 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection
 
 const proofs = [
   {
-    sector: 'Tourism Operations',
-    metric: '92%',
-    desc: 'reduction in scheduling time',
-    detail: 'From 3 hours to 15 minutes daily. Double-bookings eliminated. Single-person dependency removed. Ops manager redirected to client relationships.',
+    sector: 'Financial Services',
+    metric: '~60%',
+    desc: 'reduction in manual processing',
+    detail: 'Fragmented systems replaced with a single servicing platform. Daily reconciliation tasks eliminated. Real-time portfolio visibility enabled.',
     bg: 'bg-gradient-to-br from-[#6A30BF] to-[#3D1A78]',
   },
   {
-    sector: 'Financial Services',
-    metric: '60%',
-    desc: 'faster client onboarding',
-    detail: 'Department designed from scratch with clean processes. Zero inherited process debt from day one. Operational architecture before hiring.',
+    sector: 'Non-Profit',
+    metric: '100%',
+    desc: 'programme visibility',
+    detail: 'Siloed programmes unified under a single CRM. Compliance tracking structured across the organisation. Reporting centralised.',
     bg: 'bg-gradient-to-br from-electric-bright to-[#6A30BF]',
   },
   {
-    sector: 'Manufacturing / Export',
-    metric: '100%',
-    desc: 'value chain visibility',
-    detail: 'Full operational design from quarry to Chinese retail. 36-month phased entry strategy. Repeatable partner onboarding process.',
+    sector: 'Financial Reporting',
+    metric: 'Days → Min',
+    desc: 'reporting turnaround',
+    detail: 'Manual data extraction and reconciliation replaced with automated pipelines. Real-time dashboards delivering consistent, accurate insights.',
     bg: 'bg-gradient-to-br from-ordinal-green to-[#059669]',
   },
 ];
@@ -31,10 +31,10 @@ const ProofSection = () => (
         // Proof Points
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-4">
-        Real Results. Not Hypothetical.
+        Real Results. Measured.
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
-        Three sectors. Three transformations. Every metric measured from a quantified baseline.
+        Three engagements. Three sectors. Every outcome grounded in operational reality.
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
