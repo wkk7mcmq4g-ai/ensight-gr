@@ -8,6 +8,7 @@ import AboutSection from '@/components/home/AboutSection';
 import ProofSection from '@/components/home/ProofSection';
 import FrameworkSection from '@/components/home/FrameworkSection';
 import HowWeWorkSection from '@/components/home/HowWeWorkSection';
+import BeforeAfterSection from '@/components/home/BeforeAfterSection';
 import BeforeYouAutomate from '@/components/home/BeforeYouAutomate';
 import QuoteSection from '@/components/home/QuoteSection';
 import EngageSection from '@/components/home/EngageSection';
@@ -31,6 +32,8 @@ const Home = () => (
     <FrameworkSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeWorkSection />
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <BeforeAfterSection />
     <BeforeYouAutomate />
     <QuoteSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
