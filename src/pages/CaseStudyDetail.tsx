@@ -106,21 +106,6 @@ const CaseStudyDetail = () => {
         </StaggerChildren>
       </AnimatedSection>
 
-      {/* Quote — left border accent */}
-      {cs.quote && (
-        <AnimatedSection className="mb-10">
-          <div className="border-l-2 border-primary bg-card rounded-lg p-8">
-            <blockquote className="text-lg font-semibold leading-relaxed mb-3 italic">
-              "{cs.quote}"
-            </blockquote>
-            {cs.quoteAuthor && (
-              <div className="text-[11px] text-ordinal-dim tracking-[1px]">
-                — {cs.quoteAuthor}
-              </div>
-            )}
-          </div>
-        </AnimatedSection>
-      )}
 
       {/* Prev / Next navigation */}
       <div className="grid grid-cols-2 gap-4 mb-10">

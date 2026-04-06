@@ -9,8 +9,6 @@ export interface CaseStudy {
   tools: string[];
   metrics: { label: string; before: string; after: string }[];
   timeline: string;
-  quote?: string;
-  quoteAuthor?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -34,8 +32,6 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Portfolio Visibility', before: 'Fragmented', after: 'Real-time' },
     ],
     timeline: '12 weeks',
-    quote: 'The platform transformed how we manage our portfolio — what used to take days now happens in real time.',
-    quoteAuthor: 'Head of Operations, Financial Services Firm',
   },
   {
     id: 'charity-crm',
@@ -57,8 +53,6 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Reporting', before: 'Per-programme', after: 'Organisation-wide' },
     ],
     timeline: '10 weeks',
-    quote: 'For the first time, we have a complete picture of our programmes and compliance status in one place.',
-    quoteAuthor: 'Programme Director, National Charity',
   },
   {
     id: 'financial-reporting',
@@ -80,7 +74,5 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Insights', before: 'Periodic', after: 'Real-time' },
     ],
     timeline: '8 weeks',
-    quote: 'We went from spending days pulling reports to having everything available at the click of a button.',
-    quoteAuthor: 'Finance Director, Financial Services Firm',
   },
 ];
