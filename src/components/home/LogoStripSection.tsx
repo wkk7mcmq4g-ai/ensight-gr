@@ -23,7 +23,7 @@ const LogoStripSection = () => (
           key={i}
           src={logo.src}
           alt={logo.alt}
-          className={`${logo.className} w-auto max-w-[160px] md:max-w-[180px] object-contain opacity-50 hover:opacity-90 transition-opacity duration-300`}
+          className={`${logo.className} w-auto max-w-[160px] md:max-w-[180px] object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-90 transition-all duration-300`}
           loading="lazy"
         />
       ))}
