@@ -74,7 +74,5 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Insights', before: 'Periodic', after: 'Real-time' },
     ],
     timeline: '8 weeks',
-    quote: 'We went from spending days pulling reports to having everything available at the click of a button.',
-    quoteAuthor: 'Finance Director, Financial Services Firm',
   },
 ];
