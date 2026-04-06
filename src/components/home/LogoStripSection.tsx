@@ -5,11 +5,11 @@ import logoMat from '@/assets/logo-myathenstransfers.png';
 import logoVm from '@/assets/logo-volunteering-matters.png';
 
 const logos = [
-  { src: logoHms, alt: 'HMS' },
-  { src: logoQsix, alt: 'QSIX' },
-  { src: logoLoux, alt: 'Loux' },
-  { src: logoMat, alt: 'myAthensTransfers' },
-  { src: logoVm, alt: 'Volunteering Matters' },
+  { src: logoHms, alt: 'HMS', className: 'h-6 md:h-7' },
+  { src: logoQsix, alt: 'QSIX', className: 'h-7 md:h-8' },
+  { src: logoLoux, alt: 'Loux', className: 'h-9 md:h-10' },
+  { src: logoMat, alt: 'myAthensTransfers', className: 'h-8 md:h-9' },
+  { src: logoVm, alt: 'Volunteering Matters', className: 'h-6 md:h-7' },
 ];
 
 const LogoStripSection = () => (
@@ -23,10 +23,8 @@ const LogoStripSection = () => (
           key={i}
           src={logo.src}
           alt={logo.alt}
-          className="h-12 md:h-14 w-[150px] md:w-[180px] object-contain opacity-50 hover:opacity-90 transition-opacity duration-300"
+          className={`${logo.className} w-auto max-w-[160px] md:max-w-[180px] object-contain opacity-50 hover:opacity-90 transition-opacity duration-300`}
           loading="lazy"
-          width={180}
-          height={56}
         />
       ))}
     </div>
