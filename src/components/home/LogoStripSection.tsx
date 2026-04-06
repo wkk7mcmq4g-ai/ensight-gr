@@ -5,11 +5,11 @@ import logoMat from '@/assets/logo-myathenstransfers.png';
 import logoVm from '@/assets/logo-volunteering-matters.png';
 
 const logos = [
-  { src: logoHms, alt: 'HMS', className: 'h-7 md:h-8' },
-  { src: logoQsix, alt: 'QSIX', className: 'h-8 md:h-9' },
+  { src: logoHms, alt: 'HMS', className: 'h-6 md:h-7' },
+  { src: logoQsix, alt: 'QSIX', className: 'h-7 md:h-8' },
   { src: logoLoux, alt: 'Loux', className: 'h-9 md:h-10' },
-  { src: logoMat, alt: 'myAthensTransfers', className: 'h-7 md:h-8' },
-  { src: logoVm, alt: 'Volunteering Matters', className: 'h-7 md:h-8' },
+  { src: logoMat, alt: 'myAthensTransfers', className: 'h-8 md:h-9' },
+  { src: logoVm, alt: 'Volunteering Matters', className: 'h-6 md:h-7' },
 ];
 
 const LogoStripSection = () => (
