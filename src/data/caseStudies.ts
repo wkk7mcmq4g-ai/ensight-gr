@@ -32,8 +32,6 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Portfolio Visibility', before: 'Fragmented', after: 'Real-time' },
     ],
     timeline: '12 weeks',
-    quote: 'The platform transformed how we manage our portfolio — what used to take days now happens in real time.',
-    quoteAuthor: 'Head of Operations, Financial Services Firm',
   },
   {
     id: 'charity-crm',
