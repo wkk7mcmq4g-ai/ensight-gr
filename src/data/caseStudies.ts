@@ -9,8 +9,6 @@ export interface CaseStudy {
   tools: string[];
   metrics: { label: string; before: string; after: string }[];
   timeline: string;
-  quote?: string;
-  quoteAuthor?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
