@@ -53,8 +53,6 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Reporting', before: 'Per-programme', after: 'Organisation-wide' },
     ],
     timeline: '10 weeks',
-    quote: 'For the first time, we have a complete picture of our programmes and compliance status in one place.',
-    quoteAuthor: 'Programme Director, National Charity',
   },
   {
     id: 'financial-reporting',
