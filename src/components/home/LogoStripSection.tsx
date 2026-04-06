@@ -15,7 +15,7 @@ const logos = [
 const LogoStripSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-12">
     <p className="text-[11px] font-medium tracking-[2px] uppercase text-ordinal-dim text-center mb-8">
-      Trusted by teams across financial services, non-profits, consumer goods, and professional services
+      Trusted by teams across consumer goods, financial services, non-profits, and professional services
     </p>
     <div className="flex items-center justify-center gap-10 md:gap-14 flex-wrap">
       {logos.map((logo, i) => (
