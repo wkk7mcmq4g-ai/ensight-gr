@@ -256,7 +256,7 @@ const DataClarity = () => (
     </section>
 
     {/* ═══ ASSESSMENT SCORING ═══ */}
-    <section className="bg-[hsl(270,40%,6%)] py-24" id="assessment">
+    <section className="bg-[hsl(220,20%,8%)] py-24" id="assessment">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
           <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#06B6D4] mb-3">
