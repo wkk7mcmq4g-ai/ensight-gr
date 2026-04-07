@@ -19,7 +19,7 @@ const CaseStudies = () => {
 
   return (
     <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
-      <SEO title="Case Studies · Ensight" description="Real results, measured in weeks. See how we've helped organisations uncover hidden capacity and eliminate process debt." path="/case-studies" />
+      <SEO title="Case Studies · Ensight" description="Real results, measured in weeks. See how we've helped organisations uncover hidden capacity and eliminate process debt." path="/case-studies" ogImage="/og/case-studies.jpg" />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

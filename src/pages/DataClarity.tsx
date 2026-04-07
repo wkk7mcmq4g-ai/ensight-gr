@@ -96,7 +96,7 @@ const sectors: { icon: LucideIcon; title: string; desc: string; hsl: string }[] 
 
 const DataClarity = () => (
   <div>
-    <SEO title="Data Clarity · Ensight" description="Management analytics that drive decisions. Turn scattered data into a real-time picture of your business." path="/data-clarity" />
+    <SEO title="Data Clarity · Ensight" description="Management analytics that drive decisions. Turn scattered data into a real-time picture of your business." path="/data-clarity" ogImage="/og/data-clarity.jpg" />
     {/* ═══ HERO ═══ */}
     <section className="relative bg-[hsl(270,40%,6%)] overflow-hidden flex items-center px-6 md:px-12 pt-28 pb-14">
       {/* Animated grid */}

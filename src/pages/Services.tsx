@@ -112,7 +112,7 @@ const engagements = [
 
 const Services = () => (
   <>
-    <SEO title="Services · Ensight" description="Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation." path="/services" />
+    <SEO title="Services · Ensight" description="Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation." path="/services" ogImage="/og/services.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify({
         "@context": "https://schema.org",

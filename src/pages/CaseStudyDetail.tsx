@@ -42,6 +42,7 @@ const CaseStudyDetail = () => {
         title={`${cs.title} | Ensight`}
         description={cs.subtitle}
         path={`/case-studies/${cs.id}`}
+        ogImage="/og/case-studies.jpg"
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
