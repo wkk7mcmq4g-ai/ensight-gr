@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 interface Props {
-  variant?: 'dots' | 'circles' | 'grid' | 'minimal';
+  variant?: 'dots' | 'circles' | 'grid' | 'minimal' | 'starburst';
   className?: string;
 }
 
@@ -19,6 +19,55 @@ const DecorativeShapes = ({ variant = 'dots', className = '' }: Props) => {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 8]);
 
   const wrapperClass = `absolute inset-0 pointer-events-none overflow-hidden ${className}`;
+
+  if (variant === 'starburst') {
+    const rays = 24;
+    const cx = 200, cy = 200, innerR = 30, outerR = 190;
+    return (
+      <div ref={ref} className={wrapperClass} aria-hidden>
+        <motion.svg viewBox="0 0 400 400" className="absolute -top-10 -right-10 w-[420px] h-[420px] opacity-[0.12]" style={{ y, rotate }}>
+          {/* Radial rays */}
+          {Array.from({ length: rays }).map((_, i) => {
+            const angle = (i * 360) / rays;
+            const rad = (angle * Math.PI) / 180;
+            const x1 = cx + Math.cos(rad) * innerR;
+            const y1 = cy + Math.sin(rad) * innerR;
+            const x2 = cx + Math.cos(rad) * outerR;
+            const y2 = cy + Math.sin(rad) * outerR;
+            return (
+              <motion.line key={`ray-${i}`} x1={x1} y1={y1} x2={x2} y2={y2}
+                stroke="hsl(var(--primary))" strokeWidth={i % 3 === 0 ? 1.2 : 0.6}
+                initial={{ opacity: 0, pathLength: 0 }} animate={{ opacity: i % 2 === 0 ? 0.6 : 0.3, pathLength: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 + i * 0.04, ease }} />
+            );
+          })}
+          {/* Concentric rings */}
+          {[60, 110, 160].map((r, i) => (
+            <motion.circle key={`ring-${i}`} cx={cx} cy={cy} r={r} fill="none"
+              stroke="hsl(var(--secondary))" strokeWidth={i === 1 ? 1 : 0.6}
+              initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 0.25 - i * 0.05, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.5 + i * 0.2, ease }} />
+          ))}
+          {/* Center dot */}
+          <motion.circle cx={cx} cy={cy} r={6} fill="hsl(var(--secondary))" fillOpacity={0.4}
+            initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 1.2, ease }} />
+          {/* Accent dots at ray tips (every 6th ray) */}
+          {Array.from({ length: rays }).filter((_, i) => i % 6 === 0).map((_, idx) => {
+            const i = idx * 6;
+            const angle = (i * 360) / rays;
+            const rad = (angle * Math.PI) / 180;
+            return (
+              <motion.circle key={`tip-${idx}`} cx={cx + Math.cos(rad) * outerR} cy={cy + Math.sin(rad) * outerR}
+                r={4} fill="hsl(var(--primary))" fillOpacity={0.35}
+                initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: [0, 1.4, 1] }}
+                transition={{ duration: 0.8, delay: 1.4 + idx * 0.15, ease }} />
+            );
+          })}
+        </motion.svg>
+      </div>
+    );
+  }
 
   if (variant === 'minimal') {
     // Geometric wireframe — nested shapes with crosshair

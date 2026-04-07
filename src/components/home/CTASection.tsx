@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -16,8 +17,9 @@ const CTASection = () => {
   };
 
   return (
-    <section className="bg-primary py-28" id="contact">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+    <section className="bg-primary py-28 relative overflow-hidden" id="contact">
+      <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-primary-foreground [&_circle]:!stroke-primary-foreground [&_circle]:!fill-primary-foreground" />
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

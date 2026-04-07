@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import HeroVisual from './HeroVisual';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const HeroSection = () => (
   <section className="px-6 md:px-12 pt-24 pb-10 md:pt-32 md:pb-16 max-w-[1200px] mx-auto relative overflow-hidden">
+    <DecorativeShapes variant="starburst" />
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div>
         <motion.h1
