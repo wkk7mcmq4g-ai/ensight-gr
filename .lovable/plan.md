@@ -1,28 +1,76 @@
 
+## Remove all remaining entrance animations
 
-# Remove Section Background Alternation
+### What I found
+There are no remaining `whileInView` usages in `src`, and `src/components/home/AnimatedSection.tsx` is already a pass-through wrapper. The remaining visibility/entrance animations are coming from direct `framer-motion` usage elsewhere.
 
-## What changes
-All sections on the homepage get a uniform `#F4EFE9` (linen) background, except the three dark sections (ProofSection, QuoteSection, CTASection) which keep their existing `bg-dark-section` (#0B1E27).
+### Files that still hide or animate content on entry
+- `src/components/layout/PageTransition.tsx` — page-level fade/slide on route change
+- `src/pages/Services.tsx` — hero label, heading, paragraph
+- `src/pages/DataClarity.tsx` — hero label, heading, paragraph, CTA group
+- `src/pages/Assessment.tsx` — intro, step transitions, results wrapper, methodology expand, animated bar fill
+- `src/pages/DataClarityAssessment.tsx` — intro, step transitions, results wrapper, animated bar fill
+- `src/components/layout/Navbar.tsx` — dropdowns and mobile menu animate in/out
+- `src/components/layout/BackToTop.tsx` — button fades/scales in
+- `src/components/DecorativeShapes.tsx` — decorative SVGs still use opacity/path/scale entrance sequences
+- `src/components/home/HeroVisual.tsx` — should be kept, but only the node graph animation
 
-## Files to edit
+### Implementation approach
+1. Remove entrance animation props anywhere content starts hidden or offset:
+   - remove `initial={{ opacity: 0 ... }}`
+   - remove `animate={{ opacity: 1 ... }}`
+   - remove `exit={...}` where it only supports reveal/hide transitions
+   - replace `motion.*` with normal elements when animation is no longer needed
 
-### 1. `src/pages/Home.tsx`
-Remove `bg-white` from the wrapper divs around ValuePillarsSection, BeforeAfterSection, and EngageSection. All wrapper divs keep their `border-b border-[#D6D0C9]` but no background override — the page-level linen background handles it.
+2. Keep only the hero node graph animation:
+   - preserve `src/components/home/HeroVisual.tsx`
+   - but make sure anything that is part of the hero graph is visible immediately if needed, while preserving the ongoing node-graph motion the user explicitly wants
 
-### 2. `src/components/home/AboutSection.tsx`
-Change `bg-background` on the section element to remove it (let the parent linen show through), or leave as-is if `bg-background` already maps to linen.
+3. Remove route and UI entrance effects that still create delayed appearance:
+   - `PageTransition.tsx` should become a plain wrapper
+   - `Navbar.tsx` dropdowns/mobile menu should open instantly
+   - `BackToTop.tsx` should appear/disappear without fade/scale
 
-### 3. `src/index.css` or `tailwind.config.ts`
-Verify `--background` CSS variable equals `#F4EFE9`. If not, set it. This ensures `bg-background` on the page body produces the linen tone everywhere.
+4. Remove decorative intro sequencing:
+   - `DecorativeShapes.tsx` should render static shapes with scroll-parallax only if desired, or fully static if safer
+   - no opacity/pathLength/scale “drawing in” effects
 
-### 4. Individual section components — no background overrides
-- `PainPointsSection.tsx`: remove `bg-muted/50` from the section
-- `FreeAuditSection.tsx`: remove `bg-muted/30` from the section (if used on homepage)
-- Cards (`bg-card`) stay as-is — they're element-level, not section-level
+5. Keep non-entrance behavior:
+   - hover states stay
+   - assessment logic stays
+   - count-up and progress-ring/bar animation can stay only if they do not hide content on first render; otherwise set them to final state immediately for consistency
 
-## Dark sections (unchanged)
-- `ProofSection` — keeps `bg-dark-section`
-- `QuoteSection` — keeps `bg-dark-section`
-- `CTASection` — keeps `bg-dark-section`
+### Recommended file-by-file changes
+- `src/components/layout/PageTransition.tsx`
+  - replace `motion.div` with plain `div`
 
+- `src/pages/Services.tsx`
+  - replace hero `motion.div`, `motion.h1`, `motion.p` with regular elements
+
+- `src/pages/DataClarity.tsx`
+  - replace hero `motion.*` wrappers with regular elements
+
+- `src/pages/Assessment.tsx`
+  - remove step/result entrance transitions
+  - replace `AnimatePresence` with direct conditional rendering if practical
+  - convert progress-bar fill from animated width to immediate width
+  - keep methodology toggle only as instant show/hide, no fade/height animation
+
+- `src/pages/DataClarityAssessment.tsx`
+  - same cleanup as `Assessment.tsx`
+
+- `src/components/layout/Navbar.tsx`
+  - make dropdown panels and mobile menu render instantly with no motion wrappers
+
+- `src/components/layout/BackToTop.tsx`
+  - render plain button when `visible` is true
+
+- `src/components/DecorativeShapes.tsx`
+  - remove all entrance sequencing on SVG children
+  - keep static rendering; optionally keep subtle scroll-linked transform if it doesn’t hide content
+
+- `src/components/home/HeroVisual.tsx`
+  - preserve as the only animated visual system
+
+### Technical note
+The biggest remaining UX offenders are not homepage section wrappers anymore; they are page transitions, assessment step wrappers, and decorative Framer Motion SVGs. Once these are removed, all content will be present immediately with no fade-in, slide-in, or delayed reveal anywhere except the hero node graph.
