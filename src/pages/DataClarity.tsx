@@ -1,10 +1,7 @@
 import SEO from '@/components/SEO';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Clock, FolderSync, BarChart3, Database, Factory, Plane, Landmark, type LucideIcon } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-
-const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const problems: { icon: LucideIcon; title: string; desc: string; color: string; hsl: string }[] = [
   { icon: Clock, title: 'No real-time visibility', desc: 'Performance data lives in reports assembled weekly or monthly. By the time a problem is visible, it has already compounded. Decisions are made on last month\'s numbers at best.', color: 'bg-[#4F46E5]', hsl: '#4F46E5' },
@@ -111,42 +108,22 @@ const DataClarity = () => (
 
       <div className="relative z-10 max-w-[1200px] mx-auto w-full">
         <div className="max-w-[640px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease, delay: 0.1 }}
-            className="inline-flex items-center gap-2 font-mono-label text-[9px] tracking-[3px] uppercase text-[#06B6D4] border border-[#06B6D4]/30 px-4 py-1.5 rounded-full mb-6"
-          >
+          <div className="inline-flex items-center gap-2 font-mono-label text-[9px] tracking-[3px] uppercase text-[#06B6D4] border border-[#06B6D4]/30 px-4 py-1.5 rounded-full mb-6">
             <span className="w-[5px] h-[5px] bg-[#06B6D4] rounded-full animate-pulse" />
             Management Analytics
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease, delay: 0.2 }}
-            className="text-[clamp(40px,5vw,62px)] font-black leading-[1.06] tracking-tight text-white mb-5"
-          >
+          <h1 className="text-[clamp(40px,5vw,62px)] font-black leading-[1.06] tracking-tight text-white mb-5">
             Your data exists.{' '}
             <br />
             The <span className="bg-gradient-to-br from-[#06B6D4] to-[#10B981] bg-clip-text text-transparent">clarity</span> doesn't.
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease, delay: 0.35 }}
-            className="text-[17px] text-[#8888A0] leading-[1.75] max-w-[520px] mb-9"
-          >
+          <p className="text-[17px] text-[#8888A0] leading-[1.75] max-w-[520px] mb-9">
             Most businesses have numbers scattered across systems, spreadsheets, and departments. Data Clarity turns that raw data into a real-time picture of your business — and keeps you alongside it, every month, to act on what it says.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease, delay: 0.5 }}
-            className="flex gap-3 flex-wrap"
-          >
+          <div className="flex gap-3 flex-wrap">
             <Link
               to="/data-clarity-assessment"
               className="bg-[#10B981] text-white text-[15px] font-bold px-8 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(16,185,129,0.25)] hover:bg-[#059669] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(16,185,129,0.3)] transition-all no-underline"
@@ -159,7 +136,7 @@ const DataClarity = () => (
             >
               See how it works
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

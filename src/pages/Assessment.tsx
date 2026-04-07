@@ -1,6 +1,5 @@
 import SEO from '@/components/SEO';
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Share2, Info, X, Mail, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { generatePDF } from '@/utils/generatePDF';
@@ -59,7 +58,7 @@ const TeamSizeStep = ({
   onBack: () => void;
   onNext: () => void;
 }) => (
-  <motion.div initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -60 }} transition={{ duration: 0.3 }}>
+  <div>
     <div className="bg-card border border-border rounded-lg overflow-hidden">
       <div className="p-8">
         <span className="inline-flex items-center gap-1.5 font-mono-label text-[8px] tracking-[2px] uppercase px-2.5 py-1 rounded-full mb-3 bg-primary/10 text-electric-glow">
@@ -107,7 +106,7 @@ const TeamSizeStep = ({
         </div>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 // ─── Email Capture ───
@@ -117,7 +116,7 @@ const EmailCapture = ({ onSubmit, onSkip }: { onSubmit: (name: string, email: st
   const isValid = name.trim().length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
+    <div>
       <div className="bg-card border border-border rounded-lg p-10 text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -141,13 +140,13 @@ const EmailCapture = ({ onSubmit, onSkip }: { onSubmit: (name: string, email: st
           Skip, just show my results
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 // ─── Intro Screen ───
 const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
-  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
+  <div>
     <div className="bg-card border border-border rounded-lg overflow-hidden">
       <div className="p-8">
         <h2 className="text-[22px] font-extrabold tracking-tight mb-3">Process Debt Assessment</h2>
@@ -179,7 +178,7 @@ const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
         </button>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 // ─── Category Question Page ───
@@ -214,13 +213,7 @@ const CategoryPage = ({
   };
 
   return (
-    <motion.div
-      key={cat.id}
-      initial={{ opacity: 0, x: 60 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -60 }}
-      transition={{ duration: 0.3 }}
-    >
+    <div>
       <div className="bg-card border border-border rounded-lg overflow-hidden">
         <div className="p-8">
           <div className="mb-6">
@@ -295,7 +288,7 @@ const CategoryPage = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -352,7 +345,7 @@ const ResultsView = ({
   const maxScore = scoredQuestionCount * 3;
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <div>
       <div className="bg-card border border-border rounded-lg overflow-hidden">
         <div className="p-8">
           {/* Score + Verdict side by side */}
@@ -394,7 +387,7 @@ const ResultsView = ({
               </button>
             </div>
             {showMethodology && (
-              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
+              <div
                 className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2">
                 <p className="font-semibold text-ordinal-faint">How we calculate this:</p>
                 <p>Each of the {scoredQuestionCount} operational questions scores 0 (good) to 3 (critical), giving a max score of {maxScore}.</p>
@@ -402,7 +395,7 @@ const ResultsView = ({
                 <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % × 0.30 (capped at 30% of payroll)</p>
                 <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people × €40,000 avg cost × {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
                 <p className="text-ordinal-dim/70 italic">This is a directional estimate based on cross-industry benchmarks, not a precise audit.</p>
-              </motion.div>
+              </div>
             )}
             <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-ordinal-pink-bright via-ordinal-amber to-ordinal-green-bright bg-clip-text text-transparent mb-3">
               €{animatedCost.toLocaleString('en')}
@@ -424,13 +417,7 @@ const ResultsView = ({
                 <div key={c.id} className="flex items-center gap-3">
                   <span className="text-[13px] text-ordinal-body w-36 flex-shrink-0">{c.name}</span>
                   <div className="flex-1 h-2.5 bg-border rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full rounded-full"
-                      style={{ background: bc }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${bp}%` }}
-                      transition={{ duration: 1, delay: 0.3 + i * 0.1 }}
-                    />
+                    <div className="h-full rounded-full" style={{  background: bc , width: `${bp}%` }} />
                   </div>
                   <span className="font-mono-label text-[12px] font-bold w-12 text-right" style={{ color: bc }}>
                     {s.toFixed(1)}/3
@@ -554,7 +541,7 @@ const ResultsView = ({
           Post
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -628,7 +615,7 @@ const Assessment = () => {
         </div>
       )}
 
-      <AnimatePresence mode="wait">
+      
         {step === -1 && <IntroScreen key="intro" onBegin={() => goTo(0)} />}
 
         {step >= 0 && step < catCount && (
@@ -674,7 +661,7 @@ const Assessment = () => {
             }}
           />
         )}
-      </AnimatePresence>
+      
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
 import ensightLogo from '@/assets/ensight-logo.png';
 
 const navLinks = [
@@ -41,7 +40,6 @@ const Navbar = () => {
     }
   };
 
-  // Close dropdowns on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
@@ -75,29 +73,21 @@ const Navbar = () => {
               Services
               <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
-            <AnimatePresence>
-              {servicesOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -4, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -4, scale: 0.97 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full mt-2 w-[260px] bg-card border border-border rounded-xl shadow-xl overflow-hidden"
-                >
-                  {serviceOptions.map((opt) => (
-                    <Link
-                      key={opt.href}
-                      to={opt.href}
-                      onClick={() => handleAnchorClick(opt.href)}
-                      className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
-                    >
-                      <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                      <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {servicesOpen && (
+              <div className="absolute left-0 top-full mt-2 w-[260px] bg-card border border-border rounded-xl shadow-xl overflow-hidden">
+                {serviceOptions.map((opt) => (
+                  <Link
+                    key={opt.href}
+                    to={opt.href}
+                    onClick={() => handleAnchorClick(opt.href)}
+                    className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
+                  >
+                    <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                    <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
 
           {navLinks.map((link) => (
@@ -119,29 +109,21 @@ const Navbar = () => {
               Free Assessment
               <ChevronDown size={14} className={`transition-transform duration-200 ${assessmentOpen ? 'rotate-180' : ''}`} />
             </button>
-            <AnimatePresence>
-              {assessmentOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -4, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -4, scale: 0.97 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute right-0 top-full mt-2 w-[240px] bg-card border border-border rounded-xl shadow-xl overflow-hidden"
-                >
-                  {assessmentOptions.map((opt) => (
-                    <Link
-                      key={opt.href}
-                      to={opt.href}
-                      onClick={() => setAssessmentOpen(false)}
-                      className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
-                    >
-                      <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                      <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {assessmentOpen && (
+              <div className="absolute right-0 top-full mt-2 w-[240px] bg-card border border-border rounded-xl shadow-xl overflow-hidden">
+                {assessmentOptions.map((opt) => (
+                  <Link
+                    key={opt.href}
+                    to={opt.href}
+                    onClick={() => setAssessmentOpen(false)}
+                    className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
+                  >
+                    <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                    <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -156,56 +138,48 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile menu overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 md:hidden"
-          >
-            <div className="space-y-1">
-              <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Services</div>
-              {serviceOptions.map((opt) => (
-                <Link
-                  key={opt.href}
-                  to={opt.href}
-                  onClick={() => handleAnchorClick(opt.href)}
-                   className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
-                 >
-                   <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                  <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
-                </Link>
-              ))}
-            </div>
-            {navLinks.map((link) => (
+      {mobileOpen && (
+        <div className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 md:hidden">
+          <div className="space-y-1">
+            <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Services</div>
+            {serviceOptions.map((opt) => (
               <Link
-                key={link.label}
-                to={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-foreground text-base font-medium py-2 border-b border-border/50 last:border-0"
+                key={opt.href}
+                to={opt.href}
+                onClick={() => handleAnchorClick(opt.href)}
+                className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
               >
-                {link.label}
+                <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
               </Link>
             ))}
-            <div className="mt-2 space-y-2">
-              <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
-              {assessmentOptions.map((opt) => (
-                <Link
-                  key={opt.href}
-                  to={opt.href}
-                  onClick={() => setMobileOpen(false)}
-                   className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
-                 >
-                   <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                   <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
-                 </Link>
-               ))}
-             </div>
-           </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              to={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="text-foreground text-base font-medium py-2 border-b border-border/50 last:border-0"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="mt-2 space-y-2">
+            <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
+            {assessmentOptions.map((opt) => (
+              <Link
+                key={opt.href}
+                to={opt.href}
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
+              >
+                <div className="text-sm font-bold text-foreground">{opt.label}</div>
+                <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 };

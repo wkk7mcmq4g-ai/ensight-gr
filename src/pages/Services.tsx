@@ -1,13 +1,10 @@
 import SEO from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { ArrowRight, Workflow, BarChart3, Code2, Zap, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
 import CTASection from '@/components/home/CTASection';
 import DecorativeShapes from '@/components/DecorativeShapes';
-
-const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const offerings = [
   {
@@ -136,7 +133,7 @@ const Services = () => (
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Services",
-          "itemListElement": offerings.map((o, i) => ({
+          "itemListElement": offerings.map((o) => ({
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
@@ -150,33 +147,18 @@ const Services = () => (
     {/* Hero */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14 relative overflow-hidden">
       <DecorativeShapes variant="grid" />
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease, delay: 0.1 }}
-        className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3"
-      >
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
         {"Services"}
-      </motion.div>
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease, delay: 0.15 }}
-        className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-4"
-      >
+      </div>
+      <h1 className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-4">
         Technology and data,{' '}
         <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
           designed for your business.
         </span>
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease, delay: 0.3 }}
-        className="text-lg text-ordinal-body leading-relaxed max-w-[620px]"
-      >
+      </h1>
+      <p className="text-lg text-ordinal-body leading-relaxed max-w-[620px]">
         We help mid-market organisations transform operations, unlock the value in their data, and build technology that works the way they do — not the other way around.
-      </motion.p>
+      </p>
     </section>
 
     <div className="h-px bg-border max-w-[1200px] mx-auto" />

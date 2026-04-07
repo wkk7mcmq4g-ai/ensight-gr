@@ -1,6 +1,5 @@
 import SEO from '@/components/SEO';
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Share2 } from 'lucide-react';
 import { generateDataClarityPDF } from '@/utils/generateDataClarityPDF';
 import { Link } from 'react-router-dom';
@@ -49,7 +48,7 @@ const DimProgress = ({ step }: { step: number }) => (
 
 // ─── Intro Screen ───
 const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
-  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
+  <div>
     <div className="bg-card border border-border rounded-lg overflow-hidden">
       <div className="p-8">
         <h2 className="text-[22px] font-extrabold tracking-tight mb-3">Data Clarity Assessment</h2>
@@ -82,7 +81,7 @@ const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
         </button>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 // ─── Dimension Question Page ───
@@ -118,13 +117,7 @@ const DimensionPage = ({
   };
 
   return (
-    <motion.div
-      key={dim.id}
-      initial={{ opacity: 0, x: 60 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -60 }}
-      transition={{ duration: 0.3 }}
-    >
+    <div>
       <div className="bg-card border border-border rounded-lg overflow-hidden">
         <div className="p-8">
           {/* Dimension header */}
@@ -202,7 +195,7 @@ const DimensionPage = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -247,7 +240,7 @@ const ResultsView = ({
   const mailtoHref = `mailto:hello@ensight.co?subject=Data Clarity Assessment — ${encodeURIComponent(v.name)} (${pct}%)&body=I completed the Data Clarity Assessment and received the verdict: ${encodeURIComponent(v.name)} (${pct}%). I'd like to discuss my results.`;
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <div>
       <div className="bg-card border border-border rounded-lg overflow-hidden">
         <div className="p-8">
           {/* Score + Verdict side by side */}
@@ -297,13 +290,7 @@ const ResultsView = ({
                 <div key={d.id} className="flex items-center gap-3">
                   <span className="text-[13px] text-ordinal-body w-36 flex-shrink-0">{d.name}</span>
                   <div className="flex-1 h-2.5 bg-border rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full rounded-full"
-                      style={{ background: bc }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${bp}%` }}
-                      transition={{ duration: 1, delay: 0.3 + i * 0.1 }}
-                    />
+                    <div className="h-full rounded-full" style={{  background: bc , width: `${bp}%` }} />
                   </div>
                   <span className="font-mono-label text-[12px] font-bold w-12 text-right" style={{ color: bc }}>
                     {s.toFixed(1)}/4
@@ -444,7 +431,7 @@ const ResultsView = ({
           Post
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -509,7 +496,7 @@ const DataClarityAssessment = () => {
         </div>
       )}
 
-      <AnimatePresence mode="wait">
+      
         {step === -1 && <IntroScreen key="intro" onBegin={() => goTo(0)} />}
 
         {step >= 0 && step < 5 && (
@@ -535,7 +522,7 @@ const DataClarityAssessment = () => {
             }}
           />
         )}
-      </AnimatePresence>
+      
     </div>
   );
 };
