@@ -63,7 +63,7 @@ const routes: Record<string, RouteMeta> = {
   '/data-clarity-assessment': {
     title: 'Data Clarity Assessment | Ensight',
     description:
-      'Take our free data clarity assessment to understand your organisation's data maturity.',
+      "Take our free data clarity assessment to understand your organisation\u2019s data maturity.",
   },
   '/operational-transformation': {
     title: 'Operational Transformation | Ensight',
