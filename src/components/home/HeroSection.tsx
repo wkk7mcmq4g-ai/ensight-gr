@@ -13,9 +13,9 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease, delay: 0.15 }}
-          className="text-[clamp(28px,6vw,68px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
+          className="text-[clamp(32px,7vw,80px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
         >
-          We transform how organisations work with technology and data.
+          We <span className="text-[#0A7EA4]">transform</span> how organisations work with technology and data.
         </motion.h1>
 
         <motion.p
