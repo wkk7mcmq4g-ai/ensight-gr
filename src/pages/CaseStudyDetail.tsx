@@ -26,8 +26,26 @@ const CaseStudyDetail = () => {
     );
   }
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": `${BASE_URL}/case-studies` },
+      { "@type": "ListItem", "position": 3, "name": cs.title, "item": `${BASE_URL}/case-studies/${cs.id}` },
+    ],
+  };
+
   return (
     <div className="max-w-[800px] mx-auto px-6 pt-28 pb-20">
+      <SEO
+        title={`${cs.title} | Ensight`}
+        description={cs.subtitle}
+        path={`/case-studies/${cs.id}`}
+      />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      </Helmet>
       {/* Hero */}
       <AnimatedSection>
         <Link
