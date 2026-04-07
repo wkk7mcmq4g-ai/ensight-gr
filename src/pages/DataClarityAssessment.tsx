@@ -48,7 +48,7 @@ const DimProgress = ({ step }: { step: number }) => (
 
 // ─── Intro Screen ───
 const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
-  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
+  <div>
     <div className="bg-card border border-border rounded-lg overflow-hidden">
       <div className="p-8">
         <h2 className="text-[22px] font-extrabold tracking-tight mb-3">Data Clarity Assessment</h2>
@@ -246,7 +246,7 @@ const ResultsView = ({
   const mailtoHref = `mailto:hello@ensight.co?subject=Data Clarity Assessment — ${encodeURIComponent(v.name)} (${pct}%)&body=I completed the Data Clarity Assessment and received the verdict: ${encodeURIComponent(v.name)} (${pct}%). I'd like to discuss my results.`;
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <div>
       <div className="bg-card border border-border rounded-lg overflow-hidden">
         <div className="p-8">
           {/* Score + Verdict side by side */}

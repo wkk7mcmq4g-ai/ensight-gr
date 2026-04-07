@@ -58,7 +58,7 @@ const TeamSizeStep = ({
   onBack: () => void;
   onNext: () => void;
 }) => (
-  <motion.div initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -60 }} transition={{ duration: 0.3 }}>
+  <div>
     <div className="bg-card border border-border rounded-lg overflow-hidden">
       <div className="p-8">
         <span className="inline-flex items-center gap-1.5 font-mono-label text-[8px] tracking-[2px] uppercase px-2.5 py-1 rounded-full mb-3 bg-primary/10 text-electric-glow">
@@ -116,7 +116,7 @@ const EmailCapture = ({ onSubmit, onSkip }: { onSubmit: (name: string, email: st
   const isValid = name.trim().length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
+    <div>
       <div className="bg-card border border-border rounded-lg p-10 text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -146,7 +146,7 @@ const EmailCapture = ({ onSubmit, onSkip }: { onSubmit: (name: string, email: st
 
 // ─── Intro Screen ───
 const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
-  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
+  <div>
     <div className="bg-card border border-border rounded-lg overflow-hidden">
       <div className="p-8">
         <h2 className="text-[22px] font-extrabold tracking-tight mb-3">Process Debt Assessment</h2>
@@ -351,7 +351,7 @@ const ResultsView = ({
   const maxScore = scoredQuestionCount * 3;
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <div>
       <div className="bg-card border border-border rounded-lg overflow-hidden">
         <div className="p-8">
           {/* Score + Verdict side by side */}
