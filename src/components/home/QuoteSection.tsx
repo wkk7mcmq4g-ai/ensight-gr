@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const QuoteSection = () => (
-  <div className="bg-primary py-20 px-6 md:px-12 text-center overflow-hidden">
+  <div className="bg-primary py-20 px-6 md:px-12 text-center overflow-hidden relative">
+    <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-white [&_circle]:!stroke-white [&_.accent-dot]:!fill-white" />
     <motion.blockquote
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}

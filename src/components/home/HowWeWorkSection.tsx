@@ -1,4 +1,5 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const steps = [
   { num: '01', title: 'Discover', desc: 'We analyse your current processes, systems, and pain points to identify inefficiencies and opportunities.', color: 'border-primary text-primary' },
@@ -8,7 +9,8 @@ const steps = [
 ];
 
 const HowWeWorkSection = () => (
-  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="how-we-work">
+  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24 relative overflow-hidden" id="how-we-work">
+    <DecorativeShapes variant="starburst" className="opacity-[0.05]" />
     <AnimatedSection>
       <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
         {"// How We Work"}
