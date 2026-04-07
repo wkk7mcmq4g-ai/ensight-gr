@@ -1,23 +1,25 @@
 
 
-## Plan: Replace Heading Font with a Jeko-like Free Alternative
+## Analysis
 
-Jeko Black is a bold, geometric, rounded sans-serif. The closest free match is **Plus Jakarta Sans** (available on Google Fonts) at weight 800 — it shares Jeko's geometric proportions, rounded terminals, and modern feel.
+The `/about` page has no hero image. Its sections are:
+1. **Hero** — text only (heading + paragraph)
+2. **Our Story** — text card
+3. **How We Work** — 4 value cards
+4. **The Team** — small circular avatar (80×80px)
+5. **CTA** — text + button
 
-### Changes
+The parallax effect on the home page works well because the About *section* there has a large rectangular image. The standalone About *page* has no equivalent.
 
-**`src/index.css`**
-- Replace the Google Fonts import: swap `Outfit` for `Plus Jakarta Sans:wght@400;500;600;700;800` (keep Outfit for body, add Plus Jakarta for headings)
-- Actually: keep Outfit for body text, add Plus Jakarta Sans for headings
-- Update the `body` font-family to keep Outfit
-- Add a new utility class `.font-heading` using Plus Jakarta Sans 800
+## Options
 
-**`tailwind.config.ts`**
-- Add `fontFamily.heading: ['Plus Jakarta Sans', 'sans-serif']` to the theme extend
+**Option A — Add a decorative hero image** to the About page and apply parallax to it, similar to the home About section. This would require sourcing/choosing an image asset.
 
-**Heading components** (HeroSection, CTASection, ValuePillarsSection, HowWeHelpSection, BeforeAfterSection, SelectedWorkSection, ProofSection, ProblemsSection, AboutSection, EngageSection, QuoteSection, etc.)
-- Add `font-heading` class to all `<h1>` and `<h2>` elements
+**Option B — Apply parallax to the team avatar** — but at 80×80px round, the effect would be imperceptible.
 
-### Result
-Bold, geometric headings that approximate the Jeko Black aesthetic, paired with Outfit for body text.
+**Option C — Skip** — no suitable image exists on this page for parallax.
+
+## Recommendation
+
+Since there's no hero image on `/about`, I'd suggest either skipping this or first adding a larger visual element to the page. Want me to add a decorative hero image to the About page (reusing the `about-visual.jpg` asset from the home section) and then apply parallax to it?
 
