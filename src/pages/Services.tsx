@@ -122,6 +122,30 @@ const Services = () => (
           { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://ensight-gr.lovable.app/services" }
         ]
       })}</script>
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "provider": {
+          "@type": "Organization",
+          "name": "Ensight",
+          "url": "https://ensight-gr.lovable.app"
+        },
+        "name": "Ensight Consulting Services",
+        "description": "Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation.",
+        "url": "https://ensight-gr.lovable.app/services",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": offerings.map((o, i) => ({
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": o.title,
+              "description": o.desc
+            }
+          }))
+        }
+      })}</script>
     </Helmet>
     {/* Hero */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14 relative overflow-hidden">

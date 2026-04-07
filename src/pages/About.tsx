@@ -48,6 +48,23 @@ const About = () => (
           { "@type": "ListItem", "position": 2, "name": "About", "item": "https://ensight-gr.lovable.app/about" }
         ]
       })}</script>
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Ensight",
+        "description": "Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt.",
+        "url": "https://ensight-gr.lovable.app/about",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Ensight",
+          "url": "https://ensight-gr.lovable.app",
+          "founder": {
+            "@type": "Person",
+            "name": "George Kondylis",
+            "jobTitle": "Founder & Principal"
+          }
+        }
+      })}</script>
     </Helmet>
     <DecorativeShapes variant="circles" />
     {/* Hero */}
