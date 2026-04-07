@@ -113,6 +113,16 @@ const engagements = [
 const Services = () => (
   <>
     <SEO title="Services · Ensight" description="Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation." path="/services" />
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ensight-gr.lovable.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://ensight-gr.lovable.app/services" }
+        ]
+      })}</script>
+    </Helmet>
     {/* Hero */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14 relative overflow-hidden">
       <DecorativeShapes variant="grid" />
