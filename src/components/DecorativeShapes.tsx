@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 interface Props {
-  variant?: 'dots' | 'circles' | 'grid' | 'minimal';
+  variant?: 'dots' | 'circles' | 'grid' | 'minimal' | 'starburst';
   className?: string;
 }
 
