@@ -17,63 +17,63 @@ interface RouteMeta {
 const routes: Record<string, RouteMeta> = {
   '/': {
     title: 'Ensight | Strategy, Automation & Data',
-    description:
-      'Ensight helps organisations streamline operations through strategy, automation, and data clarity — so teams work smarter, not harder.',
+    description: 'Ensight helps organisations streamline operations through strategy, automation, and data clarity.',
+    ogImage: '/og/home.jpg',
   },
   '/about': {
     title: 'About Ensight | Our Story & Team',
-    description:
-      'Learn about Ensight — the consultancy helping organisations streamline operations through strategy, automation, and data clarity.',
+    description: 'Learn about Ensight \u2014 the consultancy helping organisations streamline operations.',
+    ogImage: '/og/about.jpg',
   },
   '/services': {
     title: 'Services | Ensight',
-    description:
-      "Explore Ensight\u2019s services: operational strategy, workflow automation, data clarity, and custom platform builds.",
+    description: "Explore Ensight\u2019s services: operational strategy, workflow automation, data clarity, and custom platform builds.",
+    ogImage: '/og/services.jpg',
   },
   '/case-studies': {
     title: 'Case Studies | Ensight',
-    description:
-      'See how Ensight has helped organisations cut costs, automate workflows, and gain real-time visibility.',
+    description: 'See how Ensight has helped organisations cut costs, automate workflows, and gain real-time visibility.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/loan-servicing': {
     title: 'Loan Servicing Platform | Ensight Case Study',
-    description:
-      'Custom end-to-end servicing system replacing fragmented processes — cutting manual processing by 60%.',
+    description: 'Custom end-to-end servicing system replacing fragmented processes \u2014 cutting manual processing by 60%.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/charity-crm': {
     title: 'Charity CRM System | Ensight Case Study',
-    description:
-      'Unified platform for programme management, compliance, and reporting across a national charity.',
+    description: 'Unified platform for programme management, compliance, and reporting across a national charity.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/financial-reporting': {
     title: 'Financial Reporting Automation | Ensight Case Study',
-    description:
-      'Automated pipelines and dashboards replacing manual data extraction — reporting reduced from days to minutes.',
+    description: 'Automated pipelines and dashboards replacing manual data extraction \u2014 reporting reduced from days to minutes.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/touro-driver-ux': {
-    title: 'Touro — Driver UX Redesign | Ensight Case Study',
-    description:
-      'Mobile-first, card-based interface that reduced cognitive load and improved real-time operational reliability.',
+    title: 'Touro \u2014 Driver UX Redesign | Ensight Case Study',
+    description: 'Mobile-first, card-based interface that reduced cognitive load and improved operational reliability.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/data-clarity': {
     title: 'Data Clarity | Ensight',
-    description:
-      'Understand where your data is, how it flows, and how to make it work for your organisation.',
+    description: 'Understand where your data is, how it flows, and how to make it work for your organisation.',
+    ogImage: '/og/data-clarity.jpg',
   },
   '/data-clarity-assessment': {
     title: 'Data Clarity Assessment | Ensight',
-    description:
-      "Take our free data clarity assessment to understand your organisation\u2019s data maturity.",
+    description: "Take our free data clarity assessment to understand your organisation\u2019s data maturity.",
+    ogImage: '/og/data-clarity.jpg',
   },
   '/operational-transformation': {
     title: 'Operational Transformation | Ensight',
-    description:
-      'Transform your operations with Ensight — from strategy to execution.',
+    description: 'Transform your operations with Ensight \u2014 from strategy to execution.',
+    ogImage: '/og/operational-transformation.jpg',
   },
   '/assessment': {
     title: 'Free Operations Assessment | Ensight',
-    description:
-      'Take our free assessment to uncover operational inefficiencies and automation opportunities.',
+    description: 'Take our free assessment to uncover operational inefficiencies and automation opportunities.',
+    ogImage: '/og/assessment.jpg',
   },
 };
 
