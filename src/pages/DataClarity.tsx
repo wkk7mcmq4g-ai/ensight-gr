@@ -320,7 +320,7 @@ const DataClarity = () => (
           {flowNodes.map((n, i) => (
             <div
               key={i}
-              className={`rounded-2xl p-5 border text-center ${n.highlight ? 'bg-[hsl(270,40%,6%)] border-white/[0.07]' : 'bg-card border-border'}`}
+              className={`rounded-2xl p-5 border text-center ${n.highlight ? 'bg-[hsl(220,20%,8%)] border-white/[0.07]' : 'bg-card border-border'}`}
             >
               <div className={`text-xl font-black font-mono-label ${n.numColor} mb-1`}>{n.num}</div>
               <div className={`text-sm font-bold ${n.highlight ? 'text-white' : ''} mb-0.5`}>{n.name}</div>
