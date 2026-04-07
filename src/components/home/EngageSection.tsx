@@ -46,7 +46,7 @@ const EngageSection = () => (
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {engagements.map((e, i) => (
         <StaggerItem key={i}>
-          <div className="bg-card border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col">
+          <div className={`${e.showTag ? 'bg-[#E8F4F8]' : 'bg-card'} border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col`}>
             <div className={`absolute top-0 left-0 w-full h-[2px] ${e.barColor}`} />
             {e.showTag && (
               <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-white px-2.5 py-1 rounded mb-4">
