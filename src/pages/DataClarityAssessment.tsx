@@ -472,7 +472,7 @@ const DataClarityAssessment = () => {
 
   return (
     <div className="max-w-[800px] mx-auto px-6 pt-28 pb-20">
-      <SEO title="Data Clarity Assessment · Ensight" description="Assess your data readiness across five dimensions. Find out where your analytics capability stands." path="/data-clarity-assessment" />
+      <SEO title="Data Clarity Assessment · Ensight" description="Assess your data readiness across five dimensions. Find out where your analytics capability stands." path="/data-clarity-assessment" ogImage="/og/data-clarity.jpg" />
       <header className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-[#06B6D4]/10 border border-[#06B6D4]/20 text-[#06B6D4] font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
           <span className="w-[6px] h-[6px] bg-[#06B6D4] rounded-full shadow-[0_0_8px_rgba(6,182,212,0.5)]" />

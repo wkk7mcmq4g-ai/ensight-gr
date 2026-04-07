@@ -38,7 +38,7 @@ const values = [
 
 const About = () => (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
-    <SEO title="About · Ensight" description="Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt." path="/about" />
+    <SEO title="About · Ensight" description="Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt." path="/about" ogImage="/og/about.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify({
         "@context": "https://schema.org",

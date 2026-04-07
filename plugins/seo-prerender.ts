@@ -6,79 +6,80 @@ import fs from 'fs';
 import path from 'path';
 
 const BASE_URL = 'https://ensight-gr.lovable.app';
-const OG_IMAGE =
-  'https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9131ee5a-adf6-4644-9666-66d96e6a8601/id-preview-d3f8e6df--80d094a5-b6ff-4e3d-9b55-194fe071745a.lovable.app-1775244958373.png';
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og/home.jpg`;
 
 interface RouteMeta {
   title: string;
   description: string;
+  ogImage?: string;
 }
 
 const routes: Record<string, RouteMeta> = {
   '/': {
     title: 'Ensight | Strategy, Automation & Data',
-    description:
-      'Ensight helps organisations streamline operations through strategy, automation, and data clarity — so teams work smarter, not harder.',
+    description: 'Ensight helps organisations streamline operations through strategy, automation, and data clarity.',
+    ogImage: '/og/home.jpg',
   },
   '/about': {
     title: 'About Ensight | Our Story & Team',
-    description:
-      'Learn about Ensight — the consultancy helping organisations streamline operations through strategy, automation, and data clarity.',
+    description: 'Learn about Ensight \u2014 the consultancy helping organisations streamline operations.',
+    ogImage: '/og/about.jpg',
   },
   '/services': {
     title: 'Services | Ensight',
-    description:
-      "Explore Ensight\u2019s services: operational strategy, workflow automation, data clarity, and custom platform builds.",
+    description: "Explore Ensight\u2019s services: operational strategy, workflow automation, data clarity, and custom platform builds.",
+    ogImage: '/og/services.jpg',
   },
   '/case-studies': {
     title: 'Case Studies | Ensight',
-    description:
-      'See how Ensight has helped organisations cut costs, automate workflows, and gain real-time visibility.',
+    description: 'See how Ensight has helped organisations cut costs, automate workflows, and gain real-time visibility.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/loan-servicing': {
     title: 'Loan Servicing Platform | Ensight Case Study',
-    description:
-      'Custom end-to-end servicing system replacing fragmented processes — cutting manual processing by 60%.',
+    description: 'Custom end-to-end servicing system replacing fragmented processes \u2014 cutting manual processing by 60%.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/charity-crm': {
     title: 'Charity CRM System | Ensight Case Study',
-    description:
-      'Unified platform for programme management, compliance, and reporting across a national charity.',
+    description: 'Unified platform for programme management, compliance, and reporting across a national charity.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/financial-reporting': {
     title: 'Financial Reporting Automation | Ensight Case Study',
-    description:
-      'Automated pipelines and dashboards replacing manual data extraction — reporting reduced from days to minutes.',
+    description: 'Automated pipelines and dashboards replacing manual data extraction \u2014 reporting reduced from days to minutes.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/touro-driver-ux': {
-    title: 'Touro — Driver UX Redesign | Ensight Case Study',
-    description:
-      'Mobile-first, card-based interface that reduced cognitive load and improved real-time operational reliability.',
+    title: 'Touro \u2014 Driver UX Redesign | Ensight Case Study',
+    description: 'Mobile-first, card-based interface that reduced cognitive load and improved operational reliability.',
+    ogImage: '/og/case-studies.jpg',
   },
   '/data-clarity': {
     title: 'Data Clarity | Ensight',
-    description:
-      'Understand where your data is, how it flows, and how to make it work for your organisation.',
+    description: 'Understand where your data is, how it flows, and how to make it work for your organisation.',
+    ogImage: '/og/data-clarity.jpg',
   },
   '/data-clarity-assessment': {
     title: 'Data Clarity Assessment | Ensight',
-    description:
-      "Take our free data clarity assessment to understand your organisation\u2019s data maturity.",
+    description: "Take our free data clarity assessment to understand your organisation\u2019s data maturity.",
+    ogImage: '/og/data-clarity.jpg',
   },
   '/operational-transformation': {
     title: 'Operational Transformation | Ensight',
-    description:
-      'Transform your operations with Ensight — from strategy to execution.',
+    description: 'Transform your operations with Ensight \u2014 from strategy to execution.',
+    ogImage: '/og/operational-transformation.jpg',
   },
   '/assessment': {
     title: 'Free Operations Assessment | Ensight',
-    description:
-      'Take our free assessment to uncover operational inefficiencies and automation opportunities.',
+    description: 'Take our free assessment to uncover operational inefficiencies and automation opportunities.',
+    ogImage: '/og/assessment.jpg',
   },
 };
 
 function buildMetaHtml(routePath: string, meta: RouteMeta): string {
   const canonical = `${BASE_URL}${routePath === '/' ? '' : routePath}`;
+  const image = meta.ogImage ? `${BASE_URL}${meta.ogImage}` : DEFAULT_OG_IMAGE;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,13 +93,13 @@ function buildMetaHtml(routePath: string, meta: RouteMeta): string {
   <meta property="og:url" content="${canonical}" />
   <meta property="og:title" content="${meta.title}" />
   <meta property="og:description" content="${meta.description}" />
-  <meta property="og:image" content="${OG_IMAGE}" />
+  <meta property="og:image" content="${image}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${meta.title}" />
   <meta name="twitter:description" content="${meta.description}" />
-  <meta name="twitter:image" content="${OG_IMAGE}" />
+  <meta name="twitter:image" content="${image}" />
   <meta http-equiv="refresh" content="0;url=${canonical}" />
 </head>
 <body>
@@ -133,20 +134,20 @@ export default function seoPrerender() {
           /<meta name="description" content="[^"]*">/,
           `<meta name="description" content="${meta.description}">`
         );
-        // Insert OG tags before </head>
+        const image = meta.ogImage ? `${BASE_URL}${meta.ogImage}` : DEFAULT_OG_IMAGE;
         const ogBlock = [
           `<link rel="canonical" href="${BASE_URL}${routePath}" />`,
           `<meta property="og:type" content="website" />`,
           `<meta property="og:url" content="${BASE_URL}${routePath}" />`,
           `<meta property="og:title" content="${meta.title}" />`,
           `<meta property="og:description" content="${meta.description}" />`,
-          `<meta property="og:image" content="${OG_IMAGE}" />`,
+          `<meta property="og:image" content="${image}" />`,
           `<meta property="og:image:width" content="1200" />`,
           `<meta property="og:image:height" content="630" />`,
           `<meta name="twitter:card" content="summary_large_image" />`,
           `<meta name="twitter:title" content="${meta.title}" />`,
           `<meta name="twitter:description" content="${meta.description}" />`,
-          `<meta name="twitter:image" content="${OG_IMAGE}" />`,
+          `<meta name="twitter:image" content="${image}" />`,
         ].join('\n    ');
         html = html.replace('</head>', `    ${ogBlock}\n</head>`);
 
