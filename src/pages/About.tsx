@@ -39,7 +39,15 @@ const values = [
   },
 ];
 
-const About = () => (
+const About = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start end', 'end start'],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
+  return (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
     <SEO title="About · Ensight" description="Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt." path="/about" />
     <Helmet>
