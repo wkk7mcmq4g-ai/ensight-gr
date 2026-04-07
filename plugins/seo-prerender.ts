@@ -116,13 +116,15 @@ export default function seoPrerender() {
       const indexHtml = fs.readFileSync(path.join(outDir, 'index.html'), 'utf-8');
 
       for (const [routePath, meta] of Object.entries(routes)) {
-        if (routePath === '/') continue; // index.html already exists
-
-        const dir = path.join(outDir, routePath.slice(1));
-        fs.mkdirSync(dir, { recursive: true });
-
-        const filePath = path.join(dir, 'index.html');
-        if (fs.existsSync(filePath)) continue; // don't overwrite
+        let filePath: string;
+        if (routePath === '/') {
+          filePath = path.join(outDir, 'index.html');
+        } else {
+          const dir = path.join(outDir, routePath.slice(1));
+          fs.mkdirSync(dir, { recursive: true });
+          filePath = path.join(dir, 'index.html');
+          if (fs.existsSync(filePath)) continue; // don't overwrite
+        }
 
         // Inject correct meta into the real SPA shell
         let html = indexHtml;
