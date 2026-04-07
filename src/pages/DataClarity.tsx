@@ -367,7 +367,7 @@ const DataClarity = () => (
     </section>
 
     {/* ═══ CTA ═══ */}
-    <section className="bg-[hsl(220,20%,8%)] py-24 text-center" id="contact">
+    <section className="bg-[hsl(217,33%,7%)] py-24 text-center" id="contact">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
           <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#06B6D4] mb-5">
