@@ -134,20 +134,20 @@ export default function seoPrerender() {
           /<meta name="description" content="[^"]*">/,
           `<meta name="description" content="${meta.description}">`
         );
-        // Insert OG tags before </head>
+        const image = meta.ogImage ? `${BASE_URL}${meta.ogImage}` : DEFAULT_OG_IMAGE;
         const ogBlock = [
           `<link rel="canonical" href="${BASE_URL}${routePath}" />`,
           `<meta property="og:type" content="website" />`,
           `<meta property="og:url" content="${BASE_URL}${routePath}" />`,
           `<meta property="og:title" content="${meta.title}" />`,
           `<meta property="og:description" content="${meta.description}" />`,
-          `<meta property="og:image" content="${OG_IMAGE}" />`,
+          `<meta property="og:image" content="${image}" />`,
           `<meta property="og:image:width" content="1200" />`,
           `<meta property="og:image:height" content="630" />`,
           `<meta name="twitter:card" content="summary_large_image" />`,
           `<meta name="twitter:title" content="${meta.title}" />`,
           `<meta name="twitter:description" content="${meta.description}" />`,
-          `<meta name="twitter:image" content="${OG_IMAGE}" />`,
+          `<meta name="twitter:image" content="${image}" />`,
         ].join('\n    ');
         html = html.replace('</head>', `    ${ogBlock}\n</head>`);
 
