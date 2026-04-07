@@ -1,5 +1,4 @@
 import { useState, useRef, useCallback } from 'react';
-import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import { GripVertical } from 'lucide-react';
 
