@@ -45,19 +45,20 @@ const Home = () => (
     </Helmet>
     <HeroSection />
     <LogoStripSection />
-    <div className="h-px bg-border max-w-[1200px] mx-auto" />
-    <ValuePillarsSection />
-    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <div className="bg-white">
+      <ValuePillarsSection />
+    </div>
     <HowWeHelpSection />
-    <div className="h-px bg-border max-w-[1200px] mx-auto" />
-    <BeforeAfterSection />
-    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <div className="bg-white">
+      <BeforeAfterSection />
+    </div>
     <SelectedWorkSection />
-    <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <ProofSection />
     <QuoteSection />
     <AboutSection />
-    <EngageSection />
+    <div className="bg-white">
+      <EngageSection />
+    </div>
     <CTASection />
   </>
 );
