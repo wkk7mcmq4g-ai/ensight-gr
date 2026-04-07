@@ -28,7 +28,7 @@ const routes: Record<string, RouteMeta> = {
   '/services': {
     title: 'Services | Ensight',
     description:
-      'Explore Ensight's services: operational strategy, workflow automation, data clarity, and custom platform builds.',
+      "Explore Ensight\u2019s services: operational strategy, workflow automation, data clarity, and custom platform builds.",
   },
   '/case-studies': {
     title: 'Case Studies | Ensight',
