@@ -6,12 +6,12 @@ import fs from 'fs';
 import path from 'path';
 
 const BASE_URL = 'https://ensight-gr.lovable.app';
-const OG_IMAGE =
-  'https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9131ee5a-adf6-4644-9666-66d96e6a8601/id-preview-d3f8e6df--80d094a5-b6ff-4e3d-9b55-194fe071745a.lovable.app-1775244958373.png';
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og/home.jpg`;
 
 interface RouteMeta {
   title: string;
   description: string;
+  ogImage?: string;
 }
 
 const routes: Record<string, RouteMeta> = {
