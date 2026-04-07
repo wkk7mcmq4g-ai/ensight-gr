@@ -1,6 +1,5 @@
 import SEO from '@/components/SEO';
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Share2 } from 'lucide-react';
 import { generateDataClarityPDF } from '@/utils/generateDataClarityPDF';
 import { Link } from 'react-router-dom';
