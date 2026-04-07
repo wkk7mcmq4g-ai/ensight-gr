@@ -20,6 +20,16 @@ const CaseStudies = () => {
   return (
     <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
       <SEO title="Case Studies · Ensight" description="Real results, measured in weeks. See how we've helped organisations uncover hidden capacity and eliminate process debt." path="/case-studies" />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ensight-gr.lovable.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://ensight-gr.lovable.app/case-studies" }
+          ]
+        })}</script>
+      </Helmet>
       <DecorativeShapes variant="minimal" />
       <AnimatedSection className="text-center mb-14">
         <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
