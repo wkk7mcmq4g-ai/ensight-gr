@@ -106,8 +106,8 @@ const DataClarity = () => (
         animation: 'gridPan 20s linear infinite',
       }} />
       {/* Blobs */}
-      <div className="absolute -top-[200px] -right-[100px] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.08)_0%,transparent_60%)]" />
-      <div className="absolute -bottom-[150px] left-[100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(79,70,229,0.07)_0%,transparent_60%)]" />
+      <div className="absolute -top-[200px] -right-[100px] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(13,148,136,0.08)_0%,transparent_60%)]" />
+      <div className="absolute -bottom-[150px] left-[100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(13,148,136,0.05)_0%,transparent_60%)]" />
 
       <div className="relative z-10 max-w-[1200px] mx-auto w-full">
         <div className="max-w-[640px]">
