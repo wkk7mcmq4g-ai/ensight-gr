@@ -21,7 +21,7 @@ const HeroSection = () => (
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease, delay: 0.3 }}
+          transition={{ duration: 0.4, ease, delay: 0.1 }}
           className="text-base md:text-xl text-[#3D5A68] font-medium leading-relaxed max-w-[600px] mb-7"
         >
           Strategy, platforms, automation, and analytics — designed around how your business actually operates.
