@@ -387,7 +387,7 @@ const ResultsView = ({
               </button>
             </div>
             {showMethodology && (
-              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
+              <div
                 className="bg-white/5 border border-white/10 rounded-xl p-5 mb-4 text-left text-xs text-ordinal-dim leading-relaxed space-y-2">
                 <p className="font-semibold text-ordinal-faint">How we calculate this:</p>
                 <p>Each of the {scoredQuestionCount} operational questions scores 0 (good) to 3 (critical), giving a max score of {maxScore}.</p>
