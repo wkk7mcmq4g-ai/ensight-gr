@@ -1,8 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { ArrowLeft, ArrowRight, CheckCircle2, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { caseStudies } from '@/data/caseStudies';
 import { Badge } from '@/components/ui/badge';
+import SEO from '@/components/SEO';
+
+const BASE_URL = 'https://ensight-gr.lovable.app';
 
 const CaseStudyDetail = () => {
   const { id } = useParams();
