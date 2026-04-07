@@ -1,23 +1,21 @@
 
+## Fix SEO Issues
 
-## Plan: Replace Heading Font with a Jeko-like Free Alternative
+### 1. Clean up `index.html`
+- Change `<meta name="author" content="Lovable">` → `"Ensight"`
+- Change `<meta name="twitter:site" content="@Lovable">` → `"@ensaboratory"` (or remove if no Twitter handle exists)
+- Remove duplicate OG/Twitter meta tags from `<head>` that conflict with Helmet-injected ones: `og:title`, `og:description`, `og:type`, `og:image`, `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`. Keep only `<title>`, `<meta name="description">`, and `<meta name="author">` as fallbacks.
 
-Jeko Black is a bold, geometric, rounded sans-serif. The closest free match is **Plus Jakarta Sans** (available on Google Fonts) at weight 800 — it shares Jeko's geometric proportions, rounded terminals, and modern feel.
+### 2. Update `sitemap.xml`
+- Add all four case study detail URLs:
+  - `/case-studies/loan-servicing`
+  - `/case-studies/charity-crm`
+  - `/case-studies/financial-reporting`
+  - `/case-studies/touro-driver-ux`
+- Priority 0.7, changefreq monthly.
 
-### Changes
+### 3. Files changed
+- `index.html`
+- `public/sitemap.xml`
 
-**`src/index.css`**
-- Replace the Google Fonts import: swap `Outfit` for `Plus Jakarta Sans:wght@400;500;600;700;800` (keep Outfit for body, add Plus Jakarta for headings)
-- Actually: keep Outfit for body text, add Plus Jakarta Sans for headings
-- Update the `body` font-family to keep Outfit
-- Add a new utility class `.font-heading` using Plus Jakarta Sans 800
-
-**`tailwind.config.ts`**
-- Add `fontFamily.heading: ['Plus Jakarta Sans', 'sans-serif']` to the theme extend
-
-**Heading components** (HeroSection, CTASection, ValuePillarsSection, HowWeHelpSection, BeforeAfterSection, SelectedWorkSection, ProofSection, ProblemsSection, AboutSection, EngageSection, QuoteSection, etc.)
-- Add `font-heading` class to all `<h1>` and `<h2>` elements
-
-### Result
-Bold, geometric headings that approximate the Jeko Black aesthetic, paired with Outfit for body text.
-
+Two files, straightforward edits.
