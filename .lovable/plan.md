@@ -1,39 +1,27 @@
 
 
-## Problem
+## Fix OG Metadata Issues
 
-The root `index.html` has no Open Graph or Twitter Card meta tags. The `seo-prerender` plugin explicitly skips the `/` route (`if (routePath === '/') continue`), so crawlers see no OG metadata for the homepage. Additionally, even sub-route pages rely on the plugin injecting tags only at build time — the base HTML template itself is bare.
+Based on the debugger feedback, four issues need addressing:
 
-## Plan
+### 1. Resize & compress `public/og/home.jpg`
+- Resize from 1376×768 to **1200×630** (standard OG dimensions)
+- Compress below **300 KB** (well under the 600 KB WhatsApp limit)
+- Apply the same resize/compress pass to all 7 OG images for consistency
 
-### 1. Add OG tags directly to `index.html`
+### 2. Lengthen homepage title (currently 37 chars → target 50-60)
+- Current: `Ensight | Strategy, Automation & Data`
+- Proposed: `Ensight | Strategy, Automation & Data for Mid-Market Teams` (59 chars)
+- Update in: `index.html`, `plugins/seo-prerender.ts` (route `/`), `src/pages/Home.tsx`
 
-Add homepage-specific OG and Twitter meta tags to the `<head>` of `index.html` as static fallbacks:
-
-```html
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ensight-gr.lovable.app" />
-<meta property="og:title" content="Ensight | Strategy, Automation & Data" />
-<meta property="og:description" content="Ensight helps organisations streamline operations through strategy, automation, and data clarity — so teams work smarter, not harder." />
-<meta property="og:image" content="https://ensight-gr.lovable.app/og/home.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Ensight | Strategy, Automation & Data" />
-<meta name="twitter:description" content="Ensight helps organisations streamline operations through strategy, automation, and data clarity — so teams work smarter, not harder." />
-<meta name="twitter:image" content="https://ensight-gr.lovable.app/og/home.jpg" />
-<link rel="canonical" href="https://ensight-gr.lovable.app" />
-```
-
-### 2. Update `seo-prerender.ts` for the `/` route
-
-Instead of skipping `/`, have the plugin **replace** the existing `index.html` with the correctly-tagged version (same logic as other routes). This ensures the homepage also gets proper tags in the production build.
-
-### 3. Verify React Helmet doesn't duplicate
-
-React Helmet with `react-helmet-async` replaces tags by matching on property/name attributes, so client-side navigation will correctly override the static fallbacks. No changes needed to the SEO component.
+### 3. Lengthen homepage description (currently 97 chars → target 110-160)
+- Current: `Ensight helps organisations streamline operations through strategy, automation, and data clarity.`
+- Proposed: `Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — through strategy, automation, and data clarity.` (165 chars)
+- Update in: `index.html`, `plugins/seo-prerender.ts`, `src/pages/Home.tsx`
 
 ### Files changed
-- `index.html` — add OG/Twitter meta tags
-- `plugins/seo-prerender.ts` — remove the `if (routePath === '/') continue` skip, let it update `index.html` in place
+- `public/og/*.jpg` — all 7 images resized to 1200×630 and compressed < 300 KB
+- `index.html` — updated title and description meta tags
+- `plugins/seo-prerender.ts` — updated `/` route title and description
+- `src/pages/Home.tsx` — updated SEO component props
 
