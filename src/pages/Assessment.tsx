@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Share2, Info, X, Mail, ArrowRight } from 'lucide-react';
@@ -582,7 +583,7 @@ const Assessment = () => {
 
   return (
     <div className="max-w-[800px] mx-auto px-6 pt-28 pb-20">
-      {/* Hero */}
+      <SEO title="Process Debt Assessment · Ensight" description="Score your operational efficiency in minutes. Identify where process debt is costing you the most." path="/assessment" />
       <header className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-electric-glow font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
           <span className="w-[6px] h-[6px] bg-electric-bright rounded-full shadow-[0_0_8px_rgba(128,0,255,0.5)]" />

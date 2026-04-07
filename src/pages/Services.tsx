@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
@@ -110,6 +111,7 @@ const engagements = [
 
 const Services = () => (
   <>
+    <SEO title="Services · Ensight" description="Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation." path="/services" />
     {/* Hero */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14 relative overflow-hidden">
       <DecorativeShapes variant="grid" />
