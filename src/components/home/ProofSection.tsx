@@ -45,7 +45,7 @@ const ProofCard = ({ p, i }: { p: typeof proofs[0]; i: number }) => {
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.3, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
         >
           {p.metric}
         </motion.div>

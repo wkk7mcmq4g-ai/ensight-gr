@@ -12,7 +12,7 @@ const HeroSection = () => (
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.15 }}
+          transition={{ duration: 0.5, ease, delay: 0.05 }}
           className="text-[clamp(32px,7vw,80px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
         >
           We <span className="text-[#0A7EA4]">transform</span> how organisations work with technology and data.
@@ -21,7 +21,7 @@ const HeroSection = () => (
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease, delay: 0.3 }}
+          transition={{ duration: 0.4, ease, delay: 0.1 }}
           className="text-base md:text-xl text-[#3D5A68] font-medium leading-relaxed max-w-[600px] mb-7"
         >
           Strategy, platforms, automation, and analytics — designed around how your business actually operates.
@@ -30,7 +30,7 @@ const HeroSection = () => (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease, delay: 0.45 }}
+          transition={{ duration: 0.4, ease, delay: 0.15 }}
           className="flex gap-3 flex-wrap"
         >
           <a
@@ -49,7 +49,7 @@ const HeroSection = () => (
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease, delay: 0.3 }}
+        transition={{ duration: 0.6, ease, delay: 0.1 }}
         className="hidden md:block"
       >
         <HeroVisual />
