@@ -1,20 +1,22 @@
 
 
-## Plan: Add Open Graph Image Meta Tags
+## Plan: Add 3-Level BreadcrumbList JSON-LD to Case Study Detail Pages
 
 ### What changes
 
-**`src/components/SEO.tsx`** — Add OG image meta tags using the existing logo/preview image URL already referenced in the Organization schema on the homepage.
+**`src/pages/CaseStudyDetail.tsx`** — Add a `<Helmet>` block with a `BreadcrumbList` JSON-LD script using the case study's title and id:
 
-Tags to add:
-- `<meta property="og:image" content="...">` 
-- `<meta property="og:image:width" content="1200">`
-- `<meta property="og:image:height" content="630">`
-- `<meta name="twitter:card" content="summary_large_image">` (upgrade from `summary`)
-- `<meta name="twitter:image" content="...">`
+```
+Home → Case Studies → {cs.title}
+```
 
-Image URL: `https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9131ee5a-adf6-4644-9666-66d96e6a8601/id-preview-d3f8e6df--80d094a5-b6ff-4e3d-9b55-194fe071745a.lovable.app-1775244958373.png` (already used in the Organization schema logo)
+Three `ListItem` entries:
+1. Home — `https://ensight-gr.lovable.app/`
+2. Case Studies — `https://ensight-gr.lovable.app/case-studies`
+3. `{cs.title}` — `https://ensight-gr.lovable.app/case-studies/{cs.id}`
+
+Also add `<SEO>` component for consistent meta tags (title, description, OG image).
 
 ### Files changed
-- `src/components/SEO.tsx` — add OG image and Twitter image meta tags (applies to all pages automatically)
+- `src/pages/CaseStudyDetail.tsx` — import `Helmet` and `SEO`, add JSON-LD breadcrumb and SEO meta tags
 
