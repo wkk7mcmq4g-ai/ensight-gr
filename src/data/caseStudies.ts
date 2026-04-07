@@ -75,4 +75,26 @@ export const caseStudies: CaseStudy[] = [
     ],
     timeline: '8 weeks',
   },
+  {
+    id: 'touro-driver-ux',
+    sector: 'Tourism & Transport',
+    title: 'Touro — Improving Driver Operations Through Better UX',
+    subtitle: 'Redesigning the driver-facing interface for clarity, speed, and reliable field execution.',
+    outcome: 'A mobile-first, card-based interface that reduced cognitive load and improved real-time operational reliability for drivers.',
+    challenge:
+      'The existing driver interface was functional but not designed for field use — hard to scan quickly, not mobile-friendly, and key information was buried in dense layouts. This slowed down drivers and increased operational friction.',
+    approach: [
+      'Audited the existing interface for usability pain points in field conditions',
+      'Designed a mobile-first, card-based layout with at-a-glance transfer summaries',
+      'Introduced expandable details for notes, contacts, and flight information',
+      'Established clear visual hierarchy and status cues for fast decision-making',
+    ],
+    tools: ['UX Redesign', 'Mobile-First Design', 'Card-Based UI', 'Visual Hierarchy'],
+    metrics: [
+      { label: 'Information Access', before: 'Buried in dense layouts', after: 'At-a-glance' },
+      { label: 'Cognitive Load', before: 'High', after: 'Reduced' },
+      { label: 'Field Execution', before: 'Friction-heavy', after: 'Reliable' },
+    ],
+    timeline: '6 weeks',
+  },
 ];
