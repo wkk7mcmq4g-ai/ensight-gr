@@ -49,7 +49,7 @@ const Home = () => (
       <ValuePillarsSection />
     </div>
     <div className="border-b border-[#D6D0C9]"><HowWeHelpSection /></div>
-    <div className="bg-white border-b border-[#D6D0C9]">
+    <div className="border-b border-[#D6D0C9]">
       <BeforeAfterSection />
     </div>
     <div className="border-b border-[#D6D0C9]"><SelectedWorkSection /></div>
