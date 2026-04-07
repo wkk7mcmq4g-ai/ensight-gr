@@ -1,28 +1,28 @@
 
 
-# Simplify Scroll-Reveal Animations
+# Remove Section Background Alternation
 
-## Problem
-Current animations use `y: 40px` / `y: 24px` translate distances, `0.6s` / `0.5s` durations, `-80px` viewport margins (delays trigger), and stagger delays — causing large blank gaps while scrolling.
+## What changes
+All sections on the homepage get a uniform `#F4EFE9` (linen) background, except the three dark sections (ProofSection, QuoteSection, CTASection) which keep their existing `bg-dark-section` (#0B1E27).
 
-## Approach
-Reduce all values in the single shared animation file. Also fix inline animations in individual section components.
+## Files to edit
 
-## Changes
+### 1. `src/pages/Home.tsx`
+Remove `bg-white` from the wrapper divs around ValuePillarsSection, BeforeAfterSection, and EngageSection. All wrapper divs keep their `border-b border-[#D6D0C9]` but no background override — the page-level linen background handles it.
 
-### 1. `src/components/home/AnimatedSection.tsx`
-- `AnimatedSection`: `y: 40` → `y: 12`, `duration: 0.6` → `0.3`, `margin: '-80px'` → `'-20px'`, cap `delay` to max `0.1`
-- `StaggerChildren`: `margin: '-80px'` → `'-20px'`, `staggerChildren: 0.1` → `0.05`
-- `StaggerItem`: `y: 24` → `y: 12`, `duration: 0.5` → `0.3`
+### 2. `src/components/home/AboutSection.tsx`
+Change `bg-background` on the section element to remove it (let the parent linen show through), or leave as-is if `bg-background` already maps to linen.
 
-### 2. `src/components/home/ProofSection.tsx`
-- ProofCard stat number animation: `delay: 0.2 + i * 0.1` → `delay: i * 0.05`, `duration: 0.6` → `0.3`
+### 3. `src/index.css` or `tailwind.config.ts`
+Verify `--background` CSS variable equals `#F4EFE9`. If not, set it. This ensures `bg-background` on the page body produces the linen tone everywhere.
 
-### 3. `src/components/home/PainPointsSection.tsx`
-- List items: `x: -12` → `x: -8`, `duration: 0.4` → `0.25`, `delay: i * 0.08` → `delay: i * 0.04`
+### 4. Individual section components — no background overrides
+- `PainPointsSection.tsx`: remove `bg-muted/50` from the section
+- `FreeAuditSection.tsx`: remove `bg-muted/30` from the section (if used on homepage)
+- Cards (`bg-card`) stay as-is — they're element-level, not section-level
 
-### 4. `src/components/home/HeroSection.tsx`
-- Already uses `animate` (not `whileInView`) so it triggers on mount — keep as-is but reduce delays slightly if any exceed 0.1s for secondary elements
-
-All layout, content, and spacing unchanged.
+## Dark sections (unchanged)
+- `ProofSection` — keeps `bg-dark-section`
+- `QuoteSection` — keeps `bg-dark-section`
+- `CTASection` — keeps `bg-dark-section`
 
