@@ -1,58 +1,51 @@
 
 
-# Color Palette Overhaul
+# Section Background Alternation & Dark Proof Section
 
-## Color Mapping (Hex → HSL)
+## Overview
+Apply alternating background colors across homepage sections for visual rhythm, and convert the Proof Points section to a full-width dark (#0B1E27) treatment. Also update the CTA/contact section to use the dark background instead of primary.
 
-| Role | Old Hex | New Hex | New HSL |
-|------|---------|---------|---------|
-| Headlines / foreground | #1D1532 | #0F2A36 | `192 56% 14%` |
-| CTA / primary | #7050D7 | #0ABFBC | `179 90% 39%` |
-| Stats accent (new) | — | #E8A838 | `36 80% 56%` |
-| Background | #F5F0EB | #F4EFE9 | `30 25% 93%` |
-| Card surfaces | current | #FFFFFF | `0 0% 100%` |
-| Body / muted text | #6D6487 | #4A6470 | `195 20% 36%` |
-| Borders | #E3E0DD | #D9D4CE | `33 10% 83%` |
+## Changes
 
-## Files to Change
+### 1. `src/pages/Home.tsx` — Wrap sections in background containers
+Currently sections use `max-w-[1200px]` internally with no full-width background wrappers. We need to wrap each section in a full-width `div` with the correct background color and remove the `<div className="h-px bg-border ...">` dividers (the alternating backgrounds provide visual separation).
 
-### 1. `src/index.css` — Update `:root` variables
-- `--foreground` → `192 56% 14%`
-- `--card-foreground`, `--popover-foreground`, `--accent-foreground` → same deep teal
-- `--primary` → `179 90% 39%` (electric teal)
-- `--ring` → match primary
-- `--background` → `30 25% 93%`
-- `--muted-foreground` → `195 20% 36%`
-- `--border`, `--input` → `33 10% 83%`
-- Brand tokens: update `--electric`, `--electric-bright`, `--electric-glow` to teal variants
-- `--ordinal-body` → `192 56% 14%`; `--ordinal-dim` → `195 20% 36%`
-- Add new `--stat-accent: 36 80% 56%` for amber highlights
-- Update sidebar vars to match
+Section order and backgrounds:
+- Hero + LogoStrip: default (linen `bg-background`)
+- ValuePillars: `bg-white`
+- HowWeHelp: `bg-background` (linen)
+- BeforeAfter: `bg-white`
+- SelectedWork: `bg-background` (linen)
+- ProofSection: `bg-dark-section` (handled inside component)
+- QuoteSection: already dark, keep as-is
+- AboutSection: `bg-background` (linen) — update component internally
+- EngageSection: `bg-white` — update component internally
+- CTASection: change from `bg-primary` to `bg-dark-section`
 
-### 2. `tailwind.config.ts` — Add stat-accent color
-- Add `"stat-accent": "hsl(var(--stat-accent))"` to colors
+### 2. `src/components/home/ProofSection.tsx` — Dark full-width treatment
+- Wrap in full-width `bg-dark-section` container
+- Section label: `text-[#C8973F]` (amber) instead of `text-primary`
+- Headline: `text-white`
+- Body text: `text-white/70`
+- Remove individual card gradient backgrounds; use `bg-white/10` or `bg-white/5` for subtle card surfaces
+- Stat numbers: keep `text-stat-accent` (#C8973F)
+- Stat labels (desc): `text-white`
+- Detail text: `text-white/70`
 
-### 3. `src/components/home/HeroVisual.tsx` — SVG nodes use `hsl(var(--primary))` already
-- These will automatically pick up the new teal via the CSS variable change. No file edit needed.
+### 3. `src/components/home/AboutSection.tsx` — Change bg
+- Line 16: change `bg-muted/30` to `bg-background`
 
-### 4. `src/components/DecorativeShapes.tsx` — Same as above
-- All SVG strokes/fills reference `hsl(var(--primary))`, so they'll auto-update. No edit needed.
+### 4. `src/components/home/EngageSection.tsx` — White bg wrapper
+- Wrap the section in a `bg-white` full-width container, or add `bg-white` class to the section's outer wrapper
 
-### 5. `src/components/home/StatStrip.tsx` — Update stat number styling
-- Add `text-stat-accent` or use the amber color for the stat numbers
+### 5. `src/components/home/CTASection.tsx` — Dark section bg
+- Line 20: change `bg-primary` to `bg-dark-section`
+- Button: keep `bg-primary text-white` (the #0A7EA4 button on dark background)
+- Update button from `bg-white text-primary` to `bg-primary text-white`
 
-### 6. `src/components/home/ProofSection.tsx` — Stat metrics
-- Apply amber accent color to the metric numbers (`~60%`, `Days → Min`, etc.)
-- Update card background gradients from purple tones to teal tones
-
-### 7. Update memory
-- Update `mem://design/tokens` and `mem://index.md` to reflect the new teal+amber palette
+### 6. `src/components/home/ValuePillarsSection.tsx`, `HowWeHelpSection.tsx`, `BeforeAfterSection.tsx`, `SelectedWorkSection.tsx`
+- No internal changes needed — backgrounds applied via wrapper divs in Home.tsx
 
 ## What stays the same
-- All layout, typography weights, font families, spacing, and content
-- Component structure and animations
-- Dark mode (untouched unless requested)
-
-## Summary
-This is primarily a CSS variable swap in `index.css` — most components already use semantic tokens (`bg-primary`, `text-foreground`, etc.) so they'll update automatically. The main manual work is adding the amber stat accent and updating the few components that use hardcoded brand token classes for stat highlighting.
+All content, layout, spacing, typography, animations, and component structure.
 
