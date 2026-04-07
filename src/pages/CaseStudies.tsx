@@ -29,6 +29,22 @@ const CaseStudies = () => {
             { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://ensight-gr.lovable.app/case-studies" }
           ]
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Case Studies · Ensight",
+          "description": "Real results, measured in weeks. See how we've helped organisations uncover hidden capacity and eliminate process debt.",
+          "url": "https://ensight-gr.lovable.app/case-studies",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": caseStudies.map((cs, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "name": cs.title,
+              "url": `https://ensight-gr.lovable.app/case-studies/${cs.id}`
+            }))
+          }
+        })}</script>
       </Helmet>
       <DecorativeShapes variant="minimal" />
       <AnimatedSection className="text-center mb-14">
