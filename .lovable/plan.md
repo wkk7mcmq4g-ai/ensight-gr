@@ -1,14 +1,16 @@
 
 
-## Plan: Update page title
+## Plan: Add JSON-LD Structured Data
 
-Update `index.html` to set the document title and Open Graph / Twitter meta titles to **"Ensight | Strategy, Automation & Data"**.
+Add a `<script type="application/ld+json">` block to `index.html` inside `<head>` with an `Organization` schema containing:
 
-### Change
-**`index.html`** — replace every occurrence of `"ensight"` used as a title/description value with the new title string. Specifically:
-- `<title>` tag
-- `og:title` meta
-- `twitter:title` meta
-- `og:description` and `twitter:description` meta (also update to match)
-- `<meta name="description">` tag
+- `name`: Ensight
+- `url`: https://ensight-gr.lovable.app
+- `description`: current meta description
+- `contactPoint`: email (hello@ensight.gr)
+- `address`: Athens, Greece
+- `sameAs`: empty array (can add social links later)
+
+### Files changed
+- `index.html` — add JSON-LD script block in `<head>`
 
