@@ -106,7 +106,7 @@ const TeamSizeStep = ({
         </div>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 // ─── Email Capture ───
@@ -140,7 +140,7 @@ const EmailCapture = ({ onSubmit, onSkip }: { onSubmit: (name: string, email: st
           Skip, just show my results
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -178,7 +178,7 @@ const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
         </button>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 // ─── Category Question Page ───
@@ -294,7 +294,7 @@ const CategoryPage = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -401,7 +401,7 @@ const ResultsView = ({
                 <p><span className="text-ordinal-faint">Waste factor</span> = Process Debt % × 0.30 (capped at 30% of payroll)</p>
                 <p><span className="text-ordinal-faint">Annual cost</span> = {teamSize} people × €40,000 avg cost × {(wasteFactor * 100).toFixed(1)}% waste = <strong className="text-ordinal-faint">{costFormatted}</strong></p>
                 <p className="text-ordinal-dim/70 italic">This is a directional estimate based on cross-industry benchmarks, not a precise audit.</p>
-              </motion.div>
+              </div>
             )}
             <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-ordinal-pink-bright via-ordinal-amber to-ordinal-green-bright bg-clip-text text-transparent mb-3">
               €{animatedCost.toLocaleString('en')}
@@ -423,13 +423,7 @@ const ResultsView = ({
                 <div key={c.id} className="flex items-center gap-3">
                   <span className="text-[13px] text-ordinal-body w-36 flex-shrink-0">{c.name}</span>
                   <div className="flex-1 h-2.5 bg-border rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full rounded-full"
-                      style={{ background: bc }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${bp}%` }}
-                      transition={{ duration: 1, delay: 0.3 + i * 0.1 }}
-                    />
+                    <div className="h-full rounded-full" style={{  background: bc , width: `${bp}%` }} />
                   </div>
                   <span className="font-mono-label text-[12px] font-bold w-12 text-right" style={{ color: bc }}>
                     {s.toFixed(1)}/3
@@ -553,7 +547,7 @@ const ResultsView = ({
           Post
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -627,7 +621,7 @@ const Assessment = () => {
         </div>
       )}
 
-      <AnimatePresence mode="wait">
+      
         {step === -1 && <IntroScreen key="intro" onBegin={() => goTo(0)} />}
 
         {step >= 0 && step < catCount && (
@@ -673,7 +667,7 @@ const Assessment = () => {
             }}
           />
         )}
-      </AnimatePresence>
+      
     </div>
   );
 };

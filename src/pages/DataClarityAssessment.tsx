@@ -81,7 +81,7 @@ const IntroScreen = ({ onBegin }: { onBegin: () => void }) => (
         </button>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 // ─── Dimension Question Page ───
@@ -201,7 +201,7 @@ const DimensionPage = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -296,13 +296,7 @@ const ResultsView = ({
                 <div key={d.id} className="flex items-center gap-3">
                   <span className="text-[13px] text-ordinal-body w-36 flex-shrink-0">{d.name}</span>
                   <div className="flex-1 h-2.5 bg-border rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full rounded-full"
-                      style={{ background: bc }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${bp}%` }}
-                      transition={{ duration: 1, delay: 0.3 + i * 0.1 }}
-                    />
+                    <div className="h-full rounded-full" style={{  background: bc , width: `${bp}%` }} />
                   </div>
                   <span className="font-mono-label text-[12px] font-bold w-12 text-right" style={{ color: bc }}>
                     {s.toFixed(1)}/4
@@ -443,7 +437,7 @@ const ResultsView = ({
           Post
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -508,7 +502,7 @@ const DataClarityAssessment = () => {
         </div>
       )}
 
-      <AnimatePresence mode="wait">
+      
         {step === -1 && <IntroScreen key="intro" onBegin={() => goTo(0)} />}
 
         {step >= 0 && step < 5 && (
@@ -534,7 +528,7 @@ const DataClarityAssessment = () => {
             }}
           />
         )}
-      </AnimatePresence>
+      
     </div>
   );
 };
