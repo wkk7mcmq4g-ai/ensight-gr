@@ -6,58 +6,59 @@
 
 @layer base {
   :root {
-    --background: 30 25% 94%;
-    --foreground: 248 42% 13%;
+    --background: 30 25% 93%;
+    --foreground: 192 56% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 248 42% 13%;
+    --card-foreground: 192 56% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 248 42% 13%;
+    --popover-foreground: 192 56% 14%;
 
-    --primary: 248 55% 50%;
+    --primary: 179 90% 39%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 185 45% 42%;
+    --secondary: 179 60% 30%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 30 10% 90%;
-    --muted-foreground: 248 18% 48%;
+    --muted-foreground: 195 20% 36%;
 
-    --accent: 254 30% 93%;
-    --accent-foreground: 248 42% 13%;
+    --accent: 179 20% 93%;
+    --accent-foreground: 192 56% 14%;
 
     --destructive: 340 72% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 256 12% 82%;
-    --input: 256 12% 82%;
-    --ring: 248 55% 50%;
+    --border: 33 10% 83%;
+    --input: 33 10% 83%;
+    --ring: 179 90% 39%;
 
     --radius: 0.5rem;
 
     /* Ensight brand tokens */
-    --electric: 248 42% 13%;
-    --electric-bright: 248 40% 28%;
-    --electric-glow: 248 55% 50%;
-    --ordinal-green: 248 55% 46%;
-    --ordinal-green-bright: 248 55% 50%;
-    --ordinal-pink: 185 45% 42%;
-    --ordinal-pink-bright: 185 45% 62%;
-    --ordinal-amber: 185 45% 42%;
-    --ordinal-cyan: 185 45% 42%;
-    --ordinal-body: 248 42% 13%;
-    --ordinal-dim: 248 18% 48%;
-    --ordinal-faint: 248 12% 62%;
+    --electric: 192 56% 14%;
+    --electric-bright: 179 70% 30%;
+    --electric-glow: 179 90% 39%;
+    --ordinal-green: 179 80% 34%;
+    --ordinal-green-bright: 179 90% 39%;
+    --ordinal-pink: 179 60% 30%;
+    --ordinal-pink-bright: 179 60% 45%;
+    --ordinal-amber: 36 80% 56%;
+    --ordinal-cyan: 179 90% 39%;
+    --ordinal-body: 192 56% 14%;
+    --ordinal-dim: 195 20% 36%;
+    --ordinal-faint: 195 15% 50%;
+    --stat-accent: 36 80% 56%;
 
-    --sidebar-background: 30 25% 94%;
-    --sidebar-foreground: 248 42% 13%;
-    --sidebar-primary: 248 55% 50%;
+    --sidebar-background: 30 25% 93%;
+    --sidebar-foreground: 192 56% 14%;
+    --sidebar-primary: 179 90% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 254 30% 93%;
-    --sidebar-accent-foreground: 248 55% 50%;
-    --sidebar-border: 256 12% 82%;
-    --sidebar-ring: 248 55% 50%;
+    --sidebar-accent: 179 20% 93%;
+    --sidebar-accent-foreground: 179 90% 39%;
+    --sidebar-border: 33 10% 83%;
+    --sidebar-ring: 179 90% 39%;
   }
 
   .dark {
