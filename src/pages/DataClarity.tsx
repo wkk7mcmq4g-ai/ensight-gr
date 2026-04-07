@@ -98,16 +98,16 @@ const DataClarity = () => (
   <div>
     <SEO title="Data Clarity · Ensight" description="Management analytics that drive decisions. Turn scattered data into a real-time picture of your business." path="/data-clarity" />
     {/* ═══ HERO ═══ */}
-    <section className="relative bg-[hsl(217,33%,7%)] overflow-hidden flex items-center px-6 md:px-12 pt-28 pb-14">
+    <section className="relative bg-[hsl(270,40%,6%)] overflow-hidden flex items-center px-6 md:px-12 pt-28 pb-14">
       {/* Animated grid */}
       <div className="absolute inset-0 opacity-100" style={{
-        backgroundImage: 'linear-gradient(rgba(13,148,136,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(13,148,136,0.06) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(79,70,229,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(79,70,229,0.06) 1px, transparent 1px)',
         backgroundSize: '48px 48px',
         animation: 'gridPan 20s linear infinite',
       }} />
       {/* Blobs */}
-      <div className="absolute -top-[200px] -right-[100px] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(13,148,136,0.08)_0%,transparent_60%)]" />
-      <div className="absolute -bottom-[150px] left-[100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(13,148,136,0.05)_0%,transparent_60%)]" />
+      <div className="absolute -top-[200px] -right-[100px] w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.08)_0%,transparent_60%)]" />
+      <div className="absolute -bottom-[150px] left-[100px] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(79,70,229,0.07)_0%,transparent_60%)]" />
 
       <div className="relative z-10 max-w-[1200px] mx-auto w-full">
         <div className="max-w-[640px]">
@@ -256,7 +256,7 @@ const DataClarity = () => (
     </section>
 
     {/* ═══ ASSESSMENT SCORING ═══ */}
-    <section className="bg-[hsl(217,33%,7%)] py-24" id="assessment">
+    <section className="bg-[hsl(270,40%,6%)] py-24" id="assessment">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
           <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#06B6D4] mb-3">
@@ -273,7 +273,7 @@ const DataClarity = () => (
         <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-10">
           {dimensions.map((d, i) => (
             <StaggerItem key={i}>
-              <div className="bg-[hsl(217,30%,12%)] border border-white/[0.07] rounded-2xl p-5 h-full">
+              <div className="bg-[#1C1B2E] border border-white/[0.07] rounded-2xl p-5 h-full">
                 <div className="font-mono-label text-[9px] tracking-[1px] uppercase text-[#06B6D4] mb-2">{d.weight} weight</div>
                 <div className="text-sm font-bold text-white mb-2">{d.title}</div>
                 <p className="text-xs text-[#8888A0] leading-relaxed mb-4">{d.desc}</p>
@@ -320,7 +320,7 @@ const DataClarity = () => (
           {flowNodes.map((n, i) => (
             <div
               key={i}
-              className={`rounded-2xl p-5 border text-center ${n.highlight ? 'bg-[hsl(217,33%,7%)] border-white/[0.07]' : 'bg-card border-border'}`}
+              className={`rounded-2xl p-5 border text-center ${n.highlight ? 'bg-[hsl(270,40%,6%)] border-white/[0.07]' : 'bg-card border-border'}`}
             >
               <div className={`text-xl font-black font-mono-label ${n.numColor} mb-1`}>{n.num}</div>
               <div className={`text-sm font-bold ${n.highlight ? 'text-white' : ''} mb-0.5`}>{n.name}</div>
@@ -367,7 +367,7 @@ const DataClarity = () => (
     </section>
 
     {/* ═══ CTA ═══ */}
-    <section className="bg-[hsl(217,33%,7%)] py-24 text-center" id="contact">
+    <section className="bg-[hsl(270,40%,6%)] py-24 text-center" id="contact">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
           <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#06B6D4] mb-5">
