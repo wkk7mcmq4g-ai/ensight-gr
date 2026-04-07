@@ -1,16 +1,10 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import AnimatedSection from './AnimatedSection';
 import aboutVisual from '@/assets/about-visual.jpg';
+import AnimatedSection from './AnimatedSection';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
     <section ref={sectionRef} className="py-24 relative overflow-hidden" id="about">
@@ -26,7 +20,7 @@ const AboutSection = () => {
                 Built by experience, not theory
               </h2>
             </AnimatedSection>
-            <AnimatedSection delay={0.15}>
+            <AnimatedSection>
               <div className="space-y-5 text-[15px] text-ordinal-body leading-relaxed">
                 <p>
                   Ensight is led by a senior data and technology professional with over 18 years of experience across consulting, financial services, and digital transformation.
@@ -41,16 +35,15 @@ const AboutSection = () => {
             </AnimatedSection>
           </div>
 
-          <AnimatedSection delay={0.3}>
+          <AnimatedSection>
             <div className="relative overflow-hidden rounded-lg">
-              <motion.img
+              <img
                 src={aboutVisual}
                 alt="Abstract geometric shapes representing structured consulting methodology"
                 className="w-full rounded-lg shadow-lg"
                 loading="lazy"
                 width={800}
                 height={1024}
-                style={{ y: imageY }}
               />
               <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background/20 to-transparent" />
             </div>
