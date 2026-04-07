@@ -98,10 +98,10 @@ const DataClarity = () => (
   <div>
     <SEO title="Data Clarity · Ensight" description="Management analytics that drive decisions. Turn scattered data into a real-time picture of your business." path="/data-clarity" />
     {/* ═══ HERO ═══ */}
-    <section className="relative bg-[hsl(270,40%,6%)] overflow-hidden flex items-center px-6 md:px-12 pt-28 pb-14">
+    <section className="relative bg-[hsl(220,20%,8%)] overflow-hidden flex items-center px-6 md:px-12 pt-28 pb-14">
       {/* Animated grid */}
       <div className="absolute inset-0 opacity-100" style={{
-        backgroundImage: 'linear-gradient(rgba(79,70,229,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(79,70,229,0.06) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(13,148,136,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(13,148,136,0.06) 1px, transparent 1px)',
         backgroundSize: '48px 48px',
         animation: 'gridPan 20s linear infinite',
       }} />
