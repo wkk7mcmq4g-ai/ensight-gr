@@ -17,7 +17,7 @@ interface RouteMeta {
 const routes: Record<string, RouteMeta> = {
   '/': {
     title: 'Ensight | Strategy, Automation & Data for Mid-Market Teams',
-    description: 'Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — through strategy, automation, and data clarity.',
+    description: 'Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — with strategy, automation, and data.',
     ogImage: '/og/home.jpg',
   },
   '/about': {
