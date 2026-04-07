@@ -38,7 +38,7 @@ const websiteSchema = {
 
 const Home = () => (
   <>
-    <SEO title="Ensight · Strategy, Automation & Data" description="Ensight helps mid-market organisations eliminate process debt, unlock hidden capacity, and build technology that works the way they do." path="/" ogImage="/og/home.jpg" />
+    <SEO title="Ensight | Strategy, Automation & Data for Mid-Market Teams" description="Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — through strategy, automation, and data clarity." path="/" ogImage="/og/home.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
