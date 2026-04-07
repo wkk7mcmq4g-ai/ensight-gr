@@ -1,27 +1,20 @@
 
 
-## Fix OG Metadata Issues
+## Fix Remaining OG Metadata Issues
 
-Based on the debugger feedback, four issues need addressing:
+### 1. Shorten homepage description to ≤160 chars
+Current (167 chars): "Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — through strategy, automation, and data clarity."
 
-### 1. Resize & compress `public/og/home.jpg`
-- Resize from 1376×768 to **1200×630** (standard OG dimensions)
-- Compress below **300 KB** (well under the 600 KB WhatsApp limit)
-- Apply the same resize/compress pass to all 7 OG images for consistency
+Proposed (156 chars): "Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — with strategy, automation, and data."
 
-### 2. Lengthen homepage title (currently 37 chars → target 50-60)
-- Current: `Ensight | Strategy, Automation & Data`
-- Proposed: `Ensight | Strategy, Automation & Data for Mid-Market Teams` (59 chars)
-- Update in: `index.html`, `plugins/seo-prerender.ts` (route `/`), `src/pages/Home.tsx`
+Update in: `index.html`, `plugins/seo-prerender.ts`, `src/pages/Home.tsx`
 
-### 3. Lengthen homepage description (currently 97 chars → target 110-160)
-- Current: `Ensight helps organisations streamline operations through strategy, automation, and data clarity.`
-- Proposed: `Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — through strategy, automation, and data clarity.` (165 chars)
-- Update in: `index.html`, `plugins/seo-prerender.ts`, `src/pages/Home.tsx`
+### 2. Add call-to-action text to the OG image
+Regenerate `public/og/home.jpg` (1200×630) with a CTA overlay such as "Book a Free Audit" or "See How We Help" to improve click-through when shared on social platforms.
 
 ### Files changed
-- `public/og/*.jpg` — all 7 images resized to 1200×630 and compressed < 300 KB
-- `index.html` — updated title and description meta tags
-- `plugins/seo-prerender.ts` — updated `/` route title and description
-- `src/pages/Home.tsx` — updated SEO component props
+- `index.html` — shorter description
+- `plugins/seo-prerender.ts` — shorter description for `/` route
+- `src/pages/Home.tsx` — shorter description in SEO component
+- `public/og/home.jpg` — regenerated with CTA text overlay
 
