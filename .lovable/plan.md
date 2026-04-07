@@ -1,37 +1,23 @@
 
 
-## Plan: Add Starburst/Radial Decorative Elements
+## Plan: Replace Heading Font with a Jeko-like Free Alternative
 
-Inspired by the brand guide's radial/starburst motifs, add a new `'starburst'` variant to `DecorativeShapes` and place it in key sections.
+Jeko Black is a bold, geometric, rounded sans-serif. The closest free match is **Plus Jakarta Sans** (available on Google Fonts) at weight 800 — it shares Jeko's geometric proportions, rounded terminals, and modern feel.
 
-### What gets built
+### Changes
 
-A new SVG starburst variant featuring:
-- Radial lines emanating from a center point (sunburst pattern)
-- Concentric rings at varying opacities
-- Subtle animated rotation on scroll (using existing parallax logic)
-- Uses `hsl(var(--primary))` and `hsl(var(--secondary))` for brand consistency
-- Very low opacity (0.08–0.15) so it's atmospheric, not distracting
+**`src/index.css`**
+- Replace the Google Fonts import: swap `Outfit` for `Plus Jakarta Sans:wght@400;500;600;700;800` (keep Outfit for body, add Plus Jakarta for headings)
+- Actually: keep Outfit for body text, add Plus Jakarta Sans for headings
+- Update the `body` font-family to keep Outfit
+- Add a new utility class `.font-heading` using Plus Jakarta Sans 800
 
-### Files changed
+**`tailwind.config.ts`**
+- Add `fontFamily.heading: ['Plus Jakarta Sans', 'sans-serif']` to the theme extend
 
-**`src/components/DecorativeShapes.tsx`**
-- Add `'starburst'` to the variant union type
-- New SVG block: ~24 radial lines from center, 2–3 concentric circle rings, a few accent dots — all animated in with staggered delays
-- Parallax scroll rotation via existing `useTransform`
+**Heading components** (HeroSection, CTASection, ValuePillarsSection, HowWeHelpSection, BeforeAfterSection, SelectedWorkSection, ProofSection, ProblemsSection, AboutSection, EngageSection, QuoteSection, etc.)
+- Add `font-heading` class to all `<h1>` and `<h2>` elements
 
-**`src/components/home/HeroSection.tsx`**
-- Import `DecorativeShapes`
-- Add `<DecorativeShapes variant="starburst" />` inside the section (behind content, pointer-events-none)
-
-**`src/components/home/CTASection.tsx`**
-- Add a starburst behind the CTA section (using `className` to invert color to white at low opacity since this section has a colored background)
-
-**`src/components/home/OpTransformHero.tsx`**
-- Switch existing `DecorativeShapes` from `variant="dots"` to `variant="starburst"`
-
-### Technical notes
-- No new dependencies
-- All decorative elements are `aria-hidden` and `pointer-events-none`
-- Animations use existing framer-motion patterns already in `DecorativeShapes`
+### Result
+Bold, geometric headings that approximate the Jeko Black aesthetic, paired with Outfit for body text.
 
