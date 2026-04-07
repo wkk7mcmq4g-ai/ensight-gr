@@ -1,4 +1,5 @@
 import SEO from '@/components/SEO';
+import { Helmet } from 'react-helmet-async';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 import georgeAvatar from '@/assets/george-kondylis.jpg';
@@ -38,6 +39,16 @@ const values = [
 const About = () => (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
     <SEO title="About · Ensight" description="Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt." path="/about" />
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ensight-gr.lovable.app/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://ensight-gr.lovable.app/about" }
+        ]
+      })}</script>
+    </Helmet>
     <DecorativeShapes variant="circles" />
     {/* Hero */}
     <AnimatedSection className="text-center mb-20">
