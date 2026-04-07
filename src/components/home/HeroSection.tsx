@@ -12,7 +12,7 @@ const HeroSection = () => (
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.15 }}
+          transition={{ duration: 0.5, ease, delay: 0.05 }}
           className="text-[clamp(32px,7vw,80px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
         >
           We <span className="text-[#0A7EA4]">transform</span> how organisations work with technology and data.
