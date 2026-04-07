@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import HeroVisual from './HeroVisual';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
