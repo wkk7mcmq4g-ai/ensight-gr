@@ -1,8 +1,11 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import SEO from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 import georgeAvatar from '@/assets/george-kondylis.jpg';
+import aboutVisual from '@/assets/about-visual.jpg';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const team = [
