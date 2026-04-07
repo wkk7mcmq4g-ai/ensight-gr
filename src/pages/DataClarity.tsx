@@ -273,7 +273,7 @@ const DataClarity = () => (
         <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-10">
           {dimensions.map((d, i) => (
             <StaggerItem key={i}>
-              <div className="bg-[hsl(220,18%,12%)] border border-white/[0.07] rounded-2xl p-5 h-full">
+              <div className="bg-[hsl(217,30%,12%)] border border-white/[0.07] rounded-2xl p-5 h-full">
                 <div className="font-mono-label text-[9px] tracking-[1px] uppercase text-[#06B6D4] mb-2">{d.weight} weight</div>
                 <div className="text-sm font-bold text-white mb-2">{d.title}</div>
                 <p className="text-xs text-[#8888A0] leading-relaxed mb-4">{d.desc}</p>
