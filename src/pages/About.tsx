@@ -37,6 +37,7 @@ const values = [
 
 const About = () => (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
+    <SEO title="About · Ensight" description="Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt." path="/about" />
     <DecorativeShapes variant="circles" />
     {/* Hero */}
     <AnimatedSection className="text-center mb-20">

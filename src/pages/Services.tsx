@@ -111,6 +111,7 @@ const engagements = [
 
 const Services = () => (
   <>
+    <SEO title="Services · Ensight" description="Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation." path="/services" />
     {/* Hero */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 pt-28 pb-14 relative overflow-hidden">
       <DecorativeShapes variant="grid" />

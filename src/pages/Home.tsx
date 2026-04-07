@@ -13,6 +13,7 @@ import CTASection from '@/components/home/CTASection';
 
 const Home = () => (
   <>
+    <SEO title="Ensight · Strategy, Automation & Data" description="Ensight helps mid-market organisations eliminate process debt, unlock hidden capacity, and build technology that works the way they do." path="/" />
     <HeroSection />
     <LogoStripSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
