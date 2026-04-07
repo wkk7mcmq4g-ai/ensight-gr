@@ -43,20 +43,20 @@ const Home = () => (
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
     </Helmet>
-    <HeroSection />
-    <LogoStripSection />
-    <div className="bg-white">
+    <div className="border-b border-[#D6D0C9]"><HeroSection /></div>
+    <div className="border-b border-[#D6D0C9]"><LogoStripSection /></div>
+    <div className="bg-white border-b border-[#D6D0C9]">
       <ValuePillarsSection />
     </div>
-    <HowWeHelpSection />
-    <div className="bg-white">
+    <div className="border-b border-[#D6D0C9]"><HowWeHelpSection /></div>
+    <div className="bg-white border-b border-[#D6D0C9]">
       <BeforeAfterSection />
     </div>
-    <SelectedWorkSection />
+    <div className="border-b border-[#D6D0C9]"><SelectedWorkSection /></div>
     <ProofSection />
     <QuoteSection />
-    <AboutSection />
-    <div className="bg-white">
+    <div className="border-b border-[#D6D0C9]"><AboutSection /></div>
+    <div className="bg-white border-b border-[#D6D0C9]">
       <EngageSection />
     </div>
     <CTASection />

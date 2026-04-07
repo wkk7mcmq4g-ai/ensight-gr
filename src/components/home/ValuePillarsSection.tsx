@@ -55,9 +55,8 @@ const ValuePillarsSection = () => (
         <StaggerItem key={i}>
           <Link
             to={p.link}
-            className="block bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 ease-out group h-full no-underline"
+            className="block bg-card border border-border border-l-[3px] border-l-[#0A7EA4] rounded-lg p-7 shadow-sm hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 hover:border-l-[#0A7EA4] transition-all duration-300 ease-out group h-full no-underline"
           >
-            <div className={`absolute top-0 left-0 w-full h-[2px] ${p.color} transition-all duration-300 group-hover:h-[3px]`} />
             <div
               className="mb-4 w-10 h-10 rounded-md flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5"
               style={{ backgroundColor: `${p.hsl}15`, color: p.hsl }}
