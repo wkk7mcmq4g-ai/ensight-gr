@@ -1,5 +1,4 @@
 import { useState, useRef, useCallback } from 'react';
-import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import { GripVertical } from 'lucide-react';
 
@@ -176,7 +175,7 @@ const BeforeAfterSection = () => {
           </div>
 
           {/* Slider handle */}
-          <motion.div
+          <div
             className="absolute top-0 bottom-0 z-20 flex items-center justify-center"
             style={{ left: `${sliderX}%`, transform: 'translateX(-50%)' }}
             onPointerDown={onPointerDown}
@@ -185,7 +184,7 @@ const BeforeAfterSection = () => {
             <div className="absolute w-9 h-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-[0_4px_20px_-4px_hsl(var(--primary)/0.5)] hover:scale-110 transition-transform">
               <GripVertical size={16} />
             </div>
-          </motion.div>
+          </div>
 
           {/* Labels */}
           <div className="absolute top-3 left-3 z-10 bg-destructive/90 text-destructive-foreground px-2.5 py-1 rounded text-[10px] font-semibold uppercase tracking-wider">

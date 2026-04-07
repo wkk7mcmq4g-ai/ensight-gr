@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { AlertCircle } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
@@ -20,17 +19,13 @@ const PainPointsSection = () => (
 
         <ul className="space-y-5 mb-10 max-w-[640px]">
           {painPoints.map((point, i) => (
-            <motion.li
+            <li
               key={i}
-              initial={{ opacity: 0, x: -8 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-20px' }}
-              transition={{ duration: 0.25, delay: i * 0.04 }}
               className="flex items-start gap-3 text-base md:text-lg text-muted-foreground leading-relaxed"
             >
               <AlertCircle size={20} className="text-primary mt-0.5 flex-shrink-0" />
               {point}
-            </motion.li>
+            </li>
           ))}
         </ul>
 

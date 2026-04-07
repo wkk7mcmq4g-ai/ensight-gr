@@ -1,8 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { motion } from 'framer-motion';
 import DecorativeShapes from '@/components/DecorativeShapes';
-
-const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const CTASection = () => {
   const [name, setName] = useState('');
@@ -20,29 +17,13 @@ const CTASection = () => {
     <section className="bg-dark-section py-28 relative overflow-hidden" id="contact">
       <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-primary-foreground [&_circle]:!stroke-primary-foreground [&_circle]:!fill-primary-foreground" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease }}
-          className="text-[clamp(28px,4.5vw,44px)] font-bold tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center"
-        >
+        <h2 className="text-[clamp(28px,4.5vw,44px)] font-bold tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center">
           Get in Touch
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease, delay: 0.1 }}
-          className="text-[17px] text-primary-foreground/80 leading-relaxed max-w-[480px] mx-auto mb-10 text-center"
-        >
+        </h2>
+        <p className="text-[17px] text-primary-foreground/80 leading-relaxed max-w-[480px] mx-auto mb-10 text-center">
           Tell us about the challenge you're working on. We'll get back to you within one business day.
-        </motion.p>
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease, delay: 0.2 }}
+        </p>
+        <form
           onSubmit={handleSubmit}
           className="max-w-[520px] mx-auto flex flex-col gap-4"
         >
@@ -78,7 +59,7 @@ const CTASection = () => {
           >
             Send Message
           </button>
-        </motion.form>
+        </form>
       </div>
     </section>
   );
