@@ -6,80 +6,80 @@
 
 @layer base {
   :root {
-    --background: 240 4% 97%;
-    --foreground: 200 15% 10%;
+    --background: 40 25% 97%;
+    --foreground: 216 60% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 15% 10%;
+    --card-foreground: 216 60% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 15% 10%;
+    --popover-foreground: 216 60% 10%;
 
-    --primary: 247 89% 60%;
+    --primary: 217 91% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4% 93%;
-    --secondary-foreground: 200 15% 10%;
+    --secondary: 40 15% 93%;
+    --secondary-foreground: 216 60% 10%;
 
-    --muted: 240 4% 94%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 40 15% 93%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 240 4% 93%;
-    --accent-foreground: 200 15% 10%;
+    --accent: 40 15% 93%;
+    --accent-foreground: 216 60% 10%;
 
     --destructive: 340 72% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 4% 90%;
-    --input: 240 4% 90%;
-    --ring: 247 89% 60%;
+    --border: 40 10% 90%;
+    --input: 40 10% 90%;
+    --ring: 217 91% 53%;
 
     --radius: 0.5rem;
 
     /* Ensight brand tokens */
-    --electric: 244 43% 25%;
-    --electric-bright: 244 40% 35%;
-    --electric-glow: 175 85% 52%;
-    --ordinal-green: 175 70% 42%;
-    --ordinal-green-bright: 175 75% 50%;
+    --electric: 216 60% 10%;
+    --electric-bright: 216 50% 18%;
+    --electric-glow: 217 91% 53%;
+    --ordinal-green: 217 80% 45%;
+    --ordinal-green-bright: 217 91% 53%;
     --ordinal-pink: 12 70% 55%;
     --ordinal-pink-bright: 12 75% 62%;
     --ordinal-amber: 38 72% 48%;
-    --ordinal-cyan: 175 85% 52%;
-    --ordinal-body: 200 25% 7%;
-    --ordinal-dim: 240 4% 46%;
-    --ordinal-faint: 240 4% 76%;
+    --ordinal-cyan: 217 91% 53%;
+    --ordinal-body: 216 60% 10%;
+    --ordinal-dim: 215 16% 47%;
+    --ordinal-faint: 215 16% 65%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 4% 26%;
-    --sidebar-primary: 247 89% 60%;
+    --sidebar-background: 40 20% 98%;
+    --sidebar-foreground: 216 40% 26%;
+    --sidebar-primary: 217 91% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4% 96%;
-    --sidebar-accent-foreground: 247 89% 60%;
-    --sidebar-border: 240 4% 91%;
-    --sidebar-ring: 247 89% 60%;
+    --sidebar-accent: 40 15% 96%;
+    --sidebar-accent-foreground: 217 91% 53%;
+    --sidebar-border: 40 10% 91%;
+    --sidebar-ring: 217 91% 53%;
   }
 
   .dark {
-    --background: 200 25% 7%;
-    --foreground: 240 4% 93%;
-    --card: 244 40% 15%;
-    --card-foreground: 240 4% 93%;
-    --popover: 244 40% 15%;
-    --popover-foreground: 240 4% 93%;
-    --primary: 247 89% 60%;
+    --background: 216 60% 7%;
+    --foreground: 40 15% 93%;
+    --card: 216 50% 12%;
+    --card-foreground: 40 15% 93%;
+    --popover: 216 50% 12%;
+    --popover-foreground: 40 15% 93%;
+    --primary: 217 91% 53%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 244 35% 20%;
-    --secondary-foreground: 240 4% 93%;
-    --muted: 244 35% 20%;
-    --muted-foreground: 240 4% 56%;
-    --accent: 244 35% 20%;
-    --accent-foreground: 240 4% 93%;
+    --secondary: 216 40% 18%;
+    --secondary-foreground: 40 15% 93%;
+    --muted: 216 40% 18%;
+    --muted-foreground: 215 16% 55%;
+    --accent: 216 40% 18%;
+    --accent-foreground: 40 15% 93%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 244 35% 22%;
-    --input: 244 35% 22%;
-    --ring: 247 89% 60%;
+    --border: 216 40% 18%;
+    --input: 216 40% 18%;
+    --ring: 217 91% 53%;
   }
 }
 
