@@ -56,7 +56,7 @@ const Home = () => (
     <ProofSection />
     <QuoteSection />
     <div className="border-b border-[#D6D0C9]"><AboutSection /></div>
-    <div className="bg-white border-b border-[#D6D0C9]">
+    <div className="border-b border-[#D6D0C9]">
       <EngageSection />
     </div>
     <CTASection />

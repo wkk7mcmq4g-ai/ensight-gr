@@ -13,7 +13,7 @@ const AboutSection = () => {
   const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section ref={sectionRef} className="bg-background py-24 relative overflow-hidden" id="about">
+    <section ref={sectionRef} className="py-24 relative overflow-hidden" id="about">
       <DecorativeShapes variant="starburst" className="opacity-[0.06]" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
