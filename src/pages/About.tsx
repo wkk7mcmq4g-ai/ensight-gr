@@ -1,11 +1,8 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import SEO from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 import georgeAvatar from '@/assets/george-kondylis.jpg';
-import aboutVisual from '@/assets/about-visual.jpg';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const team = [
@@ -39,15 +36,7 @@ const values = [
   },
 ];
 
-const About = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start end', 'end start'],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
-
-  return (
+const About = () => (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
     <SEO title="About · Ensight" description="Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt." path="/about" />
     <Helmet>
@@ -94,22 +83,6 @@ const About = () => {
       <p className="text-lg text-ordinal-body leading-relaxed max-w-[600px] mx-auto">
         Based in Athens, Ensight is an operational consultancy that helps growing companies eliminate process debt — the invisible inefficiency that compounds as you scale.
       </p>
-    </AnimatedSection>
-
-    {/* Hero Image with Parallax */}
-    <AnimatedSection className="mb-16">
-      <div ref={heroRef} className="relative overflow-hidden rounded-lg">
-        <motion.img
-          src={aboutVisual}
-          alt="Abstract geometric shapes representing structured consulting methodology"
-          className="w-full rounded-lg shadow-lg"
-          loading="lazy"
-          width={800}
-          height={1024}
-          style={{ y: imageY }}
-        />
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background/20 to-transparent" />
-      </div>
     </AnimatedSection>
 
     {/* Story */}
@@ -185,6 +158,6 @@ const About = () => {
       </div>
     </AnimatedSection>
   </div>
-  );
-};
+);
+
 export default About;
