@@ -213,13 +213,7 @@ const CategoryPage = ({
   };
 
   return (
-    <motion.div
-      key={cat.id}
-      initial={{ opacity: 0, x: 60 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -60 }}
-      transition={{ duration: 0.3 }}
-    >
+    <div>
       <div className="bg-card border border-border rounded-lg overflow-hidden">
         <div className="p-8">
           <div className="mb-6">
