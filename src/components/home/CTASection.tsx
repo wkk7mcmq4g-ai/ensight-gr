@@ -17,7 +17,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="bg-primary py-28 relative overflow-hidden" id="contact">
+    <section className="bg-dark-section py-28 relative overflow-hidden" id="contact">
       <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-primary-foreground [&_circle]:!stroke-primary-foreground [&_circle]:!fill-primary-foreground" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <motion.h2
@@ -74,7 +74,7 @@ const CTASection = () => {
           />
           <button
             type="submit"
-            className="bg-white text-primary text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-xl transition-all self-start"
+            className="bg-primary text-white text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-xl transition-all self-start"
           >
             Send Message
           </button>
