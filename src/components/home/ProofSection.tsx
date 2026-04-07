@@ -8,7 +8,7 @@ const proofs = [
     metric: '~60%',
     desc: 'reduction in manual processing',
     detail: 'Fragmented systems replaced with a single servicing platform. Daily reconciliation tasks eliminated. Real-time portfolio visibility enabled.',
-    bg: 'bg-gradient-to-br from-primary to-primary/80',
+    bg: 'bg-gradient-to-br from-primary to-electric-bright',
   },
   {
     sector: 'Non-Profit',
@@ -44,7 +44,7 @@ const ProofCard = ({ p, i }: { p: typeof proofs[0]; i: number }) => {
       >
         <div className="text-[9px] tracking-[2px] uppercase opacity-60 mb-3">{p.sector}</div>
         <motion.div
-          className="text-5xl font-bold leading-none mb-1"
+          className="text-5xl font-bold leading-none mb-1 text-stat-accent"
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

@@ -12,7 +12,7 @@ const StatStrip = () => (
         key={i}
         className={`${s.bg} px-5 py-6 text-center border-r border-white/10 last:border-0`}
       >
-        <div className="text-3xl md:text-4xl font-bold text-white leading-none tracking-tight mb-2">
+        <div className="text-3xl md:text-4xl font-bold text-stat-accent leading-none tracking-tight mb-2">
           {s.num}
         </div>
         <div className="text-[9px] uppercase tracking-[0.5px] text-white/70 leading-snug whitespace-pre-line">

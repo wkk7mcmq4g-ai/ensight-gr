@@ -78,6 +78,7 @@ export default {
         "ordinal-body": "hsl(var(--ordinal-body))",
         "ordinal-dim": "hsl(var(--ordinal-dim))",
         "ordinal-faint": "hsl(var(--ordinal-faint))",
+        "stat-accent": "hsl(var(--stat-accent))",
       },
       borderRadius: {
         lg: "var(--radius)",
