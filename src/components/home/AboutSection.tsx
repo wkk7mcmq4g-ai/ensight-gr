@@ -1,8 +1,10 @@
 import AnimatedSection from './AnimatedSection';
 import aboutVisual from '@/assets/about-visual.jpg';
+import DecorativeShapes from '@/components/DecorativeShapes';
 
 const AboutSection = () => (
-  <section className="bg-muted/30 py-24" id="about">
+  <section className="bg-muted/30 py-24 relative overflow-hidden" id="about">
+    <DecorativeShapes variant="starburst" className="opacity-[0.06]" />
     <div className="max-w-[1200px] mx-auto px-6 md:px-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div>
