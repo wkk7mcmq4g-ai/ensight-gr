@@ -185,6 +185,6 @@ const About = () => {
       </div>
     </AnimatedSection>
   </div>
-);
-
+  );
+};
 export default About;
