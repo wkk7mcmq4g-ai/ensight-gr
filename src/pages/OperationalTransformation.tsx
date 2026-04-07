@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import OpTransformHero from '@/components/home/OpTransformHero';
 import ProblemsSection from '@/components/home/ProblemsSection';
 import BeforeAfterCards from '@/components/home/BeforeAfterCards';

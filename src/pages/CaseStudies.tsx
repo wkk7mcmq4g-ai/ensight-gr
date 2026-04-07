@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';

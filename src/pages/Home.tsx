@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import HeroSection from '@/components/home/HeroSection';
 import LogoStripSection from '@/components/home/LogoStripSection';
 import ValuePillarsSection from '@/components/home/ValuePillarsSection';

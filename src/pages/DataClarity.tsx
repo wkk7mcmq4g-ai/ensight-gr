@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Clock, FolderSync, BarChart3, Database, Factory, Plane, Landmark, type LucideIcon } from 'lucide-react';
