@@ -1,55 +1,55 @@
 
-
-## Plan: Apply Charcoal + Teal + Off-White Palette
+## Plan: Apply Slate & Coral Palette
 
 New palette:
-- **Charcoal** `#1A1A2E` (HSL ~240 27% 14%) → dark backgrounds, body text
-- **Teal** `#0D9488` (HSL ~175 83% 32%) → primary accent
-- **Off-White** `#FAFAF9` (HSL ~60 20% 98%) → light backgrounds
-- **Cool Gray** `#6B7280` (HSL ~220 9% 46%) → muted text
-- **Light Gray** `#9CA3AF` (HSL ~218 11% 65%) → faint/secondary text
+- **Slate Dark** `#1E293B` (HSL ~217 33% 17%) → dark backgrounds, body text
+- **Coral** `#F97316` (HSL ~25 95% 53%) → primary accent
+- **Soft White** `#F8FAFC` (HSL ~210 40% 98%) → light backgrounds
+- **Mid Slate** `#64748B` (HSL ~215 16% 47%) → muted text
+- **Light Slate** `#94A3B8` (HSL ~215 16% 65%) → faint/secondary text
+- **Warm Coral Glow** `#FB923C` (HSL ~27 96% 61%) → secondary accent / gradients
 
 ### Changes
 
 **`src/index.css`** — Update all CSS custom properties:
 
 Light mode:
-- `--background` → `60 20% 98%` (Off-White)
-- `--foreground` → `240 27% 14%` (Charcoal)
-- `--primary` → `175 83% 32%` (Teal)
+- `--background` → `210 40% 98%` (Soft White)
+- `--foreground` → `217 33% 17%` (Slate Dark)
+- `--primary` → `25 95% 53%` (Coral)
 - `--primary-foreground` → white
 - `--card`, `--popover` → `0 0% 100%`
-- `--muted`, `--secondary`, `--accent` → `60 5% 93%`
-- `--muted-foreground` → `220 9% 46%` (Cool Gray)
-- `--border`, `--input` → `60 5% 90%`
-- `--ring` → Teal
+- `--muted`, `--secondary`, `--accent` → `210 20% 93%`
+- `--muted-foreground` → `215 16% 47%` (Mid Slate)
+- `--border`, `--input` → `210 15% 90%`
+- `--ring` → Coral
 
 Dark mode:
-- `--background` → `240 27% 8%` (deeper Charcoal)
-- `--foreground` → `60 10% 93%`
-- `--primary` → Teal
-- `--card` → `240 25% 14%` (Charcoal)
-- `--border` → `240 20% 20%`
+- `--background` → `217 33% 7%` (deep slate)
+- `--foreground` → `210 20% 93%`
+- `--primary` → Coral
+- `--card` → `217 30% 14%` (Slate Dark)
+- `--border` → `217 25% 20%`
 
 Brand tokens:
-- `--electric` → Charcoal (`240 27% 14%`)
-- `--electric-bright` → `240 22% 22%`
-- `--electric-glow` → Teal (`175 83% 32%`)
-- `--ordinal-green` / `--ordinal-cyan` → Teal shades
-- `--ordinal-pink` → warm coral kept
+- `--electric` → `217 33% 17%` (Slate Dark)
+- `--electric-bright` → `217 28% 24%`
+- `--electric-glow` → `25 95% 53%` (Coral)
+- `--ordinal-green` / `--ordinal-cyan` → Coral shades
+- `--ordinal-pink` → Warm Coral Glow (`27 96% 61%`)
 - `--ordinal-amber` → kept
-- `--ordinal-body` → Charcoal
-- `--ordinal-dim` → Cool Gray
-- `--ordinal-faint` → Light Gray
+- `--ordinal-body` → Slate Dark
+- `--ordinal-dim` → Mid Slate (`215 16% 47%`)
+- `--ordinal-faint` → Light Slate (`215 16% 65%`)
 
 Sidebar tokens updated to match.
+
+**`src/pages/DataClarity.tsx`** — Update dark section backgrounds from `hsl(220,20%,8%)` → `hsl(217,33%,7%)` and card darks to match.
 
 **Memory** — Update `mem://design/tokens` and `mem://index.md` with new palette.
 
 ### Files changed
 - `src/index.css`
+- `src/pages/DataClarity.tsx`
 - `mem://design/tokens`
 - `mem://index.md`
-
-All components auto-update via CSS variables.
-
