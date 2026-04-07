@@ -13,16 +13,16 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease, delay: 0.15 }}
-          className="text-[clamp(28px,6vw,68px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
+          className="text-[clamp(32px,7vw,80px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
         >
-          We transform how organisations work with technology and data.
+          We <span className="text-[#0A7EA4]">transform</span> how organisations work with technology and data.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease, delay: 0.3 }}
-          className="text-base md:text-xl text-muted-foreground leading-relaxed max-w-[600px] mb-7"
+          className="text-base md:text-xl text-[#3D5A68] font-medium leading-relaxed max-w-[600px] mb-7"
         >
           Strategy, platforms, automation, and analytics — designed around how your business actually operates.
         </motion.p>
