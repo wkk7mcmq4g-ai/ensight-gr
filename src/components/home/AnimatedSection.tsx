@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -7,8 +7,9 @@ interface Props {
   delay?: number;
 }
 
-const AnimatedSection = ({ children, className, delay = 0 }: Props) => (
+const AnimatedSection = forwardRef<HTMLDivElement, Props>(({ children, className, delay = 0 }, ref) => (
   <motion.div
+    ref={ref}
     className={className}
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -17,33 +18,45 @@ const AnimatedSection = ({ children, className, delay = 0 }: Props) => (
   >
     {children}
   </motion.div>
+));
+
+AnimatedSection.displayName = 'AnimatedSection';
+
+export const StaggerChildren = forwardRef<HTMLDivElement, { children: ReactNode; className?: string }>(
+  ({ children, className }, ref) => (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-80px' }}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.1 } },
+      }}
+    >
+      {children}
+    </motion.div>
+  )
 );
 
-export const StaggerChildren = ({ children, className }: { children: ReactNode; className?: string }) => (
-  <motion.div
-    className={className}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: '-80px' }}
-    variants={{
-      hidden: {},
-      visible: { transition: { staggerChildren: 0.1 } },
-    }}
-  >
-    {children}
-  </motion.div>
+StaggerChildren.displayName = 'StaggerChildren';
+
+export const StaggerItem = forwardRef<HTMLDivElement, { children: ReactNode; className?: string }>(
+  ({ children, className }, ref) => (
+    <motion.div
+      ref={ref}
+      className={className}
+      variants={{
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+      }}
+    >
+      {children}
+    </motion.div>
+  )
 );
 
-export const StaggerItem = ({ children, className }: { children: ReactNode; className?: string }) => (
-  <motion.div
-    className={className}
-    variants={{
-      hidden: { opacity: 0, y: 24 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-    }}
-  >
-    {children}
-  </motion.div>
-);
+StaggerItem.displayName = 'StaggerItem';
 
 export default AnimatedSection;
