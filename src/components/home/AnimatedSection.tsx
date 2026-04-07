@@ -29,10 +29,10 @@ export const StaggerChildren = forwardRef<HTMLDivElement, { children: ReactNode;
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: '-20px' }}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: 0.1 } },
+        visible: { transition: { staggerChildren: 0.05 } },
       }}
     >
       {children}
