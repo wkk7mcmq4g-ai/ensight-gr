@@ -96,6 +96,22 @@ const About = () => {
       </p>
     </AnimatedSection>
 
+    {/* Hero Image with Parallax */}
+    <AnimatedSection className="mb-16">
+      <div ref={heroRef} className="relative overflow-hidden rounded-lg">
+        <motion.img
+          src={aboutVisual}
+          alt="Abstract geometric shapes representing structured consulting methodology"
+          className="w-full rounded-lg shadow-lg"
+          loading="lazy"
+          width={800}
+          height={1024}
+          style={{ y: imageY }}
+        />
+        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background/20 to-transparent" />
+      </div>
+    </AnimatedSection>
+
     {/* Story */}
     <AnimatedSection className="bg-card border border-border rounded-lg p-10 mb-12">
       <h2 className="text-xl font-bold mb-4">Our Story</h2>
