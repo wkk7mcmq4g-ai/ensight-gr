@@ -21,6 +21,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/loan-servicing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/charity-crm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/financial-reporting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/touro-driver-ux</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ensight-gr.lovable.app/data-clarity</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
