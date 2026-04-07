@@ -1,4 +1,5 @@
 import SEO from '@/components/SEO';
+import { Helmet } from 'react-helmet-async';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import { Target, Eye, Zap, Users } from 'lucide-react';
 import georgeAvatar from '@/assets/george-kondylis.jpg';
