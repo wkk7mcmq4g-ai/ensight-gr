@@ -1,50 +1,50 @@
 
 
-## Plan: Apply Charcoal + Teal + Off-White Palette
+## Plan: Apply Charcoal + Electric Blue + White Palette
 
 New palette:
-- **Charcoal** `#1A1A2E` (HSL ~240 27% 14%) → dark backgrounds, body text
-- **Teal** `#0D9488` (HSL ~175 83% 32%) → primary accent
-- **Off-White** `#FAFAF9` (HSL ~60 20% 98%) → light backgrounds
-- **Cool Gray** `#6B7280` (HSL ~220 9% 46%) → muted text
-- **Light Gray** `#9CA3AF` (HSL ~218 11% 65%) → faint/secondary text
+- **Charcoal** `#121417` (HSL ~216 10% 8%) → primary dark, nav, headings
+- **Secondary** `#2A2F36` (HSL ~213 13% 19%) → secondary dark
+- **Electric Blue** `#3B82F6` (HSL ~217 91% 60%) → accent
+- **Background** `#FFFFFF` / `#F7F7F7` (HSL ~0 0% 97%) → light backgrounds
+- **Text** `#111827` (HSL ~222 47% 11%) → body text
 
 ### Changes
 
 **`src/index.css`** — Update all CSS custom properties:
 
 Light mode:
-- `--background` → `60 20% 98%` (Off-White)
-- `--foreground` → `240 27% 14%` (Charcoal)
-- `--primary` → `175 83% 32%` (Teal)
+- `--background` → `0 0% 97%` (#F7F7F7)
+- `--foreground` → `222 47% 11%` (#111827)
+- `--primary` → `217 91% 60%` (Electric Blue)
 - `--primary-foreground` → white
-- `--card`, `--popover` → `0 0% 100%`
-- `--muted`, `--secondary`, `--accent` → `60 5% 93%`
-- `--muted-foreground` → `220 9% 46%` (Cool Gray)
-- `--border`, `--input` → `60 5% 90%`
-- `--ring` → Teal
+- `--secondary` → `213 13% 19%` (#2A2F36)
+- `--secondary-foreground` → white
+- `--card`, `--popover` → `0 0% 100%` (white)
+- `--muted`, `--accent` → `0 0% 95%`
+- `--muted-foreground` → `215 14% 46%` (mid gray)
+- `--border`, `--input` → `0 0% 91%`
+- `--ring` → Electric Blue
 
 Dark mode:
-- `--background` → `240 27% 8%` (deeper Charcoal)
-- `--foreground` → `60 10% 93%`
-- `--primary` → Teal
-- `--card` → `240 25% 14%` (Charcoal)
-- `--border` → `240 20% 20%`
+- `--background` → `216 10% 6%` (deeper charcoal)
+- `--foreground` → `0 0% 95%`
+- `--card` → `216 10% 8%` (Charcoal)
+- `--border` → `213 13% 19%`
 
 Brand tokens:
-- `--electric` → Charcoal (`240 27% 14%`)
-- `--electric-bright` → `240 22% 22%`
-- `--electric-glow` → Teal (`175 83% 32%`)
-- `--ordinal-green` / `--ordinal-cyan` → Teal shades
-- `--ordinal-pink` → warm coral kept
-- `--ordinal-amber` → kept
-- `--ordinal-body` → Charcoal
-- `--ordinal-dim` → Cool Gray
-- `--ordinal-faint` → Light Gray
+- `--electric` → `216 10% 8%` (Charcoal)
+- `--electric-bright` → `213 13% 19%` (Secondary)
+- `--electric-glow` → `217 91% 60%` (Electric Blue)
+- `--ordinal-green/cyan` → Electric Blue
+- `--ordinal-body` → `222 47% 11%` (Text)
+- `--ordinal-dim` → `215 14% 46%`
+- `--ordinal-faint` → `215 12% 60%`
+- Pink, amber kept as-is
 
 Sidebar tokens updated to match.
 
-**Memory** — Update `mem://design/tokens` and `mem://index.md` with new palette.
+**`mem://design/tokens`** and **`mem://index.md`** — Updated with new palette hex codes.
 
 ### Files changed
 - `src/index.css`
