@@ -22,10 +22,10 @@ const PainPointsSection = () => (
           {painPoints.map((point, i) => (
             <motion.li
               key={i}
-              initial={{ opacity: 0, x: -12 }}
+              initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              viewport={{ once: true, margin: '-20px' }}
+              transition={{ duration: 0.25, delay: i * 0.04 }}
               className="flex items-start gap-3 text-base md:text-lg text-muted-foreground leading-relaxed"
             >
               <AlertCircle size={20} className="text-primary mt-0.5 flex-shrink-0" />

@@ -49,7 +49,7 @@ const HeroSection = () => (
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease, delay: 0.3 }}
+        transition={{ duration: 0.6, ease, delay: 0.1 }}
         className="hidden md:block"
       >
         <HeroVisual />

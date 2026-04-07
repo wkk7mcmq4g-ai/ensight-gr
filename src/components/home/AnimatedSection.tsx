@@ -48,8 +48,8 @@ export const StaggerItem = forwardRef<HTMLDivElement, { children: ReactNode; cla
       ref={ref}
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 24 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+        hidden: { opacity: 0, y: 12 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } },
       }}
     >
       {children}
