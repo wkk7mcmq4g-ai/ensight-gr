@@ -15,14 +15,14 @@ const proofs = [
     metric: '100%',
     desc: 'programme visibility',
     detail: 'Siloed programmes unified under a single CRM. Compliance tracking structured across the organisation. Reporting centralised.',
-    bg: 'bg-gradient-to-br from-electric-bright to-primary',
+    bg: 'bg-gradient-to-br from-electric to-primary',
   },
   {
     sector: 'Financial Reporting',
     metric: 'Days → Min',
     desc: 'reporting turnaround',
     detail: 'Manual data extraction and reconciliation replaced with automated pipelines. Real-time dashboards delivering consistent, accurate insights.',
-    bg: 'bg-gradient-to-br from-ordinal-green to-ordinal-green-bright',
+    bg: 'bg-gradient-to-br from-ordinal-green to-primary',
   },
 ];
 
