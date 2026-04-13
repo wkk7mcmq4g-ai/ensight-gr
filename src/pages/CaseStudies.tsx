@@ -99,7 +99,7 @@ const CaseStudies = () => {
                 </div>
                 <div className="p-7">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       {IconComponent && (
                         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                           <IconComponent size={16} className="text-primary" />
@@ -113,6 +113,11 @@ const CaseStudies = () => {
                       <Clock size={12} />
                       {cs.timeline}
                     </div>
+                  </div>
+
+                  {/* Client logo */}
+                  <div className="h-8 mb-3">
+                    <img src={cs.clientLogo} alt={cs.client} className="h-full w-auto object-contain opacity-70" loading="lazy" />
                   </div>
 
                   <h2 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{cs.title}</h2>
