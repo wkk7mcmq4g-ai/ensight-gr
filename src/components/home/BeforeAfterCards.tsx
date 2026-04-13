@@ -35,7 +35,7 @@ const BeforeAfterCards = () => (
 
       <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <StaggerItem>
-          <div className="bg-muted/40 border border-border rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-border/80">
+          <div className="bg-muted/40 border border-border rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_36px_-8px_rgba(0,0,0,0.1)] hover:border-border/80">
             <div className="flex items-center gap-2 mb-6">
               <XCircle className="text-destructive" size={22} />
               <h3 className="text-xl font-semibold">Before</h3>
@@ -58,7 +58,7 @@ const BeforeAfterCards = () => (
         </div>
 
         <StaggerItem>
-          <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_36px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/40">
             <div className="flex items-center gap-2 mb-6">
               <CheckCircle2 className="text-ordinal-green" size={22} />
               <h3 className="text-xl font-semibold">After</h3>
