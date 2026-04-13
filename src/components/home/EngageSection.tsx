@@ -8,7 +8,6 @@ const engagements = [
     title: 'Operational X-Ray',
     meta: '1–2 weeks · Fixed fee',
     desc: "We embed with your team, map real workflows, quantify bottleneck costs, and deliver a prioritised roadmap. Standalone value even if you don't proceed further.",
-    barColor: 'bg-primary',
     showTag: true,
   },
   {
@@ -16,7 +15,6 @@ const engagements = [
     title: 'Quick Win',
     meta: '4–6 weeks · Outcome-linked',
     desc: "One high-impact problem solved. Proof before commitment. We're willing to tie our fee to the measurable outcome.",
-    barColor: 'bg-ordinal-green',
     showTag: false,
   },
   {
@@ -24,7 +22,6 @@ const engagements = [
     title: 'Full Transformation',
     meta: '10–24 weeks · Scoped from X-Ray',
     desc: 'All four framework stages. End-to-end accountability from diagnosis to adopted, working solution. Scoped collaboratively from X-Ray findings.',
-    barColor: 'bg-ordinal-cyan',
     showTag: false,
   },
 ];
@@ -33,7 +30,7 @@ const EngageSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24 relative overflow-hidden" id="start">
     <DecorativeShapes variant="starburst" className="opacity-[0.06]" />
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-accent-cyan mb-3">
         Three Ways to Start
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
@@ -46,10 +43,10 @@ const EngageSection = () => (
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {engagements.map((e, i) => (
         <StaggerItem key={i}>
-          <div className={`${e.showTag ? 'bg-[#E8F4F8]' : 'bg-card'} border border-border rounded-lg p-8 relative overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col`}>
-            <div className={`absolute top-0 left-0 w-full h-[2px] ${e.barColor}`} />
+          <div className={`${e.showTag ? 'bg-[#E8F4F8]/80 backdrop-blur-xl' : 'bg-white/75 backdrop-blur-xl'} border border-white/40 rounded-lg p-8 relative overflow-hidden shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col`}>
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(187,96%,42%)]" />
             {e.showTag && (
-              <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-primary text-white px-2.5 py-1 rounded mb-4">
+              <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(217,91%,60%)] text-white px-2.5 py-1 rounded mb-4">
                 {e.tag}
               </div>
             )}

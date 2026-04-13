@@ -51,6 +51,10 @@
     --ordinal-faint: 200 18% 48%;
     --stat-accent: 39 55% 52%;
     --dark-section: 199 56% 10%;
+    --accent-blue: 217 91% 60%;
+    --accent-cyan: 187 96% 42%;
+    --gradient-cta: linear-gradient(135deg, hsl(195 89% 34%), hsl(217 91% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(195 89% 34%), hsl(187 96% 42%));
 
     --sidebar-background: 30 25% 93%;
     --sidebar-foreground: 200 63% 15%;

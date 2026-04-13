@@ -55,7 +55,7 @@ const CTASection = () => {
           />
           <button
             type="submit"
-            className="bg-primary text-white text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-xl transition-all self-start"
+            className="bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(217,91%,60%)] text-white text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:opacity-90 hover:-translate-y-0.5 hover:shadow-xl transition-all self-start"
           >
             Send Message
           </button>
