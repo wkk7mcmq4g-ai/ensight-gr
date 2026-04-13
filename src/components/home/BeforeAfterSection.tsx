@@ -8,7 +8,7 @@ const SpreadsheetChaos = () => (
     <div className="flex items-center gap-2 mb-3">
       <div className="w-3 h-3 rounded-full bg-destructive/60" />
       <div className="w-3 h-3 rounded-full bg-ordinal-amber/60" />
-      <div className="w-3 h-3 rounded-full bg-ordinal-green/40" />
+      <div className="w-3 h-3 rounded-full bg-primary/40" />
       <span className="ml-2 text-[10px] font-mono-label text-muted-foreground">revenue_tracking_FINAL_v3_copy.xlsx</span>
     </div>
     {/* Fake spreadsheet grid */}
@@ -64,7 +64,7 @@ const CleanDashboard = () => (
         <span className="text-xs font-semibold text-foreground">Revenue Dashboard</span>
       </div>
       <div className="flex items-center gap-1.5">
-        <div className="h-5 px-2 rounded-full bg-ordinal-green/15 text-ordinal-green text-[9px] font-semibold flex items-center">Live</div>
+        <div className="h-5 px-2 rounded-full bg-primary/15 text-primary text-[9px] font-semibold flex items-center">Live</div>
         <div className="h-5 px-2 rounded bg-muted text-[9px] text-muted-foreground">Q1 2025</div>
       </div>
     </div>
@@ -72,9 +72,9 @@ const CleanDashboard = () => (
     {/* KPI row */}
     <div className="grid grid-cols-3 gap-2 mb-4">
       {[
-        { label: 'Total Revenue', value: '£284K', change: '+12%', color: 'text-ordinal-green' },
-        { label: 'Active Clients', value: '47', change: '+3', color: 'text-ordinal-green' },
-        { label: 'Avg Deal Size', value: '£6.0K', change: '+8%', color: 'text-ordinal-green' },
+        { label: 'Total Revenue', value: '£284K', change: '+12%', color: 'text-primary' },
+        { label: 'Active Clients', value: '47', change: '+3', color: 'text-primary' },
+        { label: 'Avg Deal Size', value: '£6.0K', change: '+8%', color: 'text-primary' },
       ].map((kpi) => (
         <div key={kpi.label} className="bg-muted/40 rounded-lg p-3 border border-border/50">
           <div className="text-[8px] text-muted-foreground uppercase tracking-wide mb-1">{kpi.label}</div>
@@ -115,8 +115,8 @@ const CleanDashboard = () => (
         <div key={i} className="grid grid-cols-4 border-t border-border/30">
           <div className="px-2 py-1.5 text-foreground font-medium">{r.name}</div>
           <div className="px-2 py-1.5 text-foreground">{r.rev}</div>
-          <div className="px-2 py-1.5"><span className="bg-ordinal-green/15 text-ordinal-green px-1 rounded text-[8px] font-semibold">{r.status}</span></div>
-          <div className="px-2 py-1.5 text-ordinal-green">{r.trend}</div>
+          <div className="px-2 py-1.5"><span className="bg-primary/15 text-primary px-1 rounded text-[8px] font-semibold">{r.status}</span></div>
+          <div className="px-2 py-1.5 text-primary">{r.trend}</div>
         </div>
       ))}
     </div>
@@ -125,7 +125,7 @@ const CleanDashboard = () => (
 
 const BeforeAfterSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [sliderX, setSliderX] = useState(50); // percentage
+  const [sliderX, setSliderX] = useState(50);
   const dragging = useRef(false);
 
   const handleMove = useCallback((clientX: number) => {
@@ -190,7 +190,7 @@ const BeforeAfterSection = () => {
           <div className="absolute top-3 left-3 z-10 bg-destructive/90 text-destructive-foreground px-2.5 py-1 rounded text-[10px] font-semibold uppercase tracking-wider">
             Before
           </div>
-          <div className="absolute top-3 right-3 z-10 bg-ordinal-green/90 text-primary-foreground px-2.5 py-1 rounded text-[10px] font-semibold uppercase tracking-wider">
+          <div className="absolute top-3 right-3 z-10 bg-primary/90 text-primary-foreground px-2.5 py-1 rounded text-[10px] font-semibold uppercase tracking-wider">
             After
           </div>
         </div>

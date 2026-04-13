@@ -39,7 +39,7 @@ const DimProgress = ({ step }: { step: number }) => (
       <div
         key={i}
         className={`flex-1 h-1 rounded-full transition-colors duration-400 ${
-          step > i ? 'bg-ordinal-green' : step === i ? 'bg-[#06B6D4]' : 'bg-border'
+          step > i ? 'bg-primary' : step === i ? 'bg-accent-blue' : 'bg-border'
         }`}
       />
     ))}
@@ -152,13 +152,13 @@ const DimensionPage = ({
                         onClick={() => handleSelect(qi, opt.score)}
                         className={`flex items-start gap-3 px-3.5 py-3 border rounded-xl text-left text-[13px] leading-snug transition-all duration-150 cursor-pointer ${
                           selected
-                            ? 'border-[#06B6D4] bg-[#06B6D4]/5'
+                            ? 'border-primary bg-primary/5'
                             : 'border-border bg-card hover:border-muted-foreground/30 hover:bg-accent/50'
                         }`}
                       >
                         <div
                           className={`w-[18px] h-[18px] rounded-full border-[1.5px] flex items-center justify-center flex-shrink-0 mt-0.5 transition-all ${
-                            selected ? 'border-[#06B6D4] bg-[#06B6D4]' : 'border-border'
+                            selected ? 'border-primary bg-primary' : 'border-border'
                           }`}
                         >
                           {selected && <div className="w-[7px] h-[7px] bg-white rounded-full" />}
@@ -360,7 +360,7 @@ const ResultsView = ({
 
           {/* CTA */}
           <div className="bg-background border border-border rounded-xl p-8 text-center">
-            <div className="absolute-hidden h-1 bg-gradient-to-r from-[#06B6D4] via-[#10B981] to-[#4F46E5] rounded-t-xl" />
+            <div className="absolute-hidden h-1 bg-gradient-to-r from-primary to-accent-blue rounded-t-xl" />
             <h3 className="text-lg font-bold mb-2">Ready to discuss your results?</h3>
             <p className="text-[13px] text-ordinal-body leading-relaxed mb-5 max-w-[440px] mx-auto">
               Book a 30-minute call with the ordinal. team. We'll walk through your Assessment findings and map the specific path forward for your business.
@@ -368,7 +368,7 @@ const ResultsView = ({
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href={mailtoHref}
-                className="px-8 py-3 bg-[#10B981] text-white font-bold text-sm rounded-xl shadow-[0_4px_16px_rgba(16,185,129,0.15)] hover:bg-[#059669] hover:-translate-y-0.5 transition-all no-underline"
+                className="px-8 py-3 bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-sm rounded-xl shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline"
               >
                 Book a call
               </a>
@@ -461,13 +461,13 @@ const DataClarityAssessment = () => {
     <div className="max-w-[800px] mx-auto px-6 pt-28 pb-20">
       <SEO title="Data Clarity Assessment · Ensight" description="Assess your data readiness across five dimensions. Find out where your analytics capability stands." path="/data-clarity-assessment" ogImage="/og/data-clarity.jpg" />
       <header className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 bg-[#06B6D4]/10 border border-[#06B6D4]/20 text-[#06B6D4] font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
-          <span className="w-[6px] h-[6px] bg-[#06B6D4] rounded-full shadow-[0_0_8px_rgba(6,182,212,0.5)]" />
+        <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
+          <span className="w-[6px] h-[6px] bg-primary rounded-full shadow-[0_0_8px_hsl(261_84%_58%/0.5)]" />
           Data Readiness Check
         </div>
         <h1 className="text-[clamp(28px,5vw,42px)] font-extrabold leading-[1.15] tracking-tight mb-4">
           How{' '}
-          <span className="bg-gradient-to-br from-[#06B6D4] to-[#10B981] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
             Data-Ready
           </span>{' '}
           Is Your Business?

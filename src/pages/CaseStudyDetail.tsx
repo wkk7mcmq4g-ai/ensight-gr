@@ -82,8 +82,8 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* Outcome highlight */}
-        <div className="bg-ordinal-green/5 border border-ordinal-green/20 rounded-lg p-6 mb-8">
-          <div className="text-[10px] font-medium text-ordinal-green tracking-[2px] uppercase mb-2">Outcome</div>
+        <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
+          <div className="text-[10px] font-medium text-primary tracking-[2px] uppercase mb-2">Outcome</div>
           <p className="text-[15px] font-semibold leading-relaxed">{cs.outcome}</p>
         </div>
       </AnimatedSection>
@@ -100,7 +100,7 @@ const CaseStudyDetail = () => {
         <div className="space-y-3">
           {cs.approach.map((step, i) => (
             <div key={i} className="flex items-start gap-3">
-              <CheckCircle2 size={18} className="text-ordinal-green flex-shrink-0 mt-0.5" />
+              <CheckCircle2 size={18} className="text-primary flex-shrink-0 mt-0.5" />
               <span className="text-[15px] text-ordinal-body leading-relaxed">{step}</span>
             </div>
           ))}
@@ -117,11 +117,11 @@ const CaseStudyDetail = () => {
                 <div className="text-[10px] text-ordinal-dim tracking-[1px] uppercase mb-3">
                   {m.label}
                 </div>
-                <div className="text-2xl font-bold text-ordinal-green mb-1">{m.after}</div>
+                <div className="text-2xl font-bold text-primary mb-1">{m.after}</div>
                 <div className="flex items-center justify-center gap-2 text-xs text-ordinal-dim">
                   <span className="line-through">{m.before}</span>
                   <ArrowRight size={12} />
-                  <span className="text-ordinal-green font-medium">{m.after}</span>
+                  <span className="text-primary font-medium">{m.after}</span>
                 </div>
               </div>
             </StaggerItem>
@@ -162,14 +162,14 @@ const CaseStudyDetail = () => {
 
       {/* CTA */}
       <AnimatedSection className="bg-card border border-border rounded-lg p-10 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
         <h3 className="text-[22px] font-bold mb-3">See What's Hiding in Your Operations</h3>
         <p className="text-[15px] text-ordinal-body leading-relaxed mb-6 max-w-[440px] mx-auto">
           Start with our free assessment, or book an Operational X-Ray to get the full picture.
         </p>
         <a
           href="/assessment"
-          className="inline-block bg-ordinal-green text-white font-bold text-base px-10 py-4 rounded-lg shadow-[0_4px_16px_rgba(16,185,129,0.15)] hover:bg-ordinal-green-bright hover:-translate-y-0.5 transition-all duration-200 no-underline"
+          className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-lg shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
         >
           Take the Free Assessment
         </a>

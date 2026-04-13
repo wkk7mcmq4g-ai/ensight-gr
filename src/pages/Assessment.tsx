@@ -39,7 +39,7 @@ const CatProgress = ({ step }: { step: number }) => (
       <div
         key={i}
         className={`flex-1 h-1 rounded-full transition-colors duration-400 ${
-          step > i ? 'bg-ordinal-green' : step === i ? 'bg-electric-bright' : 'bg-border'
+          step > i ? 'bg-primary' : step === i ? 'bg-accent-blue' : 'bg-border'
         }`}
       />
     ))}
@@ -61,8 +61,8 @@ const TeamSizeStep = ({
   <div>
     <div className="bg-card border border-border rounded-lg overflow-hidden">
       <div className="p-8">
-        <span className="inline-flex items-center gap-1.5 font-mono-label text-[8px] tracking-[2px] uppercase px-2.5 py-1 rounded-full mb-3 bg-primary/10 text-electric-glow">
-          <span className="w-[5px] h-[5px] rounded-full bg-electric-bright" />
+        <span className="inline-flex items-center gap-1.5 font-mono-label text-[8px] tracking-[2px] uppercase px-2.5 py-1 rounded-full mb-3 bg-primary/10 text-primary">
+          <span className="w-[5px] h-[5px] rounded-full bg-primary" />
           Final question
         </span>
         <h2 className="text-xl font-extrabold tracking-tight mb-1.5">Team Size</h2>
@@ -80,7 +80,7 @@ const TeamSizeStep = ({
               const num = parseInt(e.target.value);
               onChange(isNaN(num) ? null : num);
             }}
-            className="w-[140px] px-4 py-3 border border-border rounded-xl font-sans text-lg font-bold text-center bg-background outline-none transition-colors focus:border-electric-bright"
+            className="w-[140px] px-4 py-3 border border-border rounded-xl font-sans text-lg font-bold text-center bg-background outline-none transition-colors focus:border-primary"
           />
           <span className="text-[15px] text-ordinal-dim">people</span>
         </div>
@@ -118,9 +118,9 @@ const EmailCapture = ({ onSubmit, onSkip }: { onSubmit: (name: string, email: st
   return (
     <div>
       <div className="bg-card border border-border rounded-lg p-10 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent-blue" />
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-          <Mail className="text-electric-glow" size={24} />
+          <Mail className="text-primary" size={24} />
         </div>
         <h2 className="text-[22px] font-bold mb-2">Your Results Are Ready</h2>
         <p className="text-[15px] text-ordinal-body leading-relaxed mb-8 max-w-[420px] mx-auto">
@@ -128,11 +128,11 @@ const EmailCapture = ({ onSubmit, onSkip }: { onSubmit: (name: string, email: st
         </p>
         <form onSubmit={(e) => { e.preventDefault(); if (isValid) onSubmit(name.trim(), email.trim()); }} className="max-w-[360px] mx-auto space-y-3">
           <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} maxLength={100}
-            className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground text-[15px] outline-none transition-colors focus:border-electric-bright placeholder:text-muted-foreground" />
+            className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground text-[15px] outline-none transition-colors focus:border-primary placeholder:text-muted-foreground" />
           <input type="email" placeholder="Work email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={255}
-            className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground text-[15px] outline-none transition-colors focus:border-electric-bright placeholder:text-muted-foreground" />
+            className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground text-[15px] outline-none transition-colors focus:border-primary placeholder:text-muted-foreground" />
           <button type="submit" disabled={!isValid}
-            className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-ordinal-green text-white rounded-xl font-semibold text-[15px] shadow-[0_4px_12px_rgba(16,185,129,0.12)] transition-all duration-200 hover:bg-ordinal-green-bright hover:-translate-y-px disabled:opacity-30 disabled:cursor-not-allowed">
+            className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-primary to-accent-blue text-white rounded-xl font-semibold text-[15px] shadow-[0_4px_12px_hsl(261_84%_58%/0.15)] transition-all duration-200 hover:opacity-90 hover:-translate-y-px disabled:opacity-30 disabled:cursor-not-allowed">
             View My Results <ArrowRight size={16} />
           </button>
         </form>
@@ -246,13 +246,13 @@ const CategoryPage = ({
                         onClick={() => handleSelect(qi, opt.score)}
                         className={`flex items-start gap-3 px-3.5 py-3 border rounded-xl text-left text-[13px] leading-snug transition-all duration-150 cursor-pointer ${
                           selected
-                            ? 'border-electric-bright bg-primary/[0.06]'
+                            ? 'border-primary bg-primary/[0.06]'
                             : 'border-border bg-card hover:border-muted-foreground/30 hover:bg-accent/50'
                         }`}
                       >
                         <div
                           className={`w-[18px] h-[18px] rounded-full border-[1.5px] flex items-center justify-center flex-shrink-0 mt-0.5 transition-all ${
-                            selected ? 'border-electric-bright bg-electric-bright' : 'border-border'
+                            selected ? 'border-primary bg-primary' : 'border-border'
                           }`}
                         >
                           {selected && <div className="w-[7px] h-[7px] bg-white rounded-full" />}
@@ -397,7 +397,7 @@ const ResultsView = ({
                 <p className="text-ordinal-dim/70 italic">This is a directional estimate based on cross-industry benchmarks, not a precise audit.</p>
               </div>
             )}
-            <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-ordinal-pink-bright via-ordinal-amber to-ordinal-green-bright bg-clip-text text-transparent mb-3">
+            <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-primary via-accent-blue to-secondary bg-clip-text text-transparent mb-3">
               €{animatedCost.toLocaleString('en')}
             </div>
             <div className="text-xs text-ordinal-dim leading-relaxed">
@@ -487,7 +487,7 @@ const ResultsView = ({
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a href={mailtoHref}
-                className="px-8 py-3 bg-[#10B981] text-white font-bold text-sm rounded-xl shadow-[0_4px_16px_rgba(16,185,129,0.15)] hover:bg-[#059669] hover:-translate-y-0.5 transition-all no-underline">
+                className="px-8 py-3 bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-sm rounded-xl shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline">
                 Book Your X-Ray Briefing
               </a>
               <button onClick={onRestart}
@@ -572,13 +572,13 @@ const Assessment = () => {
     <div className="max-w-[800px] mx-auto px-6 pt-28 pb-20">
       <SEO title="Process Debt Assessment · Ensight" description="Score your operational efficiency in minutes. Identify where process debt is costing you the most." path="/assessment" ogImage="/og/assessment.jpg" />
       <header className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-electric-glow font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
-          <span className="w-[6px] h-[6px] bg-electric-bright rounded-full shadow-[0_0_8px_rgba(128,0,255,0.5)]" />
+        <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary font-mono-label text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
+          <span className="w-[6px] h-[6px] bg-primary rounded-full shadow-[0_0_8px_hsl(261_84%_58%/0.5)]" />
           Free Assessment
         </div>
         <h1 className="text-[clamp(28px,5vw,42px)] font-extrabold leading-[1.15] tracking-tight mb-4">
           How Much Is{' '}
-          <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
             Process Debt
           </span>{' '}
           Costing You?
