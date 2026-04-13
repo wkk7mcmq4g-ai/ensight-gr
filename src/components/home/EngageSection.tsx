@@ -30,29 +30,29 @@ const EngageSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24 relative overflow-hidden" id="start">
     <DecorativeShapes variant="starburst" className="opacity-[0.06]" />
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-accent-cyan mb-3">
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
         Three Ways to Start
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         Low risk. High trust.
       </h2>
-      <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
+      <p className="text-base text-muted-foreground leading-relaxed max-w-[560px] mb-12">
         We know that committing to a transformation with a new partner involves risk. That{"'"}s why we designed our model to be low-risk from the start.
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {engagements.map((e, i) => (
         <StaggerItem key={i}>
-          <div className={`${e.showTag ? 'bg-[#E8F4F8]/80 backdrop-blur-xl' : 'bg-white/75 backdrop-blur-xl'} border border-white/40 rounded-lg p-8 relative overflow-hidden shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col`}>
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(187,96%,42%)]" />
+          <div className={`${e.showTag ? 'bg-primary/5 backdrop-blur-xl' : 'bg-white/75 backdrop-blur-xl'} border border-border/60 rounded-lg p-8 relative overflow-hidden shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col`}>
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
             {e.showTag && (
-              <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(217,91%,60%)] text-white px-2.5 py-1 rounded mb-4">
+              <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-gradient-to-r from-primary to-accent-blue text-white px-2.5 py-1 rounded mb-4">
                 {e.tag}
               </div>
             )}
             <h3 className="text-xl font-semibold mb-2">{e.title}</h3>
-            <div className="text-[11px] text-ordinal-dim mb-4">{e.meta}</div>
-            <p className="text-sm text-ordinal-body leading-relaxed">{e.desc}</p>
+            <div className="text-[11px] text-muted-foreground mb-4">{e.meta}</div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
           </div>
         </StaggerItem>
       ))}

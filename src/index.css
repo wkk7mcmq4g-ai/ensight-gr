@@ -6,86 +6,86 @@
 
 @layer base {
   :root {
-    --background: 33 33% 94%;
-    --foreground: 200 63% 15%;
+    --background: 210 20% 98%;
+    --foreground: 220 13% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 63% 15%;
+    --card-foreground: 220 13% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 63% 15%;
+    --popover-foreground: 220 13% 9%;
 
-    --primary: 195 89% 34%;
+    --primary: 261 84% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 60% 28%;
+    --secondary: 263 70% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 10% 90%;
-    --muted-foreground: 200 26% 32%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 195 15% 93%;
-    --accent-foreground: 200 63% 15%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 13% 9%;
 
-    --destructive: 340 72% 48%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 32 14% 81%;
-    --input: 32 14% 81%;
-    --ring: 195 89% 34%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 261 84% 58%;
 
     --radius: 0.5rem;
 
-    /* Ensight brand tokens */
-    --electric: 200 63% 15%;
-    --electric-bright: 195 70% 28%;
-    --electric-glow: 195 89% 34%;
-    --ordinal-green: 195 80% 30%;
-    --ordinal-green-bright: 195 89% 34%;
-    --ordinal-pink: 195 60% 28%;
-    --ordinal-pink-bright: 195 60% 40%;
-    --ordinal-amber: 39 55% 52%;
-    --ordinal-cyan: 195 89% 34%;
-    --ordinal-body: 200 63% 15%;
-    --ordinal-dim: 200 26% 32%;
-    --ordinal-faint: 200 18% 48%;
-    --stat-accent: 39 55% 52%;
-    --dark-section: 199 56% 10%;
+    /* Ensight brand tokens — neutral + violet */
+    --electric: 220 13% 9%;
+    --electric-bright: 261 84% 58%;
+    --electric-glow: 261 84% 58%;
+    --ordinal-green: 261 84% 58%;
+    --ordinal-green-bright: 261 84% 65%;
+    --ordinal-pink: 263 70% 50%;
+    --ordinal-pink-bright: 261 70% 58%;
+    --ordinal-amber: 261 84% 58%;
+    --ordinal-cyan: 261 84% 58%;
+    --ordinal-body: 220 9% 34%;
+    --ordinal-dim: 220 9% 46%;
+    --ordinal-faint: 220 9% 58%;
+    --stat-accent: 261 84% 65%;
+    --dark-section: 222 47% 11%;
     --accent-blue: 217 91% 60%;
-    --accent-cyan: 187 96% 42%;
-    --gradient-cta: linear-gradient(135deg, hsl(195 89% 34%), hsl(217 91% 60%));
-    --gradient-accent: linear-gradient(135deg, hsl(195 89% 34%), hsl(187 96% 42%));
+    --accent-cyan: 261 84% 58%;
+    --gradient-cta: linear-gradient(135deg, hsl(261 84% 58%), hsl(217 91% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(261 84% 58%), hsl(263 70% 50%));
 
-    --sidebar-background: 30 25% 93%;
-    --sidebar-foreground: 200 63% 15%;
-    --sidebar-primary: 195 89% 34%;
+    --sidebar-background: 220 14% 96%;
+    --sidebar-foreground: 220 13% 9%;
+    --sidebar-primary: 261 84% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 195 15% 93%;
-    --sidebar-accent-foreground: 195 89% 34%;
-    --sidebar-border: 32 14% 81%;
-    --sidebar-ring: 195 89% 34%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 261 84% 58%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 261 84% 58%;
   }
 
   .dark {
-    --background: 256 40% 8%;
-    --foreground: 30 20% 93%;
-    --card: 256 40% 14%;
-    --card-foreground: 30 20% 93%;
-    --popover: 256 40% 14%;
-    --popover-foreground: 30 20% 93%;
-    --primary: 254 63% 58%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 261 84% 58%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 38 91% 55%;
+    --secondary: 263 70% 50%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 260 30% 20%;
-    --muted-foreground: 256 10% 60%;
-    --accent: 260 30% 20%;
-    --accent-foreground: 30 20% 93%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 260 30% 22%;
-    --input: 260 30% 22%;
-    --ring: 254 63% 58%;
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 261 84% 58%;
   }
 }
 

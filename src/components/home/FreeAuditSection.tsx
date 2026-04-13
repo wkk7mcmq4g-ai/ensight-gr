@@ -18,10 +18,10 @@ const FreeAuditSection = () => (
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-3">
           Free Operational Audit
         </h2>
-        <p className="text-lg text-ordinal-body leading-relaxed mb-8">
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           Identify inefficiencies and opportunities in your business
         </p>
-        <p className="text-sm text-ordinal-body leading-relaxed mb-10">
+        <p className="text-sm text-muted-foreground leading-relaxed mb-10">
           We offer a complimentary operational audit where we review your current systems, workflows, and reporting processes. You'll receive:
         </p>
       </AnimatedSection>
@@ -30,7 +30,7 @@ const FreeAuditSection = () => (
         <ul className="space-y-4">
           {deliverables.map((item) => (
             <li key={item} className="flex items-start gap-3">
-              <CheckCircle2 className="text-ordinal-green flex-shrink-0 mt-0.5" size={18} />
+              <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={18} />
               <span className="text-sm leading-relaxed">{item}</span>
             </li>
           ))}
