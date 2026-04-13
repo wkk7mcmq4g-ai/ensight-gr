@@ -1,60 +1,82 @@
 
 
-# Vibrant Modern Refresh
+# Modern Color Refresh — Neutral + One Bold Accent
 
-All four directions combined into a cohesive upgrade. No layout or content changes.
+## Direction
+Replace the warm teal/amber/linen palette with a clean neutral foundation and a single striking accent — **electric violet (#7C3AED)**. This gives a contemporary, high-end SaaS feel while staying professional.
 
-## 1. New Color Tokens (`src/index.css`)
+## New palette
 
-Add a secondary electric blue accent and gradient utility variables:
+| Role | Old | New |
+|------|-----|-----|
+| Background | `#F4EFE9` warm linen | `#F8F9FA` cool gray-white |
+| Foreground/headlines | `#0E2D3D` teal-slate | `#111827` near-black (gray-900) |
+| Body text | `#3D5A68` teal-gray | `#4B5563` neutral gray-600 |
+| Faint/dim text | teal-tinted grays | `#6B7280` gray-500, `#9CA3AF` gray-400 |
+| Primary (accent) | `#0A7EA4` ocean teal | `#7C3AED` electric violet |
+| Secondary | `#195A73` dark teal | `#6D28D9` deeper violet |
+| Gradient CTA | teal → blue | `#7C3AED` → `#3B82F6` (violet → blue) |
+| Stat numbers | `#06B6D4` cyan | `#7C3AED` violet |
+| Card bg | white | `#FFFFFF` (stays white, clean against gray bg) |
+| Card borders | `#D6D0C9` warm | `#E5E7EB` cool gray-200 |
+| Dark sections | `#0B1E27` teal-dark | `#0F172A` slate-900 |
+| Muted bg | warm beige | `#F1F5F9` slate-50 |
 
-- `--accent-blue: 217 91% 60%` → `#2563EB`
-- `--accent-cyan: 187 96% 42%` → `#06B6D4`
-- Gradient CSS custom properties for reuse:
-  - `--gradient-cta: linear-gradient(135deg, hsl(195 89% 34%), hsl(217 91% 60%))` (teal → blue)
-  - `--gradient-accent: linear-gradient(135deg, hsl(195 89% 34%), hsl(187 96% 42%))` (teal → cyan)
+## Files to change
 
-Update `tailwind.config.ts` to expose `accent-blue` and `accent-cyan` as color tokens.
+### 1. `src/index.css` — All CSS custom properties
+Swap every token to the neutral palette above. Update gradient variables to violet→blue.
 
-## 2. Glass/Frosted Cards — All card elements site-wide
+### 2. `tailwind.config.ts` — Remove teal-specific color names
+Clean up `ordinal-*` tokens that reference old teal hues. Keep the token structure but with new values.
 
-Replace flat white `bg-card` cards with frosted glass:
+### 3. `src/components/home/HeroSection.tsx`
+- Gradient text: violet → blue instead of teal → blue
+- CTA buttons: violet → blue gradient
+- Ghost button border: violet
 
-- **ValuePillarsSection.tsx**: Cards get `bg-white/75 backdrop-blur-xl border-white/40 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)]` instead of `bg-card border-border`
-- **HowWeHelpSection.tsx**: Same glass treatment on 4 solution cards
-- **SelectedWorkSection.tsx**: Same on 3 case study cards
-- **EngageSection.tsx**: Same on 3 engagement cards (recommended card keeps its teal tint but as `bg-[#E8F4F8]/80 backdrop-blur-xl`)
-- **BeforeAfterSection.tsx**: "After" dashboard panel gets subtle glass border glow
+### 4. `src/components/home/ValuePillarsSection.tsx`
+- Icon tints and gradient accent bars: use violet shades
+- Glass cards: `border-gray-200/60` instead of `border-white/40`
 
-## 3. Gradient Accents — CTA buttons and card accent bars
+### 5. `src/components/home/HowWeHelpSection.tsx`
+- Same card and accent bar updates
 
-- **HeroSection.tsx**: "Learn More" button gets gradient background `bg-gradient-to-r from-[#0A7EA4] to-[#2563EB]` with a subtle white shine pseudo-element on hover
-- **CTASection.tsx**: "Send Message" button same gradient
-- **Navbar.tsx**: "Free Assessment" CTA button same gradient
-- **Card accent bars**: Replace flat `bg-primary` top/left bars in ValuePillars, HowWeHelp, and Engage cards with `bg-gradient-to-r from-[#0A7EA4] to-[#06B6D4]`
+### 6. `src/components/home/EngageSection.tsx`
+- Gradient bars and recommended tag: violet
+- Recommended card tint: light violet instead of teal
 
-## 4. Bolder Color Contrast
+### 7. `src/components/home/ProofSection.tsx`
+- Dark section bg: slate-900
+- Stat numbers and labels: violet accent
+- Card borders: slate tones
 
-- **ProofSection.tsx**: Stat metric numbers change from `text-stat-accent` (amber) to `text-[#06B6D4]` (vibrant cyan) for more pop against the dark background
-- **Section labels**: The small uppercase "What We Do" / "Proof Points" labels get `text-[#06B6D4]` instead of `text-primary` for extra vibrancy
-- **ValuePillarsSection.tsx** icon containers: brighter tinted backgrounds using the new cyan/blue tokens
-- **Navbar** top accent line: gradient `bg-gradient-to-r from-[#0A7EA4] to-[#2563EB]` instead of flat `bg-primary`
+### 8. `src/components/home/CTASection.tsx`
+- Dark bg: slate-900
+- CTA button: violet → blue gradient
 
-## 5. Hero Energy Boost (`src/components/home/HeroSection.tsx` + `HeroVisual.tsx`)
+### 9. `src/components/layout/Navbar.tsx`
+- Top accent line: violet → blue gradient
+- Assessment button: same gradient
+- Body text colors: neutral grays
 
-- Add a radial gradient glow behind the hero visual: `absolute` div with `bg-[radial-gradient(circle_at_center,_hsl(195_89%_34%/0.12)_0%,_transparent_70%)]`
-- Add a second ghost CTA button: "Get a Free Assessment" with `border-2 border-[#0A7EA4] text-[#0A7EA4] hover:bg-[#0A7EA4]/10` linking to `/assessment`
-- Hero keyword "transform" gets a gradient text treatment: `bg-gradient-to-r from-[#0A7EA4] to-[#2563EB] bg-clip-text text-transparent`
+### 10. `src/components/layout/Footer.tsx`
+- Text colors: neutral grays (will inherit from token changes)
 
-## Files changed
-- `src/index.css` — new CSS variables
-- `tailwind.config.ts` — new color tokens
-- `src/components/home/HeroSection.tsx` — gradient text, ghost CTA, hero glow
-- `src/components/home/ValuePillarsSection.tsx` — glass cards, gradient accent bars
-- `src/components/home/HowWeHelpSection.tsx` — glass cards, gradient bars
-- `src/components/home/SelectedWorkSection.tsx` — glass cards
-- `src/components/home/EngageSection.tsx` — glass cards
-- `src/components/home/ProofSection.tsx` — cyan stat numbers
-- `src/components/home/CTASection.tsx` — gradient CTA button
-- `src/components/layout/Navbar.tsx` — gradient top bar, gradient assessment button
+### 11. `src/components/home/QuoteSection.tsx`
+- Dark bg: slate-900
+
+### 12. All other section components
+- Section labels (`text-accent-cyan`): switch to violet accent
+- Body text classes referencing `ordinal-body`, `ordinal-dim`: will pick up new token values automatically
+
+### 13. `mem://design/tokens` — Update memory
+Record the new neutral + violet palette.
+
+## What stays the same
+- All layouts, spacing, typography weights, and font families
+- Glass card treatment (backdrop-blur)
+- Hero node graph animation
+- Dark section pattern (Proof, Quote, CTA)
+- All content and copy
 
