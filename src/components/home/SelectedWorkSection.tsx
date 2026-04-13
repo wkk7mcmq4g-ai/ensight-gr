@@ -18,7 +18,7 @@ const SelectedWorkSection = () => (
         <StaggerItem key={cs.id}>
           <Link
             to={`/case-studies/${cs.id}`}
-            className="block bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all h-full no-underline group"
+            className="block bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_12px_36px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 h-full no-underline group"
           >
             <div className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-2">
               {cs.sector}

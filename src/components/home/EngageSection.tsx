@@ -43,7 +43,7 @@ const EngageSection = () => (
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {engagements.map((e, i) => (
         <StaggerItem key={i}>
-          <div className={`${e.showTag ? 'bg-primary/5 backdrop-blur-xl' : 'bg-white/75 backdrop-blur-xl'} border border-border/60 rounded-lg p-8 relative overflow-hidden shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-md transition-all h-full flex flex-col`}>
+          <div className={`${e.showTag ? 'bg-primary/5 backdrop-blur-xl' : 'bg-white/75 backdrop-blur-xl'} border border-border/60 rounded-lg p-8 relative overflow-hidden shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_12px_36px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 h-full flex flex-col group`}>
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
             {e.showTag && (
               <div className="inline-block text-[8px] font-semibold tracking-[2px] uppercase bg-gradient-to-r from-primary to-accent-blue text-white px-2.5 py-1 rounded mb-4">
