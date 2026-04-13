@@ -42,6 +42,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: '12 weeks',
     icon: 'Landmark',
     keyResult: '60% less manual work',
+    image: caseStudyLoan,
   },
   {
     id: 'charity-crm',
@@ -65,6 +66,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: '10 weeks',
     icon: 'Heart',
     keyResult: 'Full compliance visibility',
+    image: caseStudyCharity,
   },
   {
     id: 'financial-reporting',
@@ -88,6 +90,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: '8 weeks',
     icon: 'BarChart3',
     keyResult: 'Days → Minutes',
+    image: caseStudyReporting,
   },
   {
     id: 'touro-driver-ux',
@@ -112,5 +115,6 @@ export const caseStudies: CaseStudy[] = [
     timeline: '6 weeks',
     icon: 'MapPin',
     keyResult: 'At-a-glance clarity',
+    image: caseStudyTouro,
   },
 ];
