@@ -108,15 +108,15 @@ const DataClarity = () => (
 
       <div className="relative z-10 max-w-[1200px] mx-auto w-full">
         <div className="max-w-[640px]">
-          <div className="inline-flex items-center gap-2 font-mono-label text-[9px] tracking-[3px] uppercase text-[#06B6D4] border border-[#06B6D4]/30 px-4 py-1.5 rounded-full mb-6">
-            <span className="w-[5px] h-[5px] bg-[#06B6D4] rounded-full animate-pulse" />
+          <div className="inline-flex items-center gap-2 font-mono-label text-[9px] tracking-[3px] uppercase text-primary border border-primary/30 px-4 py-1.5 rounded-full mb-6">
+            <span className="w-[5px] h-[5px] bg-primary rounded-full animate-pulse" />
             Management Analytics
           </div>
 
           <h1 className="text-[clamp(40px,5vw,62px)] font-black leading-[1.06] tracking-tight text-white mb-5">
             Your data exists.{' '}
             <br />
-            The <span className="bg-gradient-to-br from-[#06B6D4] to-[#10B981] bg-clip-text text-transparent">clarity</span> doesn't.
+            The <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">clarity</span> doesn't.
           </h1>
 
           <p className="text-[17px] text-[#8888A0] leading-[1.75] max-w-[520px] mb-9">
@@ -126,7 +126,7 @@ const DataClarity = () => (
           <div className="flex gap-3 flex-wrap">
             <Link
               to="/data-clarity-assessment"
-              className="bg-[#10B981] text-white text-[15px] font-bold px-8 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(16,185,129,0.25)] hover:bg-[#059669] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(16,185,129,0.3)] transition-all no-underline"
+              className="bg-gradient-to-r from-primary to-accent-blue text-white text-[15px] font-bold px-8 py-3.5 rounded-xl shadow-[0_4px_20px_hsl(261_84%_58%/0.25)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(261_84%_58%/0.3)] transition-all no-underline"
             >
               Take the Free Assessment
             </Link>
@@ -145,8 +145,8 @@ const DataClarity = () => (
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="problem">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#4F46E5] mb-3">
-          {"// The Problem"}
+        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          {"The Problem"}
         </div>
         <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-tight leading-[1.12] mb-4">
           You're making decisions<br />with incomplete information.
@@ -178,8 +178,8 @@ const DataClarity = () => (
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="components">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#4F46E5] mb-3">
-          {"// The Service"}
+        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          {"The Service"}
         </div>
         <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-tight leading-[1.12] mb-4">
           Three components.<br />One continuous partnership.
@@ -236,8 +236,8 @@ const DataClarity = () => (
     <section className="bg-[hsl(270,40%,6%)] py-24" id="assessment">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
-          <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#06B6D4] mb-3">
-            {"// Data Clarity Assessment"}
+          <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+            {"Data Clarity Assessment"}
           </div>
           <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-tight leading-[1.12] text-white mb-4">
             Five dimensions.<br />One clear verdict.
@@ -251,12 +251,12 @@ const DataClarity = () => (
           {dimensions.map((d, i) => (
             <StaggerItem key={i}>
               <div className="bg-[#1C1B2E] border border-white/[0.07] rounded-2xl p-5 h-full">
-                <div className="font-mono-label text-[9px] tracking-[1px] uppercase text-[#06B6D4] mb-2">{d.weight} weight</div>
+                <div className="font-mono-label text-[9px] tracking-[1px] uppercase text-primary mb-2">{d.weight} weight</div>
                 <div className="text-sm font-bold text-white mb-2">{d.title}</div>
                 <p className="text-xs text-[#8888A0] leading-relaxed mb-4">{d.desc}</p>
                 <div className="flex gap-1.5">
                   {[1, 2, 3, 4].map(s => (
-                    <div key={s} className={`w-2.5 h-2.5 rounded-full ${s <= d.score ? 'bg-[#06B6D4]' : 'bg-white/10'}`} />
+                    <div key={s} className={`w-2.5 h-2.5 rounded-full ${s <= d.score ? 'bg-primary' : 'bg-white/10'}`} />
                   ))}
                 </div>
               </div>
@@ -281,8 +281,8 @@ const DataClarity = () => (
     {/* ═══ HOW IT CONNECTS ═══ */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#4F46E5] mb-3">
-          {"// How It Connects"}
+        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          {"How It Connects"}
         </div>
         <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-tight leading-[1.12] mb-4">
           Standalone — or the natural<br />next step after operational clarity.
@@ -315,8 +315,8 @@ const DataClarity = () => (
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
-        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#4F46E5] mb-3">
-          {"// Who This Is For"}
+        <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+          {"Who This Is For"}
         </div>
         <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-tight leading-[1.12] mb-4">
           Mid-sized businesses that have<br />outgrown instinct-led decisions.
@@ -347,8 +347,8 @@ const DataClarity = () => (
     <section className="bg-[hsl(270,40%,6%)] py-24 text-center" id="contact">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
-          <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-[#06B6D4] mb-5">
-            {"// Get Started"}
+          <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-5">
+            {"Get Started"}
           </div>
           <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-tight leading-[1.12] text-white mb-5">
             Ready to see what your<br />data actually says?
@@ -359,7 +359,7 @@ const DataClarity = () => (
           <div className="flex gap-3 justify-center flex-wrap">
             <Link
               to="/data-clarity-assessment"
-              className="bg-[#10B981] text-white text-[15px] font-bold px-8 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(16,185,129,0.25)] hover:bg-[#059669] hover:-translate-y-0.5 transition-all no-underline"
+              className="bg-gradient-to-r from-primary to-accent-blue text-white text-[15px] font-bold px-8 py-3.5 rounded-xl shadow-[0_4px_20px_hsl(261_84%_58%/0.25)] hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline"
             >
               Take the Free Assessment
             </Link>
