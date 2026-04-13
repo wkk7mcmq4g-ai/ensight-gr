@@ -29,6 +29,8 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'loan-servicing',
     sector: 'Financial Services',
+    client: 'HMS',
+    clientLogo: logoHms,
     title: 'Loan Servicing Platform',
     subtitle: 'Custom end-to-end servicing system replacing fragmented processes.',
     outcome: 'A unified platform that cut manual processing by 60% and delivered real-time portfolio visibility.',
@@ -53,6 +55,8 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'charity-crm',
     sector: 'Non-Profit',
+    client: 'Volunteering Matters',
+    clientLogo: logoVolunteering,
     title: 'Charity CRM System',
     subtitle: 'Unified platform for programme management, compliance, and reporting.',
     outcome: 'A single CRM that centralised programme management and brought structured compliance oversight.',
@@ -77,6 +81,8 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'financial-reporting',
     sector: 'Financial Services',
+    client: 'QSIX',
+    clientLogo: logoQsix,
     title: 'Financial Reporting Automation',
     subtitle: 'Automated pipelines and dashboards replacing manual data extraction.',
     outcome: 'Reporting reduced from days to minutes with consistent, real-time data across the business.',
@@ -101,6 +107,8 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'touro-driver-ux',
     sector: 'Tourism & Transport',
+    client: 'MyAthensTransfers',
+    clientLogo: logoMyAthens,
     title: 'Touro — Improving Driver Operations Through Better UX',
     subtitle: 'Redesigning the driver-facing interface for clarity, speed, and reliable field execution.',
     outcome: 'A mobile-first, card-based interface that reduced cognitive load and improved real-time operational reliability for drivers.',
