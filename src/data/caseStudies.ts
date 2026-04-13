@@ -1,3 +1,8 @@
+import caseStudyLoan from '@/assets/case-study-loan.jpg';
+import caseStudyCharity from '@/assets/case-study-charity.jpg';
+import caseStudyReporting from '@/assets/case-study-reporting.jpg';
+import caseStudyTouro from '@/assets/case-study-touro.jpg';
+
 export interface CaseStudy {
   id: string;
   sector: string;
@@ -11,6 +16,7 @@ export interface CaseStudy {
   timeline: string;
   icon: string;
   keyResult: string;
+  image: string;
 }
 
 export const caseStudies: CaseStudy[] = [
