@@ -111,7 +111,7 @@ const CaseStudyDetail = () => {
             {cs.approach.map((step, i) => (
               <div key={i} className="relative flex items-start gap-4">
                 {/* Dot */}
-                <div className="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center">
+                <div className="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-card border-2 border-primary flex items-center justify-center z-10">
                   <span className="text-[10px] font-bold text-primary">{i + 1}</span>
                 </div>
                 <span className="text-[15px] text-muted-foreground leading-relaxed">{step}</span>
