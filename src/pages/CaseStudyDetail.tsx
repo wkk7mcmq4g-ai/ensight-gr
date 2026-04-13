@@ -57,8 +57,11 @@ const CaseStudyDetail = () => {
           <ArrowLeft size={14} /> All Case Studies
         </Link>
 
-        <div className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-10 mb-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
+        <div className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg mb-8 relative overflow-hidden">
+          <div className="h-56 overflow-hidden">
+            <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" width={800} height={512} />
+          </div>
+          <div className="p-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="text-[10px] font-medium text-primary tracking-[3px] uppercase">
               {cs.sector}
@@ -85,6 +88,7 @@ const CaseStudyDetail = () => {
                 {tool}
               </Badge>
             ))}
+          </div>
           </div>
         </div>
 

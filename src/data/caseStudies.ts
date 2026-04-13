@@ -1,3 +1,8 @@
+import caseStudyLoan from '@/assets/case-study-loan.jpg';
+import caseStudyCharity from '@/assets/case-study-charity.jpg';
+import caseStudyReporting from '@/assets/case-study-reporting.jpg';
+import caseStudyTouro from '@/assets/case-study-touro.jpg';
+
 export interface CaseStudy {
   id: string;
   sector: string;
@@ -11,6 +16,7 @@ export interface CaseStudy {
   timeline: string;
   icon: string;
   keyResult: string;
+  image: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -36,6 +42,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: '12 weeks',
     icon: 'Landmark',
     keyResult: '60% less manual work',
+    image: caseStudyLoan,
   },
   {
     id: 'charity-crm',
@@ -59,6 +66,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: '10 weeks',
     icon: 'Heart',
     keyResult: 'Full compliance visibility',
+    image: caseStudyCharity,
   },
   {
     id: 'financial-reporting',
@@ -82,6 +90,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: '8 weeks',
     icon: 'BarChart3',
     keyResult: 'Days → Minutes',
+    image: caseStudyReporting,
   },
   {
     id: 'touro-driver-ux',
@@ -106,5 +115,6 @@ export const caseStudies: CaseStudy[] = [
     timeline: '6 weeks',
     icon: 'MapPin',
     keyResult: 'At-a-glance clarity',
+    image: caseStudyTouro,
   },
 ];
