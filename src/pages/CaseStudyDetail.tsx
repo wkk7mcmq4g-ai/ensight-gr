@@ -89,6 +89,7 @@ const CaseStudyDetail = () => {
               </Badge>
             ))}
           </div>
+          </div>
         </div>
 
         {/* Outcome highlight */}
