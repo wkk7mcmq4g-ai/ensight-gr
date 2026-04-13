@@ -93,8 +93,10 @@ const CaseStudies = () => {
                 to={`/case-studies/${cs.id}`}
                 className="group block bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg overflow-hidden hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 no-underline h-full"
               >
-                {/* Accent bar */}
-                <div className="h-[2px] bg-gradient-to-r from-primary to-accent-blue opacity-60 group-hover:opacity-100 transition-opacity" />
+                {/* Image */}
+                <div className="h-40 overflow-hidden">
+                  <img src={cs.image} alt={cs.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width={800} height={512} />
+                </div>
                 <div className="p-7">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
