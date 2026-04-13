@@ -36,7 +36,7 @@ const AboutSection = () => {
           </div>
 
           <AnimatedSection>
-            <div className="relative overflow-hidden rounded-lg max-w-[380px] mx-auto">
+            <div className="relative overflow-hidden rounded-lg max-w-[280px] mx-auto">
               <img
                 src={aboutVisual}
                 alt="Abstract geometric shapes representing structured consulting methodology"
