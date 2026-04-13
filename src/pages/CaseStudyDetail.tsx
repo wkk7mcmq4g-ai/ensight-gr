@@ -71,6 +71,12 @@ const CaseStudyDetail = () => {
               {cs.timeline}
             </div>
           </div>
+
+          {/* Client logo */}
+          <div className="h-9 mb-4">
+            <img src={cs.clientLogo} alt={cs.client} className="h-full w-auto object-contain opacity-70" />
+          </div>
+
           <h1 className="text-[clamp(26px,4.5vw,40px)] font-bold leading-[1.15] tracking-tight mb-3">
             {cs.title}
           </h1>
