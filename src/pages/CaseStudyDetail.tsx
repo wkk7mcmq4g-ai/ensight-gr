@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowLeft, ArrowRight, Clock, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { caseStudies } from '@/data/caseStudies';
 import { Badge } from '@/components/ui/badge';
 import SEO from '@/components/SEO';
@@ -148,26 +148,6 @@ const CaseStudyDetail = () => {
         </StaggerChildren>
       </AnimatedSection>
 
-      {/* Testimonial */}
-      {cs.testimonial && (
-        <AnimatedSection className="mb-5">
-          <div className="bg-gradient-to-br from-primary/5 via-card to-card border border-primary/20 rounded-lg p-8 relative">
-            <Quote size={32} className="text-primary/20 absolute top-6 right-6" />
-            <blockquote className="text-[17px] font-medium leading-relaxed mb-4 max-w-[90%]">
-              "{cs.testimonial.quote}"
-            </blockquote>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-xs font-bold text-primary">{cs.testimonial.author[0]}</span>
-              </div>
-              <div>
-                <div className="text-sm font-semibold">{cs.testimonial.author}</div>
-                <div className="text-xs text-muted-foreground">{cs.testimonial.role}</div>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
-      )}
 
       {/* Prev / Next navigation */}
       <div className="grid grid-cols-2 gap-4 mb-10">
