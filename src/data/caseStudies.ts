@@ -11,7 +11,6 @@ export interface CaseStudy {
   timeline: string;
   icon: string;
   keyResult: string;
-  testimonial?: { quote: string; author: string; role: string };
 }
 
 export const caseStudies: CaseStudy[] = [
