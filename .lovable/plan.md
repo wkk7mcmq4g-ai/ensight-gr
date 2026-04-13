@@ -1,22 +1,33 @@
 
 
-# Replace Generated Logos with Real Client Logos
+# Add Subtle Parallax Effects to Hero & Section Dividers
 
-The user has uploaded the actual brand logos for all five clients. These should replace the generated placeholder wordmarks.
+## What we're adding
 
-## Files to copy
+1. **Hero parallax background** — A soft radial gradient orb behind the hero that moves slower than the page scroll, creating depth.
 
-| Upload | Destination |
-|--------|------------|
-| `HMS-Logo-Purple-RGB-2.png` | `src/assets/logo-hms.png` |
-| `images-removebg-preview-2.png` | `src/assets/logo-volunteering-matters.png` |
-| `Loux-logo-3.png` | `src/assets/logo-loux.png` |
-| `QsixLogo_app_no_back-2.png` | `src/assets/logo-qsix.png` |
-| `Myatlogo_-_Copy-removebg-preview-3.png` | `src/assets/logo-myathenstransfers.png` |
+2. **Section divider parallax accents** — Replace the flat `border-b` dividers in `Home.tsx` with a `ParallaxDivider` component that includes a subtle decorative line with a small gradient dot that shifts horizontally on scroll.
 
-## What changes
+3. **Hero content stagger** — The hero headline, subtitle, and CTA buttons will have slightly different scroll speeds (very subtle, 5-10px range) so they feel layered.
 
-- **5 asset files replaced** — copy each uploaded logo over the existing placeholder
-- **No code changes needed** — filenames stay the same, imports already point to these paths
-- The Loux logo is a new addition already referenced in `LogoStripSection.tsx`
+## Technical approach
+
+- Use `framer-motion`'s `useScroll` + `useTransform` (already in the project) for all parallax — no extra dependencies.
+- Respect `prefers-reduced-motion` by disabling parallax when the user prefers reduced motion.
+
+## Files changed
+
+| File | Change |
+|------|--------|
+| `src/components/home/HeroSection.tsx` | Wrap in a scroll-tracked container. Add a large, soft violet radial gradient `motion.div` behind content that scrolls at 0.5× speed. Add subtle differential scroll offsets to headline vs. subtitle vs. CTA. |
+| `src/components/home/ParallaxDivider.tsx` | **New.** A thin horizontal line with a small glowing dot that translates horizontally as the user scrolls past it. Uses `useScroll`/`useTransform`. |
+| `src/pages/Home.tsx` | Replace `border-b border-[#D6D0C9]` wrapper divs with `<ParallaxDivider />` between sections. |
+
+## Details
+
+**Hero gradient orb**: A 600×600px radial gradient (primary color at 8% opacity) positioned behind the grid, translated vertically at half the scroll rate. Adds perceived depth without distracting from content.
+
+**ParallaxDivider**: A `1px` line with a `6px` circle accent. The circle translates from ~20% to ~80% horizontally as the section scrolls through the viewport. Very subtle — purely decorative polish.
+
+**Differential hero layers**: Headline gets `translateY(scrollY * -0.03)`, subtitle `translateY(scrollY * -0.05)`, buttons `translateY(scrollY * -0.07)`. Creates a gentle layered feel.
 
