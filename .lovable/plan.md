@@ -1,82 +1,66 @@
 
 
-# Modern Color Refresh — Neutral + One Bold Accent
+# Update remaining pages to new violet palette
 
-## Direction
-Replace the warm teal/amber/linen palette with a clean neutral foundation and a single striking accent — **electric violet (#7C3AED)**. This gives a contemporary, high-end SaaS feel while staying professional.
-
-## New palette
-
-| Role | Old | New |
-|------|-----|-----|
-| Background | `#F4EFE9` warm linen | `#F8F9FA` cool gray-white |
-| Foreground/headlines | `#0E2D3D` teal-slate | `#111827` near-black (gray-900) |
-| Body text | `#3D5A68` teal-gray | `#4B5563` neutral gray-600 |
-| Faint/dim text | teal-tinted grays | `#6B7280` gray-500, `#9CA3AF` gray-400 |
-| Primary (accent) | `#0A7EA4` ocean teal | `#7C3AED` electric violet |
-| Secondary | `#195A73` dark teal | `#6D28D9` deeper violet |
-| Gradient CTA | teal → blue | `#7C3AED` → `#3B82F6` (violet → blue) |
-| Stat numbers | `#06B6D4` cyan | `#7C3AED` violet |
-| Card bg | white | `#FFFFFF` (stays white, clean against gray bg) |
-| Card borders | `#D6D0C9` warm | `#E5E7EB` cool gray-200 |
-| Dark sections | `#0B1E27` teal-dark | `#0F172A` slate-900 |
-| Muted bg | warm beige | `#F1F5F9` slate-50 |
+All homepage sections were updated to the new neutral + violet palette, but the secondary pages still reference old teal-era tokens. This plan brings them in line.
 
 ## Files to change
 
-### 1. `src/index.css` — All CSS custom properties
-Swap every token to the neutral palette above. Update gradient variables to violet→blue.
+### 1. `src/pages/About.tsx`
+- Gradient text `from-electric-bright to-ordinal-green-bright` → `from-primary to-accent-blue` (violet→blue, matching hero)
+- `text-electric-glow` on icons and role label → `text-primary`
+- CTA button `bg-ordinal-green` → violet→blue gradient (matching site CTAs)
+- CTA accent bar `from-primary via-ordinal-green to-ordinal-cyan` → `from-primary to-accent-blue`
 
-### 2. `tailwind.config.ts` — Remove teal-specific color names
-Clean up `ordinal-*` tokens that reference old teal hues. Keep the token structure but with new values.
+### 2. `src/pages/Services.tsx`
+- Gradient text `from-electric-bright to-ordinal-green-bright` → `from-primary to-accent-blue`
+- Multi-color bar/icon system for offerings and methodology: replace `bg-ordinal-green`, `bg-ordinal-cyan`, `bg-electric-bright` with violet shades (`bg-primary`, `bg-primary/70`, `bg-accent-blue`, `bg-secondary`)
+- Same for engagement model cards
 
-### 3. `src/components/home/HeroSection.tsx`
-- Gradient text: violet → blue instead of teal → blue
-- CTA buttons: violet → blue gradient
-- Ghost button border: violet
+### 3. `src/pages/CaseStudies.tsx`
+- Gradient text → `from-primary to-accent-blue`
+- Card accent bar `from-primary via-ordinal-green to-ordinal-cyan` → `from-primary to-accent-blue`
+- Metric values `text-ordinal-green` → `text-primary`
 
-### 4. `src/components/home/ValuePillarsSection.tsx`
-- Icon tints and gradient accent bars: use violet shades
-- Glass cards: `border-gray-200/60` instead of `border-white/40`
+### 4. `src/pages/CaseStudyDetail.tsx`
+- Outcome highlight box: `bg-ordinal-green/5 border-ordinal-green/20 text-ordinal-green` → `bg-primary/5 border-primary/20 text-primary`
+- Checkmark icons: `text-ordinal-green` → `text-primary`
+- Metric values: `text-ordinal-green` → `text-primary`
+- CTA accent bar → `from-primary to-accent-blue`
+- CTA button: `bg-ordinal-green` → violet→blue gradient
 
-### 5. `src/components/home/HowWeHelpSection.tsx`
-- Same card and accent bar updates
+### 5. `src/pages/Assessment.tsx`
+- Progress bar completed segments: `bg-ordinal-green` → `bg-primary`
+- Active segment: `bg-electric-bright` → `bg-accent-blue`
+- All `text-electric-glow` → `text-primary`
+- All `bg-electric-bright` → `bg-primary`
+- Email capture accent bar → `from-primary to-accent-blue`
+- Email submit button: `bg-ordinal-green` → violet→blue gradient
+- Cost estimate gradient text: `from-ordinal-pink-bright via-ordinal-amber to-ordinal-green-bright` → `from-primary via-accent-blue to-secondary`
+- Header badge: update glow shadow to violet
 
-### 6. `src/components/home/EngageSection.tsx`
-- Gradient bars and recommended tag: violet
-- Recommended card tint: light violet instead of teal
+### 6. `src/pages/DataClarityAssessment.tsx`
+- Progress bar: `bg-ordinal-green` → `bg-primary`, `bg-[#06B6D4]` → `bg-accent-blue`
+- Selected option styling: `border-[#06B6D4] bg-[#06B6D4]` → `border-primary bg-primary`
 
-### 7. `src/components/home/ProofSection.tsx`
-- Dark section bg: slate-900
-- Stat numbers and labels: violet accent
-- Card borders: slate tones
+### 7. `src/pages/DataClarity.tsx`
+- Section labels with `// The Problem` prefix: remove `//` prefix (per memory rule)
+- Hero CTA button `bg-[#10B981]` → violet→blue gradient
+- Dark section backgrounds stay slate-900 (already dark, fine)
+- Accent colors in hero label and dots from cyan to violet
 
-### 8. `src/components/home/CTASection.tsx`
-- Dark bg: slate-900
-- CTA button: violet → blue gradient
+### 8. `src/components/home/BeforeYouAutomate.tsx`
+- Background gradient: `from-primary/5 to-ordinal-green/5` → `from-primary/5 to-accent-blue/5`
+- Accent bar: `from-primary via-ordinal-green to-ordinal-cyan` → `from-primary to-accent-blue`
 
-### 9. `src/components/layout/Navbar.tsx`
-- Top accent line: violet → blue gradient
-- Assessment button: same gradient
-- Body text colors: neutral grays
+### 9. `src/components/home/BeforeAfterSection.tsx`
+- `bg-ordinal-green` references in the "After" dashboard mock → `bg-primary`
 
-### 10. `src/components/layout/Footer.tsx`
-- Text colors: neutral grays (will inherit from token changes)
-
-### 11. `src/components/home/QuoteSection.tsx`
-- Dark bg: slate-900
-
-### 12. All other section components
-- Section labels (`text-accent-cyan`): switch to violet accent
-- Body text classes referencing `ordinal-body`, `ordinal-dim`: will pick up new token values automatically
-
-### 13. `mem://design/tokens` — Update memory
-Record the new neutral + violet palette.
+### 10. Memory update
+- Update `mem://design/tokens` to note all pages now use the unified violet palette
 
 ## What stays the same
-- All layouts, spacing, typography weights, and font families
-- Glass card treatment (backdrop-blur)
-- Hero node graph animation
-- Dark section pattern (Proof, Quote, CTA)
-- All content and copy
+- DataClarity page's multi-color problem cards (indigo, cyan, violet, amber) — these are intentional categorical differentiation, not brand accent colors
+- All layouts, content, and typography
+- Dark section backgrounds (already slate-900 toned)
 
