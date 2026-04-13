@@ -4,9 +4,9 @@ import { ShieldCheck } from 'lucide-react';
 const BeforeYouAutomate = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-16">
     <AnimatedSection>
-      <div className="bg-gradient-to-br from-primary/5 to-ordinal-green/5 border border-primary/20 rounded-2xl p-10 md:p-14 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-primary/5 to-accent-blue/5 border border-primary/20 rounded-2xl p-10 md:p-14 relative overflow-hidden">
         {/* Top accent bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan rounded-t-2xl" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent-blue rounded-t-2xl" />
 
         <div className="flex flex-col md:flex-row md:items-start gap-8">
           {/* Icon */}

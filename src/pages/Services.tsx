@@ -34,8 +34,8 @@ const offerings = [
       'Activity-based cost allocation & net margin analysis',
       'Monthly interpretation & strategic recommendations',
     ],
-    barColor: 'bg-ordinal-cyan',
-    iconColor: 'text-ordinal-cyan',
+    barColor: 'bg-accent-blue',
+    iconColor: 'text-accent-blue',
     link: '/data-clarity',
     linkLabel: 'Explore Data Clarity',
   },
@@ -50,8 +50,8 @@ const offerings = [
       'Client portals & internal tools',
       'API integrations with existing systems',
     ],
-    barColor: 'bg-electric-bright',
-    iconColor: 'text-electric-bright',
+    barColor: 'bg-secondary',
+    iconColor: 'text-secondary',
     link: '/case-studies',
     linkLabel: 'See Our Work',
   },
@@ -66,8 +66,8 @@ const offerings = [
       'AI-assisted document processing',
       'Scheduled reporting & alert systems',
     ],
-    barColor: 'bg-ordinal-green',
-    iconColor: 'text-ordinal-green',
+    barColor: 'bg-primary/70',
+    iconColor: 'text-primary/70',
     link: '/operational-transformation',
     linkLabel: 'Learn More',
   },
@@ -75,9 +75,9 @@ const offerings = [
 
 const methodology = [
   { num: '01', icon: Stethoscope, title: 'Diagnose', desc: 'Understand how work actually flows. Map processes, quantify costs, identify what to fix first.', color: 'text-primary', bar: 'bg-primary' },
-  { num: '02', icon: PenTool, title: 'Redesign', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership.', color: 'text-ordinal-cyan', bar: 'bg-ordinal-cyan' },
-  { num: '03', icon: Hammer, title: 'Build', desc: 'Custom platforms, automation, integrations — built around your redesigned processes.', color: 'text-electric-bright', bar: 'bg-electric-bright' },
-  { num: '04', icon: Users, title: 'Embed', desc: "Monitor adoption. Manage resistance. Train your team. We don't leave until it's working.", color: 'text-ordinal-green', bar: 'bg-ordinal-green' },
+  { num: '02', icon: PenTool, title: 'Redesign', desc: 'Fix the process before digitising it. Simplify. Remove waste. Clarify ownership.', color: 'text-accent-blue', bar: 'bg-accent-blue' },
+  { num: '03', icon: Hammer, title: 'Build', desc: 'Custom platforms, automation, integrations — built around your redesigned processes.', color: 'text-secondary', bar: 'bg-secondary' },
+  { num: '04', icon: Users, title: 'Embed', desc: "Monitor adoption. Manage resistance. Train your team. We don't leave until it's working.", color: 'text-primary/70', bar: 'bg-primary/70' },
 ];
 
 const engagements = [
@@ -94,7 +94,7 @@ const engagements = [
     title: 'Quick Win',
     meta: '4–6 weeks · Outcome-linked',
     desc: 'One high-impact problem solved. Proof before commitment. Fee tied to measurable outcome.',
-    barColor: 'bg-ordinal-green',
+    barColor: 'bg-accent-blue',
     showTag: false,
   },
   {
@@ -102,7 +102,7 @@ const engagements = [
     title: 'Full Transformation',
     meta: '10–24 weeks · Scoped from X-Ray',
     desc: 'All four framework stages. End-to-end accountability from diagnosis to adopted, working solution.',
-    barColor: 'bg-ordinal-cyan',
+    barColor: 'bg-secondary',
     showTag: false,
   },
 ];
@@ -152,7 +152,7 @@ const Services = () => (
       </div>
       <h1 className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-4">
         Technology and data,{' '}
-        <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
+        <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
           designed for your business.
         </span>
       </h1>

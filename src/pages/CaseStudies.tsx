@@ -54,7 +54,7 @@ const CaseStudies = () => {
         </div>
         <h1 className="text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-tight mb-5">
           Real Results,{' '}
-          <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
             Measured in Weeks
           </span>
         </h1>
@@ -88,7 +88,7 @@ const CaseStudies = () => {
               className="block bg-card border border-border rounded-lg overflow-hidden hover:border-primary/40 hover:shadow-lg hover:scale-[1.005] transition-all duration-200 group no-underline"
             >
               {/* Accent bar */}
-              <div className="h-[2px] bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
+              <div className="h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
               <div className="p-8">
                 <div className="flex items-center justify-between mb-3">
                   <div className="text-[10px] font-medium text-primary tracking-[3px] uppercase">
@@ -107,7 +107,7 @@ const CaseStudies = () => {
                       <div className="text-[10px] text-ordinal-dim tracking-[1px] uppercase mb-1">
                         {m.label}
                       </div>
-                      <div className="text-sm font-bold text-ordinal-green">{m.after}</div>
+                      <div className="text-sm font-bold text-primary">{m.after}</div>
                     </div>
                   ))}
                 </div>

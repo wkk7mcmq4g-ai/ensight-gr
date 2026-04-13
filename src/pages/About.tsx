@@ -75,7 +75,7 @@ const About = () => (
       </div>
       <h1 className="text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-tight mb-5">
         We Find the Capacity{' '}
-        <span className="bg-gradient-to-br from-electric-bright to-ordinal-green-bright bg-clip-text text-transparent">
+        <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
           Already Inside
         </span>{' '}
         Your Organisation
@@ -108,7 +108,7 @@ const About = () => (
         {values.map((v) => (
           <StaggerItem key={v.title}>
             <div className="bg-card border border-border rounded-lg p-7 h-full">
-              <v.icon className="text-electric-glow mb-3" size={22} />
+              <v.icon className="text-primary mb-3" size={22} />
               <h3 className="text-base font-bold mb-2">{v.title}</h3>
               <p className="text-sm text-ordinal-body leading-relaxed">{v.desc}</p>
             </div>
@@ -132,7 +132,7 @@ const About = () => (
               height={512}
             />
             <h3 className="text-base font-bold mb-1">{t.name}</h3>
-            <div className="font-mono-label text-[10px] text-electric-glow tracking-[1px] uppercase mb-3">
+            <div className="text-[10px] text-primary tracking-[1px] uppercase mb-3 font-medium">
               {t.role}
             </div>
             <p className="text-sm text-ordinal-body leading-relaxed">{t.bio}</p>
@@ -143,7 +143,7 @@ const About = () => (
 
     {/* CTA */}
     <AnimatedSection className="bg-card border border-border rounded-lg p-10 text-center relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-ordinal-green to-ordinal-cyan" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent-blue" />
       <h2 className="text-[22px] font-bold mb-3">Ready to Uncover Your Hidden Capacity?</h2>
       <p className="text-[15px] text-ordinal-body leading-relaxed mb-6 max-w-[440px] mx-auto">
         Start with our free Process Debt Assessment, or get in touch to discuss an Operational X-Ray for your team.
@@ -151,7 +151,7 @@ const About = () => (
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="/assessment"
-          className="inline-block bg-ordinal-green text-white font-bold text-base px-10 py-4 rounded-xl shadow-[0_4px_16px_rgba(16,185,129,0.15)] hover:bg-ordinal-green-bright hover:-translate-y-0.5 transition-all duration-200 no-underline"
+          className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-xl shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
         >
           Take the Assessment
         </a>
