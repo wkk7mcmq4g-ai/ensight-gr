@@ -9,6 +9,9 @@ export interface CaseStudy {
   tools: string[];
   metrics: { label: string; before: string; after: string }[];
   timeline: string;
+  icon: string;
+  keyResult: string;
+  testimonial?: { quote: string; author: string; role: string };
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -32,6 +35,13 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Portfolio Visibility', before: 'Fragmented', after: 'Real-time' },
     ],
     timeline: '12 weeks',
+    icon: 'Landmark',
+    keyResult: '60% less manual work',
+    testimonial: {
+      quote: 'Ensight transformed our servicing operations. What used to take our team days now happens automatically.',
+      author: 'Operations Director',
+      role: 'Lending Company',
+    },
   },
   {
     id: 'charity-crm',
@@ -53,6 +63,13 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Reporting', before: 'Per-programme', after: 'Organisation-wide' },
     ],
     timeline: '10 weeks',
+    icon: 'Heart',
+    keyResult: 'Full compliance visibility',
+    testimonial: {
+      quote: 'For the first time, we can see all our programmes in one place. The compliance tracking alone has saved us countless hours.',
+      author: 'Programme Manager',
+      role: 'National Charity',
+    },
   },
   {
     id: 'financial-reporting',
@@ -74,6 +91,13 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Insights', before: 'Periodic', after: 'Real-time' },
     ],
     timeline: '8 weeks',
+    icon: 'BarChart3',
+    keyResult: 'Days → Minutes',
+    testimonial: {
+      quote: 'We went from spending days on reports to having real-time dashboards. The accuracy improvement alone justified the investment.',
+      author: 'Finance Director',
+      role: 'Financial Services Firm',
+    },
   },
   {
     id: 'touro-driver-ux',
@@ -96,5 +120,7 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Field Execution', before: 'Friction-heavy', after: 'Reliable' },
     ],
     timeline: '6 weeks',
+    icon: 'MapPin',
+    keyResult: 'At-a-glance clarity',
   },
 ];

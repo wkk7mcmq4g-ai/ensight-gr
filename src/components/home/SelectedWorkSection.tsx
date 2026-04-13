@@ -1,32 +1,7 @@
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
-
-const caseStudies = [
-  {
-    title: 'Loan Servicing Platform',
-    points: [
-      'Replaced fragmented systems with a single servicing platform',
-      'Reduced manual processing effort by approximately 60%',
-      'Enabled real-time portfolio visibility and reporting',
-    ],
-  },
-  {
-    title: 'Charity CRM System',
-    points: [
-      'Unified programme management across the organisation',
-      'Structured compliance tracking and oversight',
-      'Enabled organisation-wide reporting',
-    ],
-  },
-  {
-    title: 'Financial Reporting Automation',
-    points: [
-      'Reduced reporting time from days to minutes',
-      'Improved data accuracy and consistency',
-      'Enabled real-time insights for decision-making',
-    ],
-  },
-];
+import { caseStudies } from '@/data/caseStudies';
 
 const SelectedWorkSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="work">
@@ -39,19 +14,31 @@ const SelectedWorkSection = () => (
       </h2>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {caseStudies.map((cs, i) => (
-        <StaggerItem key={i}>
-          <div className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all h-full">
-            <h3 className="text-lg font-semibold mb-4">{cs.title}</h3>
-            <ul className="space-y-3">
-              {cs.points.map((point, j) => (
-                <li key={j} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
+      {caseStudies.slice(0, 3).map((cs) => (
+        <StaggerItem key={cs.id}>
+          <Link
+            to={`/case-studies/${cs.id}`}
+            className="block bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all h-full no-underline group"
+          >
+            <div className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-2">
+              {cs.sector}
+            </div>
+            <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{cs.title}</h3>
+            <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-[11px] font-semibold px-2.5 py-1 rounded-full mb-4">
+              {cs.keyResult}
+            </div>
+            <ul className="space-y-3 mb-5">
+              {cs.metrics.map((m) => (
+                <li key={m.label} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
                   <CheckCircle2 size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                  {point}
+                  <span><span className="font-medium text-foreground">{m.label}:</span> {m.after}</span>
                 </li>
               ))}
             </ul>
-          </div>
+            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-3 transition-all">
+              View case study <ArrowRight size={14} />
+            </span>
+          </Link>
         </StaggerItem>
       ))}
     </StaggerChildren>

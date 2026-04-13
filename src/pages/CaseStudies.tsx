@@ -3,9 +3,13 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, Clock, Landmark, Heart, BarChart3, MapPin } from 'lucide-react';
 import { caseStudies } from '@/data/caseStudies';
 import DecorativeShapes from '@/components/DecorativeShapes';
+
+const iconMap: Record<string, React.ElementType> = {
+  Landmark, Heart, BarChart3, MapPin,
+};
 
 const sectors = ['All', ...Array.from(new Set(caseStudies.map((cs) => cs.sector)))];
 
@@ -18,7 +22,7 @@ const CaseStudies = () => {
   );
 
   return (
-    <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
+    <div className="max-w-[1000px] mx-auto px-6 pt-28 pb-20 relative">
       <SEO title="Case Studies · Ensight" description="Real results, measured in weeks. See how we've helped organisations uncover hidden capacity and eliminate process debt." path="/case-studies" ogImage="/og/case-studies.jpg" />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify({
@@ -33,7 +37,7 @@ const CaseStudies = () => {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Case Studies · Ensight",
-          "description": "Real results, measured in weeks. See how we've helped organisations uncover hidden capacity and eliminate process debt.",
+          "description": "Real results, measured in weeks.",
           "url": "https://ensight-gr.lovable.app/case-studies",
           "mainEntity": {
             "@type": "ItemList",
@@ -58,7 +62,7 @@ const CaseStudies = () => {
             Measured in Weeks
           </span>
         </h1>
-        <p className="text-lg text-ordinal-body leading-relaxed max-w-[560px] mx-auto">
+        <p className="text-lg text-muted-foreground leading-relaxed max-w-[560px] mx-auto">
           See how we've helped organisations uncover hidden capacity and eliminate process debt across industries.
         </p>
       </AnimatedSection>
@@ -72,7 +76,7 @@ const CaseStudies = () => {
             className={`text-xs font-medium px-4 py-2 rounded-full border transition-all duration-200 ${
               activeSector === s
                 ? 'bg-primary text-primary-foreground border-primary'
-                : 'bg-card border-border text-ordinal-body hover:border-primary/40 hover:text-foreground'
+                : 'bg-card border-border text-muted-foreground hover:border-primary/40 hover:text-foreground'
             }`}
           >
             {s}
@@ -80,44 +84,63 @@ const CaseStudies = () => {
         ))}
       </div>
 
-      <StaggerChildren className="space-y-5">
-        {filtered.map((cs) => (
-          <StaggerItem key={cs.id}>
-            <Link
-              to={`/case-studies/${cs.id}`}
-              className="block bg-card border border-border rounded-lg overflow-hidden hover:border-primary/40 hover:shadow-lg hover:scale-[1.005] transition-all duration-200 group no-underline"
-            >
-              {/* Accent bar */}
-              <div className="h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-[10px] font-medium text-primary tracking-[3px] uppercase">
-                    {cs.sector}
-                  </div>
-                  <div className="inline-flex items-center gap-1.5 text-[11px] text-ordinal-dim">
-                    <Clock size={12} />
-                    {cs.timeline}
-                  </div>
-                </div>
-                <h2 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{cs.title}</h2>
-                <p className="text-[15px] text-ordinal-body leading-relaxed mb-4">{cs.subtitle}</p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-5">
-                  {cs.metrics.map((m) => (
-                    <div key={m.label} className="bg-background/50 border border-border/50 rounded-lg p-3">
-                      <div className="text-[10px] text-ordinal-dim tracking-[1px] uppercase mb-1">
-                        {m.label}
+      <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {filtered.map((cs) => {
+          const IconComponent = iconMap[cs.icon];
+          return (
+            <StaggerItem key={cs.id}>
+              <Link
+                to={`/case-studies/${cs.id}`}
+                className="group block bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg overflow-hidden hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 no-underline h-full"
+              >
+                {/* Accent bar */}
+                <div className="h-[2px] bg-gradient-to-r from-primary to-accent-blue opacity-60 group-hover:opacity-100 transition-opacity" />
+                <div className="p-7">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      {IconComponent && (
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <IconComponent size={16} className="text-primary" />
+                        </div>
+                      )}
+                      <div className="text-[10px] font-medium text-primary tracking-[3px] uppercase">
+                        {cs.sector}
                       </div>
-                      <div className="text-sm font-bold text-primary">{m.after}</div>
                     </div>
-                  ))}
+                    <div className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                      <Clock size={12} />
+                      {cs.timeline}
+                    </div>
+                  </div>
+
+                  <h2 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{cs.title}</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{cs.subtitle}</p>
+
+                  {/* Key result pill */}
+                  <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+                    {cs.keyResult}
+                  </div>
+
+                  {/* Metrics preview */}
+                  <div className="grid grid-cols-3 gap-2 mb-5">
+                    {cs.metrics.map((m) => (
+                      <div key={m.label} className="bg-muted/50 border border-border/50 rounded-lg p-2.5 text-center">
+                        <div className="text-[9px] text-muted-foreground tracking-[1px] uppercase mb-1 truncate">
+                          {m.label}
+                        </div>
+                        <div className="text-xs font-bold text-primary truncate">{m.after}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-3 transition-all">
+                    Read full case study <ArrowRight size={14} />
+                  </span>
                 </div>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-3 transition-all">
-                  Read full case study <ArrowRight size={14} />
-                </span>
-              </div>
-            </Link>
-          </StaggerItem>
-        ))}
+              </Link>
+            </StaggerItem>
+          );
+        })}
       </StaggerChildren>
     </div>
   );
