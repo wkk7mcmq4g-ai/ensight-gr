@@ -80,6 +80,8 @@ export default {
         "ordinal-faint": "hsl(var(--ordinal-faint))",
         "stat-accent": "hsl(var(--stat-accent))",
         "dark-section": "hsl(var(--dark-section))",
+        "accent-blue": "hsl(var(--accent-blue))",
+        "accent-cyan": "hsl(var(--accent-cyan))",
       },
       borderRadius: {
         lg: "var(--radius)",

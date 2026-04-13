@@ -7,7 +7,6 @@ const pillars = [
     icon: Workflow,
     title: 'Digital Transformation',
     desc: 'Redesign processes and systems for efficiency and scale.',
-    color: 'bg-primary',
     hsl: 'hsl(var(--primary))',
     link: '/operational-transformation',
   },
@@ -15,15 +14,13 @@ const pillars = [
     icon: BarChart3,
     title: 'Data & Analytics',
     desc: 'Turn fragmented data into clear, actionable insight.',
-    color: 'bg-ordinal-cyan',
-    hsl: 'hsl(var(--ordinal-cyan))',
+    hsl: 'hsl(var(--accent-cyan))',
     link: '/data-clarity',
   },
   {
     icon: Code2,
     title: 'Custom Platforms',
     desc: 'Purpose-built applications that replace spreadsheets and manual workflows.',
-    color: 'bg-ordinal-pink',
     hsl: 'hsl(var(--electric-bright))',
     link: '/case-studies',
   },
@@ -31,7 +28,6 @@ const pillars = [
     icon: Zap,
     title: 'Automation & Integration',
     desc: 'Connect systems, eliminate repetitive tasks, scale without headcount.',
-    color: 'bg-ordinal-green',
     hsl: 'hsl(var(--ordinal-green))',
     link: '/operational-transformation',
   },
@@ -40,7 +36,7 @@ const pillars = [
 const ValuePillarsSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="pillars">
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-accent-cyan mb-3">
         What We Do
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
@@ -55,8 +51,9 @@ const ValuePillarsSection = () => (
         <StaggerItem key={i}>
           <Link
             to={p.link}
-            className="block bg-card border border-border border-l-[3px] border-l-[#0A7EA4] rounded-lg p-7 shadow-sm hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 hover:border-l-[#0A7EA4] transition-all duration-300 ease-out group h-full no-underline"
+            className="block bg-white/75 backdrop-blur-xl border border-white/40 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 ease-out group h-full no-underline relative overflow-hidden"
           >
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(187,96%,42%)]" />
             <div
               className="mb-4 w-10 h-10 rounded-md flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5"
               style={{ backgroundColor: `${p.hsl}15`, color: p.hsl }}
