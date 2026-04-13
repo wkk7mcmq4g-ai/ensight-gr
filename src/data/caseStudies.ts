@@ -11,7 +11,6 @@ export interface CaseStudy {
   timeline: string;
   icon: string;
   keyResult: string;
-  testimonial?: { quote: string; author: string; role: string };
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -37,11 +36,6 @@ export const caseStudies: CaseStudy[] = [
     timeline: '12 weeks',
     icon: 'Landmark',
     keyResult: '60% less manual work',
-    testimonial: {
-      quote: 'Ensight transformed our servicing operations. What used to take our team days now happens automatically.',
-      author: 'Operations Director',
-      role: 'Lending Company',
-    },
   },
   {
     id: 'charity-crm',
@@ -65,11 +59,6 @@ export const caseStudies: CaseStudy[] = [
     timeline: '10 weeks',
     icon: 'Heart',
     keyResult: 'Full compliance visibility',
-    testimonial: {
-      quote: 'For the first time, we can see all our programmes in one place. The compliance tracking alone has saved us countless hours.',
-      author: 'Programme Manager',
-      role: 'National Charity',
-    },
   },
   {
     id: 'financial-reporting',
@@ -93,11 +82,6 @@ export const caseStudies: CaseStudy[] = [
     timeline: '8 weeks',
     icon: 'BarChart3',
     keyResult: 'Days → Minutes',
-    testimonial: {
-      quote: 'We went from spending days on reports to having real-time dashboards. The accuracy improvement alone justified the investment.',
-      author: 'Finance Director',
-      role: 'Financial Services Firm',
-    },
   },
   {
     id: 'touro-driver-ux',
