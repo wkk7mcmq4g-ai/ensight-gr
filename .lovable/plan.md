@@ -1,76 +1,60 @@
 
-## Remove all remaining entrance animations
 
-### What I found
-There are no remaining `whileInView` usages in `src`, and `src/components/home/AnimatedSection.tsx` is already a pass-through wrapper. The remaining visibility/entrance animations are coming from direct `framer-motion` usage elsewhere.
+# Vibrant Modern Refresh
 
-### Files that still hide or animate content on entry
-- `src/components/layout/PageTransition.tsx` — page-level fade/slide on route change
-- `src/pages/Services.tsx` — hero label, heading, paragraph
-- `src/pages/DataClarity.tsx` — hero label, heading, paragraph, CTA group
-- `src/pages/Assessment.tsx` — intro, step transitions, results wrapper, methodology expand, animated bar fill
-- `src/pages/DataClarityAssessment.tsx` — intro, step transitions, results wrapper, animated bar fill
-- `src/components/layout/Navbar.tsx` — dropdowns and mobile menu animate in/out
-- `src/components/layout/BackToTop.tsx` — button fades/scales in
-- `src/components/DecorativeShapes.tsx` — decorative SVGs still use opacity/path/scale entrance sequences
-- `src/components/home/HeroVisual.tsx` — should be kept, but only the node graph animation
+All four directions combined into a cohesive upgrade. No layout or content changes.
 
-### Implementation approach
-1. Remove entrance animation props anywhere content starts hidden or offset:
-   - remove `initial={{ opacity: 0 ... }}`
-   - remove `animate={{ opacity: 1 ... }}`
-   - remove `exit={...}` where it only supports reveal/hide transitions
-   - replace `motion.*` with normal elements when animation is no longer needed
+## 1. New Color Tokens (`src/index.css`)
 
-2. Keep only the hero node graph animation:
-   - preserve `src/components/home/HeroVisual.tsx`
-   - but make sure anything that is part of the hero graph is visible immediately if needed, while preserving the ongoing node-graph motion the user explicitly wants
+Add a secondary electric blue accent and gradient utility variables:
 
-3. Remove route and UI entrance effects that still create delayed appearance:
-   - `PageTransition.tsx` should become a plain wrapper
-   - `Navbar.tsx` dropdowns/mobile menu should open instantly
-   - `BackToTop.tsx` should appear/disappear without fade/scale
+- `--accent-blue: 217 91% 60%` → `#2563EB`
+- `--accent-cyan: 187 96% 42%` → `#06B6D4`
+- Gradient CSS custom properties for reuse:
+  - `--gradient-cta: linear-gradient(135deg, hsl(195 89% 34%), hsl(217 91% 60%))` (teal → blue)
+  - `--gradient-accent: linear-gradient(135deg, hsl(195 89% 34%), hsl(187 96% 42%))` (teal → cyan)
 
-4. Remove decorative intro sequencing:
-   - `DecorativeShapes.tsx` should render static shapes with scroll-parallax only if desired, or fully static if safer
-   - no opacity/pathLength/scale “drawing in” effects
+Update `tailwind.config.ts` to expose `accent-blue` and `accent-cyan` as color tokens.
 
-5. Keep non-entrance behavior:
-   - hover states stay
-   - assessment logic stays
-   - count-up and progress-ring/bar animation can stay only if they do not hide content on first render; otherwise set them to final state immediately for consistency
+## 2. Glass/Frosted Cards — All card elements site-wide
 
-### Recommended file-by-file changes
-- `src/components/layout/PageTransition.tsx`
-  - replace `motion.div` with plain `div`
+Replace flat white `bg-card` cards with frosted glass:
 
-- `src/pages/Services.tsx`
-  - replace hero `motion.div`, `motion.h1`, `motion.p` with regular elements
+- **ValuePillarsSection.tsx**: Cards get `bg-white/75 backdrop-blur-xl border-white/40 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)]` instead of `bg-card border-border`
+- **HowWeHelpSection.tsx**: Same glass treatment on 4 solution cards
+- **SelectedWorkSection.tsx**: Same on 3 case study cards
+- **EngageSection.tsx**: Same on 3 engagement cards (recommended card keeps its teal tint but as `bg-[#E8F4F8]/80 backdrop-blur-xl`)
+- **BeforeAfterSection.tsx**: "After" dashboard panel gets subtle glass border glow
 
-- `src/pages/DataClarity.tsx`
-  - replace hero `motion.*` wrappers with regular elements
+## 3. Gradient Accents — CTA buttons and card accent bars
 
-- `src/pages/Assessment.tsx`
-  - remove step/result entrance transitions
-  - replace `AnimatePresence` with direct conditional rendering if practical
-  - convert progress-bar fill from animated width to immediate width
-  - keep methodology toggle only as instant show/hide, no fade/height animation
+- **HeroSection.tsx**: "Learn More" button gets gradient background `bg-gradient-to-r from-[#0A7EA4] to-[#2563EB]` with a subtle white shine pseudo-element on hover
+- **CTASection.tsx**: "Send Message" button same gradient
+- **Navbar.tsx**: "Free Assessment" CTA button same gradient
+- **Card accent bars**: Replace flat `bg-primary` top/left bars in ValuePillars, HowWeHelp, and Engage cards with `bg-gradient-to-r from-[#0A7EA4] to-[#06B6D4]`
 
-- `src/pages/DataClarityAssessment.tsx`
-  - same cleanup as `Assessment.tsx`
+## 4. Bolder Color Contrast
 
-- `src/components/layout/Navbar.tsx`
-  - make dropdown panels and mobile menu render instantly with no motion wrappers
+- **ProofSection.tsx**: Stat metric numbers change from `text-stat-accent` (amber) to `text-[#06B6D4]` (vibrant cyan) for more pop against the dark background
+- **Section labels**: The small uppercase "What We Do" / "Proof Points" labels get `text-[#06B6D4]` instead of `text-primary` for extra vibrancy
+- **ValuePillarsSection.tsx** icon containers: brighter tinted backgrounds using the new cyan/blue tokens
+- **Navbar** top accent line: gradient `bg-gradient-to-r from-[#0A7EA4] to-[#2563EB]` instead of flat `bg-primary`
 
-- `src/components/layout/BackToTop.tsx`
-  - render plain button when `visible` is true
+## 5. Hero Energy Boost (`src/components/home/HeroSection.tsx` + `HeroVisual.tsx`)
 
-- `src/components/DecorativeShapes.tsx`
-  - remove all entrance sequencing on SVG children
-  - keep static rendering; optionally keep subtle scroll-linked transform if it doesn’t hide content
+- Add a radial gradient glow behind the hero visual: `absolute` div with `bg-[radial-gradient(circle_at_center,_hsl(195_89%_34%/0.12)_0%,_transparent_70%)]`
+- Add a second ghost CTA button: "Get a Free Assessment" with `border-2 border-[#0A7EA4] text-[#0A7EA4] hover:bg-[#0A7EA4]/10` linking to `/assessment`
+- Hero keyword "transform" gets a gradient text treatment: `bg-gradient-to-r from-[#0A7EA4] to-[#2563EB] bg-clip-text text-transparent`
 
-- `src/components/home/HeroVisual.tsx`
-  - preserve as the only animated visual system
+## Files changed
+- `src/index.css` — new CSS variables
+- `tailwind.config.ts` — new color tokens
+- `src/components/home/HeroSection.tsx` — gradient text, ghost CTA, hero glow
+- `src/components/home/ValuePillarsSection.tsx` — glass cards, gradient accent bars
+- `src/components/home/HowWeHelpSection.tsx` — glass cards, gradient bars
+- `src/components/home/SelectedWorkSection.tsx` — glass cards
+- `src/components/home/EngageSection.tsx` — glass cards
+- `src/components/home/ProofSection.tsx` — cyan stat numbers
+- `src/components/home/CTASection.tsx` — gradient CTA button
+- `src/components/layout/Navbar.tsx` — gradient top bar, gradient assessment button
 
-### Technical note
-The biggest remaining UX offenders are not homepage section wrappers anymore; they are page transitions, assessment step wrappers, and decorative Framer Motion SVGs. Once these are removed, all content will be present immediately with no fade-in, slide-in, or delayed reveal anywhere except the hero node graph.
