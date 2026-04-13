@@ -25,7 +25,7 @@ const ProofSection = () => (
   <section className="bg-dark-section py-24" id="results">
     <div className="max-w-[1200px] mx-auto px-6 md:px-12">
       <AnimatedSection>
-        <div className="text-[10px] font-medium tracking-[3px] uppercase text-accent-cyan mb-3">
+        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
           Proof Points
         </div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4 text-white">
@@ -40,7 +40,7 @@ const ProofSection = () => (
           <StaggerItem key={i}>
             <div className="bg-white/10 rounded-lg p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.14]">
               <div className="text-[9px] tracking-[2px] uppercase text-white/60 mb-3">{p.sector}</div>
-              <div className="text-5xl font-bold leading-none mb-1 text-accent-cyan">
+              <div className="text-5xl font-bold leading-none mb-1 text-primary">
                 {p.metric}
               </div>
               <div className="text-base font-semibold text-white mb-3">{p.desc}</div>

@@ -55,7 +55,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(217,91%,60%)] z-[100]" />
+      <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue z-[100]" />
 
       <nav className="fixed top-1 left-0 right-0 z-[99] px-6 md:px-12 py-4 flex justify-between items-center bg-background/90 backdrop-blur-2xl border-b border-border">
         <Link to="/">
@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="relative" ref={servicesRef}>
             <button
               onClick={() => { setServicesOpen((v) => !v); setAssessmentOpen(false); }}
-              className="inline-flex items-center gap-1 text-ordinal-dim text-sm font-medium hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1 text-muted-foreground text-sm font-medium hover:text-foreground transition-colors"
             >
               Services
               <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
@@ -83,7 +83,7 @@ const Navbar = () => {
                     className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
                   >
                     <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                    <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                    <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
                   </Link>
                 ))}
               </div>
@@ -94,7 +94,7 @@ const Navbar = () => {
             <Link
               key={link.label}
               to={link.href}
-              className="text-ordinal-dim text-sm font-medium hover:text-foreground transition-colors"
+              className="text-muted-foreground text-sm font-medium hover:text-foreground transition-colors"
             >
               {link.label}
             </Link>
@@ -104,7 +104,7 @@ const Navbar = () => {
           <div className="relative" ref={assessmentRef}>
             <button
               onClick={() => { setAssessmentOpen((v) => !v); setServicesOpen(false); }}
-              className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-gradient-to-r from-[hsl(195,89%,34%)] to-[hsl(217,91%,60%)] px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 hover:-translate-y-px transition-all"
+              className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 hover:-translate-y-px transition-all"
             >
               Free Assessment
               <ChevronDown size={14} className={`transition-transform duration-200 ${assessmentOpen ? 'rotate-180' : ''}`} />
@@ -119,7 +119,7 @@ const Navbar = () => {
                     className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
                   >
                     <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                    <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                    <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
                   </Link>
                 ))}
               </div>
@@ -141,7 +141,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 md:hidden">
           <div className="space-y-1">
-            <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Services</div>
+            <div className="text-[9px] font-medium tracking-[2px] uppercase text-muted-foreground mb-1">Services</div>
             {serviceOptions.map((opt) => (
               <Link
                 key={opt.href}
@@ -150,7 +150,7 @@ const Navbar = () => {
                 className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
               >
                 <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
               </Link>
             ))}
           </div>
@@ -165,7 +165,7 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="mt-2 space-y-2">
-            <div className="text-[9px] font-medium tracking-[2px] uppercase text-ordinal-dim mb-1">Free Assessments</div>
+            <div className="text-[9px] font-medium tracking-[2px] uppercase text-muted-foreground mb-1">Free Assessments</div>
             {assessmentOptions.map((opt) => (
               <Link
                 key={opt.href}
@@ -174,7 +174,7 @@ const Navbar = () => {
                 className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
               >
                 <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                <div className="text-[11px] text-ordinal-dim">{opt.desc}</div>
+                <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
               </Link>
             ))}
           </div>

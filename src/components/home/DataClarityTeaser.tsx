@@ -7,13 +7,13 @@ const DataClarityTeaser = () => (
     <AnimatedSection>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div className="max-w-[560px]">
-          <div className="text-[10px] font-medium tracking-[3px] uppercase text-ordinal-cyan mb-3">
+          <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
             Standalone Tool
           </div>
           <h2 className="text-[clamp(24px,3.5vw,36px)] font-semibold tracking-tight leading-[1.15] mb-4">
             Data Clarity Score
           </h2>
-          <p className="text-base text-ordinal-body leading-relaxed mb-6">
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
             Not sure if your data is ready for AI, automation, or better reporting? Take our free Data Clarity assessment and get a personalised score with actionable recommendations.
           </p>
           <Link
