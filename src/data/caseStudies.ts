@@ -2,10 +2,16 @@ import caseStudyLoan from '@/assets/case-study-loan.jpg';
 import caseStudyCharity from '@/assets/case-study-charity.jpg';
 import caseStudyReporting from '@/assets/case-study-reporting.jpg';
 import caseStudyTouro from '@/assets/case-study-touro.jpg';
+import logoHms from '@/assets/logo-hms.png';
+import logoMyAthens from '@/assets/logo-myathenstransfers.png';
+import logoVolunteering from '@/assets/logo-volunteering-matters.png';
+import logoQsix from '@/assets/logo-qsix.png';
 
 export interface CaseStudy {
   id: string;
   sector: string;
+  client: string;
+  clientLogo: string;
   title: string;
   subtitle: string;
   outcome: string;
