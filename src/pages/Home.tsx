@@ -11,6 +11,7 @@ import QuoteSection from '@/components/home/QuoteSection';
 import AboutSection from '@/components/home/AboutSection';
 import EngageSection from '@/components/home/EngageSection';
 import CTASection from '@/components/home/CTASection';
+import ParallaxDivider from '@/components/home/ParallaxDivider';
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -43,22 +44,23 @@ const Home = () => (
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
     </Helmet>
-    <div className="border-b border-[#D6D0C9]"><HeroSection /></div>
-    <div className="border-b border-[#D6D0C9]"><LogoStripSection /></div>
-    <div className="border-b border-[#D6D0C9]">
-      <ValuePillarsSection />
-    </div>
-    <div className="border-b border-[#D6D0C9]"><HowWeHelpSection /></div>
-    <div className="border-b border-[#D6D0C9]">
-      <BeforeAfterSection />
-    </div>
-    <div className="border-b border-[#D6D0C9]"><SelectedWorkSection /></div>
+    <HeroSection />
+    <ParallaxDivider />
+    <LogoStripSection />
+    <ParallaxDivider />
+    <ValuePillarsSection />
+    <ParallaxDivider />
+    <HowWeHelpSection />
+    <ParallaxDivider />
+    <BeforeAfterSection />
+    <ParallaxDivider />
+    <SelectedWorkSection />
     <ProofSection />
     <QuoteSection />
-    <div className="border-b border-[#D6D0C9]"><AboutSection /></div>
-    <div className="border-b border-[#D6D0C9]">
-      <EngageSection />
-    </div>
+    <ParallaxDivider />
+    <AboutSection />
+    <ParallaxDivider />
+    <EngageSection />
     <CTASection />
   </>
 );
