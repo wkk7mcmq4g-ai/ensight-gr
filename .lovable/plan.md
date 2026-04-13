@@ -1,27 +1,22 @@
 
 
-# Fix Client Logos on Case Study Pages
+# Replace Generated Logos with Real Client Logos
 
-The current logo files are 512x512 AI-generated square images that don't resemble real client wordmarks. They look passable on the homepage (which applies `grayscale opacity-50`) but appear broken/unprofessional on case study pages at full opacity.
+The user has uploaded the actual brand logos for all five clients. These should replace the generated placeholder wordmarks.
 
-## Approach
+## Files to copy
 
-Regenerate all four logo PNGs as clean, text-based wordmarks on transparent backgrounds — wide/horizontal format (e.g. 400x100) matching typical logo proportions.
+| Upload | Destination |
+|--------|------------|
+| `HMS-Logo-Purple-RGB-2.png` | `src/assets/logo-hms.png` |
+| `images-removebg-preview-2.png` | `src/assets/logo-volunteering-matters.png` |
+| `Loux-logo-3.png` | `src/assets/logo-loux.png` |
+| `QsixLogo_app_no_back-2.png` | `src/assets/logo-qsix.png` |
+| `Myatlogo_-_Copy-removebg-preview-3.png` | `src/assets/logo-myathenstransfers.png` |
 
-| File | Text | Style |
-|------|------|-------|
-| `logo-hms.png` | HMS | Bold, professional sans-serif |
-| `logo-myathenstransfers.png` | myAthensTransfers | Clean sans-serif |
-| `logo-volunteering-matters.png` | Volunteering Matters | Friendly sans-serif |
-| `logo-qsix.png` | QSIX | Modern geometric sans-serif |
+## What changes
 
-Generate using Python/Pillow with a clean dark gray (#1a1a2e) text on transparent background. This ensures they look crisp on both the homepage (with grayscale filter) and case study pages.
-
-## Files changed
-- `src/assets/logo-hms.png` — regenerated as text wordmark
-- `src/assets/logo-myathenstransfers.png` — regenerated
-- `src/assets/logo-volunteering-matters.png` — regenerated
-- `src/assets/logo-qsix.png` — regenerated
-
-No code changes needed — the sizing/styling in the templates is already correct for horizontal logos.
+- **5 asset files replaced** — copy each uploaded logo over the existing placeholder
+- **No code changes needed** — filenames stay the same, imports already point to these paths
+- The Loux logo is a new addition already referenced in `LogoStripSection.tsx`
 
