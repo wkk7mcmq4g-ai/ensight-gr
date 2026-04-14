@@ -1,20 +1,13 @@
 
 
-# Make Hero Section More Compact
-
-Reduce the vertical size of the hero section by tightening padding, font sizes, and spacing.
+# Widen About Section + Add Abstract Background Lines
 
 ## Changes
 
-**File: `src/components/home/HeroSection.tsx`**
+**File: `src/components/home/AboutSection.tsx`**
 
-1. Reduce top/bottom padding: `pt-24 pb-10 md:pt-32 md:pb-16` → `pt-16 pb-6 md:pt-24 md:pb-10`
-2. Reduce headline max font size: `clamp(32px,7vw,80px)` → `clamp(28px,5.5vw,60px)`
-3. Tighten headline bottom margin: `mb-6` → `mb-4`
-4. Tighten subtitle bottom margin: `mb-7` → `mb-5`
-5. Reduce grid gap: `gap-8` → `gap-6`
+1. Widen the text container from `max-w-[600px]` to `max-w-[800px]`
+2. Replace the `DecorativeShapes` starburst with a custom inline SVG background of fine, subtle diagonal/intersecting lines in violet tones — low opacity, spanning the full section width. These will be thin geometric lines (not the heavy starburst) with slight transparency, positioned absolutely behind the content.
 
-**File: `src/components/home/HeroVisual.tsx`**
-
-6. Reduce the SVG minimum height: `min-h-[320px]` → `min-h-[260px]`
+The abstract lines will be a set of ~8-10 thin diagonal lines crossing the section at various angles, using `hsl(var(--primary))` at ~0.06-0.10 opacity, plus a couple of faint horizontal lines for layering.
 
