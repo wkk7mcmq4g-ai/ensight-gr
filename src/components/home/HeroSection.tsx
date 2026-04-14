@@ -20,7 +20,7 @@ const HeroSection = () => {
   const noMotion = prefersReducedMotion;
 
   return (
-    <section ref={ref} className="px-6 md:px-12 pt-24 pb-10 md:pt-32 md:pb-16 max-w-[1200px] mx-auto relative overflow-hidden">
+    <section ref={ref} className="px-6 md:px-12 pt-16 pb-6 md:pt-24 md:pb-10 max-w-[1200px] mx-auto relative overflow-hidden">
       <DecorativeShapes variant="starburst" />
 
       {/* Parallax gradient orb */}
@@ -33,17 +33,17 @@ const HeroSection = () => {
         aria-hidden
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center relative">
         <div>
           <motion.h1
-            className="text-[clamp(32px,7vw,80px)] font-bold leading-[1.08] tracking-tight mb-6 text-foreground"
+            className="text-[clamp(28px,5.5vw,60px)] font-bold leading-[1.08] tracking-tight mb-4 text-foreground"
             style={{ y: noMotion ? 0 : headlineY }}
           >
             We <span className="bg-gradient-to-r from-primary to-accent-blue bg-clip-text text-transparent">transform</span> how organisations work with technology and data.
           </motion.h1>
 
           <motion.p
-            className="text-base md:text-xl text-muted-foreground font-medium leading-relaxed max-w-[600px] mb-7"
+            className="text-base md:text-xl text-muted-foreground font-medium leading-relaxed max-w-[600px] mb-5"
             style={{ y: noMotion ? 0 : subtitleY }}
           >
             Strategy, platforms, automation, and analytics — designed around how your business actually operates.

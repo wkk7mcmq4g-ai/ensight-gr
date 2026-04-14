@@ -36,7 +36,7 @@ const HeroVisual = () => {
   const floatY = useTransform(scrollYProgress, [0, 1], [10, -20]);
 
   return (
-    <div ref={ref} className="relative w-full h-full min-h-[320px]">
+    <div ref={ref} className="relative w-full h-full min-h-[260px]">
       <motion.svg viewBox="0 0 380 360" className="w-full h-full" aria-hidden style={{ y: floatY }}>
         <defs>
           <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
