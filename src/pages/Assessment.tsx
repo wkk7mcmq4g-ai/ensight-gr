@@ -340,7 +340,7 @@ const ResultsView = ({
   const shareText = `I just scored ${pct}% on the Process Debt Assessment by ordinal. Find out your score:`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
-  const mailtoHref = `mailto:hello@ordinal.co?subject=Operational X-Ray Enquiry&body=Hi, I just completed the ordinal Process Debt Assessment (score: ${pct}%). I'd like to learn more about the Operational X-Ray.`;
+  const mailtoHref = `mailto:hello@ensight.gr?subject=Operational X-Ray Enquiry&body=Hi, I just completed the Ensight Process Debt Assessment (score: ${pct}%). I'd like to learn more about the Operational X-Ray.`;
   const scoredQuestionCount = CATS.reduce((t, c) => t + c.questions.length, 0);
   const maxScore = scoredQuestionCount * 3;
 

@@ -276,7 +276,7 @@ export function generatePDF(data: PDFData) {
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
   doc.setTextColor(...COLORS.dim);
-  doc.text('Contact hello@ordinal.co to book your Operational X-Ray briefing.', cx, y + 16, { align: 'center' });
+  doc.text('Contact hello@ensight.gr to book your Operational X-Ray briefing.', cx, y + 16, { align: 'center' });
 
   // Save
   doc.save(`Process-Debt-Report-${data.pct}pct.pdf`);

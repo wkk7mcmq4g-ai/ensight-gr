@@ -237,7 +237,7 @@ const ResultsView = ({
   const shareText = `I scored ${pct}% on the Data Readiness Assessment by Ensight. How data-ready is your business?`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
-  const mailtoHref = `mailto:hello@ensight.co?subject=Data Clarity Assessment — ${encodeURIComponent(v.name)} (${pct}%)&body=I completed the Data Clarity Assessment and received the verdict: ${encodeURIComponent(v.name)} (${pct}%). I'd like to discuss my results.`;
+  const mailtoHref = `mailto:hello@ensight.gr?subject=Data Clarity Assessment — ${encodeURIComponent(v.name)} (${pct}%)&body=I completed the Data Clarity Assessment and received the verdict: ${encodeURIComponent(v.name)} (${pct}%). I'd like to discuss my results.`;
 
   return (
     <div>

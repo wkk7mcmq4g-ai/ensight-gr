@@ -266,7 +266,7 @@ export function generateDataClarityPDF(data: DataClarityPDFData) {
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
   doc.setTextColor(...COLORS.dim);
-  doc.text('Contact hello@ensight.co to book your Data Clarity Assessment.', cx, y + 16, { align: 'center' });
+  doc.text('Contact hello@ensight.gr to book your Data Clarity Assessment.', cx, y + 16, { align: 'center' });
 
   doc.save(`Data-Readiness-Report-${data.pct}pct.pdf`);
 }

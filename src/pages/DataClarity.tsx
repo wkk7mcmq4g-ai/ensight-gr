@@ -364,14 +364,14 @@ const DataClarity = () => (
               Take the Free Assessment
             </Link>
             <a
-              href="mailto:hello@ensight.co?subject=Data Clarity Information"
+              href="mailto:hello@ensight.gr?subject=Data Clarity Information"
               className="text-white text-[15px] font-semibold px-8 py-3.5 rounded-xl border border-white/15 hover:bg-white/5 transition-all no-underline"
             >
               Review the offering
             </a>
           </div>
           <div className="font-mono-label text-[10px] text-[#8888A0] tracking-[1px] mt-8">
-            hello@ensight.co · Athens, Greece
+            hello@ensight.gr · Athens, Greece
           </div>
         </AnimatedSection>
       </div>
