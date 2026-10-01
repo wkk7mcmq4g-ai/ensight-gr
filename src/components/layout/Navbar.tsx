@@ -9,14 +9,14 @@ const navLinks = [
 ];
 
 const serviceOptions = [
-  { label: 'All Services', desc: 'See everything we offer', href: '/services' },
-  { label: 'Operational Transformation', desc: 'Process-first change for mid-market teams', href: '/operational-transformation' },
-  { label: 'Data Clarity', desc: 'Management analytics & data readiness', href: '/data-clarity' },
+  { label: 'What We Do', desc: 'Insight, process, and applied AI', href: '/services' },
+  { label: 'Insight & Reporting', desc: 'Management information, costing, dashboards', href: '/data-clarity' },
+  { label: 'Process & Automation', desc: 'Fix the flow, then automate it', href: '/operational-transformation' },
 ];
 
 const assessmentOptions = [
-  { label: 'Process Debt', desc: 'Operational efficiency audit', href: '/assessment' },
-  { label: 'Data Clarity', desc: 'Data readiness check', href: '/data-clarity-assessment' },
+  { label: 'Operational X-Ray', desc: 'Where process debt is costing you', href: '/assessment' },
+  { label: 'Data Readiness', desc: 'Can you trust your numbers?', href: '/data-clarity-assessment' },
 ];
 
 const Navbar = () => {

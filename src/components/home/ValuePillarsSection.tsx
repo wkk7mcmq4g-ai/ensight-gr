@@ -1,35 +1,55 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
-import { ArrowRight, Workflow, BarChart3, Code2, Zap } from 'lucide-react';
+import { ArrowRight, BarChart3, Workflow, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const pillars = [
   {
-    icon: Workflow,
-    title: 'Digital Transformation',
-    desc: 'Redesign processes and systems for efficiency and scale.',
-    hsl: 'hsl(var(--primary))',
-    link: '/operational-transformation',
-  },
-  {
+    num: '01',
     icon: BarChart3,
-    title: 'Data & Analytics',
-    desc: 'Turn fragmented data into clear, actionable insight.',
-    hsl: 'hsl(var(--accent-blue))',
+    title: 'Insight & Reporting',
+    desc: 'Management information that survives scrutiny.',
+    body: 'One definition per number, agreed by the people who use it. Costing at product and customer level, so you know where the margin really is and where it leaks.',
+    points: [
+      'Metric and KPI definitions',
+      'Activity-based costing and pricing analysis',
+      'Management reporting and dashboards',
+      'Data consolidated from the ERP and everything outside it',
+      'Specification and oversight of external BI partners',
+    ],
+    hsl: 'hsl(var(--primary))',
     link: '/data-clarity',
   },
   {
-    icon: Code2,
-    title: 'Custom Platforms',
-    desc: 'Purpose-built applications that replace spreadsheets and manual workflows.',
-    hsl: 'hsl(var(--primary))',
-    link: '/case-studies',
+    num: '02',
+    icon: Workflow,
+    title: 'Process & Automation',
+    desc: 'Fix the flow, then automate it.',
+    body: 'Most automation fails because it encodes the workaround and makes it permanent. We map how the work actually moves, remove what should not be there, make ownership explicit — and only then build.',
+    points: [
+      'Process mapping and redesign',
+      'Workflow and approval automation',
+      'ERP and system integration',
+      'Document and invoice flows',
+      'Rollout, training and adoption',
+    ],
+    hsl: 'hsl(var(--accent-blue))',
+    link: '/operational-transformation',
   },
   {
-    icon: Zap,
-    title: 'Automation & Integration',
-    desc: 'Connect systems, eliminate repetitive tasks, scale without headcount.',
+    num: '03',
+    icon: Sparkles,
+    title: 'AI, Applied',
+    desc: 'Used where it earns its place, with a record of what it did.',
+    body: 'AI is good at reading messy documents and searching content nobody has time to search. It is unreliable at anything that must be exactly right every time — unless you design for that. We put a person in front of anything that posts, pays or commits.',
+    points: [
+      'Document and invoice extraction into the ERP, with human approval',
+      'Search and question-answering over internal documents and data',
+      'Scoped, read-only access by default, with audit trails',
+      'AI usage and governance policy',
+      'Hands-on training so the team actually uses it',
+    ],
     hsl: 'hsl(var(--secondary))',
-    link: '/operational-transformation',
+    link: '/services',
   },
 ];
 
@@ -40,29 +60,41 @@ const ValuePillarsSection = () => (
         What We Do
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
-        Four Pillars of Impact
+        Three services, in this order
       </h2>
-      <p className="text-base text-muted-foreground leading-relaxed max-w-[560px] mb-12">
-        We help mid-market organisations modernise operations, unlock data, and build technology that works the way they do.
+      <p className="text-base text-muted-foreground leading-relaxed max-w-[620px] mb-12">
+        Reporting that holds up. The process behind it, fixed. And automation applied only where it earns its place.
       </p>
     </AnimatedSection>
-    <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {pillars.map((p, i) => (
         <StaggerItem key={i}>
           <Link
             to={p.link}
-            className="block bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(261_84%_58%/0.15)] hover:border-primary/30 transition-all duration-300 ease-out group h-full no-underline relative overflow-hidden"
+            className="flex flex-col bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 hover:shadow-[0_8px_30px_-8px_hsl(261_84%_58%/0.15)] hover:border-primary/30 transition-all duration-300 ease-out group h-full no-underline relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
-            <div
-              className="mb-4 w-10 h-10 rounded-md flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5"
-              style={{ backgroundColor: `${p.hsl}15`, color: p.hsl }}
-            >
-              <p.icon size={20} strokeWidth={1.5} />
+            <div className="flex items-center justify-between mb-4">
+              <div
+                className="w-10 h-10 rounded-md flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5"
+                style={{ backgroundColor: `${p.hsl}15`, color: p.hsl }}
+              >
+                <p.icon size={20} strokeWidth={1.5} />
+              </div>
+              <span className="text-[11px] font-mono tracking-widest text-muted-foreground/60">{p.num}</span>
             </div>
             <h3 className="text-base font-semibold mb-1.5 text-foreground">{p.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-3">{p.desc}</p>
-            <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
+            <p className="text-sm font-medium text-foreground/80 leading-relaxed mb-2.5">{p.desc}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.body}</p>
+            <ul className="space-y-1.5 mb-5">
+              {p.points.map((pt, j) => (
+                <li key={j} className="text-[13px] text-muted-foreground leading-snug flex gap-2">
+                  <span aria-hidden className="text-primary/50 shrink-0">—</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+            <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
               Learn more <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </Link>

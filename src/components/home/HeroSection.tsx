@@ -39,14 +39,14 @@ const HeroSection = () => {
             className="text-[clamp(28px,5.5vw,60px)] font-bold leading-[1.08] tracking-tight mb-4 text-foreground"
             style={{ y: noMotion ? 0 : headlineY }}
           >
-            We <span className="bg-gradient-to-r from-primary to-accent-blue bg-clip-text text-transparent">transform</span> how organisations work with technology and data.
+            Run the business on <span className="bg-gradient-to-r from-primary to-accent-blue bg-clip-text text-transparent">numbers you trust</span>.
           </motion.h1>
 
           <motion.p
             className="text-base md:text-xl text-muted-foreground font-medium leading-relaxed max-w-[600px] mb-5"
             style={{ y: noMotion ? 0 : subtitleY }}
           >
-            Strategy, platforms, automation, and analytics — designed around how your business actually operates.
+            Insight, costing and reporting that hold up — and the automation that keeps them running. We fix how the work flows first, so what you measure actually means something.
           </motion.p>
 
           <motion.div className="flex gap-3 flex-wrap" style={{ y: noMotion ? 0 : ctaY }}>
@@ -54,18 +54,8 @@ const HeroSection = () => {
               to="/assessment"
               className="bg-gradient-to-r from-primary to-accent-blue text-primary-foreground text-sm md:text-base font-semibold px-6 py-3 md:px-9 md:py-4 rounded-lg shadow-[0_4px_16px_hsl(261_84%_58%/0.25)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(261_84%_58%/0.3)] transition-all no-underline"
             >
-              Get a Free Assessment
+              Start with the free assessment
             </Link>
-            <a
-              href="#pillars"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="border-2 border-primary text-primary text-sm md:text-base font-semibold px-6 py-3 md:px-9 md:py-4 rounded-lg hover:bg-primary/10 hover:-translate-y-0.5 transition-all no-underline"
-            >
-              See How We Work
-            </a>
           </motion.div>
         </div>
 

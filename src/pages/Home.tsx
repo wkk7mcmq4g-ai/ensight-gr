@@ -3,7 +3,8 @@ import SEO from '@/components/SEO';
 import HeroSection from '@/components/home/HeroSection';
 import LogoStripSection from '@/components/home/LogoStripSection';
 import ValuePillarsSection from '@/components/home/ValuePillarsSection';
-import HowWeHelpSection from '@/components/home/HowWeHelpSection';
+import ProblemsSection from '@/components/home/ProblemsSection';
+import BeforeYouAutomate from '@/components/home/BeforeYouAutomate';
 import BeforeAfterSection from '@/components/home/BeforeAfterSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import ProofSection from '@/components/home/ProofSection';
@@ -19,7 +20,7 @@ const organizationSchema = {
   "name": "Ensight",
   "url": "https://ensight-gr.lovable.app",
   "logo": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9131ee5a-adf6-4644-9666-66d96e6a8601/id-preview-d3f8e6df--80d094a5-b6ff-4e3d-9b55-194fe071745a.lovable.app-1775244958373.png",
-  "description": "Ensight helps organisations streamline operations through strategy, automation, and data clarity — so teams work smarter, not harder.",
+  "description": "Ensight builds management information mid-market businesses can trust — insight, costing and reporting, the process behind them, and automation applied where it earns its place.",
   "email": "hello@ensight.gr",
   "address": {
     "@type": "PostalAddress",
@@ -39,7 +40,7 @@ const websiteSchema = {
 
 const Home = () => (
   <>
-    <SEO title="Ensight | Strategy, Automation & Data for Mid-Market Teams" description="Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — with strategy, automation, and data." path="/" ogImage="/og/home.jpg" />
+    <SEO title="Ensight | Insight, Reporting & Automation for Mid-Market Teams" description="Ensight builds management information you can trust — costing, reporting and the automation that keeps it running. We fix the process before we build the technology." path="/" ogImage="/og/home.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
@@ -48,9 +49,10 @@ const Home = () => (
     <ParallaxDivider />
     <LogoStripSection />
     <ParallaxDivider />
-    <ValuePillarsSection />
+    <ProblemsSection />
     <ParallaxDivider />
-    <HowWeHelpSection />
+    <ValuePillarsSection />
+    <BeforeYouAutomate />
     <ParallaxDivider />
     <BeforeAfterSection />
     <ParallaxDivider />
