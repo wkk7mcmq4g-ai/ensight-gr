@@ -1,13 +1,13 @@
-import { MessageSquare, Brain, Eye, ClipboardCopy, CalendarClock, TrendingUp, type LucideIcon } from 'lucide-react';
+import { GitCompare, Percent, CalendarClock, ClipboardCopy, Brain, Users, type LucideIcon } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 
 const problems: { icon: LucideIcon; title: string; desc: string; color: string; iconColor: string }[] = [
-  { icon: MessageSquare, title: 'The WhatsApp Organisation', desc: "Decisions, approvals, and critical updates flowing through chat groups with no structure and no audit trail.", color: 'bg-electric-bright', iconColor: 'hsl(var(--electric-bright))' },
-  { icon: Brain, title: 'The Human Router', desc: "One person holds the operation together. When they're out, everything slows or stops.", color: 'bg-ordinal-cyan', iconColor: 'hsl(var(--ordinal-cyan))' },
-  { icon: Eye, title: 'The Invisible Queue', desc: "Work piles up and nobody sees it until it's a crisis. Requests sit in inboxes for days.", color: 'bg-primary', iconColor: 'hsl(var(--primary))' },
-  { icon: ClipboardCopy, title: 'The Copy-Paste Economy', desc: "Staff manually moving data between systems. The waste isn't in the tools — it's in the gaps between them.", color: 'bg-ordinal-pink', iconColor: 'hsl(var(--ordinal-pink))' },
-  { icon: CalendarClock, title: 'The Meeting Trap', desc: "Weekly meetings that exist only because management has no other way to find out what's happening.", color: 'bg-ordinal-amber', iconColor: 'hsl(var(--ordinal-amber))' },
-  { icon: TrendingUp, title: 'Growth by Headcount', desc: "Every new client means more admin. You're scaling linearly when you should be scaling smart.", color: 'bg-ordinal-green', iconColor: 'hsl(var(--ordinal-green))' },
+  { icon: GitCompare, title: 'Two Versions of the Truth', desc: "The same metric arrives at two different numbers depending on who built the report. The meeting opens by deciding which one to believe.", color: 'bg-electric-bright', iconColor: 'hsl(var(--electric-bright))' },
+  { icon: Percent, title: 'Revenue Without Margin', desc: "You know exactly what you sold. You do not know what it cost to make it, move it and serve the customer who bought it — so price is set on instinct.", color: 'bg-primary', iconColor: 'hsl(var(--primary))' },
+  { icon: CalendarClock, title: 'The Month-End Scramble', desc: "The pack takes days to assemble, and it depends on one person remembering how each figure is put together.", color: 'bg-ordinal-amber', iconColor: 'hsl(var(--ordinal-amber))' },
+  { icon: ClipboardCopy, title: 'The Copy-Paste Economy', desc: "Staff manually moving data between systems. The waste isn't in the tools — it's in the gaps between them, and every gap is a place the numbers can drift.", color: 'bg-ordinal-pink', iconColor: 'hsl(var(--ordinal-pink))' },
+  { icon: Brain, title: 'The Human Router', desc: "One person holds the operation together. When they're out, everything slows or stops — and nobody else can explain how the report was built.", color: 'bg-ordinal-cyan', iconColor: 'hsl(var(--ordinal-cyan))' },
+  { icon: Users, title: 'The Meeting Trap', desc: "A weekly meeting that exists only because management has no other way to find out what is happening.", color: 'bg-ordinal-green', iconColor: 'hsl(var(--ordinal-green))' },
 ];
 
 const ProblemsSection = () => (
@@ -20,7 +20,7 @@ const ProblemsSection = () => (
         The Six Signs of Process Debt
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
-        If any of this sounds familiar, your organisation has accumulated process debt — and it{"'"}s compounding every month.
+        None of these are reporting problems. They are process debt — the workarounds that became permanent and quietly broke the link between what happened and what the numbers say happened.
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
