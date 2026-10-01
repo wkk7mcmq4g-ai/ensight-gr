@@ -2,22 +2,22 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection
 
 const proofs = [
   {
+    sector: 'Consumer Goods',
+    metric: 'Per product',
+    desc: 'and per customer, costed',
+    detail: 'Landed cost calculated from purchase through to goods received, then production and distribution activity allocated to products and customers. Pricing decisions moved from revenue to margin — including third-party goods, where the margin is thinnest.',
+  },
+  {
+    sector: 'Institutional Real Estate',
+    metric: 'One number',
+    desc: 'per metric, agreed and traceable',
+    detail: 'Portfolio, loan, finance and spend systems consolidated behind definitions the business agreed, with lineage preserved to source. The investment committee stopped reconciling the pack and started interrogating it.',
+  },
+  {
     sector: 'Financial Services',
-    metric: '~60%',
-    desc: 'reduction in manual processing',
-    detail: 'Fragmented systems replaced with a single servicing platform. Daily reconciliation tasks eliminated. Real-time portfolio visibility enabled.',
-  },
-  {
-    sector: 'Non-Profit',
-    metric: '100%',
-    desc: 'programme visibility',
-    detail: 'Siloed programmes unified under a single CRM. Compliance tracking structured across the organisation. Reporting centralised.',
-  },
-  {
-    sector: 'Financial Reporting',
-    metric: 'Days → Min',
-    desc: 'reporting turnaround',
-    detail: 'Manual data extraction and reconciliation replaced with automated pipelines. Real-time dashboards delivering consistent, accurate insights.',
+    metric: 'Full lifecycle',
+    desc: 'visible in one place',
+    detail: 'A servicing operation spread across spreadsheets and email brought into one system, so portfolio position could be read at any moment instead of assembled on request.',
   },
 ];
 
@@ -29,10 +29,10 @@ const ProofSection = () => (
           Proof Points
         </div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4 text-white">
-          Real Results. Measured.
+          What clients can now see
         </h2>
         <p className="text-base text-white/70 leading-relaxed max-w-[560px] mb-12">
-          Three engagements. Three sectors. Every outcome grounded in operational reality.
+          Three engagements. The test is not how much time was saved — it is whether the management team can answer a question they could not answer before.
         </p>
       </AnimatedSection>
       <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">

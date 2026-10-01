@@ -30,6 +30,11 @@ const routes: Record<string, RouteMeta> = {
     description: "Explore Ensight\u2019s services: operational strategy, workflow automation, data clarity, and custom platform builds.",
     ogImage: '/og/services.jpg',
   },
+  '/costing': {
+    title: 'What a Product Actually Costs | Ensight',
+    description: 'Why true product and customer cost does not come out of the ERP, the three layers of costing, and what has to be true before you can build it.',
+    ogImage: '/og/services.jpg',
+  },
   '/case-studies': {
     title: 'Case Studies | Ensight',
     description: 'See how Ensight has helped organisations cut costs, automate workflows, and gain real-time visibility.',
@@ -51,8 +56,8 @@ const routes: Record<string, RouteMeta> = {
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/financial-reporting': {
-    title: 'Financial Reporting Automation | Ensight Case Study',
-    description: 'Automated pipelines and dashboards replacing manual data extraction \u2014 reporting reduced from days to minutes.',
+    title: 'One Set of Numbers | Ensight Case Study',
+    description: 'A governed reporting layer for an institutional portfolio \u2014 one agreed definition per metric, with lineage back to source.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/touro-driver-ux': {

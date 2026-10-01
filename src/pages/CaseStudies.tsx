@@ -23,7 +23,7 @@ const CaseStudies = () => {
 
   return (
     <div className="max-w-[1000px] mx-auto px-6 pt-28 pb-20 relative">
-      <SEO title="Case Studies · Ensight" description="Real results, measured in weeks. See how we've helped organisations uncover hidden capacity and eliminate process debt." path="/case-studies" ogImage="/og/case-studies.jpg" />
+      <SEO title="Case Studies · Ensight" description="Costing, reporting and the systems underneath them — built so management can answer questions the business could not answer before." path="/case-studies" ogImage="/og/case-studies.jpg" />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -57,13 +57,13 @@ const CaseStudies = () => {
           Case Studies
         </div>
         <h1 className="text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-tight mb-5">
-          Real Results,{' '}
+          Numbers they can{' '}
           <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
-            Measured in Weeks
+            finally defend
           </span>
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-[560px] mx-auto">
-          See how we've helped organisations uncover hidden capacity and eliminate process debt across industries.
+          Costing, reporting and the systems underneath them — built so management can answer questions the business could not answer before.
         </p>
       </AnimatedSection>
 

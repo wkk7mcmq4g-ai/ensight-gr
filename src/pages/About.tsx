@@ -10,36 +10,36 @@ const team = [
   {
     name: 'George Kondylis',
     role: 'Founder & Principal',
-    bio: 'Direct operational experience across tourism, financial services, and manufacturing/export. George built Ensight on one observation: most companies don\'t have a technology problem — they have a process problem. The Operational X-Ray methodology exists to make that visible, fast.',
+    bio: 'Eighteen years in data and finance systems across banking, institutional real estate, consulting and manufacturing \u2014 building warehouses, costing models and the reporting that management actually runs on. George built Ensight on one observation: most companies are not short of data, they are short of numbers they can defend.',
   },
 ];
 
 const values = [
   {
     icon: Eye,
-    title: 'Radical Visibility',
-    desc: 'You can\'t fix what you can\'t see. We make the invisible visible before recommending a single change.',
+    title: 'One Number, Defensible',
+    desc: 'Every figure has one definition, agreed by the people who use it, and can be traced back to where it came from.',
   },
   {
     icon: Target,
     title: 'Precision Over Volume',
-    desc: 'We don\'t deliver 200-page reports. We find the 3-5 changes that unlock the most capacity.',
+    desc: 'No 200-page reports. We answer the three or four questions the management team keeps asking and cannot currently settle.',
   },
   {
     icon: Zap,
     title: 'Speed to Impact',
-    desc: 'Our engagements are measured in weeks, not months. You see results before the invoice lands.',
+    desc: 'Engagements are measured in weeks. You see the first real answer before the invoice lands.',
   },
   {
     icon: Users,
     title: 'Embedded, Not External',
-    desc: 'We work alongside your team, not from a boardroom. Real insight comes from the floor, not the org chart.',
+    desc: 'We work alongside your team, not from a boardroom. The real cost drivers are on the floor, not in the org chart.',
   },
 ];
 
 const About = () => (
   <div className="max-w-[900px] mx-auto px-6 pt-28 pb-20 relative">
-    <SEO title="About · Ensight" description="Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt." path="/about" ogImage="/og/about.jpg" />
+    <SEO title="About · Ensight" description="Eighteen years in data, costing and finance systems. We build management information businesses can defend \u2014 and fix the process underneath it first." path="/about" ogImage="/og/about.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify({
         "@context": "https://schema.org",
@@ -53,7 +53,7 @@ const About = () => (
         "@context": "https://schema.org",
         "@type": "AboutPage",
         "name": "About Ensight",
-        "description": "Meet the team behind Ensight. We find the capacity already inside your organisation by eliminating process debt.",
+        "description": "Eighteen years in data, costing and finance systems. We build management information businesses can defend \u2014 and fix the process underneath it first.",
         "url": "https://ensight-gr.lovable.app/about",
         "mainEntity": {
           "@type": "Organization",
@@ -91,13 +91,13 @@ const About = () => (
       <h2 className="text-xl font-bold mb-4">Our Story</h2>
       <div className="text-[15px] text-ordinal-body leading-relaxed space-y-4">
         <p>
-          Ensight was founded on a simple observation: most companies don't have a people problem or a technology problem — they have a process problem. Teams are working hard, tools are in place, yet capacity keeps disappearing into workarounds, re-work, and coordination overhead.
+          Ensight was founded on a simple observation: most companies are not short of data. They are short of numbers they can defend. The ERP records every transaction faithfully and still cannot say what a product costs to make and move, or what a customer actually earns.
         </p>
         <p>
-          We call this <strong className="text-foreground">Process Debt</strong>. Like technical debt, it accumulates silently and compounds over time. Unlike technical debt, almost nobody is measuring it.
+          The reason is almost never the reporting tool. It is <strong className="text-foreground">process debt</strong> — the temporary workarounds that became permanent, each one quietly breaking the link between what happened and what the numbers say happened. Like technical debt it compounds, and unlike technical debt almost nobody is measuring it.
         </p>
         <p>
-          Our Operational X-Ray methodology was built to make process debt visible, quantifiable, and fixable — fast. We embed with your team, map what's really happening, and deliver targeted changes that unlock trapped capacity within weeks, not months.
+          So we work in that order. The Operational X-Ray makes the gap visible and quantified; the process gets fixed; and only then is the costing, the reporting and the automation built on top of it. Numbers built any other way are confident and wrong.
         </p>
       </div>
     </AnimatedSection>

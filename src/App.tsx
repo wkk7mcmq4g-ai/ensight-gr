@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import DataClarity from "./pages/DataClarity";
 import OperationalTransformation from "./pages/OperationalTransformation";
 import Services from "./pages/Services";
+import Costing from "./pages/Costing";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/data-clarity" element={<DataClarity />} />
             <Route path="/operational-transformation" element={<OperationalTransformation />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/costing" element={<Costing />} />
 
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
