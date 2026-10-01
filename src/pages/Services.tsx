@@ -2,74 +2,64 @@ import SEO from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowRight, Workflow, BarChart3, Code2, Zap, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
+import { ArrowRight, Workflow, BarChart3, Sparkles, Stethoscope, PenTool, Hammer, Users } from 'lucide-react';
 import CTASection from '@/components/home/CTASection';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const offerings = [
   {
-    icon: Workflow,
-    title: 'Operational Transformation',
-    subtitle: 'Process-first change for mid-market teams',
-    desc: 'We embed with your team to diagnose bottlenecks, redesign workflows, and build the platforms that make the new way of working stick. Every engagement starts with understanding the operation — not selling software.',
+    num: '01',
+    icon: BarChart3,
+    title: 'Insight & Reporting',
+    subtitle: 'Management information that survives scrutiny',
+    desc: 'One definition per number, agreed by the people who use it. Costing at product and customer level, so you know where the margin really is and where it leaks. Reports that get read, because they answer what the management team is actually asking — and because someone owns what they say.',
     features: [
-      'Workflow mapping & bottleneck quantification',
-      'Process redesign before any technology',
-      'Custom platform build & system integration',
-      'Adoption management & team training',
+      'Metric and KPI definitions',
+      'Activity-based costing and pricing analysis',
+      'Management reporting and dashboards',
+      'Data consolidated from the ERP and everything outside it',
+      'Specification and oversight of external BI partners',
     ],
     barColor: 'bg-primary',
     iconColor: 'text-primary',
-    link: '/operational-transformation',
-    linkLabel: 'Explore Operational Transformation',
+    link: '/data-clarity',
+    linkLabel: 'Explore Insight & Reporting',
   },
   {
-    icon: BarChart3,
-    title: 'Data Clarity',
-    subtitle: 'Management analytics that drive decisions',
-    desc: 'Your data exists — the clarity doesn\'t. We assess your data readiness, build bespoke analytics systems, and partner with you monthly to turn numbers into decisions. Not a dashboard handoff — an ongoing analytical relationship.',
+    num: '02',
+    icon: Workflow,
+    title: 'Process & Automation',
+    subtitle: 'Fix the flow, then automate it',
+    desc: 'Most automation fails because it encodes the workaround and makes it permanent. We map how the work actually moves, remove what should not be there, make ownership explicit — and only then build. What comes back is recovered capacity: the things your team can finally get to once the work stops fighting them.',
     features: [
-      'Data readiness assessment across 5 dimensions',
-      'Bespoke dashboards & real-time KPIs',
-      'Activity-based cost allocation & net margin analysis',
-      'Monthly interpretation & strategic recommendations',
+      'Process mapping and redesign',
+      'Workflow and approval automation',
+      'ERP and system integration',
+      'Document and invoice flows',
+      'Rollout, training and adoption',
     ],
     barColor: 'bg-accent-blue',
     iconColor: 'text-accent-blue',
-    link: '/data-clarity',
-    linkLabel: 'Explore Data Clarity',
+    link: '/operational-transformation',
+    linkLabel: 'Explore Process & Automation',
   },
   {
-    icon: Code2,
-    title: 'Custom Platforms',
-    subtitle: 'Purpose-built applications for your operation',
-    desc: 'Off-the-shelf software forces you to adapt your processes to the tool. We build the other way around — applications designed for how your business actually works, replacing spreadsheets, disconnected systems, and manual workarounds.',
+    num: '03',
+    icon: Sparkles,
+    title: 'AI, Applied',
+    subtitle: 'Used where it earns its place, with a record of what it did',
+    desc: 'AI is good at reading messy documents and searching content nobody has time to search. It is unreliable at anything that must be exactly right every time — unless you design for that. We use it where the input is unstructured and the volume is high, put a person in front of anything that posts, pays or commits, and log what every system touched and who approved it.',
     features: [
-      'Web & mobile applications tailored to your workflows',
-      'CRM, project management & compliance systems',
-      'Client portals & internal tools',
-      'API integrations with existing systems',
+      'Document and invoice extraction into the ERP, with human approval',
+      'Search and question-answering over internal documents and data',
+      'Scoped, read-only access by default, with audit trails',
+      'AI usage and governance policy',
+      'Hands-on training so the team actually uses it',
     ],
     barColor: 'bg-secondary',
     iconColor: 'text-secondary',
     link: '/case-studies',
     linkLabel: 'See Our Work',
-  },
-  {
-    icon: Zap,
-    title: 'Automation & Integration',
-    subtitle: 'Connect systems and eliminate manual work',
-    desc: 'Every hour your team spends copying data between systems is an hour not spent on work that matters. We identify repetitive processes, connect your tools, and build automation that scales your operation without scaling your headcount.',
-    features: [
-      'System-to-system API integrations',
-      'Workflow automation & approval chains',
-      'AI-assisted document processing',
-      'Scheduled reporting & alert systems',
-    ],
-    barColor: 'bg-primary/70',
-    iconColor: 'text-primary/70',
-    link: '/operational-transformation',
-    linkLabel: 'Learn More',
   },
 ];
 
@@ -109,7 +99,7 @@ const engagements = [
 
 const Services = () => (
   <>
-    <SEO title="Services · Ensight" description="Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation." path="/services" ogImage="/og/services.jpg" />
+    <SEO title="Services · Ensight" description="Insight and reporting, process and automation, and AI applied where it earns its place — for mid-market businesses." path="/services" ogImage="/og/services.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify({
         "@context": "https://schema.org",
@@ -128,7 +118,7 @@ const Services = () => (
           "url": "https://ensight-gr.lovable.app"
         },
         "name": "Ensight Consulting Services",
-        "description": "Technology and data, designed for your business. Operational transformation, data clarity, custom platforms, and automation.",
+        "description": "Insight and reporting, process and automation, and AI applied where it earns its place \u2014 for mid-market businesses.",
         "url": "https://ensight-gr.lovable.app/services",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -151,13 +141,13 @@ const Services = () => (
         {"Services"}
       </div>
       <h1 className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-4">
-        Technology and data,{' '}
+        Numbers you can act on,{' '}
         <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
-          designed for your business.
+          and the work behind them.
         </span>
       </h1>
       <p className="text-lg text-ordinal-body leading-relaxed max-w-[620px]">
-        We help mid-market organisations transform operations, unlock the value in their data, and build technology that works the way they do — not the other way around.
+        We build management information mid-market businesses can trust — and we fix the process underneath it first, so the numbers mean something.
       </p>
     </section>
 
@@ -170,10 +160,10 @@ const Services = () => (
           {"What We Do"}
         </div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
-          Four areas of expertise
+          Three services, in this order
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
-          Each service can stand alone or combine into a comprehensive transformation programme. We scope what you need — nothing more.
+          Reporting that holds up. The process behind it, fixed. And automation applied only where it earns its place. Each can stand alone, but the order is the point.
         </p>
       </AnimatedSection>
 
@@ -187,7 +177,10 @@ const Services = () => (
                   <div className="flex items-center gap-3 mb-3">
                     <o.icon className={`${o.iconColor} shrink-0`} size={24} strokeWidth={1.5} />
                     <div>
-                      <h3 className="text-xl font-semibold">{o.title}</h3>
+                      <h3 className="text-xl font-semibold">
+                        <span className="text-[11px] font-mono tracking-widest text-ordinal-dim mr-2.5 align-middle">{o.num}</span>
+                        {o.title}
+                      </h3>
                       <p className="text-xs text-ordinal-dim">{o.subtitle}</p>
                     </div>
                   </div>

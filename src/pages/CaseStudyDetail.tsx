@@ -74,7 +74,7 @@ const CaseStudyDetail = () => {
           </div>
 
           {/* Client logo */}
-          <div className="h-9 mb-4">
+          <div className="mb-4 flex items-center" style={{ height: `${2.25 * (cs.logoScale ?? 1)}rem` }}>
             <img src={cs.clientLogo} alt={cs.client} className="h-full w-auto object-contain opacity-70" />
           </div>
 

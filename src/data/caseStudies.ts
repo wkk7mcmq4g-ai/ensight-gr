@@ -24,6 +24,12 @@ export interface CaseStudy {
   icon: string;
   keyResult: string;
   image: string;
+  /**
+   * Height multiplier for the client logo. Logos are laid out to a shared
+   * height, which makes a near-square mark look much smaller than a wide
+   * wordmark. Set this above 1 to even out the visual weight.
+   */
+  logoScale?: number;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -53,6 +59,7 @@ export const caseStudies: CaseStudy[] = [
     icon: 'Calculator',
     keyResult: 'Margin visible per product and customer',
     image: caseStudyReporting,
+    logoScale: 1.9,
   },
   {
     id: 'loan-servicing',
