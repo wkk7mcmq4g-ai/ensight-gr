@@ -4,6 +4,7 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home
 import { Target, Eye, Zap, Users } from 'lucide-react';
 import georgeAvatar from '@/assets/george-kondylis.jpg';
 import DecorativeShapes from '@/components/DecorativeShapes';
+import { CONTACT_HREF } from '@/lib/contact';
 
 const team = [
   {
@@ -146,14 +147,14 @@ const About = () => (
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent-blue" />
       <h2 className="text-[22px] font-bold mb-3">Ready to Uncover Your Hidden Capacity?</h2>
       <p className="text-[15px] text-ordinal-body leading-relaxed mb-6 max-w-[440px] mx-auto">
-        Start with our free Process Debt Assessment, or get in touch to discuss an Operational X-Ray for your team.
+        Get in touch to discuss an Operational X-Ray for your team.
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="/assessment"
+          href={CONTACT_HREF}
           className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-xl shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
         >
-          Take the Assessment
+          Book an Operational X-Ray
         </a>
       </div>
     </AnimatedSection>

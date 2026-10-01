@@ -5,13 +5,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "@/components/layout/Layout";
 import Home from "./pages/Home";
-import Assessment from "./pages/Assessment";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
 import DataClarity from "./pages/DataClarity";
-import DataClarityAssessment from "./pages/DataClarityAssessment";
 import OperationalTransformation from "./pages/OperationalTransformation";
 import Services from "./pages/Services";
 
@@ -26,12 +24,10 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/assessment" element={<Assessment />} />
             <Route path="/about" element={<About />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/data-clarity" element={<DataClarity />} />
-            <Route path="/data-clarity-assessment" element={<DataClarityAssessment />} />
             <Route path="/operational-transformation" element={<OperationalTransformation />} />
             <Route path="/services" element={<Services />} />
 

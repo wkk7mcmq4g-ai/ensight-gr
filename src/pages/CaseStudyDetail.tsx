@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Clock, ChevronLeft, ChevronRight } from 'lucide-
 import { caseStudies } from '@/data/caseStudies';
 import { Badge } from '@/components/ui/badge';
 import SEO from '@/components/SEO';
+import { CONTACT_HREF } from '@/lib/contact';
 
 const BASE_URL = 'https://ensight-gr.lovable.app';
 
@@ -194,13 +195,13 @@ const CaseStudyDetail = () => {
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
         <h3 className="text-[22px] font-bold mb-3">See What's Hiding in Your Operations</h3>
         <p className="text-[15px] text-muted-foreground leading-relaxed mb-6 max-w-[440px] mx-auto">
-          Start with our free assessment, or book an Operational X-Ray to get the full picture.
+          Book an Operational X-Ray to get the full picture of where your process debt sits.
         </p>
         <a
-          href="/assessment"
+          href={CONTACT_HREF}
           className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-lg shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
         >
-          Take the Free Assessment
+          Book an Operational X-Ray
         </a>
       </AnimatedSection>
     </div>

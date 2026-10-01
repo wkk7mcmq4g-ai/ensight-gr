@@ -60,20 +60,10 @@ const routes: Record<string, RouteMeta> = {
     description: 'Understand where your data is, how it flows, and how to make it work for your organisation.',
     ogImage: '/og/data-clarity.jpg',
   },
-  '/data-clarity-assessment': {
-    title: 'Data Clarity Assessment | Ensight',
-    description: "Take our free data clarity assessment to understand your organisation\u2019s data maturity.",
-    ogImage: '/og/data-clarity.jpg',
-  },
   '/operational-transformation': {
     title: 'Operational Transformation | Ensight',
     description: 'Transform your operations with Ensight \u2014 from strategy to execution.',
     ogImage: '/og/operational-transformation.jpg',
-  },
-  '/assessment': {
-    title: 'Free Operations Assessment | Ensight',
-    description: 'Take our free assessment to uncover operational inefficiencies and automation opportunities.',
-    ogImage: '/og/assessment.jpg',
   },
 };
 

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { CONTACT_HREF } from '@/lib/contact';
 import HeroVisual from './HeroVisual';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
@@ -50,12 +50,12 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div className="flex gap-3 flex-wrap" style={{ y: noMotion ? 0 : ctaY }}>
-            <Link
-              to="/assessment"
+            <a
+              href={CONTACT_HREF}
               className="bg-gradient-to-r from-primary to-accent-blue text-primary-foreground text-sm md:text-base font-semibold px-6 py-3 md:px-9 md:py-4 rounded-lg shadow-[0_4px_16px_hsl(261_84%_58%/0.25)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(261_84%_58%/0.3)] transition-all no-underline"
             >
-              Start with the free assessment
-            </Link>
+              Book an Operational X-Ray
+            </a>
           </motion.div>
         </div>
 

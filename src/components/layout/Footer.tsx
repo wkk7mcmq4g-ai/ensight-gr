@@ -13,7 +13,6 @@ const Footer = () => (
       <Link to="/case-studies" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Case Studies</Link>
       <Link to="/data-clarity" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Data Clarity</Link>
       <Link to="/about" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">About</Link>
-      <Link to="/assessment" className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">Assessment</Link>
     </div>
     <div className="flex flex-col items-center md:items-end gap-1">
       <a href="mailto:hello@ensight.gr" className="text-[10px] text-ordinal-dim tracking-[1px] hover:text-foreground transition-colors">

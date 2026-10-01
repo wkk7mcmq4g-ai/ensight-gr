@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import ensightLogo from '@/assets/ensight-logo.png';
+import { CONTACT_HREF } from '@/lib/contact';
 
 const navLinks = [
   { label: 'Case Studies', href: '/case-studies' },
@@ -14,23 +15,16 @@ const serviceOptions = [
   { label: 'Process & Automation', desc: 'Fix the flow, then automate it', href: '/operational-transformation' },
 ];
 
-const assessmentOptions = [
-  { label: 'Operational X-Ray', desc: 'Where process debt is costing you', href: '/assessment' },
-  { label: 'Data Readiness', desc: 'Can you trust your numbers?', href: '/data-clarity-assessment' },
-];
 
 const Navbar = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [assessmentOpen, setAssessmentOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
-  const assessmentRef = useRef<HTMLDivElement>(null);
 
   const handleAnchorClick = (href: string) => {
     setMobileOpen(false);
     setServicesOpen(false);
-    setAssessmentOpen(false);
     const [path, hash] = href.split('#');
     if (location.pathname === (path || '/') && hash) {
       setTimeout(() => {
@@ -44,9 +38,6 @@ const Navbar = () => {
     const handler = (e: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
-      }
-      if (assessmentRef.current && !assessmentRef.current.contains(e.target as Node)) {
-        setAssessmentOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
@@ -67,7 +58,7 @@ const Navbar = () => {
           {/* Services dropdown */}
           <div className="relative" ref={servicesRef}>
             <button
-              onClick={() => { setServicesOpen((v) => !v); setAssessmentOpen(false); }}
+              onClick={() => { setServicesOpen((v) => !v); }}
               className="inline-flex items-center gap-1 text-muted-foreground text-sm font-medium hover:text-foreground transition-colors"
             >
               Services
@@ -100,31 +91,12 @@ const Navbar = () => {
             </Link>
           ))}
 
-          {/* Assessment dropdown */}
-          <div className="relative" ref={assessmentRef}>
-            <button
-              onClick={() => { setAssessmentOpen((v) => !v); setServicesOpen(false); }}
-              className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 hover:-translate-y-px transition-all"
-            >
-              Free Assessment
-              <ChevronDown size={14} className={`transition-transform duration-200 ${assessmentOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {assessmentOpen && (
-              <div className="absolute right-0 top-full mt-2 w-[240px] bg-card border border-border rounded-xl shadow-xl overflow-hidden">
-                {assessmentOptions.map((opt) => (
-                  <Link
-                    key={opt.href}
-                    to={opt.href}
-                    onClick={() => setAssessmentOpen(false)}
-                    className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
-                  >
-                    <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                    <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          <a
+            href={CONTACT_HREF}
+            className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 hover:-translate-y-px transition-all no-underline"
+          >
+            Book an Operational X-Ray
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -164,20 +136,13 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <div className="mt-2 space-y-2">
-            <div className="text-[9px] font-medium tracking-[2px] uppercase text-muted-foreground mb-1">Free Assessments</div>
-            {assessmentOptions.map((opt) => (
-              <Link
-                key={opt.href}
-                to={opt.href}
-                onClick={() => setMobileOpen(false)}
-                className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
-              >
-                <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
-              </Link>
-            ))}
-          </div>
+          <a
+            href={CONTACT_HREF}
+            onClick={() => setMobileOpen(false)}
+            className="mt-2 block text-center text-[12px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-3 rounded-lg no-underline"
+          >
+            Book an Operational X-Ray
+          </a>
         </div>
       )}
     </>
