@@ -6,6 +6,7 @@ import logoHms from '@/assets/logo-hms.png';
 import logoMyAthens from '@/assets/logo-myathenstransfers.png';
 import logoVolunteering from '@/assets/logo-volunteering-matters.png';
 import logoQsix from '@/assets/logo-qsix.png';
+import logoLoux from '@/assets/logo-loux.png';
 
 export interface CaseStudy {
   id: string;
@@ -26,6 +27,33 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
+  {
+    id: 'costing-bi-platform',
+    sector: 'Consumer Goods',
+    client: 'Loux Marlafekas',
+    clientLogo: logoLoux,
+    title: 'Activity-Based Costing & BI Platform',
+    subtitle: 'A costing model and reporting layer built on SoftOne, so management can see what each product and each customer actually earns.',
+    outcome:
+      'Management moved from a view of revenue to a view of margin. True landed cost is now calculated and carried through to costing and pricing at product and customer level — including third-party goods moving through the distribution network, where margin is thinnest and the exposure was largest. Pricing and commercial decisions are taken against the real numbers rather than an estimate.',
+    challenge:
+      'The ERP recorded transactions faithfully, but it could not answer the question management kept asking: what does this product actually cost us to make and move, and what does this customer actually earn? Landed cost sat across purchasing, packaging, production and distribution, and nothing brought those pieces together. Pricing decisions were therefore made on gross revenue and gut feel, and the risk concentrated exactly where it mattered most — in third-party goods carried through the network on thin margins.',
+    approach: [
+      'Led the end-to-end SoftOne ERP transformation first — process redesign, data migration and post-go-live optimisation across finance, procurement and sales — so the transaction data underneath was trustworthy before anything was built on it',
+      'Designed the costing model: landed cost from purchase order through to goods received, then allocation of production and distribution activity to products and customers, so cost follows the work actually performed',
+      'Built the reporting data warehouse and BI layer on top of SoftOne, giving management margin by product, by customer and by channel, alongside budgeting, forecasting and variance analysis',
+    ],
+    tools: ['SoftOne ERP', 'Activity-Based Costing', 'Reporting Data Warehouse', 'Power BI', 'Pricing Analysis'],
+    metrics: [
+      { label: 'Cost per product', before: 'Estimated from averages', after: 'Calculated from landed cost and activity' },
+      { label: 'Customer profitability', before: 'Not measured', after: 'Reported by customer and channel' },
+      { label: 'Pricing decisions', before: 'Revenue-led', after: 'Margin-led, against real numbers' },
+    ],
+    timeline: 'Ongoing advisory since 2009',
+    icon: 'Calculator',
+    keyResult: 'Margin visible per product and customer',
+    image: caseStudyReporting,
+  },
   {
     id: 'loan-servicing',
     sector: 'Financial Services',

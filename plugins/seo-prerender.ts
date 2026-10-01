@@ -35,6 +35,11 @@ const routes: Record<string, RouteMeta> = {
     description: 'See how Ensight has helped organisations cut costs, automate workflows, and gain real-time visibility.',
     ogImage: '/og/case-studies.jpg',
   },
+  '/case-studies/costing-bi-platform': {
+    title: 'Activity-Based Costing & BI Platform | Ensight Case Study',
+    description: 'A costing model and reporting layer built on SoftOne — margin visible by product, customer and channel.',
+    ogImage: '/og/case-studies.jpg',
+  },
   '/case-studies/loan-servicing': {
     title: 'Loan Servicing Platform | Ensight Case Study',
     description: 'Custom end-to-end servicing system replacing fragmented processes \u2014 cutting manual processing by 60%.',

@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowRight, Clock, Landmark, Heart, BarChart3, MapPin } from 'lucide-react';
+import { ArrowRight, Clock, Landmark, Heart, BarChart3, MapPin, Calculator } from 'lucide-react';
 import { caseStudies } from '@/data/caseStudies';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const iconMap: Record<string, React.ElementType> = {
-  Landmark, Heart, BarChart3, MapPin,
+  Landmark, Heart, BarChart3, MapPin, Calculator,
 };
 
 const sectors = ['All', ...Array.from(new Set(caseStudies.map((cs) => cs.sector)))];
