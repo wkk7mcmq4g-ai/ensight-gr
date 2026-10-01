@@ -45,6 +45,11 @@ const routes: Record<string, RouteMeta> = {
     description: 'A costing model and reporting layer built on SoftOne — margin visible by product, customer and channel.',
     ogImage: '/og/case-studies.jpg',
   },
+  '/case-studies/invoice-extraction': {
+    title: 'Invoices the Machine Reads | Ensight Case Study',
+    description: 'AI extraction pulling supplier invoices into the finance system structured and consistent \u2014 with a person approving every posting.',
+    ogImage: '/og/case-studies.jpg',
+  },
   '/case-studies/loan-servicing': {
     title: 'Loan Servicing Platform | Ensight Case Study',
     description: 'Custom end-to-end servicing system replacing fragmented processes \u2014 cutting manual processing by 60%.',

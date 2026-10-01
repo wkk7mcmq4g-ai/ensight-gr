@@ -62,6 +62,34 @@ export const caseStudies: CaseStudy[] = [
     logoScale: 1.9,
   },
   {
+    id: 'invoice-extraction',
+    sector: 'Financial Services',
+    client: 'QSIX',
+    clientLogo: logoQsix,
+    title: 'Invoices the Machine Reads',
+    subtitle: 'AI extraction that pulls supplier invoices into the finance system structured and consistent — with a person approving every posting.',
+    outcome:
+      'Supplier invoices are now read automatically and arrive in the finance system as structured data, routed to the right approver with the extracted values on screen beside the document. Nobody retypes an invoice, and nothing posts without a human saying so. The downstream effect matters more than the time saved: spend data is consistent from the moment it enters, so the reporting built on top of it is arguing about decisions rather than about whether the figures match the paperwork.',
+    challenge:
+      'Invoices arrived as PDFs and scans, in every layout a supplier cared to use, and were read by a person and keyed in by hand. That is slow, but slow was not the real problem. Hand-keying is where inconsistency enters a finance system and never leaves — a supplier name spelled two ways, a date in the wrong format, a net figure transposed. Every one of those errors is invisible at the point of entry and expensive three months later, when a report is questioned and nobody can tell whether the number or the typing is wrong.',
+    approach: [
+      'Mapped how invoices actually arrive and who approves what, before any model was involved — including the exceptions, which is where document automation usually fails',
+      'Built extraction on Azure Document Intelligence to pull supplier, dates, line detail, net, VAT and totals from unstructured documents, whatever the layout',
+      'Orchestrated the flow in Power Automate: extracted values validated against the finance system, routed to the right approver, with the source document alongside — and nothing posts until a person approves it',
+      'Designed for the failure case: low-confidence extractions are flagged rather than guessed, and every posting carries a record of what the system read and who approved it',
+    ],
+    tools: ['Azure Document Intelligence', 'Power Automate', 'ERP Integration', 'Human-in-the-Loop Design', 'Audit Trails'],
+    metrics: [
+      { label: 'Invoice capture', before: 'Read and keyed in by hand', after: 'Extracted automatically from any layout' },
+      { label: 'Data quality at source', before: 'Transposition and spelling drift', after: 'Validated against the finance system' },
+      { label: 'Control', before: 'Manual process, no record of why', after: 'Human approval, with an audit trail' },
+    ],
+    timeline: '6 weeks',
+    icon: 'ScanLine',
+    keyResult: 'Automated extraction, human approval',
+    image: caseStudyLoan,
+  },
+  {
     id: 'loan-servicing',
     sector: 'Financial Services',
     client: 'HMS',
