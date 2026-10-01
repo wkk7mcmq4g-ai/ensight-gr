@@ -57,7 +57,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/case-studies/financial-reporting': {
     title: 'One Set of Numbers | Ensight Case Study',
-    description: 'A governed reporting layer for an institutional portfolio \u2014 one agreed definition per metric, with lineage back to source.',
+    description: 'A governed reporting layer for an institutional portfolio, plus AI invoice extraction into the finance system \u2014 one agreed definition per metric, with lineage back to source.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/touro-driver-ux': {
