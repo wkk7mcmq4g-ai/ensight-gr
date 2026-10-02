@@ -15,8 +15,8 @@ const components = [
   {
     num: '01', numColor: 'text-[#06B6D4]', borderColor: 'border-[#06B6D4]',
     tag: 'Entry point · Fixed fee · 1–2 weeks', pill: 'Fixed fee', pillBg: 'bg-[#06B6D4]/10 text-[#06B6D4]',
-    title: 'Data Clarity Assessment',
-    desc: 'Before building anything, we need to know what we\'re building on. The Data Clarity Assessment is a structured diagnostic that maps your data landscape across five dimensions and produces a clear verdict: whether you\'re ready to build, what needs fixing first, or whether deeper operational work is required.',
+    title: 'Operational X-Ray',
+    desc: 'Before building anything, we need to know what we\'re building on. The Operational X-Ray is a structured diagnostic that maps your data landscape across five dimensions and produces a clear verdict: whether you\'re ready to build, what needs fixing first, or whether deeper operational work is required.',
     desc2: 'The output is not a list of problems. It is a scored profile and a specific recommended next step — with enough detail to act on immediately.',
     deliverableLabel: 'Deliverable',
     deliverable: 'Data Readiness Report — scored framework, findings per dimension, verdict, and recommended path forward',
@@ -49,7 +49,7 @@ const components = [
   {
     num: '03', numColor: 'text-[#4F46E5]', borderColor: 'border-[#4F46E5]',
     tag: 'Ongoing · Monthly retainer', pill: 'Monthly retainer', pillBg: 'bg-[#4F46E5]/10 text-[#4F46E5]',
-    title: 'Data Clarity Retainer',
+    title: 'The Monthly Partnership',
     desc: 'A dashboard without interpretation is just a mirror. The retainer is the ongoing partnership where the value compounds — a monthly meeting with a prepared deck, working through what the numbers mean and what to do about it.',
     desc2: 'This is a decision-making conversation, not a reporting meeting. The question we\'re answering every month is: what does the data tell us to do?',
     deliverableLabel: 'Monthly rhythm',
@@ -75,15 +75,15 @@ const dimensions = [
 const verdicts = [
   { range: '75–100%', name: 'Build-Ready', desc: 'Your data foundation is sufficient to proceed. Minor gaps can be addressed during the build phase. We move directly to scoping the Analytics Build.', color: 'border-[#10B981] bg-[#10B981]/5' },
   { range: '50–74%', name: 'Foundation First', desc: 'Specific remediation is required before a full build. We provide a targeted roadmap. Partial builds may be possible while remediation proceeds in parallel.', color: 'border-[#F59E0B] bg-[#F59E0B]/5' },
-  { range: 'Below 50%', name: 'Not Viable Yet', desc: 'Fundamental data or process issues block meaningful analytics. A remediation roadmap is provided. An Operational Clarity engagement may be recommended first.', color: 'border-[#EC4899] bg-[#EC4899]/5' },
+  { range: 'Below 50%', name: 'Not Viable Yet', desc: 'Fundamental data or process issues block meaningful analytics. A remediation roadmap is provided. Process work is recommended before the analytics build.', color: 'border-[#EC4899] bg-[#EC4899]/5' },
 ];
 
 const flowNodes = [
-  { num: '01', name: 'Diagnose', sub: 'Operational X-Ray', tag: 'Operational Clarity', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
-  { num: '02–04', name: 'Transform', sub: 'Redesign · Build · Embed', tag: 'Operational Clarity', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
-  { num: 'A', name: 'Assess', sub: 'Data Clarity Assessment', tag: 'Data Clarity', tagColor: 'bg-[#06B6D4]/10 text-[#06B6D4]', numColor: 'text-[#06B6D4]', highlight: true },
-  { num: 'B', name: 'Build', sub: 'Analytics System', tag: 'Data Clarity', tagColor: 'bg-[#06B6D4]/10 text-[#06B6D4]', numColor: 'text-[#06B6D4]', highlight: true },
-  { num: 'C', name: 'Partner', sub: 'Monthly Retainer', tag: 'Data Clarity', tagColor: 'bg-[#10B981]/10 text-[#10B981]', numColor: 'text-[#10B981]', highlight: true },
+  { num: '01', name: 'Diagnose', sub: 'Operational X-Ray', tag: 'Process & Automation', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
+  { num: '02–04', name: 'Transform', sub: 'Redesign · Build · Embed', tag: 'Process & Automation', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
+  { num: 'A', name: 'Assess', sub: 'Operational X-Ray', tag: 'Insight & Reporting', tagColor: 'bg-[#06B6D4]/10 text-[#06B6D4]', numColor: 'text-[#06B6D4]', highlight: true },
+  { num: 'B', name: 'Build', sub: 'Analytics System', tag: 'Insight & Reporting', tagColor: 'bg-[#06B6D4]/10 text-[#06B6D4]', numColor: 'text-[#06B6D4]', highlight: true },
+  { num: 'C', name: 'Partner', sub: 'Monthly Retainer', tag: 'Insight & Reporting', tagColor: 'bg-[#10B981]/10 text-[#10B981]', numColor: 'text-[#10B981]', highlight: true },
 ];
 
 const sectors: { icon: LucideIcon; title: string; desc: string; hsl: string }[] = [
@@ -94,7 +94,7 @@ const sectors: { icon: LucideIcon; title: string; desc: string; hsl: string }[] 
 
 const DataClarity = () => (
   <div>
-    <SEO title="Data Clarity · Ensight" description="Management analytics that drive decisions. Turn scattered data into a real-time picture of your business." path="/data-clarity" ogImage="/og/data-clarity.jpg" />
+    <SEO title="Insight &amp; Reporting · Ensight" description="Costing, reporting and management information you can defend — one definition per number, margin visible by product and customer." path="/data-clarity" ogImage="/og/data-clarity.jpg" />
     {/* ═══ HERO ═══ */}
     <section className="relative bg-[hsl(270,40%,6%)] overflow-hidden flex items-center px-6 md:px-12 pt-28 pb-14">
       {/* Animated grid */}
@@ -111,7 +111,7 @@ const DataClarity = () => (
         <div className="max-w-[640px]">
           <div className="inline-flex items-center gap-2 font-mono-label text-[9px] tracking-[3px] uppercase text-primary border border-primary/30 px-4 py-1.5 rounded-full mb-6">
             <span className="w-[5px] h-[5px] bg-primary rounded-full animate-pulse" />
-            Management Analytics
+            Insight &amp; Reporting
           </div>
 
           <h1 className="text-[clamp(40px,5vw,62px)] font-black leading-[1.06] tracking-tight text-white mb-5">
@@ -121,7 +121,7 @@ const DataClarity = () => (
           </h1>
 
           <p className="text-[17px] text-[#8888A0] leading-[1.75] max-w-[520px] mb-9">
-            Most businesses have numbers scattered across systems, spreadsheets, and departments. Data Clarity turns that raw data into a real-time picture of your business — and keeps you alongside it, every month, to act on what it says.
+            Most businesses have numbers scattered across systems, spreadsheets and departments, and no single version anyone will defend. We build the layer that settles that — costing, margin and the metrics management actually decides on — and stay alongside it every month to work through what it says.
           </p>
 
           <div className="flex gap-3 flex-wrap">
@@ -186,7 +186,7 @@ const DataClarity = () => (
           Three components.<br />One continuous partnership.
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[580px] mb-14">
-          Data Clarity is not a project with a handoff date. It is an ongoing analytical relationship — built on a solid data foundation, and sustained by monthly interpretation that turns numbers into decisions.
+          This is not a project with a handoff date. It is an ongoing analytical relationship — built on a data foundation that holds, and sustained by monthly interpretation that turns numbers into decisions.
         </p>
       </AnimatedSection>
 
@@ -238,7 +238,7 @@ const DataClarity = () => (
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
           <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-            {"Data Clarity Assessment"}
+            {"The Operational X-Ray"}
           </div>
           <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-tight leading-[1.12] text-white mb-4">
             Five dimensions.<br />One clear verdict.
@@ -289,7 +289,7 @@ const DataClarity = () => (
           Standalone — or the natural<br />next step after operational clarity.
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[580px] mb-14">
-          Data Clarity works as an independent service. It also connects directly to Ensight's operational transformation work — because clean processes produce reliable data, and reliable data deserves a system built around it.
+          Insight and reporting works as an independent service. It also connects directly to the process and automation work — because a clean process is what produces data you can rely on, and data you can rely on deserves a system built around it.
         </p>
       </AnimatedSection>
 
@@ -323,7 +323,7 @@ const DataClarity = () => (
           Mid-sized businesses that have<br />outgrown instinct-led decisions.
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[580px] mb-14">
-          Data Clarity is designed for organisations with 20–200 employees where management is still making decisions based on intuition, lagging reports, or data they don't fully trust.
+          This is designed for organisations with 20–200 employees where management is still deciding on intuition, lagging reports, or numbers they do not fully trust.
         </p>
       </AnimatedSection>
       <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -365,7 +365,7 @@ const DataClarity = () => (
               Book an Operational X-Ray
             </a>
             <a
-              href="mailto:hello@ensight.gr?subject=Data Clarity Information"
+              href={CONTACT_HREF}
               className="text-white text-[15px] font-semibold px-8 py-3.5 rounded-xl border border-white/15 hover:bg-white/5 transition-all no-underline"
             >
               Review the offering

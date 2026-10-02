@@ -1,21 +1,21 @@
-import { Monitor, Users, BarChart3, Zap } from 'lucide-react';
+import { Map, Scissors, Users, Zap } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 
 const solutions = [
-  { icon: Monitor, title: 'Custom Applications', desc: 'We build systems that replace spreadsheets and manual workflows.', hsl: 'hsl(var(--primary))' },
-  { icon: Users, title: 'CRM & Workflows', desc: 'Manage operations, approvals, and compliance in one unified system.', hsl: 'hsl(var(--accent-blue))' },
-  { icon: BarChart3, title: 'Data & Reporting', desc: 'Real-time dashboards and reporting using Power BI and SQL.', hsl: 'hsl(var(--primary))' },
-  { icon: Zap, title: 'Automation & Integration', desc: 'Connect systems and automate processes using APIs and AI.', hsl: 'hsl(var(--secondary))' },
+  { icon: Map, title: 'Map what actually happens', desc: 'Not the org chart version. Where work waits, who it waits on, and what that costs.', hsl: 'hsl(var(--primary))' },
+  { icon: Scissors, title: 'Redesign before building', desc: 'Remove the steps that exist only because something else was broken. Make ownership explicit.', hsl: 'hsl(var(--accent-blue))' },
+  { icon: Zap, title: 'Build and integrate', desc: 'Approval flows, document handling, and the connections between systems that were bridged by hand.', hsl: 'hsl(var(--primary))' },
+  { icon: Users, title: 'Stay through adoption', desc: 'Train the team, manage the resistance, and leave only once the new way is the way.', hsl: 'hsl(var(--secondary))' },
 ];
 
 const HowWeHelpSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="solutions">
     <AnimatedSection>
       <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        How We Help
+        The Sequence
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-12">
-        Technology that fits your operations
+        Four steps, and the technology comes third
       </h2>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

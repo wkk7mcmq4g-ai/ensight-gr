@@ -71,13 +71,13 @@ const routes: Record<string, RouteMeta> = {
     ogImage: '/og/case-studies.jpg',
   },
   '/data-clarity': {
-    title: 'Data Clarity | Ensight',
-    description: 'Understand where your data is, how it flows, and how to make it work for your organisation.',
+    title: 'Insight & Reporting | Ensight',
+    description: 'Costing, reporting and management information you can defend \u2014 one definition per number, margin visible by product and customer.',
     ogImage: '/og/data-clarity.jpg',
   },
   '/operational-transformation': {
-    title: 'Operational Transformation | Ensight',
-    description: 'Transform your operations with Ensight \u2014 from strategy to execution.',
+    title: 'Process & Automation | Ensight',
+    description: 'We map how the work actually moves, remove what should not be there, and only then build.',
     ogImage: '/og/operational-transformation.jpg',
   },
 };

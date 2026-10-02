@@ -62,6 +62,35 @@ export const caseStudies: CaseStudy[] = [
     logoScale: 1.9,
   },
   {
+    id: 'financial-reporting',
+    sector: 'Financial Services',
+    client: 'QSIX',
+    clientLogo: logoQsix,
+    title: 'One Set of Numbers',
+    subtitle: 'A governed reporting layer for an institutional portfolio, where every metric has one definition — and an AI extraction step that gets supplier invoices into the finance system clean, before they can pollute it.',
+    outcome:
+      'The firm stopped debating whose number was right. Finance, investment and operations now read the same portfolio position from the same definitions, with lineage back to source, and the reporting cycle no longer depends on one person remembering how a figure was assembled. Supplier invoices arrive structured rather than retyped, so the spend data feeding those reports is consistent from the moment it enters. Meetings moved from reconciling the pack to interrogating what it says.',
+    challenge:
+      'Portfolio, loan, finance and spend data lived in separate systems, and each team had built its own view on top of its own extract. The same metric carried different definitions in different packs, so a committee meeting could open with two credible numbers for the same position and spend half its time deciding which to believe. Nobody could trace a figure back to where it came from, which made the numbers hard to defend and impossible to audit. Upstream of all of it, supplier invoices were being read by a person and keyed in by hand — the point at which inconsistency enters a finance system and never leaves.',
+    approach: [
+      'Catalogued every metric already in circulation, traced each to its source and surfaced where two reports used the same name for different calculations',
+      'Consolidated portfolio, loan, finance and spend systems into a single governed warehouse, with definitions agreed by the people who rely on them and lineage preserved to source',
+      'Rebuilt the reporting layer on those definitions, with a measure-governance audit so the calculated logic behind each figure is documented and reviewable rather than buried in a report',
+      'Closed the gap at source: supplier invoices are read automatically with Azure Document Intelligence and routed through Power Automate into the finance system, with a human approving every posting — so spend data arrives structured instead of being retyped into the system it will later be reported from',
+    ],
+    tools: ['Data Warehouse', 'Metric Governance', 'Semantic Modelling', 'Power BI', 'Data Lineage', 'Azure Document Intelligence', 'Power Automate'],
+    metrics: [
+      { label: 'Definitions', before: 'One metric, several meanings', after: 'One agreed definition, documented' },
+      { label: 'Traceability', before: 'Figures could not be traced to source', after: 'Lineage preserved end to end' },
+      { label: 'Invoice capture', before: 'Keyed in by hand, then reconciled', after: 'Extracted automatically, approved by a person' },
+      { label: 'Committee time', before: 'Spent reconciling the pack', after: 'Spent on the decision' },
+    ],
+    timeline: '8 weeks',
+    icon: 'BarChart3',
+    keyResult: 'One agreed number per metric',
+    image: caseStudyReporting,
+  },
+  {
     id: 'invoice-extraction',
     sector: 'Financial Services',
     client: 'QSIX',
@@ -140,35 +169,6 @@ export const caseStudies: CaseStudy[] = [
     icon: 'Heart',
     keyResult: 'Full compliance visibility',
     image: caseStudyCharity,
-  },
-  {
-    id: 'financial-reporting',
-    sector: 'Financial Services',
-    client: 'QSIX',
-    clientLogo: logoQsix,
-    title: 'One Set of Numbers',
-    subtitle: 'A governed reporting layer for an institutional portfolio, where every metric has one definition — and an AI extraction step that gets supplier invoices into the finance system clean, before they can pollute it.',
-    outcome:
-      'The firm stopped debating whose number was right. Finance, investment and operations now read the same portfolio position from the same definitions, with lineage back to source, and the reporting cycle no longer depends on one person remembering how a figure was assembled. Supplier invoices arrive structured rather than retyped, so the spend data feeding those reports is consistent from the moment it enters. Meetings moved from reconciling the pack to interrogating what it says.',
-    challenge:
-      'Portfolio, loan, finance and spend data lived in separate systems, and each team had built its own view on top of its own extract. The same metric carried different definitions in different packs, so a committee meeting could open with two credible numbers for the same position and spend half its time deciding which to believe. Nobody could trace a figure back to where it came from, which made the numbers hard to defend and impossible to audit. Upstream of all of it, supplier invoices were being read by a person and keyed in by hand — the point at which inconsistency enters a finance system and never leaves.',
-    approach: [
-      'Catalogued every metric already in circulation, traced each to its source and surfaced where two reports used the same name for different calculations',
-      'Consolidated portfolio, loan, finance and spend systems into a single governed warehouse, with definitions agreed by the people who rely on them and lineage preserved to source',
-      'Rebuilt the reporting layer on those definitions, with a measure-governance audit so the calculated logic behind each figure is documented and reviewable rather than buried in a report',
-      'Closed the gap at source: supplier invoices are read automatically with Azure Document Intelligence and routed through Power Automate into the finance system, with a human approving every posting — so spend data arrives structured instead of being retyped into the system it will later be reported from',
-    ],
-    tools: ['Data Warehouse', 'Metric Governance', 'Semantic Modelling', 'Power BI', 'Data Lineage', 'Azure Document Intelligence', 'Power Automate'],
-    metrics: [
-      { label: 'Definitions', before: 'One metric, several meanings', after: 'One agreed definition, documented' },
-      { label: 'Traceability', before: 'Figures could not be traced to source', after: 'Lineage preserved end to end' },
-      { label: 'Invoice capture', before: 'Keyed in by hand, then reconciled', after: 'Extracted automatically, approved by a person' },
-      { label: 'Committee time', before: 'Spent reconciling the pack', after: 'Spent on the decision' },
-    ],
-    timeline: '8 weeks',
-    icon: 'BarChart3',
-    keyResult: 'One agreed number per metric',
-    image: caseStudyReporting,
   },
   {
     id: 'touro-driver-ux',
