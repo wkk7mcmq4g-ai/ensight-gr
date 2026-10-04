@@ -1,6 +1,8 @@
 import caseStudyLoan from '@/assets/case-study-loan.jpg';
 import caseStudyCharity from '@/assets/case-study-charity.jpg';
 import caseStudyReporting from '@/assets/case-study-reporting.jpg';
+import caseStudyCosting from '@/assets/case-study-costing.jpg';
+import caseStudyInvoice from '@/assets/case-study-invoice.jpg';
 import caseStudyTouro from '@/assets/case-study-touro.jpg';
 import logoHms from '@/assets/logo-hms.png';
 import logoMyAthens from '@/assets/logo-myathenstransfers.png';
@@ -58,7 +60,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: 'Ongoing advisory since 2009',
     icon: 'Calculator',
     keyResult: 'Margin visible per product and customer',
-    image: caseStudyReporting,
+    image: caseStudyCosting,
     logoScale: 1.9,
   },
   {
@@ -116,7 +118,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: '6 weeks',
     icon: 'ScanLine',
     keyResult: 'Automated extraction, human approval',
-    image: caseStudyLoan,
+    image: caseStudyInvoice,
   },
   {
     id: 'loan-servicing',
