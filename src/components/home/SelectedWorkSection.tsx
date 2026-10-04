@@ -3,22 +3,34 @@ import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 import { caseStudies } from '@/data/caseStudies';
 
-const SelectedWorkSection = () => (
+type Props = {
+  /** Case study ids to show. Defaults to the three that lead the list. */
+  ids?: string[];
+  eyebrow?: string;
+  heading?: string;
+  lead?: string;
+};
+
+const SelectedWorkSection = ({
+  ids,
+  eyebrow = 'Selected Work',
+  heading = 'What clients can now answer',
+  lead = 'The test is not how much time was saved. It is whether the management team can answer a question the business could not answer before.',
+}: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="work">
     <AnimatedSection>
       <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
-        Selected Work
+        {eyebrow}
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
-        What clients can now answer
+        {heading}
       </h2>
       <p className="text-base text-muted-foreground leading-relaxed max-w-[580px] mb-12">
-        The test is not how much time was saved. It is whether the management team can answer a question
-        the business could not answer before.
+        {lead}
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {caseStudies.slice(0, 3).map((cs) => (
+      {(ids ? ids.map((id) => caseStudies.find((c) => c.id === id)!).filter(Boolean) : caseStudies.slice(0, 3)).map((cs) => (
         <StaggerItem key={cs.id}>
           <Link
             to={`/case-studies/${cs.id}`}

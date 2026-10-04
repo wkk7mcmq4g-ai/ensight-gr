@@ -4,11 +4,11 @@ const OpTransformHero = () => (
   <section className="px-6 md:px-12 pt-24 pb-10 md:pt-32 md:pb-16 flex flex-col justify-center max-w-[1200px] mx-auto relative overflow-hidden">
     <DecorativeShapes variant="starburst" />
     <h1 className="text-[clamp(34px,6vw,68px)] font-bold leading-[1.08] tracking-tight mb-6 max-w-[800px] text-foreground">
-      Fix the flow, then build the thing that runs it.
+      Software built for how you actually work.
     </h1>
 
     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[600px] mb-7">
-      Custom business applications, workflow automation and system integration — built around a process that has been fixed first, so the software is not just a faster version of the workaround.
+      Custom business applications, workflow automation and system integration — for the operations that off-the-shelf software makes you bend around. We redesign the process before we build, which is why what you get is not a faster version of the workaround.
     </p>
 
     <div className="flex gap-3 flex-wrap">
@@ -20,7 +20,7 @@ const OpTransformHero = () => (
         }}
         className="bg-primary text-primary-foreground text-base font-bold px-7 py-3 md:px-9 md:py-4 rounded-xl shadow-[0_4px_16px_hsl(var(--primary)/0.15)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.2)] transition-all no-underline"
       >
-        See where it goes wrong
+        See where the work gets stuck
       </a>
     </div>
   </section>

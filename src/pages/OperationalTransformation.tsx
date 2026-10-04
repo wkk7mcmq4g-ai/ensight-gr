@@ -14,8 +14,17 @@ const OperationalTransformation = () => (
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeHelpSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
-    <SelectedWorkSection />
-    <EngageSection />
+    <SelectedWorkSection
+      ids={['loan-servicing', 'charity-crm', 'touro-driver-ux']}
+      eyebrow="Applications We Built"
+      heading="Systems the work actually runs on"
+      lead="Each of these replaced a spreadsheet, an inbox or a process that lived in somebody's head — and each is still in daily use."
+    />
+    <EngageSection
+      lead="Quick Win"
+      heading="Start with one problem."
+      intro="You do not have to commit to a programme to find out whether this works. Pick the thing that costs you the most time, and we solve that one first."
+    />
     <CTASection />
   </>
 );
