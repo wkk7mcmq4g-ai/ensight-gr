@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import SEO from '@/components/SEO';
 import { CONTACT_HREF } from '@/lib/contact';
 
-const BASE_URL = 'https://ensight-gr.lovable.app';
+const BASE_URL = 'https://www.ensight.gr';
 
 const CaseStudyDetail = () => {
   const { id } = useParams();

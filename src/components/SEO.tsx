@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const BASE_URL = 'https://ensight-gr.lovable.app';
+const BASE_URL = 'https://www.ensight.gr';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og/home.jpg`;
 
 interface SEOProps {

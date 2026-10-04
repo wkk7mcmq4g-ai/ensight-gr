@@ -5,7 +5,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = 'https://ensight-gr.lovable.app';
+const BASE_URL = 'https://www.ensight.gr';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og/home.jpg`;
 
 interface RouteMeta {
@@ -16,18 +16,18 @@ interface RouteMeta {
 
 const routes: Record<string, RouteMeta> = {
   '/': {
-    title: 'Ensight | Strategy, Automation & Data for Mid-Market Teams',
-    description: 'Ensight helps mid-market organisations streamline operations, eliminate process debt, and build technology that works — with strategy, automation, and data.',
+    title: 'Ensight | Insight, Reporting & Automation for Mid-Market Teams',
+    description: 'Ensight builds management information you can trust — costing, reporting and the automation that keeps it running. We fix the process before we build the technology.',
     ogImage: '/og/home.jpg',
   },
   '/about': {
-    title: 'About Ensight | Our Story & Team',
-    description: 'Learn about Ensight \u2014 the consultancy helping organisations streamline operations.',
+    title: 'About Ensight | Numbers You Can Defend',
+    description: 'Eighteen years in data, costing and finance systems. We build management information businesses can defend \u2014 and fix the process underneath it first.',
     ogImage: '/og/about.jpg',
   },
   '/services': {
     title: 'Services | Ensight',
-    description: "Explore Ensight\u2019s services: operational strategy, workflow automation, data clarity, and custom platform builds.",
+    description: 'Insight and reporting, process and automation, and AI applied where it earns its place \u2014 for mid-market businesses.',
     ogImage: '/og/services.jpg',
   },
   '/costing': {
@@ -37,7 +37,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/case-studies': {
     title: 'Case Studies | Ensight',
-    description: 'See how Ensight has helped organisations cut costs, automate workflows, and gain real-time visibility.',
+    description: 'Costing, reporting and the systems underneath them \u2014 built so management can answer questions the business could not answer before.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/costing-bi-platform': {

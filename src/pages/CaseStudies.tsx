@@ -29,8 +29,8 @@ const CaseStudies = () => {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ensight-gr.lovable.app/" },
-            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://ensight-gr.lovable.app/case-studies" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ensight.gr/" },
+            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.ensight.gr/case-studies" }
           ]
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -38,14 +38,14 @@ const CaseStudies = () => {
           "@type": "CollectionPage",
           "name": "Case Studies · Ensight",
           "description": "Real results, measured in weeks.",
-          "url": "https://ensight-gr.lovable.app/case-studies",
+          "url": "https://www.ensight.gr/case-studies",
           "mainEntity": {
             "@type": "ItemList",
             "itemListElement": caseStudies.map((cs, i) => ({
               "@type": "ListItem",
               "position": i + 1,
               "name": cs.title,
-              "url": `https://ensight-gr.lovable.app/case-studies/${cs.id}`
+              "url": `https://www.ensight.gr/case-studies/${cs.id}`
             }))
           }
         })}</script>

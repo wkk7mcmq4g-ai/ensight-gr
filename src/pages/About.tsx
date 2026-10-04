@@ -45,8 +45,8 @@ const About = () => (
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ensight-gr.lovable.app/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://ensight-gr.lovable.app/about" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ensight.gr/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.ensight.gr/about" }
         ]
       })}</script>
       <script type="application/ld+json">{JSON.stringify({
@@ -54,11 +54,11 @@ const About = () => (
         "@type": "AboutPage",
         "name": "About Ensight",
         "description": "Eighteen years in data, costing and finance systems. We build management information businesses can defend \u2014 and fix the process underneath it first.",
-        "url": "https://ensight-gr.lovable.app/about",
+        "url": "https://www.ensight.gr/about",
         "mainEntity": {
           "@type": "Organization",
           "name": "Ensight",
-          "url": "https://ensight-gr.lovable.app",
+          "url": "https://www.ensight.gr",
           "founder": {
             "@type": "Person",
             "name": "George Kondylis",

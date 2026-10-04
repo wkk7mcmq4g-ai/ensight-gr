@@ -105,8 +105,8 @@ const Services = () => (
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ensight-gr.lovable.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://ensight-gr.lovable.app/services" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ensight.gr/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.ensight.gr/services" }
         ]
       })}</script>
       <script type="application/ld+json">{JSON.stringify({
@@ -115,11 +115,11 @@ const Services = () => (
         "provider": {
           "@type": "Organization",
           "name": "Ensight",
-          "url": "https://ensight-gr.lovable.app"
+          "url": "https://www.ensight.gr"
         },
         "name": "Ensight Consulting Services",
         "description": "Insight and reporting, process and automation, and AI applied where it earns its place \u2014 for mid-market businesses.",
-        "url": "https://ensight-gr.lovable.app/services",
+        "url": "https://www.ensight.gr/services",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Services",
