@@ -4,11 +4,11 @@ const OpTransformHero = () => (
   <section className="px-6 md:px-12 pt-24 pb-10 md:pt-32 md:pb-16 flex flex-col justify-center max-w-[1200px] mx-auto relative overflow-hidden">
     <DecorativeShapes variant="starburst" />
     <h1 className="text-[clamp(34px,6vw,68px)] font-bold leading-[1.08] tracking-tight mb-6 max-w-[800px] text-foreground">
-      Fix the flow, then automate it.
+      Fix the flow, then build the thing that runs it.
     </h1>
 
     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[600px] mb-7">
-      Most automation fails because it encodes the workaround and makes it permanent. We map how the work actually moves, remove what should not be there, make ownership explicit — and only then build.
+      Custom business applications, workflow automation and system integration — built around a process that has been fixed first, so the software is not just a faster version of the workaround.
     </p>
 
     <div className="flex gap-3 flex-wrap">

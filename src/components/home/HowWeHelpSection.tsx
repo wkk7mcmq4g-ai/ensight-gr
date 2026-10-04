@@ -4,7 +4,7 @@ import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection
 const solutions = [
   { icon: Map, title: 'Map what actually happens', desc: 'Not the org chart version. Where work waits, who it waits on, and what that costs.', hsl: 'hsl(var(--primary))' },
   { icon: Scissors, title: 'Redesign before building', desc: 'Remove the steps that exist only because something else was broken. Make ownership explicit.', hsl: 'hsl(var(--accent-blue))' },
-  { icon: Zap, title: 'Build and integrate', desc: 'Approval flows, document handling, and the connections between systems that were bridged by hand.', hsl: 'hsl(var(--primary))' },
+  { icon: Zap, title: 'Build the application', desc: 'The system the work actually runs on — approvals, documents, and the connections between platforms that were bridged by hand.', hsl: 'hsl(var(--primary))' },
   { icon: Users, title: 'Stay through adoption', desc: 'Train the team, manage the resistance, and leave only once the new way is the way.', hsl: 'hsl(var(--secondary))' },
 ];
 

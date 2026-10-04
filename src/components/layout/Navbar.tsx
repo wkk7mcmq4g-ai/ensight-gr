@@ -12,7 +12,7 @@ const navLinks = [
 const serviceOptions = [
   { label: 'What We Do', desc: 'Insight, process, and applied AI', href: '/services' },
   { label: 'Insight & Reporting', desc: 'Management information, costing, dashboards', href: '/data-clarity' },
-  { label: 'Process & Automation', desc: 'Fix the flow, then automate it', href: '/operational-transformation' },
+  { label: 'Applications & Automation', desc: 'Business applications and the process underneath them', href: '/operational-transformation' },
   { label: 'What a product actually costs', desc: 'A worked example', href: '/costing' },
 ];
 

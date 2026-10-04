@@ -9,7 +9,7 @@ import CTASection from '@/components/home/CTASection';
 
 const OperationalTransformation = () => (
   <>
-    <SEO title="Process &amp; Automation · Ensight" description="We map how the work actually moves, remove what should not be there, and only then build — so the automation does not make the workaround permanent." path="/operational-transformation" ogImage="/og/operational-transformation.jpg" />
+    <SEO title="Applications &amp; Automation · Ensight" description="Custom business applications, workflow automation and system integration — built around a process that has been fixed first." path="/operational-transformation" ogImage="/og/operational-transformation.jpg" />
     <OpTransformHero />
     <ProblemsSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />

@@ -28,20 +28,20 @@ const offerings = [
   {
     num: '02',
     icon: Workflow,
-    title: 'Process & Automation',
-    subtitle: 'Fix the flow, then automate it',
-    desc: 'Most automation fails because it encodes the workaround and makes it permanent. We map how the work actually moves, remove what should not be there, make ownership explicit — and only then build. What comes back is recovered capacity: the things your team can finally get to once the work stops fighting them.',
+    title: 'Applications & Automation',
+    subtitle: 'Fix the flow, then build the thing that runs it',
+    desc: 'Most automation fails because it encodes the workaround and makes it permanent. We map how the work actually moves, remove what should not be there, make ownership explicit — and only then build the application that runs it. What comes back is recovered capacity: the things your team can finally get to once the work stops fighting them.',
     features: [
       'Process mapping and redesign',
-      'Workflow and approval automation',
-      'ERP and system integration',
-      'Document and invoice flows',
+      'Custom business applications — built for how the work actually runs',
+      'Workflow, approval and document automation',
+      'ERP and system integration, and the data flows between them',
       'Rollout, training and adoption',
     ],
     barColor: 'bg-accent-blue',
     iconColor: 'text-accent-blue',
     link: '/operational-transformation',
-    linkLabel: 'Explore Process & Automation',
+    linkLabel: 'Explore Applications & Automation',
   },
   {
     num: '03',
@@ -163,7 +163,7 @@ const Services = () => (
           Three services, in this order
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
-          Reporting that holds up. The process behind it, fixed. And automation applied only where it earns its place. Each can stand alone, but the order is the point.
+          Reporting that holds up. The process behind it, fixed — then the applications and automation that run it. And AI only where it earns its place. Each can stand alone, but the order is the point.
         </p>
       </AnimatedSection>
 

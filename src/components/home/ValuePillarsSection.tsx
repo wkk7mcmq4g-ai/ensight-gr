@@ -22,14 +22,14 @@ const pillars = [
   {
     num: '02',
     icon: Workflow,
-    title: 'Process & Automation',
-    desc: 'Fix the flow, then automate it.',
-    body: 'Most automation fails because it encodes the workaround and makes it permanent. We map how the work actually moves, remove what should not be there, make ownership explicit — and only then build.',
+    title: 'Applications & Automation',
+    desc: 'Fix the flow, then build the thing that runs it.',
+    body: 'Most automation fails because it encodes the workaround and makes it permanent. We map how the work actually moves, remove what should not be there, make ownership explicit — and only then build the application that runs it. What comes back is recovered capacity: the things your team can finally get to once the work stops fighting them.',
     points: [
       'Process mapping and redesign',
-      'Workflow and approval automation',
-      'ERP and system integration',
-      'Document and invoice flows',
+      'Custom business applications — built for how the work actually runs',
+      'Workflow, approval and document automation',
+      'ERP and system integration, and the data flows between them',
       'Rollout, training and adoption',
     ],
     hsl: 'hsl(var(--accent-blue))',
@@ -63,7 +63,7 @@ const ValuePillarsSection = () => (
         Three services, in this order
       </h2>
       <p className="text-base text-muted-foreground leading-relaxed max-w-[620px] mb-12">
-        Reporting that holds up. The process behind it, fixed. And automation applied only where it earns its place.
+        Reporting that holds up. The process behind it, fixed — then the applications and automation that run it. And AI only where it earns its place.
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">

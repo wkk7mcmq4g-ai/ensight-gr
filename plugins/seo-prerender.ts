@@ -17,7 +17,7 @@ interface RouteMeta {
 const routes: Record<string, RouteMeta> = {
   '/': {
     title: 'Ensight | Insight, Reporting & Automation for Mid-Market Teams',
-    description: 'Ensight builds management information you can trust — costing, reporting and the automation that keeps it running. We fix the process before we build the technology.',
+    description: 'Ensight builds management information you can trust — costing, reporting, business applications and the automation that keep them running. We fix the process before we build the technology.',
     ogImage: '/og/home.jpg',
   },
   '/about': {
@@ -76,8 +76,8 @@ const routes: Record<string, RouteMeta> = {
     ogImage: '/og/data-clarity.jpg',
   },
   '/operational-transformation': {
-    title: 'Process & Automation | Ensight',
-    description: 'We map how the work actually moves, remove what should not be there, and only then build.',
+    title: 'Applications & Automation | Ensight',
+    description: 'Custom business applications, workflow automation and system integration \u2014 built around a process that has been fixed first.',
     ogImage: '/og/operational-transformation.jpg',
   },
 };

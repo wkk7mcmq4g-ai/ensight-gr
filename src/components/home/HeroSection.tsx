@@ -46,7 +46,7 @@ const HeroSection = () => {
             className="text-base md:text-xl text-muted-foreground font-medium leading-relaxed max-w-[600px] mb-5"
             style={{ y: noMotion ? 0 : subtitleY }}
           >
-            Insight, costing and reporting that hold up — and the automation that keeps them running. We fix how the work flows first, so what you measure actually means something.
+            Insight, costing and reporting that hold up — and the applications and automation that keep them running. We fix how the work flows first, so what you measure actually means something.
           </motion.p>
 
           <motion.div className="flex gap-3 flex-wrap" style={{ y: noMotion ? 0 : ctaY }}>

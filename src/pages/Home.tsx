@@ -20,7 +20,7 @@ const organizationSchema = {
   "name": "Ensight",
   "url": "https://www.ensight.gr",
   "logo": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9131ee5a-adf6-4644-9666-66d96e6a8601/id-preview-d3f8e6df--80d094a5-b6ff-4e3d-9b55-194fe071745a.lovable.app-1775244958373.png",
-  "description": "Ensight builds management information mid-market businesses can trust — insight, costing and reporting, the process behind them, and automation applied where it earns its place.",
+  "description": "Ensight builds management information mid-market businesses can trust — insight, costing and reporting, the business applications and automation that keep them running, and AI applied where it earns its place.",
   "email": "hello@ensight.gr",
   "address": {
     "@type": "PostalAddress",
@@ -40,7 +40,7 @@ const websiteSchema = {
 
 const Home = () => (
   <>
-    <SEO title="Ensight | Insight, Reporting & Automation for Mid-Market Teams" description="Ensight builds management information you can trust — costing, reporting and the automation that keeps it running. We fix the process before we build the technology." path="/" ogImage="/og/home.jpg" />
+    <SEO title="Ensight | Insight, Reporting & Automation for Mid-Market Teams" description="Ensight builds management information you can trust — costing, reporting, business applications and the automation that keeps them running. We fix the process before we build the technology." path="/" ogImage="/og/home.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>

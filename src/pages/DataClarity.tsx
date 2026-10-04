@@ -79,8 +79,8 @@ const verdicts = [
 ];
 
 const flowNodes = [
-  { num: '01', name: 'Diagnose', sub: 'Operational X-Ray', tag: 'Process & Automation', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
-  { num: '02–04', name: 'Transform', sub: 'Redesign · Build · Embed', tag: 'Process & Automation', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
+  { num: '01', name: 'Diagnose', sub: 'Operational X-Ray', tag: 'Applications & Automation', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
+  { num: '02–04', name: 'Transform', sub: 'Redesign · Build · Embed', tag: 'Applications & Automation', tagColor: 'bg-primary/10 text-primary', numColor: 'text-primary', highlight: false },
   { num: 'A', name: 'Assess', sub: 'Operational X-Ray', tag: 'Insight & Reporting', tagColor: 'bg-[#06B6D4]/10 text-[#06B6D4]', numColor: 'text-[#06B6D4]', highlight: true },
   { num: 'B', name: 'Build', sub: 'Analytics System', tag: 'Insight & Reporting', tagColor: 'bg-[#06B6D4]/10 text-[#06B6D4]', numColor: 'text-[#06B6D4]', highlight: true },
   { num: 'C', name: 'Partner', sub: 'Monthly Retainer', tag: 'Insight & Reporting', tagColor: 'bg-[#10B981]/10 text-[#10B981]', numColor: 'text-[#10B981]', highlight: true },
