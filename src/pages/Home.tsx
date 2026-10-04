@@ -5,9 +5,7 @@ import LogoStripSection from '@/components/home/LogoStripSection';
 import ValuePillarsSection from '@/components/home/ValuePillarsSection';
 import ProblemsSection from '@/components/home/ProblemsSection';
 import BeforeYouAutomate from '@/components/home/BeforeYouAutomate';
-import BeforeAfterSection from '@/components/home/BeforeAfterSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
-import ProofSection from '@/components/home/ProofSection';
 import QuoteSection from '@/components/home/QuoteSection';
 import AboutSection from '@/components/home/AboutSection';
 import EngageSection from '@/components/home/EngageSection';
@@ -54,10 +52,7 @@ const Home = () => (
     <ValuePillarsSection />
     <BeforeYouAutomate />
     <ParallaxDivider />
-    <BeforeAfterSection />
-    <ParallaxDivider />
     <SelectedWorkSection />
-    <ProofSection />
     <QuoteSection />
     <ParallaxDivider />
     <AboutSection />

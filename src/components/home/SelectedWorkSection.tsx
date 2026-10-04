@@ -9,9 +9,13 @@ const SelectedWorkSection = () => (
       <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
         Selected Work
       </div>
-      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-12">
-        Engagements that delivered
+      <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
+        What clients can now answer
       </h2>
+      <p className="text-base text-muted-foreground leading-relaxed max-w-[580px] mb-12">
+        The test is not how much time was saved. It is whether the management team can answer a question
+        the business could not answer before.
+      </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {caseStudies.slice(0, 3).map((cs) => (
