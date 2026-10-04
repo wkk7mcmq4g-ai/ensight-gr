@@ -17,7 +17,7 @@ const ProblemsSection = () => (
         Sound Familiar?
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
-        The Six Signs of Process Debt
+        Six reasons the numbers don't hold
       </h2>
       <p className="text-base text-ordinal-body leading-relaxed max-w-[560px] mb-12">
         None of these are reporting problems. They are process debt — the workarounds that became permanent and quietly broke the link between what happened and what the numbers say happened.

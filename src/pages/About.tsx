@@ -75,14 +75,13 @@ const About = () => (
         About Ensight
       </div>
       <h1 className="text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-tight mb-5">
-        We Find the Capacity{' '}
+        We Build the Numbers{' '}
         <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
-          Already Inside
-        </span>{' '}
-        Your Organisation
+          You Can Defend
+        </span>
       </h1>
       <p className="text-lg text-ordinal-body leading-relaxed max-w-[600px] mx-auto">
-        Based in Athens, Ensight is an operational consultancy that helps growing companies eliminate process debt — the invisible inefficiency that compounds as you scale.
+        Based in Athens. We build the costing, reporting and management information that growing companies run on — and fix the process underneath it first, so the numbers mean something.
       </p>
     </AnimatedSection>
 
