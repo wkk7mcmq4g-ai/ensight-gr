@@ -32,13 +32,20 @@ const AboutSection = () => {
           <AnimatedSection>
             <div className="space-y-5 text-[15px] text-ordinal-body leading-relaxed">
               <p>
-                Ensight is led by a senior data and technology professional with over 18 years of experience across consulting, financial services, and digital transformation.
+                Eighteen years in data and finance systems — banking risk and internal audit, Big Four IT risk,
+                institutional real estate, and a fifteen-year advisory relationship with a Greek manufacturer.
+                Warehouses, costing models, and the reporting that management actually runs on.
               </p>
               <p>
-                We specialise in designing and delivering practical, scalable systems that solve real business problems — from operational workflows and CRM platforms to advanced reporting and automation.
+                That means landed cost traced from purchase order to goods received. Activity allocated to the
+                products and customers that consume it. Metric definitions argued out and agreed, with lineage
+                back to source. And the applications and automation that keep all of it running without
+                somebody rebuilding it by hand every month.
               </p>
               <p>
-                Our approach combines strategic thinking with hands-on execution, ensuring solutions are not only well-designed but also fully implemented and adopted.
+                It also means knowing where this goes wrong. Costing models that nobody defends, dashboards
+                nobody opens, automation that made a workaround permanent. The order of the work is what
+                prevents that, and it is not negotiable.
               </p>
             </div>
           </AnimatedSection>

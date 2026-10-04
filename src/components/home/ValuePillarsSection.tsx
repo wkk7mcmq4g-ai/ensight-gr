@@ -13,7 +13,7 @@ const pillars = [
       'Metric and KPI definitions',
       'Activity-based costing and pricing analysis',
       'Management reporting and dashboards',
-      'Data consolidated from the ERP and everything outside it',
+      'Automated data flows — from the ERP and everything outside it, into reporting, without manual assembly',
       'Specification and oversight of external BI partners',
     ],
     hsl: 'hsl(var(--primary))',

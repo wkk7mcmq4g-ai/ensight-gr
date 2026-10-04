@@ -1,7 +1,6 @@
 import SEO from '@/components/SEO';
 import OpTransformHero from '@/components/home/OpTransformHero';
-import ProblemsSection from '@/components/home/ProblemsSection';
-import BeforeAfterCards from '@/components/home/BeforeAfterCards';
+import ProcessProblemsSection from '@/components/home/ProcessProblemsSection';
 import HowWeHelpSection from '@/components/home/HowWeHelpSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import EngageSection from '@/components/home/EngageSection';
@@ -11,9 +10,7 @@ const OperationalTransformation = () => (
   <>
     <SEO title="Applications &amp; Automation · Ensight" description="Custom business applications, workflow automation and system integration — built around a process that has been fixed first." path="/operational-transformation" ogImage="/og/operational-transformation.jpg" />
     <OpTransformHero />
-    <ProblemsSection />
-    <div className="h-px bg-border max-w-[1200px] mx-auto" />
-    <BeforeAfterCards />
+    <ProcessProblemsSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
     <HowWeHelpSection />
     <div className="h-px bg-border max-w-[1200px] mx-auto" />

@@ -19,21 +19,21 @@ const components = [
     desc: 'Before building anything, we need to know what we\'re building on. The Operational X-Ray is a structured diagnostic that maps your data landscape across five dimensions and produces a clear verdict: whether you\'re ready to build, what needs fixing first, or whether deeper operational work is required.',
     desc2: 'The output is not a list of problems. It is a scored profile and a specific recommended next step — with enough detail to act on immediately.',
     deliverableLabel: 'Deliverable',
-    deliverable: 'Data Readiness Report — scored framework, findings per dimension, verdict, and recommended path forward',
+    deliverable: 'X-Ray report — scored framework, findings per dimension, verdict, and the prioritised path forward',
     listTitle: 'Five scoring dimensions:',
     list: [
+      'Process Clarity — does the work follow a defined path, or is it rebuilt each time?',
       'Data Availability — does the right data exist and is it captured systematically?',
       'Data Consistency — is there a single version of truth across systems and departments?',
       'Cost Visibility — are costs allocated to clients, products, and business units?',
-      'System Integration — do key systems communicate, or is data moved manually?',
-      'Reporting Maturity — what reporting exists today and how is it used?',
+      'Systems & Reporting — do key systems communicate, and does the reporting inform decisions?',
     ],
   },
   {
     num: '02', numColor: 'text-[#10B981]', borderColor: 'border-[#10B981]',
-    tag: 'One-off project · Scope defined by Assessment', pill: 'Project fee', pillBg: 'bg-[#10B981]/10 text-[#10B981]',
+    tag: 'One-off project · Scope defined by the X-Ray', pill: 'Project fee', pillBg: 'bg-[#10B981]/10 text-[#10B981]',
     title: 'The Analytics Build',
-    desc: 'A bespoke analytics system built on a consistent methodology. The scope is defined by the Assessment — every engagement follows the same four-layer structure, but the output is tailored to your business profile, sector, and what the data can actually support.',
+    desc: 'A bespoke analytics system built on a consistent methodology. The scope is defined by the X-Ray — every engagement follows the same four-layer structure, but the output is tailored to your business profile, sector, and what the data can actually support.',
     desc2: 'We build until it\'s being used — adoption and training are built into the engagement, not bolted on at the end.',
     deliverableLabel: 'Deliverable',
     deliverable: 'Working analytics system, trained team, documentation, and handover to retainer',
@@ -43,7 +43,7 @@ const components = [
       'Commercial View — revenue and margin by client and product, trend and concentration.',
       'ABC Classification — Pareto analysis of clients and products by net profit contribution.',
       'Cost & P&L View — activity-based cost allocation producing net margin at client and product level.',
-      'Sector KPIs — business-specific operational indicators defined during the Assessment.',
+      'Sector KPIs — business-specific operational indicators defined during the X-Ray.',
     ],
   },
   {
@@ -65,11 +65,11 @@ const components = [
 ];
 
 const dimensions = [
-  { weight: '25%', title: 'Data Availability', desc: 'Does the data that matters actually exist? Is it captured systematically or reconstructed ad hoc?', score: 3 },
+  { weight: '20%', title: 'Process Clarity', desc: 'Does the work follow a defined path, or is it reconstructed each time? Where does it wait, and on whom?', score: 2 },
+  { weight: '20%', title: 'Data Availability', desc: 'Does the data that matters actually exist? Is it captured systematically or reconstructed ad hoc?', score: 3 },
   { weight: '25%', title: 'Data Consistency', desc: 'Is there a single version of truth, or do different systems produce conflicting numbers for the same metric?', score: 2 },
   { weight: '20%', title: 'Cost Visibility', desc: 'Are costs allocated to clients, products, and business units — or do they sit in undifferentiated overhead?', score: 1 },
-  { weight: '15%', title: 'System Integration', desc: 'Do key systems communicate, or is data moved manually between platforms, spreadsheets, and people?', score: 2 },
-  { weight: '15%', title: 'Reporting Maturity', desc: 'What reporting exists today, how is it produced, and does it actually inform decisions?', score: 3 },
+  { weight: '15%', title: 'Systems & Reporting', desc: 'Do key systems communicate, or is data moved by hand? What reporting exists, and does it actually inform decisions?', score: 2 },
 ];
 
 const verdicts = [
@@ -244,7 +244,7 @@ const DataClarity = () => (
             Five dimensions.<br />One clear verdict.
           </h2>
           <p className="text-base text-[#8888A0] leading-relaxed max-w-[580px] mb-14">
-            Each dimension is scored 1–4. The composite weighted score determines your Data Readiness verdict — and the specific path forward.
+            Each dimension is scored 1–4. The composite weighted score determines the verdict — and the specific path forward. The same diagnostic, whichever service you end up in.
           </p>
         </AnimatedSection>
 

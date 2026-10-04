@@ -7,7 +7,7 @@ const engagements = [
     tag: 'Recommended',
     title: 'Operational X-Ray',
     meta: '1–2 weeks · Fixed fee',
-    desc: "We embed with your team, map real workflows, quantify bottleneck costs, and deliver a prioritised roadmap. Standalone value even if you don't proceed further.",
+    desc: "We embed with your team, map how the work actually flows and what state the data behind it is in, quantify what the gaps are costing, and deliver a prioritised roadmap. Standalone value even if you do not proceed further.",
     showTag: true,
   },
   {
