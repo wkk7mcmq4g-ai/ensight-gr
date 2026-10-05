@@ -3,13 +3,14 @@ import DecorativeShapes from '@/components/DecorativeShapes';
 
 const CTASection = () => {
   const [name, setName] = useState('');
+  const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Message from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    const subject = encodeURIComponent(`Message from ${name}${company ? `, ${company}` : ''}`);
+    const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\n${message}`);
     window.location.href = `mailto:hello@ensight.gr?subject=${subject}&body=${body}`;
   };
 
@@ -18,10 +19,10 @@ const CTASection = () => {
       <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-primary-foreground [&_circle]:!stroke-primary-foreground [&_circle]:!fill-primary-foreground" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <h2 className="text-[clamp(28px,4.5vw,44px)] font-bold tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center">
-          Get in Touch
+          Tell me what you can't currently answer
         </h2>
-        <p className="text-[17px] text-primary-foreground/80 leading-relaxed max-w-[480px] mx-auto mb-10 text-center">
-          Tell us about the challenge you're working on. We'll get back to you within one business day.
+        <p className="text-[17px] text-primary-foreground/80 leading-relaxed max-w-[520px] mx-auto mb-10 text-center">
+          Or what your team is still doing by hand. I reply within one working day.
         </p>
         <form
           onSubmit={handleSubmit}
@@ -37,16 +38,23 @@ const CTASection = () => {
               className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm"
             />
             <input
+              type="text"
+              placeholder="Company"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm"
+            />
+            <input
               type="email"
               placeholder="Email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm"
+              className="sm:col-span-2 w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm"
             />
           </div>
           <textarea
-            placeholder="Tell us about your challenge..."
+            placeholder="Message"
             required
             rows={4}
             value={message}
@@ -57,7 +65,7 @@ const CTASection = () => {
             type="submit"
             className="bg-gradient-to-r from-primary to-accent-blue text-white text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:opacity-90 hover:-translate-y-1 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.35)] active:translate-y-0 transition-all duration-200 self-start"
           >
-            Send Message
+            Send
           </button>
         </form>
       </div>

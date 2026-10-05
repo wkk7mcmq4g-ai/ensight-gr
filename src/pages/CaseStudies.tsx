@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowRight, Clock, Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine } from 'lucide-react';
+import { ArrowRight, Clock, Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine, MessageSquareText } from 'lucide-react';
 import { caseStudies } from '@/data/caseStudies';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const iconMap: Record<string, React.ElementType> = {
-  Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine,
+  Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine, MessageSquareText,
 };
 
 const sectors = ['All', ...Array.from(new Set(caseStudies.map((cs) => cs.sector)))];
@@ -23,21 +23,21 @@ const CaseStudies = () => {
 
   return (
     <div className="max-w-[1000px] mx-auto px-6 pt-28 pb-20 relative">
-      <SEO title="Case Studies · Ensight" description="Costing, reporting and the systems underneath them — built so management can answer questions the business could not answer before." path="/case-studies" ogImage="/og/case-studies.jpg" />
+      <SEO title="Work · Ensight" description="Costing, reporting and automation, built so management can answer a question the business could not answer before." path="/case-studies" ogImage="/og/case-studies.jpg" />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ensight.gr/" },
-            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.ensight.gr/case-studies" }
+            { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://www.ensight.gr/case-studies" }
           ]
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Case Studies · Ensight",
-          "description": "Real results, measured in weeks.",
+          "name": "Work · Ensight",
+          "description": "Costing, reporting and automation, built so management can answer a question the business could not answer before.",
           "url": "https://www.ensight.gr/case-studies",
           "mainEntity": {
             "@type": "ItemList",
@@ -54,16 +54,16 @@ const CaseStudies = () => {
       <AnimatedSection className="text-center mb-14">
         <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
           <span className="w-[6px] h-[6px] bg-primary rounded-full" />
-          Case Studies
+          Work
         </div>
         <h1 className="text-[clamp(28px,5vw,48px)] font-bold leading-[1.1] tracking-tight mb-5">
-          Numbers they can{' '}
+          What clients can{' '}
           <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
-            finally defend
+            now answer
           </span>
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-[560px] mx-auto">
-          Costing, reporting and the systems underneath them — built so management can answer questions the business could not answer before.
+          Costing, reporting and automation, built so management can answer a question the business could not answer before.
         </p>
       </AnimatedSection>
 

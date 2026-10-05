@@ -1,92 +1,41 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import ensightLogo from '@/assets/ensight-logo.png';
 import { CONTACT_HREF } from '@/lib/contact';
 
 const navLinks = [
-  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Costing & Reporting', href: '/data-clarity' },
+  { label: 'AI & Automation', href: '/ai-automation' },
+  { label: 'Work', href: '/case-studies' },
+  { label: 'How I work', href: '/how-i-work' },
   { label: 'About', href: '/about' },
 ];
-
-const serviceOptions = [
-  { label: 'What We Do', desc: 'Insight, process, and applied AI', href: '/services' },
-  { label: 'Insight & Reporting', desc: 'Management information, costing, dashboards', href: '/data-clarity' },
-  { label: 'Applications & Automation', desc: 'Business applications and the process underneath them', href: '/operational-transformation' },
-  { label: 'What a product actually costs', desc: 'A worked example', href: '/costing' },
-];
-
 
 const Navbar = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const servicesRef = useRef<HTMLDivElement>(null);
 
-  const handleAnchorClick = (href: string) => {
-    setMobileOpen(false);
-    setServicesOpen(false);
-    const [path, hash] = href.split('#');
-    if (location.pathname === (path || '/') && hash) {
-      setTimeout(() => {
-        const el = document.getElementById(hash);
-        el?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
-  };
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
-        setServicesOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, []);
+  const isActive = (href: string) =>
+    location.pathname === href || location.pathname.startsWith(`${href}/`);
 
   return (
     <>
       <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue z-[100]" />
 
-      <nav className="fixed top-1 left-0 right-0 z-[99] px-6 md:px-12 py-4 flex justify-between items-center bg-background/90 backdrop-blur-2xl border-b border-border">
+      <nav className="fixed top-1 left-0 right-0 z-[99] px-6 lg:px-12 py-4 flex justify-between items-center bg-background/90 backdrop-blur-2xl border-b border-border">
         <Link to="/">
           <img src={ensightLogo} alt="Ensight" className="h-8" />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-7">
-          {/* Services dropdown */}
-          <div className="relative" ref={servicesRef}>
-            <button
-              onClick={() => { setServicesOpen((v) => !v); }}
-              className="inline-flex items-center gap-1 text-muted-foreground text-sm font-medium hover:text-foreground transition-colors"
-            >
-              Services
-              <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {servicesOpen && (
-              <div className="absolute left-0 top-full mt-2 w-[260px] bg-card border border-border rounded-xl shadow-xl overflow-hidden">
-                {serviceOptions.map((opt) => (
-                  <Link
-                    key={opt.href}
-                    to={opt.href}
-                    onClick={() => handleAnchorClick(opt.href)}
-                    className="block px-5 py-3.5 hover:bg-accent transition-colors no-underline border-b border-border last:border-0"
-                  >
-                    <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                    <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
+        <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               to={link.href}
-              className="text-muted-foreground text-sm font-medium hover:text-foreground transition-colors"
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              className={`text-sm font-medium hover:text-foreground transition-colors ${isActive(link.href) ? 'text-foreground' : 'text-muted-foreground'}`}
             >
               {link.label}
             </Link>
@@ -96,13 +45,13 @@ const Navbar = () => {
             href={CONTACT_HREF}
             className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 hover:-translate-y-px transition-all no-underline"
           >
-            Book an Operational X-Ray
+            Book a call
           </a>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -112,21 +61,7 @@ const Navbar = () => {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 md:hidden">
-          <div className="space-y-1">
-            <div className="text-[9px] font-medium tracking-[2px] uppercase text-muted-foreground mb-1">Services</div>
-            {serviceOptions.map((opt) => (
-              <Link
-                key={opt.href}
-                to={opt.href}
-                onClick={() => handleAnchorClick(opt.href)}
-                className="block px-4 py-3 bg-card border border-border rounded-lg no-underline"
-              >
-                <div className="text-sm font-bold text-foreground">{opt.label}</div>
-                <div className="text-[11px] text-muted-foreground">{opt.desc}</div>
-              </Link>
-            ))}
-          </div>
+        <div className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 lg:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -142,7 +77,7 @@ const Navbar = () => {
             onClick={() => setMobileOpen(false)}
             className="mt-2 block text-center text-[12px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-3 rounded-lg no-underline"
           >
-            Book an Operational X-Ray
+            Book a call
           </a>
         </div>
       )}

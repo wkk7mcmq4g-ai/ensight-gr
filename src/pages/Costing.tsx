@@ -54,14 +54,15 @@ const Costing = () => (
         headline: 'What a product actually costs',
         description:
           'Why true product and customer cost does not come out of the ERP, what the three layers are, and what has to be true before you can build it.',
-        author: { '@type': 'Organization', name: 'Ensight' },
+        author: { '@type': 'Person', name: 'George Kondylis' },
+        publisher: { '@type': 'Organization', name: 'Ensight' },
       })}</script>
     </Helmet>
 
     {/* Hero */}
     <section className="max-w-[900px] mx-auto px-6 md:px-12 pt-28 pb-12 relative overflow-hidden">
       <DecorativeShapes variant="grid" />
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">Worked example</div>
+      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">Worked example · George Kondylis</div>
       <h1 className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-5">
         What a product{' '}
         <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
@@ -254,14 +255,14 @@ const Costing = () => (
             Want to know which layer you are missing?
           </h2>
           <p className="text-[15px] text-ordinal-body leading-relaxed mb-6 max-w-[560px]">
-            An Operational X-Ray takes one to two weeks at a fixed fee, and ends with a straight answer about what
-            your data can support today and what has to change before it can support more.
+            The two-week review ends with a straight answer about what your data can support today, and what has
+            to change before it can support more.
           </p>
           <a
             href={CONTACT_HREF}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent-blue text-white font-semibold text-[15px] px-8 py-3.5 rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline"
           >
-            Book an Operational X-Ray <ArrowRight size={16} />
+            Book a call <ArrowRight size={16} />
           </a>
         </div>
       </AnimatedSection>

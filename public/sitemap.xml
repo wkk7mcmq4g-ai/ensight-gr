@@ -6,8 +6,28 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/services</loc>
+    <loc>https://ensight-gr.lovable.app/data-clarity</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/ai-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/costing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/how-i-work</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -16,9 +36,24 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://ensight-gr.lovable.app/case-studies/costing-bi-platform</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/financial-reporting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/invoice-extraction</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/governed-ai-access</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ensight-gr.lovable.app/case-studies/loan-servicing</loc>
@@ -31,33 +66,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/financial-reporting</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://ensight-gr.lovable.app/case-studies/touro-driver-ux</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ensight-gr.lovable.app/data-clarity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ensight-gr.lovable.app/data-clarity-assessment</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ensight-gr.lovable.app/operational-transformation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ensight-gr.lovable.app/assessment</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 </urlset>

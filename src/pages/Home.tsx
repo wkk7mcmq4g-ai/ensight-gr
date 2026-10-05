@@ -4,13 +4,15 @@ import HeroSection from '@/components/home/HeroSection';
 import LogoStripSection from '@/components/home/LogoStripSection';
 import ValuePillarsSection from '@/components/home/ValuePillarsSection';
 import ProblemsSection from '@/components/home/ProblemsSection';
-import BeforeYouAutomate from '@/components/home/BeforeYouAutomate';
+import HowIWorkTeaser from '@/components/home/HowIWorkTeaser';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
-import QuoteSection from '@/components/home/QuoteSection';
 import AboutSection from '@/components/home/AboutSection';
 import EngageSection from '@/components/home/EngageSection';
 import CTASection from '@/components/home/CTASection';
 import ParallaxDivider from '@/components/home/ParallaxDivider';
+
+const DESCRIPTION =
+  'I build the costing and reporting that show what each product and customer really earns, and automate the manual work between your systems.';
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -18,8 +20,12 @@ const organizationSchema = {
   "name": "Ensight",
   "url": "https://www.ensight.gr",
   "logo": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9131ee5a-adf6-4644-9666-66d96e6a8601/id-preview-d3f8e6df--80d094a5-b6ff-4e3d-9b55-194fe071745a.lovable.app-1775244958373.png",
-  "description": "Ensight builds management information mid-market businesses can trust — insight, costing and reporting, the business applications and automation that keep them running, and AI applied where it earns its place.",
+  "description": DESCRIPTION,
   "email": "hello@ensight.gr",
+  "founder": {
+    "@type": "Person",
+    "name": "George Kondylis"
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Athens",
@@ -38,7 +44,7 @@ const websiteSchema = {
 
 const Home = () => (
   <>
-    <SEO title="Ensight | Insight, Reporting & Automation for Mid-Market Teams" description="Ensight builds management information you can trust — costing, reporting, business applications and the automation that keeps them running. We fix the process before we build the technology." path="/" ogImage="/og/home.jpg" />
+    <SEO title="Ensight | Costing, reporting and AI automation for mid-sized businesses" description={DESCRIPTION} path="/" ogImage="/og/home.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
@@ -47,13 +53,12 @@ const Home = () => (
     <ParallaxDivider />
     <LogoStripSection />
     <ParallaxDivider />
+    <ValuePillarsSection />
+    <ParallaxDivider />
     <ProblemsSection />
     <ParallaxDivider />
-    <ValuePillarsSection />
-    <BeforeYouAutomate />
-    <ParallaxDivider />
     <SelectedWorkSection />
-    <QuoteSection />
+    <HowIWorkTeaser />
     <ParallaxDivider />
     <AboutSection />
     <ParallaxDivider />

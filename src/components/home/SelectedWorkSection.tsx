@@ -15,7 +15,7 @@ const SelectedWorkSection = ({
   ids,
   eyebrow = 'Selected Work',
   heading = 'What clients can now answer',
-  lead = 'The test is not how much time was saved. It is whether the management team can answer a question the business could not answer before.',
+  lead = 'The test is not how much time was saved. It is whether management can answer a question the business could not answer before.',
 }: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="work">
     <AnimatedSection>

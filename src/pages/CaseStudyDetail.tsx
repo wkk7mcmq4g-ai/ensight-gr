@@ -21,7 +21,7 @@ const CaseStudyDetail = () => {
       <div className="max-w-[720px] mx-auto px-6 pt-28 pb-20 text-center">
         <h1 className="text-2xl font-bold mb-4">Case Study Not Found</h1>
         <Link to="/case-studies" className="text-primary hover:underline">
-          ← Back to Case Studies
+          ← Back to Work
         </Link>
       </div>
     );
@@ -32,7 +32,7 @@ const CaseStudyDetail = () => {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` },
-      { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": `${BASE_URL}/case-studies` },
+      { "@type": "ListItem", "position": 2, "name": "Work", "item": `${BASE_URL}/case-studies` },
       { "@type": "ListItem", "position": 3, "name": cs.title, "item": `${BASE_URL}/case-studies/${cs.id}` },
     ],
   };
@@ -55,7 +55,7 @@ const CaseStudyDetail = () => {
           to="/case-studies"
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
-          <ArrowLeft size={14} /> All Case Studies
+          <ArrowLeft size={14} /> All work
         </Link>
 
         <div className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg mb-8 relative overflow-hidden">
@@ -114,7 +114,7 @@ const CaseStudyDetail = () => {
 
       {/* Approach — Visual Timeline */}
       <AnimatedSection className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-8 mb-5">
-        <h2 className="text-lg font-semibold mb-6">Our Approach</h2>
+        <h2 className="text-lg font-semibold mb-6">Approach</h2>
         <div className="relative pl-8">
           {/* Vertical line */}
           <div className="absolute left-[11px] top-1 bottom-1 w-[2px] bg-gradient-to-b from-primary to-accent-blue rounded-full" />
@@ -193,15 +193,15 @@ const CaseStudyDetail = () => {
       {/* CTA */}
       <AnimatedSection className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-10 text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
-        <h3 className="text-[22px] font-bold mb-3">See What's Hiding in Your Operations</h3>
+        <h3 className="text-[22px] font-bold mb-3">Have a question your numbers can't answer?</h3>
         <p className="text-[15px] text-muted-foreground leading-relaxed mb-6 max-w-[440px] mx-auto">
-          Book an Operational X-Ray to get the full picture of where your process debt sits.
+          Tell me what it is. A first call takes thirty minutes and costs nothing.
         </p>
         <a
           href={CONTACT_HREF}
           className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-lg shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
         >
-          Book an Operational X-Ray
+          Book a call
         </a>
       </AnimatedSection>
     </div>

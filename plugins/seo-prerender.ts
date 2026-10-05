@@ -16,18 +16,28 @@ interface RouteMeta {
 
 const routes: Record<string, RouteMeta> = {
   '/': {
-    title: 'Ensight | Insight, Reporting & Automation for Mid-Market Teams',
-    description: 'Ensight builds management information you can trust — costing, reporting, business applications and the automation that keep them running. We fix the process before we build the technology.',
+    title: 'Ensight | Costing, reporting and AI automation for mid-sized businesses',
+    description: 'I build the costing and reporting that show what each product and customer really earns, and automate the manual work between your systems.',
     ogImage: '/og/home.jpg',
   },
   '/about': {
-    title: 'About Ensight | Numbers You Can Defend',
-    description: 'Eighteen years in data, costing and finance systems. We build management information businesses can defend \u2014 and fix the process underneath it first.',
+    title: 'About | Ensight',
+    description: 'George Kondylis: eighteen years in data, costing and finance systems, from bank audit to a seventeen-year advisory relationship with a Greek manufacturer.',
     ogImage: '/og/about.jpg',
   },
-  '/services': {
-    title: 'Services | Ensight',
-    description: 'Insight and reporting, process and automation, and AI applied where it earns its place \u2014 for mid-market businesses.',
+  '/data-clarity': {
+    title: 'Costing & Reporting | Ensight',
+    description: 'Product and customer margin, one definition per metric, and a month-end pack that assembles itself.',
+    ogImage: '/og/data-clarity.jpg',
+  },
+  '/ai-automation': {
+    title: 'AI & Automation | Ensight',
+    description: 'Invoices read instead of retyped, approvals with a record, and plain-language answers from your own data, with a person approving anything that posts or pays.',
+    ogImage: '/og/operational-transformation.jpg',
+  },
+  '/how-i-work': {
+    title: 'How I work | Ensight',
+    description: 'Process first, technology second: four stages, and a guarantee with a cost attached.',
     ogImage: '/og/services.jpg',
   },
   '/costing': {
@@ -36,8 +46,8 @@ const routes: Record<string, RouteMeta> = {
     ogImage: '/og/services.jpg',
   },
   '/case-studies': {
-    title: 'Case Studies | Ensight',
-    description: 'Costing, reporting and the systems underneath them \u2014 built so management can answer questions the business could not answer before.',
+    title: 'Work | Ensight',
+    description: 'Costing, reporting and automation, built so management can answer a question the business could not answer before.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/costing-bi-platform': {
@@ -45,9 +55,19 @@ const routes: Record<string, RouteMeta> = {
     description: 'A costing model and reporting layer built on SoftOne — margin visible by product, customer and channel.',
     ogImage: '/og/case-studies.jpg',
   },
+  '/case-studies/financial-reporting': {
+    title: 'One Set of Numbers | Ensight Case Study',
+    description: 'A governed reporting layer for an institutional portfolio — one agreed definition per metric, with lineage back to source.',
+    ogImage: '/og/case-studies.jpg',
+  },
   '/case-studies/invoice-extraction': {
     title: 'Invoices the Machine Reads | Ensight Case Study',
     description: 'AI extraction pulling supplier invoices into the finance system structured and consistent \u2014 with a person approving every posting.',
+    ogImage: '/og/case-studies.jpg',
+  },
+  '/case-studies/governed-ai-access': {
+    title: 'Ask the Data | Ensight Case Study',
+    description: 'Plain-language access to live portfolio, finance and spend data, with every query scoped and logged.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/loan-servicing': {
@@ -57,28 +77,13 @@ const routes: Record<string, RouteMeta> = {
   },
   '/case-studies/charity-crm': {
     title: 'Charity CRM System | Ensight Case Study',
-    description: 'Unified platform for programme management, compliance, and reporting across a national charity.',
-    ogImage: '/og/case-studies.jpg',
-  },
-  '/case-studies/financial-reporting': {
-    title: 'One Set of Numbers | Ensight Case Study',
-    description: 'A governed reporting layer for an institutional portfolio, plus AI invoice extraction into the finance system \u2014 one agreed definition per metric, with lineage back to source.',
+    description: 'Unified platform for programme management, compliance, and reporting across a national charity. Built pro bono.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/touro-driver-ux': {
-    title: 'Touro \u2014 Driver UX Redesign | Ensight Case Study',
-    description: 'Mobile-first, card-based interface that reduced cognitive load and improved operational reliability.',
+    title: 'Touro: the app my drivers work from | Ensight Case Study',
+    description: 'A mobile-first redesign of the driver screen at my own transfer company, built for a phone on the move.',
     ogImage: '/og/case-studies.jpg',
-  },
-  '/data-clarity': {
-    title: 'Insight & Reporting | Ensight',
-    description: 'Costing, reporting and management information you can defend \u2014 one definition per number, margin visible by product and customer.',
-    ogImage: '/og/data-clarity.jpg',
-  },
-  '/operational-transformation': {
-    title: 'Applications & Automation | Ensight',
-    description: 'Custom business applications, workflow automation and system integration \u2014 built around a process that has been fixed first.',
-    ogImage: '/og/operational-transformation.jpg',
   },
 };
 

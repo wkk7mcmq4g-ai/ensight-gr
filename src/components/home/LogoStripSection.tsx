@@ -1,21 +1,19 @@
 import logoHms from "@/assets/logo-hms.png";
 import logoQsix from "@/assets/logo-qsix.png";
 import logoLoux from "@/assets/logo-loux.png";
-import logoMat from "@/assets/logo-myathenstransfers.png";
 import logoVm from "@/assets/logo-volunteering-matters.png";
 
 const logos = [
-  { src: logoHms, alt: "HMS", className: "h-7 md:h-8" },
-  { src: logoQsix, alt: "QSIX", className: "h-8 md:h-9" },
   { src: logoLoux, alt: "Loux", className: "h-10 md:h-12" },
-  { src: logoMat, alt: "myAthensTransfers", className: "h-5 md:h-6" },
+  { src: logoQsix, alt: "QSIX", className: "h-8 md:h-9" },
+  { src: logoHms, alt: "HMS", className: "h-7 md:h-8" },
   { src: logoVm, alt: "Volunteering Matters", className: "h-5 md:h-6" },
 ];
 
 const LogoStripSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-12">
     <p className="text-[11px] font-medium tracking-[2px] uppercase text-ordinal-dim text-center mb-8">
-      Trusted by teams across consumer goods, financial services, non-profits, and professional services
+      Where this work has been done
     </p>
     <div className="flex items-center justify-center gap-10 md:gap-14 flex-wrap">
       {logos.map((logo, i) => (
