@@ -7,6 +7,7 @@ import DarkHero from '@/components/sections/DarkHero';
 import { heroPrimaryButton, heroSecondaryButton } from '@/components/sections/buttonStyles';
 import ClosingCTA from '@/components/sections/ClosingCTA';
 import SectionHeading from '@/components/sections/SectionHeading';
+import DataLayerSection from '@/components/sections/DataLayerSection';
 import { CONTACT_HREF } from '@/lib/contact';
 
 const TITLE = 'Costing & Reporting · Ensight';
@@ -145,6 +146,10 @@ const DataClarity = () => (
         </Link>
       </AnimatedSection>
     </section>
+
+    {/* The data layer */}
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <DataLayerSection lead="A costing model is only as good as the data it stands on. These are the four layers I build to get from ERP transactions to a margin figure you can defend, and I have run them in production for a manufacturer and an institutional asset manager." />
 
     {/* How it runs */}
     <div className="h-px bg-border max-w-[1200px] mx-auto" />

@@ -5,6 +5,7 @@ import LogoStripSection from '@/components/home/LogoStripSection';
 import ValuePillarsSection from '@/components/home/ValuePillarsSection';
 import ProblemsSection from '@/components/home/ProblemsSection';
 import HowIWorkTeaser from '@/components/home/HowIWorkTeaser';
+import DataLayerSection from '@/components/sections/DataLayerSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import AboutSection from '@/components/home/AboutSection';
 import EngageSection from '@/components/home/EngageSection';
@@ -54,6 +55,8 @@ const Home = () => (
     <LogoStripSection />
     <ParallaxDivider />
     <ValuePillarsSection />
+    <ParallaxDivider />
+    <DataLayerSection />
     <ParallaxDivider />
     <ProblemsSection />
     <ParallaxDivider />
