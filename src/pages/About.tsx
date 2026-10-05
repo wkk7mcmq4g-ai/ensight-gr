@@ -101,9 +101,6 @@ const About = () => (
         <p>
           Since 2009 I have advised Loux, a Greek soft-drinks manufacturer, on costing, pricing and reporting, including its move to SoftOne. Since 2018 I have run data and business applications for QSix, an institutional real estate manager in London and Berlin. There I built the data warehouse, the reporting platform, and the firm's AI tooling and policy.
         </p>
-        <p>
-          I also run a transfers company in Athens, so I know what it is to be the owner waiting for a number.
-        </p>
       </div>
       <div className="mt-6 pt-5 border-t border-border text-[13px] text-ordinal-dim">
         MSc, University of Warwick · BSc Computer Science, Lancaster University
