@@ -81,8 +81,8 @@ const routes: Record<string, RouteMeta> = {
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/touro-driver-ux': {
-    title: 'Touro: the app my drivers work from | Ensight Case Study',
-    description: 'A mobile-first redesign of the driver screen at my own transfer company, built for a phone on the move.',
+    title: 'Touro: the app the drivers work from | Ensight Case Study',
+    description: 'A mobile-first redesign of the driver screen at an Athens transfer company, built for a phone on the move.',
     ogImage: '/og/case-studies.jpg',
   },
 };

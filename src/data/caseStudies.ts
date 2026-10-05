@@ -201,14 +201,14 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'touro-driver-ux',
-    sector: 'My Own Company',
+    sector: 'Transfers Company',
     client: 'myAthensTransfers',
     clientLogo: logoMyAthens,
-    title: 'Touro: the app my drivers work from',
-    subtitle: 'A mobile-first redesign of the driver screen at my own transfer company, built for a phone on the move.',
+    title: 'Touro: the app the drivers work from',
+    subtitle: 'A mobile-first redesign of the driver screen at an Athens transfer company, built for a phone on the move.',
     outcome: 'Drivers went from squinting at dense tables to glancing at clear, card-based summaries — reducing cognitive load, speeding up pickups, and cutting down on dispatch calls. The new interface brought real-time reliability to field operations.',
     challenge:
-      'I run myAthensTransfers, an airport and port transfer company in Athens. The driver screen had grown with the business and was never designed for a phone on the move. Passenger names, pickup times and flight numbers sat in dense tables that were hard to scan between jobs, so drivers missed details and called dispatch to check them.',
+      'myAthensTransfers is an airport and port transfer company in Athens. The driver screen had grown with the business and was never designed for a phone on the move. Passenger names, pickup times and flight numbers sat in dense tables that were hard to scan between jobs, so drivers missed details and called dispatch to check them.',
     approach: [
       'Watched how drivers actually used the screen during live jobs',
       'Redesigned the layout mobile-first, around cards with an at-a-glance summary of each transfer',
