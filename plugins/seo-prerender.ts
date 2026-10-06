@@ -16,8 +16,8 @@ interface RouteMeta {
 
 const routes: Record<string, RouteMeta> = {
   '/': {
-    title: 'Ensight | Costing, reporting and AI automation for mid-sized businesses',
-    description: 'I build the costing and reporting that show what each product and customer really earns, and automate the manual work between your systems.',
+    title: 'Ensight | Data, reporting and AI automation for mid-sized businesses',
+    description: 'I build the data and reporting that show what each product and customer really earns, and automate the manual work between your systems.',
     ogImage: '/og/home.jpg',
   },
   '/about': {
@@ -26,8 +26,8 @@ const routes: Record<string, RouteMeta> = {
     ogImage: '/og/about.jpg',
   },
   '/data-clarity': {
-    title: 'Costing & Reporting | Ensight',
-    description: 'Product and customer margin, one definition per metric, and a month-end pack that assembles itself.',
+    title: 'Data & Reporting | Ensight',
+    description: 'A data warehouse and management reporting on your ERP: customer and product margin, one definition per metric, and a month-end pack that assembles itself.',
     ogImage: '/og/data-clarity.jpg',
   },
   '/ai-automation': {
@@ -47,7 +47,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/case-studies': {
     title: 'Work | Ensight',
-    description: 'Costing, reporting and automation, built so management can answer a question the business could not answer before.',
+    description: 'Data, reporting and automation, built so management can answer a question the business could not answer before.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/costing-bi-platform': {

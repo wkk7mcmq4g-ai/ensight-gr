@@ -47,7 +47,7 @@ const HeroSection = () => {
             className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed max-w-[600px] mb-6"
             style={{ y: noMotion ? 0 : subtitleY }}
           >
-            Most companies know what they sold. Few know what each product and each customer earns once it has been made, moved and served. I build the costing and reporting that answer that, and I automate the manual work that sits between your systems and your numbers.
+            Most companies know what they sold. Few know what each product and each customer earns once it has been made, moved and served. I build the data and reporting that answer that, and I automate the manual work that sits between your systems and your numbers.
           </motion.p>
 
           <motion.div className="flex gap-3 flex-wrap items-center" style={{ y: noMotion ? 0 : ctaY }}>

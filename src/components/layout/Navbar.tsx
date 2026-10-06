@@ -5,7 +5,7 @@ import ensightLogo from '@/assets/ensight-logo.png';
 import { CONTACT_HREF } from '@/lib/contact';
 
 const navLinks = [
-  { label: 'Costing & Reporting', href: '/data-clarity' },
+  { label: 'Data & Reporting', href: '/data-clarity' },
   { label: 'AI & Automation', href: '/ai-automation' },
   { label: 'Work', href: '/case-studies' },
   { label: 'How I work', href: '/how-i-work' },

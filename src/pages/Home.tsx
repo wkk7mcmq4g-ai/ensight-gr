@@ -13,7 +13,7 @@ import CTASection from '@/components/home/CTASection';
 import ParallaxDivider from '@/components/home/ParallaxDivider';
 
 const DESCRIPTION =
-  'I build the costing and reporting that show what each product and customer really earns, and automate the manual work between your systems.';
+  'I build the data and reporting that show what each product and customer really earns, and automate the manual work between your systems.';
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@ const websiteSchema = {
 
 const Home = () => (
   <>
-    <SEO title="Ensight | Costing, reporting and AI automation for mid-sized businesses" description={DESCRIPTION} path="/" ogImage="/og/home.jpg" />
+    <SEO title="Ensight | Data, reporting and AI automation for mid-sized businesses" description={DESCRIPTION} path="/" ogImage="/og/home.jpg" />
     <Helmet>
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>

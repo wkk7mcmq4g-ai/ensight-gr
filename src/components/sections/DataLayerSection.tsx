@@ -36,7 +36,7 @@ type Props = {
 
 /** The four-layer data stack that both services are built on. The order is the direction the data flows. */
 const DataLayerSection = ({
-  lead = 'Costing, reporting and automation all rest on the same four layers. I design and build each of them, and have run them in production for a manufacturer and an institutional asset manager.',
+  lead = 'Reporting, costing and automation all rest on the same four layers. I design and build each of them, and have run them in production for a manufacturer and an institutional asset manager.',
 }: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="data-layer">
     <AnimatedSection>

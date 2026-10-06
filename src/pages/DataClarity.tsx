@@ -1,7 +1,7 @@
 import SEO from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Package, Users, GitCompare, CalendarCheck, type LucideIcon } from 'lucide-react';
+import { ArrowRight, Users, GitCompare, CalendarCheck, TrendingUp, type LucideIcon } from 'lucide-react';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
 import DarkHero from '@/components/sections/DarkHero';
 import { heroPrimaryButton, heroSecondaryButton } from '@/components/sections/buttonStyles';
@@ -10,15 +10,15 @@ import SectionHeading from '@/components/sections/SectionHeading';
 import DataLayerSection from '@/components/sections/DataLayerSection';
 import { CONTACT_HREF } from '@/lib/contact';
 
-const TITLE = 'Costing & Reporting · Ensight';
+const TITLE = 'Data & Reporting · Ensight';
 const DESCRIPTION =
-  'Product and customer margin, one definition per metric, and a month-end pack that assembles itself.';
+  'A data warehouse and management reporting on your ERP: customer and product margin, one definition per metric, and a month-end pack that assembles itself.';
 
-const outcomes: { icon: LucideIcon; title: string; desc: string; hsl: string }[] = [
-  { icon: Package, title: 'Cost per product', desc: 'Landed cost from purchase order to goods received, then production and handling allocated by what actually drives them.', hsl: 'hsl(var(--primary))' },
-  { icon: Users, title: 'Profit per customer', desc: 'Delivery, order handling, returns, rebates and payment terms charged to the customer who causes them.', hsl: 'hsl(var(--accent-blue))' },
-  { icon: GitCompare, title: 'One set of definitions', desc: 'Each metric defined once, agreed by the people who use it, and traceable to its source.', hsl: 'hsl(var(--primary))' },
-  { icon: CalendarCheck, title: 'A pack that builds itself', desc: 'Reporting fed from the ERP and the systems around it, ready at month end without manual assembly.', hsl: 'hsl(var(--accent-blue))' },
+const questions: { icon: LucideIcon; question: string; title: string; desc: string; hsl: string }[] = [
+  { icon: Users, question: 'Which customers and products make money?', title: 'Customer and product profitability', desc: 'Landed cost first, then production, delivery, returns, rebates and payment terms charged to the product or customer that causes them.', hsl: 'hsl(var(--primary))' },
+  { icon: GitCompare, question: 'Which of these two numbers is right?', title: 'One agreed set of numbers', desc: 'Each metric defined once, agreed by the people who use it, and traceable to its source.', hsl: 'hsl(var(--accent-blue))' },
+  { icon: CalendarCheck, question: 'Why does month end take a week?', title: 'A pack that builds itself', desc: 'Reporting fed from the ERP and the systems around it, ready at month end without manual assembly.', hsl: 'hsl(var(--primary))' },
+  { icon: TrendingUp, question: 'How are sales, stock and cash moving?', title: 'Sales, stock and cash reporting', desc: 'By customer, product and channel, against last year and budget, refreshed automatically.', hsl: 'hsl(var(--accent-blue))' },
 ];
 
 const stages = [
@@ -40,7 +40,7 @@ const stages = [
     num: '02',
     tag: 'Project · Scoped from the review',
     title: 'The build',
-    desc: 'A costing model and reporting layer on your ERP. Training is part of the work, and I stay until it is in use.',
+    desc: 'A data warehouse and reporting layer on your ERP, with a costing model where the data supports it. Training is part of the work, and I stay until it is in use.',
     listTitle: 'What gets built',
     list: [
       'A company view of revenue, margin, volume and cost',
@@ -84,7 +84,7 @@ const DataClarity = () => (
       <script type="application/ld+json">{JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Service',
-        name: 'Costing & Reporting',
+        name: 'Data & Reporting',
         description: DESCRIPTION,
         url: 'https://www.ensight.gr/data-clarity',
         provider: { '@type': 'Organization', name: 'Ensight', url: 'https://www.ensight.gr' },
@@ -92,14 +92,14 @@ const DataClarity = () => (
     </Helmet>
 
     <DarkHero
-      eyebrow="Costing & Reporting"
+      eyebrow="Data & Reporting"
       headline={
         <>
           Revenue is easy to see.{' '}
           <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">Margin isn't.</span>
         </>
       }
-      subhead="Your ERP records every transaction and still cannot say what a product costs to make and move, or what a customer earns after delivery, rebates and terms. I build the costing model and the reporting layer that answer both, on the systems you already run."
+      subhead="Your ERP records every transaction and still cannot say what a customer earns, why margin moved, or which of two reports is right. I build the data warehouse, the definitions and the reporting that answer those, on the systems you already run."
     >
       <a href={CONTACT_HREF} className={heroPrimaryButton}>Book a call</a>
       <Link to="/costing" className={heroSecondaryButton}>See the worked example</Link>
@@ -107,9 +107,9 @@ const DataClarity = () => (
 
     {/* What you get */}
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="what-you-get">
-      <SectionHeading eyebrow="What You Get" heading="Four things you can't see today" />
+      <SectionHeading eyebrow="What You Get" heading="Four questions you will be able to answer" />
       <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {outcomes.map((o) => (
+        {questions.map((o) => (
           <StaggerItem key={o.title}>
             <div className="bg-card border border-border rounded-lg p-7 relative overflow-hidden shadow-sm h-full">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
@@ -119,7 +119,8 @@ const DataClarity = () => (
               >
                 <o.icon size={20} strokeWidth={1.5} />
               </div>
-              <h3 className="text-base font-bold mb-1.5">{o.title}</h3>
+              <h3 className="text-lg font-semibold mb-1 leading-snug">{o.question}</h3>
+              <p className="text-sm font-medium text-primary mb-2">{o.title}</p>
               <p className="text-sm text-ordinal-body leading-relaxed">{o.desc}</p>
             </div>
           </StaggerItem>
@@ -133,7 +134,7 @@ const DataClarity = () => (
       <AnimatedSection className="max-w-[720px]">
         <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">The Gap</div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-5">
-          Why the ERP can't answer it
+          Why the ERP can't answer the margin question
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed mb-6">
           An ERP is a record of transactions. It does not hold a model of which costs follow volume, which follow order count and which follow one difficult customer. So the standard report stops at gross margin and spreads everything else evenly.
@@ -149,7 +150,7 @@ const DataClarity = () => (
 
     {/* The data layer */}
     <div className="h-px bg-border max-w-[1200px] mx-auto" />
-    <DataLayerSection lead="A costing model is only as good as the data it stands on. These are the four layers I build to get from ERP transactions to a margin figure you can defend, and I have run them in production for a manufacturer and an institutional asset manager." />
+    <DataLayerSection lead="Reporting is only as good as the data it stands on. These are the four layers I build to get from ERP transactions to a figure you can defend, and I have run them in production for a manufacturer and an institutional asset manager." />
 
     {/* How it runs */}
     <div className="h-px bg-border max-w-[1200px] mx-auto" />

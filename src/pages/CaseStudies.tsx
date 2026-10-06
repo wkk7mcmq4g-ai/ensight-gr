@@ -23,7 +23,7 @@ const CaseStudies = () => {
 
   return (
     <div className="max-w-[1000px] mx-auto px-6 pt-28 pb-20 relative">
-      <SEO title="Work · Ensight" description="Costing, reporting and automation, built so management can answer a question the business could not answer before." path="/case-studies" ogImage="/og/case-studies.jpg" />
+      <SEO title="Work · Ensight" description="Data, reporting and automation, built so management can answer a question the business could not answer before." path="/case-studies" ogImage="/og/case-studies.jpg" />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -37,7 +37,7 @@ const CaseStudies = () => {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Work · Ensight",
-          "description": "Costing, reporting and automation, built so management can answer a question the business could not answer before.",
+          "description": "Data, reporting and automation, built so management can answer a question the business could not answer before.",
           "url": "https://www.ensight.gr/case-studies",
           "mainEntity": {
             "@type": "ItemList",
@@ -63,7 +63,7 @@ const CaseStudies = () => {
           </span>
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-[560px] mx-auto">
-          Costing, reporting and automation, built so management can answer a question the business could not answer before.
+          Data, reporting and automation, built so management can answer a question the business could not answer before.
         </p>
       </AnimatedSection>
 

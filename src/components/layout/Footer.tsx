@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import ensightLogo from '@/assets/ensight-logo.png';
 
 const links = [
-  { label: 'Costing & Reporting', href: '/data-clarity' },
+  { label: 'Data & Reporting', href: '/data-clarity' },
   { label: 'AI & Automation', href: '/ai-automation' },
   { label: 'Work', href: '/case-studies' },
   { label: 'How I work', href: '/how-i-work' },

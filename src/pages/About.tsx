@@ -84,7 +84,7 @@ const About = () => (
         </span>
       </h1>
       <p className="text-lg text-ordinal-body leading-relaxed max-w-[600px] mx-auto">
-        Ensight is my consulting practice, based in Athens. I work with mid-sized companies on costing, reporting and the automation that keeps both running.
+        Ensight is my consulting practice, based in Athens. I work with mid-sized companies on data, reporting and the automation that keeps both running.
       </p>
     </AnimatedSection>
 
