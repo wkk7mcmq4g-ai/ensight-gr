@@ -1,3 +1,4 @@
+import { englishPath, greekPath, isGreekPath, translatedPaths } from '@/lib/languages';
 import { Helmet } from 'react-helmet-async';
 
 const BASE_URL = 'https://www.ensight.gr';
@@ -15,6 +16,13 @@ const SEO = ({ title, description, path = '', ogImage }: SEOProps) => {
   const image = ogImage ? `${BASE_URL}${ogImage}` : DEFAULT_OG_IMAGE;
   return (
     <Helmet>
+      <html lang={isGreekPath(path) ? "el" : "en"} />
+      <meta property="og:locale" content={isGreekPath(path) ? "el_GR" : "en_GB"} />
+      {translatedPaths.includes(englishPath(path || "/")) && [
+        <link key="en" rel="alternate" hrefLang="en" href={BASE_URL + englishPath(path || "/")} />,
+        <link key="el" rel="alternate" hrefLang="el" href={BASE_URL + greekPath(englishPath(path || "/"))} />,
+        <link key="default" rel="alternate" hrefLang="x-default" href={BASE_URL + englishPath(path || "/")} />,
+      ]}
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />

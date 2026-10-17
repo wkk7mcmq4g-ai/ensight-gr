@@ -1,3 +1,5 @@
+import { greekPages, greekCaseContent } from '../src/data/greekPages';
+import { translatedPaths, englishPath, greekPath, isGreekPath } from '../src/lib/languages';
 /**
  * Vite plugin: generates static HTML shells for each route at build time
  * so social-media crawlers see correct OG / Twitter meta tags without JS.
@@ -102,6 +104,10 @@ const routes: Record<string, RouteMeta> = {
   },
 };
 
+routes['/el'] = { title: 'Ensight | Δεδομένα, εφαρμογές και αυτοματισμοί', description: 'Αξιόπιστη πληροφόρηση, επιχειρησιακές εφαρμογές και AI που βοηθούν την ομάδα σας να αποφασίζει και να δουλεύει καλύτερα.' };
+for (const page of greekPages) routes['/el' + page.path] = { title: page.title, description: page.intro };
+for (const [id, page] of Object.entries(greekCaseContent)) routes['/el/case-studies/' + id] = { title: page.title + ' | Ensight', description: page.intro, ogImage: '/og/case-studies.jpg' };
+
 function buildMetaHtml(routePath: string, meta: RouteMeta): string {
   const canonical = `${BASE_URL}${routePath === '/' ? '' : routePath}`;
   const image = meta.ogImage ? `${BASE_URL}${meta.ogImage}` : DEFAULT_OG_IMAGE;
@@ -152,7 +158,14 @@ export default function seoPrerender() {
         }
 
         // Inject correct meta into the real SPA shell
-        let html = indexHtml;
+        let html = indexHtml.replace(/<html([^>]*?)lang="[^"]*"/, '<html$1lang="' + (isGreekPath(routePath) ? 'el' : 'en') + '"');
+        const equivalent = englishPath(routePath);
+        if (translatedPaths.includes(equivalent)) {
+          const alternate = '<link rel="alternate" hreflang="en" href="' + BASE_URL + equivalent + '" />\n' +
+            '<link rel="alternate" hreflang="el" href="' + BASE_URL + greekPath(equivalent) + '" />\n' +
+            '<link rel="alternate" hreflang="x-default" href="' + BASE_URL + equivalent + '" />';
+          html = html.replace('</head>', alternate + '\n</head>');
+        }
         html = html.replace(
           /<title>[^<]*<\/title>/,
           `<title>${meta.title}</title>`
