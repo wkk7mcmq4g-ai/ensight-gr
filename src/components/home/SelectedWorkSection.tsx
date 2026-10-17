@@ -70,7 +70,7 @@ const SelectedWorkSection = ({
       ))}
     </StaggerChildren>
     <div className="flex flex-wrap gap-x-8 gap-y-3 mt-6">
-    <Link to="/case-studies/costing-bi-platform#loux-demo" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Watch the Loux Business Insights demo · 43 seconds <ArrowRight size={14} /></Link>
+    <Link to="/case-studies/loux-softone-bi#loux-demo" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Watch the Loux Business Insights demo · 43 seconds <ArrowRight size={14} /></Link>
     <Link to="/case-studies/fhl-entersoft-reporting#fhl-demo" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Watch the FHL reporting demo · 36 seconds <ArrowRight size={14} /></Link>
     </div>
   </section>

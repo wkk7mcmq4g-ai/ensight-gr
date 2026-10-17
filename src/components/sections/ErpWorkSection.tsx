@@ -20,15 +20,15 @@ const builds = [
     platform: 'SoftOne',
     client: 'Loux',
     context: 'Soft-drinks manufacturer and distributor',
-    question: 'Who do we call today, and is a tight week coming?',
-    body: 'The receivables team starts the day on one screen, built on the SoftOne system they already run.',
+    question: 'What changed against last year, and who do we call today?',
+    body: 'One application beside SoftOne for management, sales, finance and operations. It reads the ERP and never writes to it.',
     points: [
-      'Who owes what and since when, and who to call today',
-      'Reminder emails prepared in Outlook from the selected invoices',
-      'A shared activity calendar and full history for every customer',
-      'Receipts, payments and cheques coming up, week by week',
+      'Sales against the same days last year, at any level',
+      'Profit per customer and item, down to profit before tax',
+      'Stock after open orders, and how long it will last',
+      'Balances, Outlook reminders and a weekly cash plan',
     ],
-    href: '/case-studies/softone-receivables-cash',
+    href: '/case-studies/loux-softone-bi',
   },
 ];
 

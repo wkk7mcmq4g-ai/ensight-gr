@@ -55,9 +55,9 @@ const routes: Record<string, RouteMeta> = {
     description: 'A reporting layer on Entersoft for a white marble producer that ships worldwide: what each customer owes, every open order, and the numbers behind them.',
     ogImage: '/og/case-studies.jpg',
   },
-  '/case-studies/softone-receivables-cash': {
-    title: 'One Screen for Receivables and Cash | Ensight Case Study',
-    description: 'A receivables and cash application on SoftOne: who to call today, what falls due next, and the tight week before it arrives.',
+  '/case-studies/loux-softone-bi': {
+    title: 'Business Intelligence Beside SoftOne | Ensight Case Study',
+    description: 'Sales, profitability, orders and stock, receivables, cash and P&L in one Greek-language application that reads SoftOne and never writes to it.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/costing-bi-platform': {

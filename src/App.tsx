@@ -28,6 +28,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
+            <Route path="/case-studies/softone-receivables-cash" element={<Navigate to="/case-studies/loux-softone-bi" replace />} />
             <Route path="/data-clarity" element={<DataClarity />} />
             <Route path="/ai-automation" element={<AiAutomation />} />
             <Route path="/how-i-work" element={<HowIWork />} />

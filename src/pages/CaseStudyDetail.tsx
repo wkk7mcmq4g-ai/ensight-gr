@@ -135,11 +135,11 @@ const CaseStudyDetail = () => {
         </section>
       )}
 
-      {cs.id === 'costing-bi-platform' && (
+      {cs.id === 'loux-softone-bi' && (
         <section id="loux-demo" aria-labelledby="loux-demo-title" className="scroll-mt-24 bg-card border border-border rounded-lg p-6 md:p-8 mb-8">
           <h2 id="loux-demo-title" className="text-lg font-semibold mb-2">Watch Business Insights on SoftOne</h2>
           <p id="loux-demo-description" className="text-sm text-muted-foreground leading-relaxed mb-5">
-            A 43-second demonstration of Business Insights, related to the Loux BI work: management summaries, sales comparisons, stock, customer discounts and cash planning. Greek interface and on-screen captions, using demonstration data.
+            A 43-second demonstration of the same application, shown with invented data and neutral Business Insights branding: management summaries, sales comparisons, stock, customer discounts and cash planning. Greek interface with on-screen captions.
           </p>
           <video
             controls
