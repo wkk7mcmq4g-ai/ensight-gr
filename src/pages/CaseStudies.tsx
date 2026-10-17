@@ -3,12 +3,14 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from '@/components/home/AnimatedSection';
-import { ArrowRight, Clock, Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine, MessageSquareText } from 'lucide-react';
+import { ArrowRight, Clock, Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine, MessageSquareText, Factory, Wallet } from 'lucide-react';
+import PlatformPanel from '@/components/sections/PlatformPanel';
+import ClientMark from '@/components/sections/ClientMark';
 import { caseStudies } from '@/data/caseStudies';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const iconMap: Record<string, React.ElementType> = {
-  Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine, MessageSquareText,
+  Landmark, Heart, BarChart3, MapPin, Calculator, ScanLine, MessageSquareText, Factory, Wallet,
 };
 
 const sectors = ['All', ...Array.from(new Set(caseStudies.map((cs) => cs.sector)))];
@@ -95,7 +97,11 @@ const CaseStudies = () => {
               >
                 {/* Image */}
                 <div className="h-40 overflow-hidden">
-                  <img src={cs.image} alt={cs.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width={800} height={512} />
+                  {cs.image ? (
+                    <img src={cs.image} alt={cs.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width={800} height={512} />
+                  ) : (
+                    <PlatformPanel platform={cs.platform ?? cs.sector} client={cs.client} />
+                  )}
                 </div>
                 <div className="p-7">
                   <div className="flex items-center justify-between mb-4">
@@ -116,8 +122,8 @@ const CaseStudies = () => {
                   </div>
 
                   {/* Client logo */}
-                  <div className="mb-3 flex items-center" style={{ height: `${2 * (cs.logoScale ?? 1)}rem` }}>
-                    <img src={cs.clientLogo} alt={cs.client} className="h-full w-auto object-contain opacity-70" loading="lazy" />
+                  <div className="mb-3">
+                    <ClientMark client={cs.client} logo={cs.clientLogo} height={2 * (cs.logoScale ?? 1)} />
                   </div>
 
                   <h2 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{cs.title}</h2>

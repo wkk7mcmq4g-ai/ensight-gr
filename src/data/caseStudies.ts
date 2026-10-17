@@ -14,7 +14,10 @@ export interface CaseStudy {
   id: string;
   sector: string;
   client: string;
-  clientLogo: string;
+  /** Logo file. Without one, the client's name is shown in type. */
+  clientLogo?: string;
+  /** ERP the work was built on. Shown in place of a photograph when there is no image. */
+  platform?: string;
   title: string;
   subtitle: string;
   outcome: string;
@@ -25,7 +28,7 @@ export interface CaseStudy {
   timeline: string;
   icon: string;
   keyResult: string;
-  image: string;
+  image?: string;
   /**
    * Height multiplier for the client logo. Logos are laid out to a shared
    * height, which makes a near-square mark look much smaller than a wide
@@ -35,6 +38,62 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
+  {
+    id: 'fhl-entersoft-reporting',
+    sector: 'Manufacturing & Export',
+    client: 'FHL Kiriakidis Group',
+    platform: 'Entersoft',
+    title: 'Balances and Open Orders, Straight from Entersoft',
+    subtitle: 'A reporting layer on Entersoft for a white marble producer that ships worldwide: what each customer owes, every open order, and the numbers behind them.',
+    outcome:
+      'Two questions management asks every week now answer themselves: who owes us money and how late is it, and which orders still have not gone out. Behind them sit sales and margins, production, stock, cash flow and P&L, live from the ERP and agreeing with the books. No new system and no licences: FHL owns the data, the reports and the code.',
+    challenge:
+      'FHL quarries and processes white marble in northern Greece and ships it worldwide: blocks, slabs, tiles and cut-to-size. The answers were already in Entersoft. Getting them meant an export and someone\'s morning, and an export is out of date the moment it is made.',
+    approach: [
+      'Read the Entersoft database through a read-only login that cannot change anything',
+      'Wrote the rules down: what counts as a sale, how a payment is matched to a partly paid invoice, and when an order still counts as open',
+      "Reconciled every figure to the accountant's before building a single screen",
+      'Built the reporting on top: customer balances carried from last year and this, invoice by invoice and by how far past due; every open order line by line, with what has gone out, what is left and how long it has waited',
+    ],
+    tools: ['Entersoft ERP', 'Read-only Database Access', 'Business Rules', 'Reconciliation', 'Reporting Layer'],
+    metrics: [
+      { label: 'Customer balances', before: 'An export and a morning', after: 'Invoice by invoice, by days past due' },
+      { label: 'Open orders', before: 'An export and a morning', after: 'Line by line: shipped, left, days waiting' },
+      { label: 'The figures', before: 'Out of date once exported', after: "Live, reconciled to the accountant's" },
+    ],
+    timeline: 'October 2026',
+    icon: 'Factory',
+    keyResult: 'Balances and open orders, straight from the ERP',
+  },
+  {
+    id: 'softone-receivables-cash',
+    sector: 'Consumer Goods',
+    client: 'Loux Marlafekas',
+    clientLogo: logoLoux,
+    platform: 'SoftOne',
+    title: 'One Screen for Receivables and Cash',
+    subtitle: 'A receivables and cash application on SoftOne: who to call today, what falls due next, and the tight week before it arrives.',
+    outcome:
+      'The receivables team starts the day with who to call, not with exports and Excel. Everyone sees the same picture, and when someone is away the next person picks up where they left off. The cash view shows every receipt, payment and cheque coming up, week by week, so a tight week is visible before it arrives.',
+    challenge:
+      'The answers were in SoftOne, but the day started with exports and Excel, and the history of each customer lived in emails and personal notes. When someone was away, their follow-ups went with them.',
+    approach: [
+      'Built on the SoftOne system Loux already runs, reading from it without changing it, with balances refreshed overnight',
+      'One receivables screen: who owes what and since when, the customers to prioritise today, and what falls due in the next few days',
+      'Reminder emails prepared in Outlook from the invoices selected on screen',
+      'A shared activity calendar and a full history for each customer, with tasks that can be assigned to a specific person',
+      'A cash view of every receipt, payment and cheque coming up, week by week',
+    ],
+    tools: ['SoftOne ERP', 'Receivables', 'Cash Planning', 'Shared Activity Calendar', 'Outlook'],
+    metrics: [
+      { label: 'Start of the day', before: 'Exports and Excel', after: 'One screen: who to call today' },
+      { label: 'Customer history', before: 'Emails and personal notes', after: 'Shared, one record per customer' },
+    ],
+    timeline: 'Since September 2026',
+    icon: 'Wallet',
+    keyResult: 'The day starts with who to call',
+    logoScale: 1.9,
+  },
   {
     id: 'costing-bi-platform',
     sector: 'Consumer Goods',

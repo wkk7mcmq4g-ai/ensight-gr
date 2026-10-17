@@ -8,6 +8,7 @@ import { heroPrimaryButton, heroSecondaryButton } from '@/components/sections/bu
 import ClosingCTA from '@/components/sections/ClosingCTA';
 import SectionHeading from '@/components/sections/SectionHeading';
 import DataLayerSection from '@/components/sections/DataLayerSection';
+import ErpWorkSection from '@/components/sections/ErpWorkSection';
 import { CONTACT_HREF } from '@/lib/contact';
 
 const TITLE = 'Data & Reporting · Ensight';
@@ -147,6 +148,10 @@ const DataClarity = () => (
         </Link>
       </AnimatedSection>
     </section>
+
+    {/* Built on the two Greek ERPs */}
+    <div className="h-px bg-border max-w-[1200px] mx-auto" />
+    <ErpWorkSection />
 
     {/* The data layer */}
     <div className="h-px bg-border max-w-[1200px] mx-auto" />

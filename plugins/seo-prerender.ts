@@ -50,6 +50,16 @@ const routes: Record<string, RouteMeta> = {
     description: 'Data, reporting and automation, built so management can answer a question the business could not answer before.',
     ogImage: '/og/case-studies.jpg',
   },
+  '/case-studies/fhl-entersoft-reporting': {
+    title: 'Balances and Open Orders, Straight from Entersoft | Ensight Case Study',
+    description: 'A reporting layer on Entersoft for a white marble producer that ships worldwide: what each customer owes, every open order, and the numbers behind them.',
+    ogImage: '/og/case-studies.jpg',
+  },
+  '/case-studies/softone-receivables-cash': {
+    title: 'One Screen for Receivables and Cash | Ensight Case Study',
+    description: 'A receivables and cash application on SoftOne: who to call today, what falls due next, and the tight week before it arrives.',
+    ogImage: '/og/case-studies.jpg',
+  },
   '/case-studies/costing-bi-platform': {
     title: 'Activity-Based Costing & BI Platform | Ensight Case Study',
     description: 'A costing model and reporting layer built on SoftOne — margin visible by product, customer and channel.',

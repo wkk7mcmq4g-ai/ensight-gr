@@ -6,6 +6,8 @@ import { caseStudies } from '@/data/caseStudies';
 import { Badge } from '@/components/ui/badge';
 import SEO from '@/components/SEO';
 import { CONTACT_HREF } from '@/lib/contact';
+import PlatformPanel from '@/components/sections/PlatformPanel';
+import ClientMark from '@/components/sections/ClientMark';
 
 const BASE_URL = 'https://www.ensight.gr';
 
@@ -60,7 +62,11 @@ const CaseStudyDetail = () => {
 
         <div className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg mb-8 relative overflow-hidden">
           <div className="h-56 overflow-hidden">
-            <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" width={800} height={512} />
+            {cs.image ? (
+              <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" width={800} height={512} />
+            ) : (
+              <PlatformPanel platform={cs.platform ?? cs.sector} client={cs.client} />
+            )}
           </div>
           <div className="p-10">
           <div className="flex items-center gap-3 mb-4">
@@ -74,8 +80,8 @@ const CaseStudyDetail = () => {
           </div>
 
           {/* Client logo */}
-          <div className="mb-4 flex items-center" style={{ height: `${2.25 * (cs.logoScale ?? 1)}rem` }}>
-            <img src={cs.clientLogo} alt={cs.client} className="h-full w-auto object-contain opacity-70" />
+          <div className="mb-4">
+            <ClientMark client={cs.client} logo={cs.clientLogo} height={2.25 * (cs.logoScale ?? 1)} />
           </div>
 
           <h1 className="text-[clamp(26px,4.5vw,40px)] font-bold leading-[1.15] tracking-tight mb-3">

@@ -36,6 +36,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/fhl-entersoft-reporting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ensight-gr.lovable.app/case-studies/softone-receivables-cash</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ensight-gr.lovable.app/case-studies/costing-bi-platform</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -6,6 +6,7 @@ import ValuePillarsSection from '@/components/home/ValuePillarsSection';
 import ProblemsSection from '@/components/home/ProblemsSection';
 import HowIWorkTeaser from '@/components/home/HowIWorkTeaser';
 import DataLayerSection from '@/components/sections/DataLayerSection';
+import ErpWorkSection from '@/components/sections/ErpWorkSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import AboutSection from '@/components/home/AboutSection';
 import EngageSection from '@/components/home/EngageSection';
@@ -56,11 +57,13 @@ const Home = () => (
     <ParallaxDivider />
     <ValuePillarsSection />
     <ParallaxDivider />
+    <ErpWorkSection />
+    <ParallaxDivider />
     <DataLayerSection />
     <ParallaxDivider />
     <ProblemsSection />
     <ParallaxDivider />
-    <SelectedWorkSection />
+    <SelectedWorkSection ids={['costing-bi-platform', 'financial-reporting', 'invoice-extraction']} />
     <HowIWorkTeaser />
     <ParallaxDivider />
     <AboutSection />
