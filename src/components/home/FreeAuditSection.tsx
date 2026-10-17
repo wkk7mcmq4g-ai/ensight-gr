@@ -39,7 +39,7 @@ const FreeAuditSection = () => (
 
       <AnimatedSection delay={0.25} className="text-center">
         <a
-          href="mailto:hello@ensight.gr?subject=Free Operational Audit"
+          href="mailto:georgekondylis@msn.com?subject=Free Operational Audit"
           className="inline-block bg-primary text-primary-foreground text-base font-bold px-9 py-4 rounded-xl shadow-lg hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-xl transition-all no-underline"
         >
           Request Free Audit

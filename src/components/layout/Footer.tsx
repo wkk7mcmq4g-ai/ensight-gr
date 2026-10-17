@@ -22,8 +22,8 @@ const Footer = () => (
       ))}
     </div>
     <div className="flex flex-col items-center md:items-end gap-1">
-      <a href="mailto:hello@ensight.gr" className="text-[10px] text-ordinal-dim tracking-[1px] hover:text-foreground transition-colors">
-        hello@ensight.gr
+      <a href="mailto:georgekondylis@msn.com" className="text-[10px] text-ordinal-dim tracking-[1px] hover:text-foreground transition-colors">
+        georgekondylis@msn.com
       </a>
       <div className="text-[10px] text-ordinal-faint tracking-[1px]">
         Athens, Greece

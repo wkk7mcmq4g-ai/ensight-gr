@@ -19,7 +19,7 @@ const ClosingCTA = ({ heading, body }: Props) => (
         <a href={CONTACT_HREF} className={`inline-block ${heroPrimaryButton}`}>
           Email George
         </a>
-        <div className="text-[10px] text-white/50 tracking-[1px] mt-8">hello@ensight.gr · Athens, Greece</div>
+        <div className="text-[10px] text-white/50 tracking-[1px] mt-8">georgekondylis@msn.com · Athens, Greece</div>
       </AnimatedSection>
     </div>
   </section>

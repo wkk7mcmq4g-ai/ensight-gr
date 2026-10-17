@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = 'hello@ensight.gr';
+export const CONTACT_EMAIL = 'georgekondylis@msn.com';
 
 const subject = 'Request for a call';
 const body = [

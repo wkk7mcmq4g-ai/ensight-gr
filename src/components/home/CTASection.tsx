@@ -27,7 +27,7 @@ const CTASection = () => {
     }
     const subject = encodeURIComponent(`Message from ${name}${company ? `, ${company}` : ''}`);
     const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:hello@ensight.gr?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:georgekondylis@msn.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -44,9 +44,9 @@ const CTASection = () => {
           onSubmit={handleSubmit}
           className="max-w-[520px] mx-auto flex flex-col gap-4"
         >
-          <p className="text-sm text-primary-foreground/80">{enquiryEndpoint ? 'Tell me what you need and I will reply by email.' : 'This form opens a draft in your email app. Send it there to complete your enquiry.'} You can also email <a href="mailto:hello@ensight.gr" className="underline">hello@ensight.gr</a> directly.</p>
+          <p className="text-sm text-primary-foreground/80">{enquiryEndpoint ? 'Tell me what you need and I will reply by email.' : 'This form opens a draft in your email app. Send it there to complete your enquiry.'} You can also email <a href="mailto:georgekondylis@msn.com" className="underline">georgekondylis@msn.com</a> directly.</p>
           {status === 'sent' && <p role="status" className="text-sm text-primary-foreground">Thank you — your enquiry has been received. I will reply within one working day.</p>}
-          {status === 'error' && <p role="alert" className="text-sm text-primary-foreground">Your enquiry could not be confirmed. Your message is still here; please retry or email hello@ensight.gr.</p>}
+          {status === 'error' && <p role="alert" className="text-sm text-primary-foreground">Your enquiry could not be confirmed. Your message is still here; please retry or email georgekondylis@msn.com.</p>}
           <fieldset disabled={status === 'sending'} className="flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input

@@ -14,6 +14,6 @@ export async function submitEnquiry(endpoint: string, enquiry: Enquiry): Promise
   });
   const result = await response.json().catch(() => null);
   if (!response.ok || (result?.ok !== true && result?.success !== true)) {
-    throw new Error('Your enquiry could not be confirmed. Please retry or email hello@ensight.gr.');
+    throw new Error('Your enquiry could not be confirmed. Please retry or email georgekondylis@msn.com.');
   }
 }
