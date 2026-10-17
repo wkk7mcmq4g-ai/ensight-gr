@@ -11,7 +11,7 @@ import CTASection from '@/components/home/CTASection';
 import ParallaxDivider from '@/components/home/ParallaxDivider';
 
 const DESCRIPTION =
-  'I build the data and reporting that show what each product and customer really earns, and automate the manual work between your systems.';
+  'Data, reporting, custom applications and automation that help you understand profitability, manage cash and simplify daily work.';
 
 const organizationSchema = {
   "@context": "https://schema.org",

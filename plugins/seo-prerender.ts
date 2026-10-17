@@ -17,7 +17,7 @@ interface RouteMeta {
 const routes: Record<string, RouteMeta> = {
   '/': {
     title: 'Ensight | Data, reporting and AI automation for mid-sized businesses',
-    description: 'I build the data and reporting that show what each product and customer really earns, and automate the manual work between your systems.',
+    description: 'Data, reporting, custom applications and automation that help you understand profitability, manage cash and simplify daily work.',
     ogImage: '/og/home.jpg',
   },
   '/about': {

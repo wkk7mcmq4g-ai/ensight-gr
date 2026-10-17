@@ -41,7 +41,7 @@ const HeroSection = () => {
             className="text-[clamp(28px,5.5vw,56px)] font-bold leading-[1.08] tracking-tight mb-4 text-foreground"
             style={{ y: noMotion ? 0 : headlineY }}
           >
-            Which of your customers <span className="bg-gradient-to-r from-primary to-accent-blue bg-clip-text text-transparent">actually make you money</span>?
+            Clearer numbers. <span className="bg-gradient-to-r from-primary to-accent-blue bg-clip-text text-transparent">Simpler ways to work.</span>
           </motion.h1>
 
           <motion.p
@@ -60,17 +60,19 @@ const HeroSection = () => {
               Email George
             </a>
             <Link
-              to="/costing"
+              to="/case-studies"
               className="text-sm md:text-base font-semibold text-foreground border border-border bg-card px-6 py-3 md:px-9 md:py-4 rounded-lg hover:border-primary/40 hover:-translate-y-0.5 transition-all no-underline"
             >
-              See the worked example
+              Explore the work
             </Link>
           </motion.div>
         </div>
 
         <div className="relative">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_hsl(261_84%_58%/0.12)_0%,_transparent_70%)] scale-150 pointer-events-none" aria-hidden />
+          <p className="text-sm font-semibold text-foreground mb-3">One example: what each customer earns</p>
           <HeroMarginTable />
+          <Link to="/costing" className="inline-block mt-3 text-sm font-medium text-primary hover:underline">See how the margin is calculated →</Link>
         </div>
       </div>
     </section>

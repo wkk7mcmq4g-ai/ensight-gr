@@ -12,6 +12,12 @@ type Props = {
   lead?: string;
 };
 
+const cardTitles: Record<string, string> = {
+  'costing-bi-platform': 'Product & customer profitability',
+  'fhl-entersoft-reporting': 'Receivables & open orders',
+  'invoice-extraction': 'Invoice capture & approval',
+};
+
 const SelectedWorkSection = ({
   ids,
   eyebrow = 'Selected Work',
@@ -35,7 +41,7 @@ const SelectedWorkSection = ({
         <StaggerItem key={cs.id}>
           <Link
             to={`/case-studies/${cs.id}`}
-            className="block bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_12px_36px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 h-full no-underline group"
+            className="flex flex-col bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_12px_36px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 h-full no-underline group"
           >
             <div className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-2">
               {cs.sector}
@@ -44,25 +50,26 @@ const SelectedWorkSection = ({
               <ClientMark client={cs.client} logo={cs.clientLogo} height={Math.min(2 * (cs.logoScale ?? 1), 4.5)} />
             </div>
             <p className="text-sm font-semibold text-foreground mb-2">{cs.client}</p>
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{cs.title}</h3>
+            <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{cardTitles[cs.id] ?? cs.title}</h3>
             <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-[11px] font-semibold px-2.5 py-1 rounded-full mb-4">
               {cs.keyResult}
             </div>
             <ul className="space-y-3 mb-5">
-              {cs.metrics.map((m) => (
+              {cs.metrics.slice(0, 2).map((m) => (
                 <li key={m.label} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
                   <CheckCircle2 size={16} className="text-primary mt-0.5 flex-shrink-0" />
                   <span><span className="font-medium text-foreground">{m.label}:</span> {m.after}</span>
                 </li>
               ))}
             </ul>
-            <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-3 transition-all">
+            <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-3 transition-all">
               View case study <ArrowRight size={14} />
             </span>
           </Link>
         </StaggerItem>
       ))}
     </StaggerChildren>
+    <Link to="/case-studies/fhl-entersoft-reporting#fhl-demo" className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-primary hover:underline">Watch the FHL reporting demo · 36 seconds <ArrowRight size={14} /></Link>
   </section>
 );
 

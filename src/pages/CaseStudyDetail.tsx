@@ -113,7 +113,7 @@ const CaseStudyDetail = () => {
       </AnimatedSection>
 
       {cs.id === 'fhl-entersoft-reporting' && (
-        <section aria-labelledby="fhl-demo-title" className="bg-card border border-border rounded-lg p-6 md:p-8 mb-8">
+        <section id="fhl-demo" aria-labelledby="fhl-demo-title" className="scroll-mt-24 bg-card border border-border rounded-lg p-6 md:p-8 mb-8">
           <h2 id="fhl-demo-title" className="text-lg font-semibold mb-2">Watch the reporting walkthrough</h2>
           <p id="fhl-demo-description" className="text-sm text-muted-foreground leading-relaxed mb-5">
             A 36-second tour of the reporting interface, including the management summary, production and profit-and-loss views. Silent video with on-screen captions.
