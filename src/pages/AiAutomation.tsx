@@ -17,7 +17,7 @@ const DESCRIPTION =
   'Invoices read instead of retyped, approvals with a record, and plain-language answers from your own data, with a person approving anything that posts or pays.';
 
 const builds: { icon: LucideIcon; title: string; desc: string; hsl: string }[] = [
-  { icon: ScanLine, title: 'Documents in, clean data out', desc: 'Supplier invoices, delivery notes and contracts are read automatically, checked against your finance system and sent to the right approver. Nobody retypes them.', hsl: 'hsl(var(--primary))' },
+  { icon: ScanLine, title: 'Documents in, clean data out', desc: 'Supplier invoices, delivery notes and contracts are read automatically, checked against your finance system and sent to the right approver. Exceptions are flagged for review.', hsl: 'hsl(var(--primary))' },
   { icon: MessageSquareText, title: 'Answers from your own data', desc: 'A manager asks a question in plain language and gets the answer from live finance, sales or portfolio data. Access is read-only, limited per person and logged.', hsl: 'hsl(var(--accent-blue))' },
   { icon: FileSearch, title: 'Search across your documents', desc: 'Policies, contracts and reports are found by meaning, with the source shown beside the answer.', hsl: 'hsl(var(--primary))' },
   { icon: Workflow, title: 'Approvals and workflows', desc: 'Purchases, discounts and invoices follow one path, with a record of who approved what and when.', hsl: 'hsl(var(--accent-blue))' },
@@ -85,7 +85,7 @@ const AiAutomation = () => (
       }
       subhead="AI is good at reading messy documents and searching what nobody has time to search. It is unreliable at anything that must be exactly right every time, unless the system is designed for that. I design for it: a person approves anything that posts, pays or commits, and every step leaves a record."
     >
-      <a href={CONTACT_HREF} className={heroPrimaryButton}>Book a call</a>
+      <a href={CONTACT_HREF} className={heroPrimaryButton}>Email George</a>
       <a href="#what-i-build" className={heroSecondaryButton}>See what I build</a>
     </DarkHero>
 
@@ -180,7 +180,7 @@ const AiAutomation = () => (
 
     <ClosingCTA
       heading="Start with one process"
-      body="You do not have to commit to a programme to find out whether this works. Pick the task that costs your team the most time. I map it, remove what should not be there, and automate what is left, in four to six weeks."
+      body="You do not have to commit to a programme to find out whether this works. Pick the task that costs your team the most time. We agree the scope and access first, then aim for a first release in four to six weeks for a focused workflow. Larger builds and adoption are scoped separately."
     />
   </div>
 );

@@ -28,11 +28,10 @@ const HowIWorkTeaser = () => (
           <div className="bg-card border border-border rounded-xl px-7 py-6">
             <div className="flex items-center gap-2.5 mb-3">
               <ShieldCheck className="text-primary shrink-0" size={20} />
-              <div className="text-sm font-semibold text-foreground">The Before You Automate guarantee</div>
+              <div className="text-sm font-semibold text-foreground">An agreed scope before the build</div>
             </div>
             <p className="text-[15px] text-foreground leading-relaxed">
-              If I recommend technology without first analysing and redesigning the process it supports,{' '}
-              <span className="text-primary font-bold">the implementation is free.</span>
+              You receive documented findings, the changes I recommend, and an agreed scope with deliverables and acceptance criteria before implementation starts.
             </p>
           </div>
         </div>

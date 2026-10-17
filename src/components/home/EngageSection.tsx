@@ -5,13 +5,13 @@ const engagements = [
   {
     title: 'Two-week review',
     meta: '2 weeks · Fixed fee',
-    desc: 'I map how the work flows and what state the data is in. You get a straight answer on what your numbers can support today and what to fix first. The findings are yours whether or not we go further.',
+    desc: 'You receive a process and data assessment, prioritised findings, and a recommended first project with a scope and estimate. The findings are yours whether or not we go further.',
     recommended: true,
   },
   {
     title: 'One problem, solved',
-    meta: '4–6 weeks · Fee can be tied to the result',
-    desc: 'Pick the question you cannot answer, or the task that costs the most time. I solve that one first, and I am willing to tie the fee to the measured result.',
+    meta: 'Typical first release: 4–6 weeks',
+    desc: 'Start with one report, application or workflow. We agree the scope, data access and success measures first. Larger builds and adoption are planned separately.',
     recommended: false,
   },
   {
@@ -23,7 +23,7 @@ const engagements = [
 ];
 
 const EngageSection = () => (
-  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24 relative overflow-hidden" id="start">
+  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-14 md:py-16 relative overflow-hidden" id="start">
     <DecorativeShapes variant="starburst" className="opacity-[0.06]" />
     <AnimatedSection>
       <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
@@ -33,7 +33,7 @@ const EngageSection = () => (
         Three ways to start
       </h2>
       <p className="text-base text-muted-foreground leading-relaxed max-w-[560px] mb-12">
-        Larger programmes are scoped from the review.
+        Start with a free 30-minute conversation. The review is a separate, fixed-fee engagement.
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">

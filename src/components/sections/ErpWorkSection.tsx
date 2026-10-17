@@ -38,7 +38,7 @@ type Props = {
 
 /** Reporting built directly on the two Greek ERPs, one client on each. */
 const ErpWorkSection = ({
-  lead = 'Most mid-sized Greek companies run one of the two. I build the reporting on the system you already have, reading from it rather than replacing it.',
+  lead = 'If your company runs SoftOne or Entersoft, you can build on the data already there. I build the reporting on the system you already have, reading from it rather than replacing it.',
 }: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="erp">
     <AnimatedSection>

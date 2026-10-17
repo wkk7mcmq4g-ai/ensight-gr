@@ -70,9 +70,9 @@ const Costing = () => (
         </span>
       </h1>
       <p className="text-lg text-ordinal-body leading-relaxed">
-        Every ERP in the world will tell you what you paid for something. Almost none of them will tell you what it
-        costs you to make it, move it and serve the customer who buys it — which is the number every pricing decision
-        depends on. This is how that gap gets closed, and what has to be true before you can start.
+        Purchase costs are only part of the picture. Production, handling, delivery and customer terms can change
+        the margin you keep. Your ERP may hold much of this data; the work is bringing it together with an agreed
+        costing model. This example shows how that changes a pricing decision.
       </p>
     </section>
 
@@ -262,7 +262,7 @@ const Costing = () => (
             href={CONTACT_HREF}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent-blue text-white font-semibold text-[15px] px-8 py-3.5 rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline"
           >
-            Book a call <ArrowRight size={16} />
+            Email George <ArrowRight size={16} />
           </a>
         </div>
       </AnimatedSection>

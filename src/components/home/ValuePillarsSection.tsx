@@ -38,7 +38,7 @@ const pillars = [
 ];
 
 const ValuePillarsSection = () => (
-  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="pillars">
+  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-14 md:py-16" id="pillars">
     <AnimatedSection>
       <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
         Services
