@@ -2,6 +2,7 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 import { caseStudies } from '@/data/caseStudies';
+import ClientMark from '@/components/sections/ClientMark';
 
 type Props = {
   /** Case study ids to show. Defaults to the three that lead the list. */
@@ -15,7 +16,7 @@ const SelectedWorkSection = ({
   ids,
   eyebrow = 'Selected Work',
   heading = 'What this looks like in practice',
-  lead = 'Product profitability, cash planning and invoice automation: examples of the decisions and daily work these systems support.',
+  lead = 'Product profitability at Loux, receivables and open-order reporting at FHL, and invoice automation at QSix.',
 }: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-14 md:py-16" id="work">
     <AnimatedSection>
@@ -38,6 +39,9 @@ const SelectedWorkSection = ({
           >
             <div className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-2">
               {cs.sector}
+            </div>
+            <div className="h-20 flex items-center mb-4">
+              <ClientMark client={cs.client} logo={cs.clientLogo} height={Math.min(2 * (cs.logoScale ?? 1), 4.5)} />
             </div>
             <p className="text-sm font-semibold text-foreground mb-2">{cs.client}</p>
             <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{cs.title}</h3>

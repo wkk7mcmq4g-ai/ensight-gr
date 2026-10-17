@@ -18,7 +18,7 @@ const values = [
   {
     icon: Target,
     title: 'Precision over volume',
-    desc: 'No 200-page reports. I answer the three or four questions the management team keeps asking and cannot settle.',
+    desc: 'The work starts with the decisions and tasks that matter most, with clear deliverables and a practical scope.',
   },
   {
     icon: Zap,
@@ -28,7 +28,7 @@ const values = [
   {
     icon: Users,
     title: 'Alongside your team',
-    desc: 'I work where the work happens. The real cost drivers are on the floor, not in the org chart.',
+    desc: 'I work where the work happens. I learn from the people doing the work as well as the people making decisions.',
   },
 ];
 
@@ -111,7 +111,7 @@ const About = () => (
     <AnimatedSection className="mb-12 px-1">
       <h2 className="text-xl font-bold mb-4">Why Ensight exists</h2>
       <p className="text-[15px] text-ordinal-body leading-relaxed">
-        Most companies are not short of data. They are short of numbers they can defend. The ERP records every transaction and still cannot say what a product costs to make and move, or what a customer earns. Closing that gap is the work.
+        Business systems hold valuable information, but teams can still spend hours assembling reports, moving data and coordinating work. Ensight brings the data and processes together through reporting, connected workflows and applications built around how the business operates.
       </p>
     </AnimatedSection>
 

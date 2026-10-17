@@ -33,7 +33,7 @@ const EngageSection = () => (
         Three ways to start
       </h2>
       <p className="text-base text-muted-foreground leading-relaxed max-w-[560px] mb-12">
-        Start with a free 30-minute conversation. The review is a separate, fixed-fee engagement.
+        Start with a free 30-minute conversation. A review is useful when the scope needs investigation; a small, well-defined task can be scoped directly.
       </p>
     </AnimatedSection>
     <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-4">

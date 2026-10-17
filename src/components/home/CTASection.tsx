@@ -19,10 +19,10 @@ const CTASection = () => {
       <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-primary-foreground [&_circle]:!stroke-primary-foreground [&_circle]:!fill-primary-foreground" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <h2 className="text-[clamp(28px,4.5vw,44px)] font-bold tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center">
-          Tell me what you can't currently answer
+          What would you like your business to do better?
         </h2>
         <p className="text-[17px] text-primary-foreground/80 leading-relaxed max-w-[520px] mx-auto mb-10 text-center">
-          Or what your team is still doing by hand. I reply within one working day.
+          A clearer report, a simpler workflow or an application your team needs. Tell me where to start; I reply within one working day.
         </p>
         <form
           onSubmit={handleSubmit}

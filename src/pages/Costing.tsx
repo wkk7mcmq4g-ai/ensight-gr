@@ -10,7 +10,7 @@ const layers = [
     num: '01',
     title: 'Landed cost',
     question: 'What did it cost to get here?',
-    body: 'Purchase price is the part everyone has. The rest — freight, duty, insurance, handling, the credit note three weeks later, the FX difference on an import — sits in different documents and usually lands in a general expense account. Until those are pulled back onto the item, every margin below this line is wrong by an unknown amount.',
+    body: 'Purchase price is the part everyone has. The rest — freight, duty, insurance, handling, the credit note three weeks later, the FX difference on an import — sits in different documents and usually lands in a general expense account. Bringing the relevant costs back to the item makes the margin more complete.',
     trap: 'Averaging freight across a whole shipment hides the items that are expensive to move.',
   },
   {
@@ -18,14 +18,14 @@ const layers = [
     title: 'Activity cost',
     question: 'What did it cost to make and handle?',
     body: 'Production, picking, packing, quality, storage. Traditional costing spreads these across volume, which quietly subsidises the difficult products with the easy ones. Activity-based costing asks what actually drives each cost — setups, not units; order lines, not revenue; pallet days, not sales value — and allocates on that.',
-    trap: 'A low-volume product with frequent changeovers can consume more of the plant than its volume suggests by an order of magnitude.',
+    trap: 'A low-volume product with frequent changeovers can consume more of the plant than its volume suggests .',
   },
   {
     num: '03',
     title: 'Cost to serve',
     question: 'What did it cost to sell and deliver?',
     body: 'Two customers buying identical volumes at identical prices can earn very different margins. One orders monthly in full pallets; the other orders twice a week in mixed cases, to three sites, with returns. Delivery, order processing, rebates and payment terms belong to the customer, not the product.',
-    trap: 'Cost to serve is where the surprises are. It is also the layer most companies never build.',
+    trap: 'Cost to serve is where the surprises are. It is worth checking whether your current reporting includes it.',
   },
 ];
 
@@ -36,14 +36,15 @@ const example = [
   { label: 'Order handling', a: '€0.15', b: '€0.70', note: 'Monthly pallets vs twice-weekly mixed cases' },
   { label: 'Delivery', a: '€0.30', b: '€1.10', note: 'One site vs three' },
   { label: 'Returns and credits', a: '€0.05', b: '€0.45', note: 'Short shelf life on small drops' },
-  { label: 'Rebate and settlement terms', a: '€0.20', b: '€0.95', note: 'Volume rebate plus 90-day terms' },
+  { label: 'Rebate allowance', a: '€0.15', b: '€0.65', note: 'Illustrative commercial terms' },
+  { label: 'Payment-term financing allowance', a: '€0.05', b: '€0.30', note: 'Illustrative cost of funding receivables' },
 ];
 
 const Costing = () => (
   <>
     <SEO
       title="What a Product Actually Costs · Ensight"
-      description="Why true product and customer cost does not come out of the ERP, what the three layers are, and what has to be true before you can build it."
+      description="How landed cost, activity cost and cost to serve build a clearer view of product and customer margins."
       path="/costing"
       ogImage="/og/services.jpg"
     />
@@ -53,7 +54,7 @@ const Costing = () => (
         '@type': 'Article',
         headline: 'What a product actually costs',
         description:
-          'Why true product and customer cost does not come out of the ERP, what the three layers are, and what has to be true before you can build it.',
+          'How landed cost, activity cost and cost to serve build a clearer view of product and customer margins.',
         author: { '@type': 'Person', name: 'George Kondylis' },
         publisher: { '@type': 'Organization', name: 'Ensight' },
       })}</script>
@@ -82,20 +83,14 @@ const Costing = () => (
     <section className="max-w-[900px] mx-auto px-6 md:px-12 py-16">
       <AnimatedSection>
         <h2 className="text-[clamp(24px,3.5vw,32px)] font-semibold tracking-tight leading-[1.2] mb-5">
-          Why the ERP cannot answer it
+          Where the costing model matters
         </h2>
         <div className="text-[15px] text-ordinal-body leading-relaxed space-y-4 max-w-[680px]">
           <p>
-            An ERP is a record of transactions, and it is usually an excellent one. It knows that an invoice was raised,
-            that goods were received, that a payment cleared. What it does not hold is a model of{' '}
-            <strong className="text-foreground">cost behaviour</strong> — which costs are driven by volume, which by
-            order count, which by the number of times a line changes over, and which by one difficult customer.
+            Your ERP records transactions and may already support detailed costing. The question is whether its configuration and reporting reflect the costs you need to understand: volume, order count, production changeovers and customer service requirements.
           </p>
           <p>
-            So the standard report gives you revenue minus cost of goods, and stops. Everything that happens between
-            the purchase order and the customer's loading bay sits in overhead, spread evenly across products that
-            consume it very unevenly. The result reads as precise and is systematically wrong in the same direction:
-            it flatters the difficult products and penalises the simple ones.
+            A report based on revenue less cost of goods can omit delivery, handling and customer terms. Where overheads are allocated only by volume, the model may miss differences in how products and customers use resources. The right approach starts by checking what your existing system already supports.
           </p>
         </div>
       </AnimatedSection>
@@ -108,8 +103,7 @@ const Costing = () => (
           Three layers, built in order
         </h2>
         <p className="text-[15px] text-ordinal-body leading-relaxed mb-10 max-w-[680px]">
-          Each one has to stand before the next is worth building. Skipping a layer does not speed things up — it
-          produces a number nobody will defend in the room where it matters.
+          Start with reliable product costs, then add the activities and customer costs that matter to your decisions. Document the assumptions at each step.
         </p>
       </AnimatedSection>
 
@@ -142,9 +136,7 @@ const Costing = () => (
             Same product, same price, two customers
           </h2>
           <p className="text-[15px] text-white/70 leading-relaxed mb-8 max-w-[640px]">
-            The figures below are illustrative, not from a client engagement. They exist to show the shape of the
-            problem: on the reported line these two customers are identical, and three lines further down they are not
-            remotely the same business.
+            These illustrative amounts are per unit, not client results. The final row shows margin after the listed costs, before remaining overheads; it is not net profit. Rebate and financing allowances are shown separately.
           </p>
         </AnimatedSection>
 
@@ -191,7 +183,7 @@ const Costing = () => (
                   <td className="py-4 px-3 text-sm text-right font-bold text-white tabular-nums">€3.10</td>
                   <td className="py-4 px-3 text-sm text-right font-bold text-primary tabular-nums">€0.60</td>
                   <td className="py-4 pl-5 text-[13px] text-white/50 hidden md:table-cell">
-                    One of these is a good customer
+                    Different margins after the listed costs
                   </td>
                 </tr>
               </tbody>
@@ -201,10 +193,7 @@ const Costing = () => (
 
         <AnimatedSection delay={0.2}>
           <p className="text-[15px] text-white/70 leading-relaxed mt-8 max-w-[640px]">
-            Nothing here is exotic. Every one of those lines already exists somewhere in the business — in delivery
-            notes, in the rebate agreement, in the credit notes nobody reads. The work is not finding new data. It is
-            deciding what drives each cost, agreeing that with the people who will have to live with the answer, and
-            then carrying it through consistently enough that the number survives being challenged.
+            The inputs may already exist in delivery records, rebate agreements and credit notes. Where they do not, we identify what needs to be captured. The model documents each allocation and assumption so the team can understand, challenge and maintain it.
           </p>
         </AnimatedSection>
       </div>
@@ -218,9 +207,7 @@ const Costing = () => (
         </h2>
         <div className="text-[15px] text-ordinal-body leading-relaxed space-y-4 max-w-[680px]">
           <p>
-            Activity-based costing is where most businesses want to begin, and it is almost always the wrong place to
-            begin. It is a destination, not a starting point, because it inherits every weakness in the data
-            underneath it — and it inherits them silently, dressed up as a precise number.
+            Activity-based costing depends on reliable source data and useful records of the activities that drive costs. We assess those foundations before choosing the level of detail the model can support.
           </p>
           <p>Before it is worth building, four things need to hold:</p>
           <ul className="space-y-2.5 pl-1">
@@ -239,9 +226,7 @@ const Costing = () => (
             ))}
           </ul>
           <p>
-            Where they do not hold, the honest answer is that the costing work comes second and the groundwork comes
-            first. That is a less satisfying thing to be told, and it is the difference between a model management
-            uses and a model that gets quietly abandoned after two quarters.
+            Where there are gaps, we agree the groundwork and document any interim assumptions before expanding the model.
           </p>
         </div>
       </AnimatedSection>

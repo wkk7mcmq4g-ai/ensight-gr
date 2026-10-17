@@ -71,7 +71,7 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'softone-receivables-cash',
     sector: 'Consumer Goods',
-    client: 'Loux Marlafekas',
+    client: 'Loux',
     clientLogo: logoLoux,
     platform: 'SoftOne',
     title: 'One Screen for Receivables and Cash',
@@ -100,7 +100,7 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'costing-bi-platform',
     sector: 'Consumer Goods',
-    client: 'Loux Marlafekas',
+    client: 'Loux',
     clientLogo: logoLoux,
     title: 'Activity-Based Costing & BI Platform',
     subtitle: 'A costing model and reporting layer built on SoftOne, so management can see what each product and each customer actually earns.',
@@ -162,7 +162,7 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       'Supplier invoices are now read automatically and arrive in the finance system as structured data, routed to the right approver with the extracted values on screen beside the document. Exceptions are reviewed before use, and nothing posts without human approval. The downstream effect matters more than the time saved: spend data is consistent from the moment it enters, so the reporting built on top of it is arguing about decisions rather than about whether the figures match the paperwork.',
     challenge:
-      'Invoices arrived as PDFs and scans, in every layout a supplier cared to use, and were read by a person and keyed in by hand. That is slow, but slow was not the real problem. Hand-keying is where inconsistency enters a finance system and never leaves — a supplier name spelled two ways, a date in the wrong format, a net figure transposed. Every one of those errors is invisible at the point of entry and expensive three months later, when a report is questioned and nobody can tell whether the number or the typing is wrong.',
+      'Invoices arrived as PDFs and scans in different supplier layouts and needed manual entry. This created repetitive work and made consistent supplier names, dates and amounts harder to maintain. The workflow needed extraction, validation and a clear approval step.',
     approach: [
       'Mapped how invoices actually arrive and who approves what, before any model was involved — including the exceptions, which is where document automation usually fails',
       'Built extraction on Azure Document Intelligence to pull supplier, dates, line detail, net, VAT and totals from supported unstructured documents, with exceptions flagged for review',
@@ -216,7 +216,7 @@ export const caseStudies: CaseStudy[] = [
     clientLogo: logoHms,
     title: 'Loan Servicing Platform',
     subtitle: 'A purpose-built servicing system that replaced fragmented spreadsheets and manual hand-offs with a single, real-time operational hub.',
-    outcome: 'HMS moved from a patchwork of disconnected tools to a unified platform that handles the full loan lifecycle — from onboarding through repayment — with real-time visibility at every stage. Manual processing dropped by 60%, and the operations team reclaimed hours previously lost to reconciliation.',
+    outcome: 'A unified servicing platform brings onboarding, repayment workflows and portfolio reporting into one operational view.',
     challenge:
       'As the loan portfolio grew, so did the operational strain. Servicing was spread across disconnected spreadsheets, email threads, and legacy tools — each requiring manual data entry and reconciliation. Portfolio managers lacked a single source of truth, and reporting was a labour-intensive exercise that consumed entire working days. Errors were common, and the team spent more time maintaining processes than improving them.',
     approach: [
@@ -226,13 +226,13 @@ export const caseStudies: CaseStudy[] = [
     ],
     tools: ['Custom Platform', 'Workflow Automation', 'Data Integration', 'Real-time Dashboards'],
     metrics: [
-      { label: 'Manual Processing', before: 'Extensive daily effort', after: '~60% reduction' },
-      { label: 'Reconciliation', before: 'Full-day manual task', after: 'Fully automated' },
+      { label: 'Manual Processing', before: 'Extensive daily effort', after: 'Connected workflows with less repeated entry' },
+      { label: 'Reconciliation', before: 'Full-day manual task', after: 'Supported within the platform' },
       { label: 'Portfolio Visibility', before: 'Fragmented across tools', after: 'Real-time, single view' },
     ],
     timeline: '12 weeks',
     icon: 'Landmark',
-    keyResult: '60% less manual work',
+    keyResult: 'One servicing workflow',
     image: caseStudyLoan,
   },
   {
@@ -242,7 +242,7 @@ export const caseStudies: CaseStudy[] = [
     clientLogo: logoVolunteering,
     title: 'Charity CRM System',
     subtitle: 'A centralised platform that brought programme management, volunteer tracking, and compliance reporting under one roof. Built pro bono.',
-    outcome: 'Volunteering Matters moved from managing each programme in isolation to running the entire organisation through a single CRM — with structured compliance oversight, cross-programme reporting, and a clear operational picture for leadership.',
+    outcome: 'A central CRM brings programme management, volunteer tracking and compliance reporting together. Built pro bono.',
     challenge:
       'Each programme operated as its own silo, with its own tracking methods, spreadsheets, and reporting cadences. There was no unified view of volunteer engagement, programme outcomes, or compliance status. Leadership decisions were based on manually assembled reports that were often outdated by the time they reached the board. Compliance tracking was inconsistent, creating risk during audits and funding reviews.',
     approach: [
@@ -252,13 +252,13 @@ export const caseStudies: CaseStudy[] = [
     ],
     tools: ['CRM Design', 'Compliance Framework', 'Centralised Reporting', 'Programme Management'],
     metrics: [
-      { label: 'Programme Management', before: 'Siloed per programme', after: 'Fully centralised' },
+      { label: 'Programme Management', before: 'Siloed per programme', after: 'Central programme records' },
       { label: 'Compliance Tracking', before: 'Ad-hoc and inconsistent', after: 'Structured with audit trails' },
       { label: 'Reporting', before: 'Manual, per-programme', after: 'Real-time, organisation-wide' },
     ],
     timeline: 'Pro bono, since 2021',
     icon: 'Heart',
-    keyResult: 'Full compliance visibility',
+    keyResult: 'Central programme and compliance tracking',
     image: caseStudyCharity,
   },
   {
@@ -268,7 +268,7 @@ export const caseStudies: CaseStudy[] = [
     clientLogo: logoMyAthens,
     title: 'Touro: the app the drivers work from',
     subtitle: 'A mobile-first redesign of the driver screen at an Athens transfer company, built for a phone on the move.',
-    outcome: 'Drivers went from squinting at dense tables to glancing at clear, card-based summaries — reducing cognitive load, speeding up pickups, and cutting down on dispatch calls. The new interface brought real-time reliability to field operations.',
+    outcome: 'The redesigned driver screen presents each transfer as a clear card, with pickup details visible and supporting information in expandable panels.',
     challenge:
       'myAthensTransfers is an airport and port transfer company in Athens. The driver screen had grown with the business and was never designed for a phone on the move. Passenger names, pickup times and flight numbers sat in dense tables that were hard to scan between jobs, so drivers missed details and called dispatch to check them.',
     approach: [
@@ -280,8 +280,8 @@ export const caseStudies: CaseStudy[] = [
     tools: ['UX Redesign', 'Mobile-First Design', 'Card-Based UI', 'Visual Hierarchy'],
     metrics: [
       { label: 'Information Access', before: 'Buried in dense layouts', after: 'At-a-glance summaries' },
-      { label: 'Cognitive Load', before: 'High, error-prone', after: 'Minimal, focused' },
-      { label: 'Field Execution', before: 'Friction-heavy, call-dependent', after: 'Reliable, self-service' },
+      { label: 'Cognitive Load', before: 'High, error-prone', after: 'Focused cards and expandable details' },
+      { label: 'Field Execution', before: 'Friction-heavy, call-dependent', after: 'Key transfer details available on mobile' },
     ],
     timeline: '6 weeks',
     icon: 'MapPin',

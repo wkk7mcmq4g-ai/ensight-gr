@@ -32,7 +32,7 @@ const HeroMarginTable = () => (
       </tbody>
     </table>
     <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-border">
-      Same product, same price. Illustrative figures.
+      Illustrative amounts per unit, after the listed service costs and before remaining overheads.
     </figcaption>
   </figure>
 );

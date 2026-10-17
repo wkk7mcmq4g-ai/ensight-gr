@@ -11,8 +11,8 @@ const DESCRIPTION = 'Process first, technology second: assessment, an agreed sco
 const patterns: { icon: LucideIcon; title: string; desc: string; iconColor: string }[] = [
   { icon: Brain, title: 'The Human Router', desc: 'One person holds the operation together. When they are out, everything slows or stops.', iconColor: 'hsl(var(--ordinal-cyan))' },
   { icon: Users, title: 'The Meeting Trap', desc: 'A weekly meeting that exists only because management has no other way to find out what is happening.', iconColor: 'hsl(var(--ordinal-green))' },
-  { icon: MessageSquare, title: 'The WhatsApp Organisation', desc: 'Decisions and approvals flow through chat groups, with no record of who agreed to what.', iconColor: 'hsl(var(--electric-bright))' },
-  { icon: TrendingUp, title: 'Growth by Headcount', desc: 'Every new client means more admin, and the only answer anyone has is to hire.', iconColor: 'hsl(var(--ordinal-amber))' },
+  { icon: MessageSquare, title: 'The WhatsApp Organisation', desc: 'Decisions and approvals flow through chat groups, making them difficult to find and follow up.', iconColor: 'hsl(var(--electric-bright))' },
+  { icon: TrendingUp, title: 'Growth by Headcount', desc: 'Administrative effort rises with each new client, leaving less capacity for service and growth.', iconColor: 'hsl(var(--ordinal-amber))' },
 ];
 
 const stages = [
@@ -51,7 +51,7 @@ const HowIWork = () => (
         </span>
       </h1>
       <p className="text-lg text-ordinal-body leading-relaxed max-w-[680px]">
-        I do not build on a process until I understand it and have fixed what is wrong with it. That is slower in week one and faster in every week after.
+        I start by understanding how your team works, agree what needs to change, and build the reporting, workflow or application around that.
       </p>
     </section>
 
@@ -63,7 +63,7 @@ const HowIWork = () => (
         <h2 className={`${h2} mb-5`}>Why the order matters</h2>
         <p className={prose}>
           Every business accumulates workarounds. A temporary fix becomes the way things are done, and each one loosens the link between what happened and what the numbers say happened. I call that{' '}
-          <strong className="text-foreground">process debt</strong>. Like technical debt it compounds, and almost nobody measures it. Automate it and you make it permanent. Report on it and you get figures that are confident and wrong.
+          <strong className="text-foreground">process debt</strong>. Like technical debt it compounds, and almost nobody measures it. Reviewing these workarounds before a build helps avoid carrying unnecessary steps and inconsistent definitions into the new system.
         </p>
       </AnimatedSection>
     </section>
@@ -156,6 +156,15 @@ const HowIWork = () => (
       </div>
     </section>
 
+    <section className="max-w-[900px] mx-auto px-6 md:px-12 pb-16">
+      <h2 className={`${h2} mb-6`}>Practical questions</h2>
+      <dl className="space-y-6 text-[15px] text-ordinal-body leading-relaxed">
+        <div><dt className="font-semibold text-foreground mb-2">What do you need from us?</dt><dd>A named business contact, time with the people who use the process, and access to the relevant reports or sample data. System access is agreed for the scope, using read-only access where appropriate.</dd></div>
+        <div><dt className="font-semibold text-foreground mb-2">What happens at handover?</dt><dd>The proposal sets out the code, reports, documentation and training included, together with ownership, hosting and any third-party licences. These are agreed before the build starts.</dd></div>
+        <div><dt className="font-semibold text-foreground mb-2">Is support available afterwards?</dt><dd>We agree the support period, responsibilities and any ongoing arrangement as part of the scope. Monthly advisory is a separate option for interpreting results and planning improvements.</dd></div>
+        <div><dt className="font-semibold text-foreground mb-2">Does every task need a two-week review?</dt><dd>No. A small, well-defined task can be scoped directly. The review is useful when the process, data or requirements need investigation first.</dd></div>
+      </dl>
+    </section>
     {/* CTA */}
     <section className="max-w-[900px] mx-auto px-6 md:px-12 pb-24">
       <AnimatedSection>

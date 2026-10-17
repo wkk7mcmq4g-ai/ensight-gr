@@ -54,7 +54,7 @@ const stages = [
     num: '03',
     tag: 'Ongoing · Retainer',
     title: 'Monthly advisory',
-    desc: 'One prepared meeting a month on what the numbers say. A dashboard without interpretation is just a mirror.',
+    desc: 'One prepared meeting a month on what the numbers say. We connect the findings to priorities and actions.',
     listTitle: 'What each meeting covers',
     list: [
       'What happened, against last period and target',
@@ -135,7 +135,7 @@ const DataClarity = () => (
       <AnimatedSection className="max-w-[720px]">
         <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">The Gap</div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-5">
-          Why the ERP can't answer the margin question
+          Where your current reporting may leave gaps
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed mb-6">
           Your ERP may support costing, but the reports you use depend on the model and allocations configured behind them. Understanding customer profit can require production, order handling and delivery costs to be brought together and allocated using agreed drivers.
@@ -198,10 +198,10 @@ const DataClarity = () => (
       <AnimatedSection className="max-w-[720px]">
         <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">Who This Is For</div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-5">
-          Companies that have outgrown deciding on instinct
+          When this work is useful
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed">
-          This fits businesses of 20–200 people where management knows revenue by customer and cannot see profit by customer. Typical cases are manufacturers and distributors with many products, uneven customers and thin margins on part of the range. It also fits financial services firms that need client profitability and one agreed set of portfolio figures.
+          This fits businesses whose reporting has become difficult to maintain, reconcile or use for decisions. Manufacturers and distributors may need product and customer margins; financial services firms may need a consistent portfolio view. The starting point is the question or reporting gap you need to resolve.
         </p>
       </AnimatedSection>
     </section>

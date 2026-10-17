@@ -28,13 +28,13 @@ const controls = [
   'Read-only access by default',
   'Separate, limited credentials for each system',
   'A person approves before anything posts, pays or commits',
-  'Low-confidence results are flagged, never guessed',
+  'Low-confidence results are flagged for review',
   'Every action is logged: what the system read, and who approved it',
   'A written AI usage policy your team can follow',
 ];
 
 const stuck: { icon: LucideIcon; title: string; desc: string; color: string; iconColor: string }[] = [
-  { icon: FileWarning, title: 'Approval by email', desc: 'A purchase, a discount or an invoice gets approved in a thread. Three months later nobody can reconstruct who authorised it, or when.', color: 'bg-ordinal-pink', iconColor: 'hsl(var(--ordinal-pink))' },
+  { icon: FileWarning, title: 'Approval by email', desc: 'A purchase, a discount or an invoice gets approved in a thread. Finding the decision later means searching messages and attachments.', color: 'bg-ordinal-pink', iconColor: 'hsl(var(--ordinal-pink))' },
   { icon: Repeat, title: 'The same work, every month', desc: 'A report, a reconciliation or a file transfer that somebody rebuilds by hand on the same day of every month.', color: 'bg-ordinal-amber', iconColor: 'hsl(var(--ordinal-amber))' },
   { icon: Unplug, title: "Systems that don't talk", desc: 'The ERP, the CRM and the warehouse system each hold part of the answer, and a person is the link between them.', color: 'bg-ordinal-cyan', iconColor: 'hsl(var(--ordinal-cyan))' },
   { icon: Eye, title: 'The invisible queue', desc: 'Work piles up at one point and nobody sees it until it is a crisis.', color: 'bg-primary', iconColor: 'hsl(var(--primary))' },
@@ -83,7 +83,7 @@ const AiAutomation = () => (
           <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">Keep a person on the decisions.</span>
         </>
       }
-      subhead="AI is good at reading messy documents and searching what nobody has time to search. It is unreliable at anything that must be exactly right every time, unless the system is designed for that. I design for it: a person approves anything that posts, pays or commits, and every step leaves a record."
+      subhead="I use AI where it helps with document extraction and search, and workflow automation to connect the steps around it. Validation and human approval are built into consequential actions, with a record of what happened. AI output can still be wrong, so exceptions are reviewed."
     >
       <a href={CONTACT_HREF} className={heroPrimaryButton}>Email George</a>
       <a href="#what-i-build" className={heroSecondaryButton}>See what I build</a>

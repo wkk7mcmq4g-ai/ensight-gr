@@ -36,7 +36,7 @@ const HeroSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative">
         <div>
-          <p className="text-sm font-semibold text-primary mb-3">Data, reporting and automation for manufacturers and distributors</p>
+          <p className="text-sm font-semibold text-primary mb-3">Data, business systems and automation for growing businesses</p>
           <motion.h1
             className="text-[clamp(28px,5.5vw,56px)] font-bold leading-[1.08] tracking-tight mb-4 text-foreground"
             style={{ y: noMotion ? 0 : headlineY }}
@@ -48,9 +48,10 @@ const HeroSection = () => {
             className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed max-w-[600px] mb-6"
             style={{ y: noMotion ? 0 : subtitleY }}
           >
-            I help management see profit by product and customer, plan cash, and reduce manual work. Built around your existing ERP, with agreed definitions and figures you can trace to source.
+            I connect your data and systems so you can understand profitability, manage cash and simplify daily work. From reporting and approvals to custom applications, I build around the systems your team already uses.
           </motion.p>
 
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6">Experience across manufacturing, distribution and financial services.</p>
           <motion.div className="flex gap-3 flex-wrap items-center" style={{ y: noMotion ? 0 : ctaY }}>
             <a
               href={CONTACT_HREF}

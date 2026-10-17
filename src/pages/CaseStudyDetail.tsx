@@ -199,9 +199,9 @@ const CaseStudyDetail = () => {
       {/* CTA */}
       <AnimatedSection className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-10 text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue" />
-        <h3 className="text-[22px] font-bold mb-3">Have a question your numbers can't answer?</h3>
+        <h3 className="text-[22px] font-bold mb-3">Have a similar challenge?</h3>
         <p className="text-[15px] text-muted-foreground leading-relaxed mb-6 max-w-[440px] mx-auto">
-          Tell me what it is. A first call takes thirty minutes and costs nothing.
+          Tell me what your team needs to see or do differently. A first call takes thirty minutes and costs nothing.
         </p>
         <a
           href={CONTACT_HREF}

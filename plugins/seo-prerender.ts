@@ -42,7 +42,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/costing': {
     title: 'What a Product Actually Costs | Ensight',
-    description: 'Why true product and customer cost does not come out of the ERP, the three layers of costing, and what has to be true before you can build it.',
+    description: 'How landed cost, activity cost and cost to serve build a clearer view of product and customer margins.',
     ogImage: '/og/services.jpg',
   },
   '/case-studies': {
@@ -82,7 +82,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/case-studies/loan-servicing': {
     title: 'Loan Servicing Platform | Ensight Case Study',
-    description: 'Custom end-to-end servicing system replacing fragmented processes \u2014 cutting manual processing by 60%.',
+    description: 'A unified servicing platform connecting onboarding, repayment workflows and portfolio reporting.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/charity-crm': {

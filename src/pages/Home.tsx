@@ -52,7 +52,7 @@ const Home = () => (
     <ParallaxDivider />
     <LogoStripSection />
     <ParallaxDivider />
-    <SelectedWorkSection ids={['costing-bi-platform', 'softone-receivables-cash', 'invoice-extraction']} />
+    <SelectedWorkSection ids={['costing-bi-platform', 'fhl-entersoft-reporting', 'invoice-extraction']} />
     <ParallaxDivider />
     <ValuePillarsSection />
     <HowIWorkTeaser />
