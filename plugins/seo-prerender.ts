@@ -37,7 +37,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/how-i-work': {
     title: 'How I work | Ensight',
-    description: 'Process first, technology second: assessment, an agreed scope, implementation and adoption.',
+    description: 'From understanding the business need to an agreed scope, working software, training and handover. A practical approach to reporting, applications and automation.',
     ogImage: '/og/services.jpg',
   },
   '/costing': {
