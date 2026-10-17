@@ -135,6 +135,29 @@ const CaseStudyDetail = () => {
         </section>
       )}
 
+      {cs.id === 'costing-bi-platform' && (
+        <section id="loux-demo" aria-labelledby="loux-demo-title" className="scroll-mt-24 bg-card border border-border rounded-lg p-6 md:p-8 mb-8">
+          <h2 id="loux-demo-title" className="text-lg font-semibold mb-2">Watch Business Insights on SoftOne</h2>
+          <p id="loux-demo-description" className="text-sm text-muted-foreground leading-relaxed mb-5">
+            A 43-second demonstration of Business Insights, related to the Loux BI work: management summaries, sales comparisons, stock, customer discounts and cash planning. Greek interface and on-screen captions, using demonstration data.
+          </p>
+          <video
+            controls
+            playsInline
+            preload="none"
+            poster="/videos/loux-business-insights-poster.jpg"
+            width={1080}
+            height={1080}
+            aria-label="Business Insights on SoftOne demonstration"
+            aria-describedby="loux-demo-description"
+            className="w-full max-w-[640px] aspect-square mx-auto rounded-lg bg-black"
+          >
+            <source src="/videos/loux-business-insights.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="/videos/loux-business-insights.mp4">Watch the Business Insights demonstration</a>.
+          </video>
+        </section>
+      )}
+
       {/* Challenge */}
       <AnimatedSection className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-8 mb-5">
         <h2 className="text-lg font-semibold mb-3">The Challenge</h2>
