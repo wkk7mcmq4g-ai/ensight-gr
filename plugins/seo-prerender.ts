@@ -56,12 +56,12 @@ const routes: Record<string, RouteMeta> = {
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/fhl-entersoft-reporting': {
-    title: 'Balances and Open Orders, Straight from Entersoft | Ensight Case Study',
+    title: 'See what is owed and what still needs to ship. | FHL Kiriakidis Group | Ensight',
     description: 'A reporting layer on Entersoft for a white marble producer that ships worldwide: what each customer owes, every open order, and the numbers behind them.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/loux-softone-bi': {
-    title: 'Business Intelligence Beside SoftOne | Ensight Case Study',
+    title: 'Sales, stock and cash in one shared view. | Loux | Ensight',
     description: 'One place to understand sales and margins, plan stock and orders, and manage receivables and cash — connected to SoftOne.',
     ogImage: '/og/case-studies.jpg',
   },
