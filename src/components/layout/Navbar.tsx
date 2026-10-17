@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ensightLogo from '@/assets/ensight-logo.png';
@@ -16,6 +16,8 @@ const navLinks = [
 const Navbar = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => { setMobileOpen(false); }, [location.pathname, location.hash]);
 
   const isActive = (href: string) =>
     location.pathname === href || location.pathname.startsWith(`${href}/`);
@@ -52,9 +54,12 @@ const Navbar = () => {
 
         {/* Mobile hamburger */}
         <button
-          className="xl:hidden p-2 text-foreground"
+          className="xl:hidden min-h-11 min-w-11 flex items-center justify-center p-2 text-foreground"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
+          onKeyDown={(event) => { if (event.key === "Escape") setMobileOpen(false); }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -62,7 +67,7 @@ const Navbar = () => {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 xl:hidden">
+        <div id="mobile-navigation" onKeyDown={(event) => { if (event.key === "Escape") setMobileOpen(false); }} className="fixed inset-x-0 top-[80px] max-h-[calc(100dvh-80px)] overflow-y-auto z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 xl:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.label}

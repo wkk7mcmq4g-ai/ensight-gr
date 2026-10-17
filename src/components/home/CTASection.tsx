@@ -31,7 +31,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="bg-dark-section py-28 relative overflow-hidden scroll-mt-24" id="contact">
+    <section className="bg-dark-section py-16 md:py-28 relative overflow-hidden scroll-mt-24" id="contact">
       <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-primary-foreground [&_circle]:!stroke-primary-foreground [&_circle]:!fill-primary-foreground" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <h2 className="text-[clamp(28px,4.5vw,44px)] font-bold tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center">
@@ -63,7 +63,7 @@ const CTASection = () => {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm"
+              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm"
             />
             <input
               type="text"
@@ -72,7 +72,7 @@ const CTASection = () => {
               placeholder="Company"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm"
+              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm"
             />
             <input
               type="email"
@@ -82,7 +82,7 @@ const CTASection = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="sm:col-span-2 w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm"
+              className="sm:col-span-2 w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm"
             />
           </div>
           <textarea
@@ -93,7 +93,7 @@ const CTASection = () => {
             rows={4}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-sm resize-none"
+            className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm resize-none"
           />
           <button
             type="submit"

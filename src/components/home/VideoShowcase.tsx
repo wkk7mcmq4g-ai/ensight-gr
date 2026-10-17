@@ -30,11 +30,11 @@ export default function VideoShowcase() {
         <Dialog.Overlay className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm" />
         <Dialog.Content className="fixed z-[201] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-3xl max-h-[92dvh] overflow-y-auto rounded-2xl border border-white/15 bg-[hsl(270,30%,8%)] text-white p-4 sm:p-6 shadow-2xl">
           {active !== null && <>
-            <Dialog.Title className="text-lg font-semibold pr-10">{demos[active].title}</Dialog.Title>
-            <Dialog.Description className="text-sm text-white/60 mt-1 mb-4">Application walkthrough · {demos[active].duration} · demonstration data</Dialog.Description>
+            <Dialog.Title className="text-lg font-semibold pr-14">{demos[active].title}</Dialog.Title>
+            <Dialog.Description className="text-sm text-white/60 mt-1 mb-4 pr-12">Application walkthrough · {demos[active].duration} · demonstration data</Dialog.Description>
             <video key={demos[active].video} src={demos[active].video} controls autoPlay playsInline preload="metadata" className="w-full max-h-[68dvh] bg-black rounded-lg" aria-label={demos[active].title + ' video demonstration'} />
           </>}
-          <Dialog.Close className="absolute right-4 top-4 rounded-full p-2 bg-white/10 hover:bg-white/20 focus-visible:outline focus-visible:outline-2"><X size={20} /><span className="sr-only">Close video</span></Dialog.Close>
+          <Dialog.Close className="absolute right-4 top-4 min-h-11 min-w-11 flex items-center justify-center rounded-full p-2 bg-white/10 hover:bg-white/20 focus-visible:outline focus-visible:outline-2"><X size={20} /><span className="sr-only">Close video</span></Dialog.Close>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

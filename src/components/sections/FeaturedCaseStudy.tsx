@@ -43,7 +43,7 @@ const presentations = {
 export default function FeaturedCaseStudy({ study }: { study: CaseStudy }) {
   const [expanded, setExpanded] = useState(false);
   const view = presentations[study.id as keyof typeof presentations];
-  return <main className="max-w-[1120px] mx-auto px-6 md:px-10 pt-28 pb-20">
+  return <div className="max-w-[1120px] mx-auto px-6 md:px-10 pt-28 pb-20">
     <SEO title={view.headline + ' | ' + study.client + ' | Ensight'} description={view.intro} path={'/case-studies/' + study.id} ogImage="/og/case-studies.jpg" />
     <Helmet><script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ensight.gr/' },
@@ -80,6 +80,6 @@ export default function FeaturedCaseStudy({ study }: { study: CaseStudy }) {
     <section className="rounded-2xl bg-[hsl(270,40%,10%)] text-white p-8 md:p-12 text-center"><h2 className="text-3xl font-semibold mb-4">What does your team need to see or do differently?</h2><p className="text-white/70 mb-7 max-w-xl mx-auto">Bring one business question or manual process. We can discuss a practical first step in a free thirty-minute conversation.</p><a href={ENQUIRY_HREF} className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-4 font-semibold text-white hover:bg-primary/90">Discuss your project <ArrowRight size={17} /></a></section>
     <Link to="/case-studies" className="inline-flex items-center gap-2 mt-8 text-sm text-primary font-semibold"><ArrowLeft size={15} />Explore more work</Link>
 
-    <Dialog.Root open={expanded} onOpenChange={setExpanded}><Dialog.Portal><Dialog.Overlay className="fixed inset-0 z-[200] bg-black/85 backdrop-blur-sm" /><Dialog.Content className="fixed z-[201] inset-3 sm:inset-6 bg-background rounded-xl overflow-auto p-5 sm:p-8"><Dialog.Title className="text-lg font-semibold pr-12">{view.imageTitle}</Dialog.Title><Dialog.Description className="text-sm text-muted-foreground mt-2 mb-6">{view.caption} Demonstration data.</Dialog.Description><img src={view.image} alt={view.alt} width="1080" height="1080" className="w-full max-w-[1080px] h-auto mx-auto" /><Dialog.Close className="fixed right-7 top-7 sm:right-10 sm:top-10 p-2 rounded-full bg-background border border-border shadow hover:bg-muted"><X size={22} /><span className="sr-only">Close image</span></Dialog.Close></Dialog.Content></Dialog.Portal></Dialog.Root>
-  </main>;
+    <Dialog.Root open={expanded} onOpenChange={setExpanded}><Dialog.Portal><Dialog.Overlay className="fixed inset-0 z-[200] bg-black/85 backdrop-blur-sm" /><Dialog.Content className="fixed z-[201] inset-3 sm:inset-6 bg-background rounded-xl overflow-auto p-5 sm:p-8"><Dialog.Title className="text-lg font-semibold pr-12">{view.imageTitle}</Dialog.Title><Dialog.Description className="text-sm text-muted-foreground mt-2 mb-6">{view.caption} Demonstration data.</Dialog.Description><img src={view.image} alt={view.alt} width="1080" height="1080" className="w-full max-w-[1080px] h-auto mx-auto" /><Dialog.Close className="fixed right-7 top-7 sm:right-10 sm:top-10 min-h-11 min-w-11 flex items-center justify-center p-2 rounded-full bg-background border border-border shadow hover:bg-muted"><X size={22} /><span className="sr-only">Close image</span></Dialog.Close></Dialog.Content></Dialog.Portal></Dialog.Root>
+  </div>;
 }
