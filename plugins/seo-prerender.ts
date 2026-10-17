@@ -22,7 +22,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/about': {
     title: 'About | Ensight',
-    description: 'George Kondylis: eighteen years in data, costing and finance systems, from bank audit to a seventeen-year advisory relationship with a Greek manufacturer.',
+    description: 'George Kondylis, founder of Ensight in Athens. Experience in data leadership, business applications, reporting, automation and applied AI.',
     ogImage: '/og/about.jpg',
   },
   '/data-clarity': {
