@@ -2,8 +2,10 @@ import logoHms from "@/assets/logo-hms.png";
 import logoQsix from "@/assets/logo-qsix.png";
 import logoLoux from "@/assets/logo-loux.png";
 import logoVm from "@/assets/logo-volunteering-matters.png";
+import logoFhl from "@/assets/logo-fhl.png";
 
 const logos = [
+  { src: logoFhl, alt: "FHL Kiriakidis Group", className: "h-12 md:h-14" },
   { src: logoLoux, alt: "Loux", className: "h-10 md:h-12" },
   { src: logoQsix, alt: "QSIX", className: "h-8 md:h-9" },
   { src: logoHms, alt: "HMS", className: "h-7 md:h-8" },

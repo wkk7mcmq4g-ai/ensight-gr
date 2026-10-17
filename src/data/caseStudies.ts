@@ -9,6 +9,7 @@ import logoMyAthens from '@/assets/logo-myathenstransfers.png';
 import logoVolunteering from '@/assets/logo-volunteering-matters.png';
 import logoQsix from '@/assets/logo-qsix.png';
 import logoLoux from '@/assets/logo-loux.png';
+import logoFhl from '@/assets/logo-fhl.png';
 
 export interface CaseStudy {
   id: string;
@@ -42,6 +43,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'fhl-entersoft-reporting',
     sector: 'Manufacturing & Export',
     client: 'FHL Kiriakidis Group',
+    clientLogo: logoFhl,
     platform: 'Entersoft',
     title: 'Balances and Open Orders, Straight from Entersoft',
     subtitle: 'A reporting layer on Entersoft for a white marble producer that ships worldwide: what each customer owes, every open order, and the numbers behind them.',
@@ -64,6 +66,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: 'October 2026',
     icon: 'Factory',
     keyResult: 'Balances and open orders, straight from the ERP',
+    logoScale: 2.2,
   },
   {
     id: 'softone-receivables-cash',
