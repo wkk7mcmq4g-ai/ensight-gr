@@ -1,3 +1,4 @@
+import AIDataDemo from '@/components/sections/AIDataDemo';
 import SEO from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -79,7 +80,7 @@ const AiAutomation = () => (
       subhead="I build AI assistants that answer questions from your business data, and applications that bring spreadsheets, approvals and manual tasks into a shared workflow. The solution connects to the systems you already use, with access and responsibilities agreed from the start."
     >
       <a href={ENQUIRY_HREF} className={heroPrimaryButton}>Discuss your project</a>
-      <a href="#what-i-build" className={heroSecondaryButton}>See what I build</a>
+      <a href="#ai-demo" className={heroSecondaryButton}>Try the data example</a>
     </DarkHero>
 
     {/* What I build */}
@@ -106,7 +107,7 @@ const AiAutomation = () => (
 
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 pb-20 scroll-mt-24" id="ai-data">
       <SectionHeading eyebrow="AI Agents & MCP" heading="Have a conversation with your business data" />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-8">
         <div className="space-y-4 text-[15px] text-ordinal-body leading-relaxed">
           <p>Before a meeting, you need the sales position, the gap to target and the customers behind it. An AI assistant can bring those questions into one conversation, using the data your business already holds.</p>
           <p>I build agents and MCP connections that let users query approved ERP, finance and warehouse data in plain language. Depending on the agreed scope, the assistant can return KPIs, comparisons, charts and dashboards, with access through a suitable desktop or mobile interface.</p>
@@ -114,23 +115,8 @@ const AiAutomation = () => (
           <p>The integration enforces permissions for each request. Answers show their source, reporting period and data freshness. Ambiguous questions need clarification, and AI-generated analysis still needs review.</p>
           <Link to="/case-studies/governed-ai-access" className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">See the QSix AI-access case study <ArrowRight size={14} /></Link>
         </div>
-        <div className="bg-card border border-border rounded-xl p-6 md:p-8">
-          <p className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-4">Example questions · illustrative workflow</p>
-          <ol className="space-y-4">
-            {[
-              { question: 'How are sales performing against target this month?', result: 'A KPI summary with the reporting period and comparison basis.' },
-              { question: 'Which customers explain the largest part of the gap?', result: 'A ranked breakdown linked to the underlying figures.' },
-              { question: 'Chart their performance against the same period last year.', result: 'A comparison chart using agreed definitions and dates.' },
-              { question: 'Put these views into a dashboard for the meeting.', result: 'A dashboard assembled from the approved queries and views.' },
-            ].map((item, index) => (
-              <li key={item.question} className="border-b border-border pb-4 last:border-0 last:pb-0">
-                <p className="font-semibold text-foreground mb-1"><span className="text-primary mr-2">{index + 1}.</span>{item.question}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.result}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
       </div>
+      <AIDataDemo />
     </section>
 
     <section className="bg-muted/40 border-y border-border py-16 scroll-mt-24" id="business-applications">
