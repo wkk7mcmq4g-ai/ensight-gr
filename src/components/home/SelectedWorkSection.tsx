@@ -1,10 +1,9 @@
-import { CheckCircle2, ArrowRight, Play } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 import { caseStudies } from '@/data/caseStudies';
 import ClientMark from '@/components/sections/ClientMark';
-import logoLoux from '@/assets/logo-loux.png';
-import logoFhl from '@/assets/logo-fhl.png';
+import VideoShowcase from './VideoShowcase';
 
 type Props = {
   /** Case study ids to show. Defaults to the three that lead the list. */
@@ -71,20 +70,7 @@ const SelectedWorkSection = ({
         </StaggerItem>
       ))}
     </StaggerChildren>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-      {[
-        { title: 'Loux Business Insights', company: 'Loux', logo: logoLoux, duration: '43 seconds', poster: '/videos/loux-business-insights-poster.jpg', href: '/case-studies/loux-softone-bi#loux-demo', description: 'See the reporting connected to SoftOne.' },
-        { title: 'FHL reporting', company: 'FHL', logo: logoFhl, duration: '36 seconds', poster: '/videos/fhl-demo-poster.jpg', href: '/case-studies/fhl-entersoft-reporting#fhl-demo', description: 'Explore receivables and open orders from Entersoft.' },
-      ].map((demo) => (
-        <Link key={demo.href} to={demo.href} className="group flex items-center gap-5 rounded-xl border border-border bg-card p-4 hover:border-primary/40 transition-colors">
-          <div className="relative w-28 sm:w-36 aspect-square shrink-0 overflow-hidden rounded-lg bg-muted">
-            <img src={demo.poster} alt="" width="1080" height="1080" loading="lazy" className="h-full w-full object-cover" />
-            <span className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors"><span className="rounded-full bg-primary p-3 text-primary-foreground shadow-lg"><Play size={20} fill="currentColor" aria-hidden="true" /></span></span>
-          </div>
-          <div className="min-w-0"><img src={demo.logo} alt={demo.company} loading="lazy" className="h-10 w-28 max-w-full object-contain object-left mb-3" /><p className="text-xs font-medium text-primary mb-2">Video demo · {demo.duration}</p><h3 className="font-semibold mb-2">{demo.title}</h3><p className="text-sm text-muted-foreground">{demo.description}</p><span className="inline-flex items-center gap-2 text-sm font-semibold text-primary mt-3">Watch the demo <ArrowRight size={14} /></span></div>
-        </Link>
-      ))}
-    </div>
+    <VideoShowcase />
   </section>
 );
 

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ENQUIRY_HREF } from '@/lib/contact';
-import HeroMarginTable from './HeroMarginTable';
+import ProductPreview from './ProductPreview';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
 const HeroSection = () => {
@@ -68,12 +68,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_hsl(261_84%_58%/0.12)_0%,_transparent_70%)] scale-150 pointer-events-none" aria-hidden />
-          <p className="text-sm font-semibold text-foreground mb-3">One example: what each customer earns</p>
-          <HeroMarginTable />
-          <Link to="/costing" className="inline-block mt-3 text-sm font-medium text-primary hover:underline">See how the margin is calculated →</Link>
-        </div>
+        <ProductPreview />
       </div>
     </section>
   );
