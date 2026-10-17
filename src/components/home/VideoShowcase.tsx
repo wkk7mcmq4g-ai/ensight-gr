@@ -7,7 +7,7 @@ import logoFhl from '@/assets/logo-fhl.png';
 
 const demos = [
   { title: 'Loux Business Insights', company: 'Loux', logo: logoLoux, duration: '43 seconds', poster: '/videos/loux-dashboard-preview.jpg', video: '/videos/loux-business-insights.mp4', href: '/case-studies/loux-softone-bi', description: 'Sales, margins, stock and cash, connected to SoftOne.' },
-  { title: 'FHL reporting', company: 'FHL', logo: logoFhl, duration: '36 seconds', poster: '/videos/fhl-reporting-preview.jpg', video: '/videos/fhl-demo.mp4', href: '/case-studies/fhl-entersoft-reporting', description: 'Receivables and open orders, straight from Entersoft.' },
+  { title: 'FHL reporting', company: 'FHL', logo: logoFhl, duration: '36 seconds', poster: '/videos/fhl-reporting-preview.jpg?v=20261017-el', video: '/videos/fhl-demo.mp4?v=20261017-el', href: '/case-studies/fhl-entersoft-reporting', description: 'Receivables and open orders, straight from Entersoft.' },
 ];
 
 export default function VideoShowcase() {
