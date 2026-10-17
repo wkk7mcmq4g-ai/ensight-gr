@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import DataClarity from "./pages/DataClarity";
 import AiAutomation from "./pages/AiAutomation";
 import HowIWork from "./pages/HowIWork";
+import BusinessApplications from "./pages/BusinessApplications";
 import Costing from "./pages/Costing";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/case-studies/softone-receivables-cash" element={<Navigate to="/case-studies/loux-softone-bi" replace />} />
             <Route path="/data-clarity" element={<DataClarity />} />
+            <Route path="/business-applications" element={<BusinessApplications />} />
             <Route path="/ai-automation" element={<AiAutomation />} />
             <Route path="/how-i-work" element={<HowIWork />} />
             <Route path="/costing" element={<Costing />} />

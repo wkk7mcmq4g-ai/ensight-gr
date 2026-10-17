@@ -3,6 +3,7 @@ import ensightLogo from '@/assets/ensight-logo.png';
 
 const links = [
   { label: 'Data & Reporting', href: '/data-clarity' },
+  { label: 'Business Applications', href: '/business-applications' },
   { label: 'AI & Automation', href: '/ai-automation' },
   { label: 'Work', href: '/case-studies' },
   { label: 'How I work', href: '/how-i-work' },

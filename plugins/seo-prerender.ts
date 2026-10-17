@@ -30,6 +30,11 @@ const routes: Record<string, RouteMeta> = {
     description: 'A data warehouse and management reporting on your ERP: customer and product margin, one definition per metric, and a month-end pack that assembles itself.',
     ogImage: '/og/data-clarity.jpg',
   },
+  '/business-applications': {
+    title: 'Business Applications | Ensight',
+    description: 'Custom applications for shared spreadsheet processes, approvals, requests and operational work, connected to your existing systems.',
+    ogImage: '/og/services.jpg',
+  },
   '/ai-automation': {
     title: 'AI & Automation | Ensight',
     description: 'AI agents and MCP connections for business-data queries, KPIs and charts, plus custom applications that replace manual spreadsheet workflows.',

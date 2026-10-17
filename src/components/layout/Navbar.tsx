@@ -6,6 +6,7 @@ import { CONTACT_HREF } from '@/lib/contact';
 
 const navLinks = [
   { label: 'Data & Reporting', href: '/data-clarity' },
+  { label: 'Business Applications', href: '/business-applications' },
   { label: 'AI & Automation', href: '/ai-automation' },
   { label: 'Work', href: '/case-studies' },
   { label: 'How I work', href: '/how-i-work' },
@@ -23,13 +24,13 @@ const Navbar = () => {
     <>
       <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue z-[100]" />
 
-      <nav className="fixed top-1 left-0 right-0 z-[99] px-6 lg:px-12 py-4 flex justify-between items-center bg-background/90 backdrop-blur-2xl border-b border-border">
+      <nav className="fixed top-1 left-0 right-0 z-[99] px-6 xl:px-12 py-4 flex justify-between items-center bg-background/90 backdrop-blur-2xl border-b border-border">
         <Link to="/">
           <img src={ensightLogo} alt="Ensight" className="h-8" />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-7">
+        <div className="hidden xl:flex items-center gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -51,7 +52,7 @@ const Navbar = () => {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden p-2 text-foreground"
+          className="xl:hidden p-2 text-foreground"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -61,7 +62,7 @@ const Navbar = () => {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 lg:hidden">
+        <div className="fixed inset-x-0 top-[57px] z-[98] bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col gap-4 xl:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.label}

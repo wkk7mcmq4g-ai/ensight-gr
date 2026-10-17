@@ -1,4 +1,4 @@
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
 import { caseStudies } from '@/data/caseStudies';
@@ -69,9 +69,19 @@ const SelectedWorkSection = ({
         </StaggerItem>
       ))}
     </StaggerChildren>
-    <div className="flex flex-wrap gap-x-8 gap-y-3 mt-6">
-    <Link to="/case-studies/loux-softone-bi#loux-demo" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Watch the Loux Business Insights demo · 43 seconds <ArrowRight size={14} /></Link>
-    <Link to="/case-studies/fhl-entersoft-reporting#fhl-demo" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Watch the FHL reporting demo · 36 seconds <ArrowRight size={14} /></Link>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+      {[
+        { title: 'Loux Business Insights', duration: '43 seconds', poster: '/videos/loux-business-insights-poster.jpg', href: '/case-studies/loux-softone-bi#loux-demo', description: 'See the reporting connected to SoftOne.' },
+        { title: 'FHL reporting', duration: '36 seconds', poster: '/videos/fhl-demo-poster.jpg', href: '/case-studies/fhl-entersoft-reporting#fhl-demo', description: 'Explore receivables and open orders from Entersoft.' },
+      ].map((demo) => (
+        <Link key={demo.href} to={demo.href} className="group flex items-center gap-5 rounded-xl border border-border bg-card p-4 hover:border-primary/40 transition-colors">
+          <div className="relative w-28 sm:w-36 aspect-square shrink-0 overflow-hidden rounded-lg bg-muted">
+            <img src={demo.poster} alt="" width="1080" height="1080" loading="lazy" className="h-full w-full object-cover" />
+            <span className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors"><span className="rounded-full bg-primary p-3 text-primary-foreground shadow-lg"><Play size={20} fill="currentColor" aria-hidden="true" /></span></span>
+          </div>
+          <div><p className="text-xs font-medium text-primary mb-2">Video demo · {demo.duration}</p><h3 className="font-semibold mb-2">{demo.title}</h3><p className="text-sm text-muted-foreground">{demo.description}</p><span className="inline-flex items-center gap-2 text-sm font-semibold text-primary mt-3">Watch the demo <ArrowRight size={14} /></span></div>
+        </Link>
+      ))}
     </div>
   </section>
 );

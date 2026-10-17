@@ -1,83 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ensight-gr.lovable.app/</loc>
+    <loc>https://www.ensight.gr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/data-clarity</loc>
+    <loc>https://www.ensight.gr/data-clarity</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/ai-automation</loc>
+    <loc>https://www.ensight.gr/ai-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/costing</loc>
+    <loc>https://www.ensight.gr/costing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/how-i-work</loc>
+    <loc>https://www.ensight.gr/how-i-work</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies</loc>
+    <loc>https://www.ensight.gr/case-studies</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/about</loc>
+    <loc>https://www.ensight.gr/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/fhl-entersoft-reporting</loc>
+    <loc>https://www.ensight.gr/case-studies/fhl-entersoft-reporting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/loux-softone-bi</loc>
+    <loc>https://www.ensight.gr/case-studies/loux-softone-bi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/costing-bi-platform</loc>
+    <loc>https://www.ensight.gr/case-studies/costing-bi-platform</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/financial-reporting</loc>
+    <loc>https://www.ensight.gr/case-studies/financial-reporting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/invoice-extraction</loc>
+    <loc>https://www.ensight.gr/case-studies/invoice-extraction</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/governed-ai-access</loc>
+    <loc>https://www.ensight.gr/case-studies/governed-ai-access</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/loan-servicing</loc>
+    <loc>https://www.ensight.gr/case-studies/loan-servicing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/charity-crm</loc>
+    <loc>https://www.ensight.gr/case-studies/charity-crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ensight-gr.lovable.app/case-studies/touro-driver-ux</loc>
+    <loc>https://www.ensight.gr/case-studies/touro-driver-ux</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url><loc>https://www.ensight.gr/business-applications</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

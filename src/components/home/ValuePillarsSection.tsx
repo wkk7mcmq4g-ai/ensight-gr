@@ -1,39 +1,28 @@
 import AnimatedSection, { StaggerChildren, StaggerItem } from './AnimatedSection';
-import { ArrowRight, BarChart3, Workflow } from 'lucide-react';
+import { ArrowRight, BarChart3, Workflow, AppWindow } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const pillars = [
   {
-    num: '01',
-    icon: BarChart3,
-    title: 'Know your numbers',
+    num: '01', icon: BarChart3, title: 'Understand performance',
     desc: 'Reporting that connects sales, costs and cash.',
-    body: "You get one agreed definition for every figure, and margin by product, customer and channel. Recurring reporting is automated, with definitions documented for the people who maintain it.",
-    points: [
-      'One definition per metric, traceable to its source',
-      'Sales, margin, stock and cash drawn from the ERP on an agreed schedule',
-      'Product costs across purchasing, production and delivery',
-      'What each customer earns after delivery, rebates and payment terms',
-    ],
-    hsl: 'hsl(var(--primary))',
-    link: '/data-clarity',
-    linkLabel: 'Data & Reporting',
+    body: 'Get consistent figures and see what is driving the result, with definitions agreed and documented.',
+    points: ['KPIs traceable to their source', 'Product and customer profitability', 'Recurring reporting from your ERP'],
+    hsl: 'hsl(var(--primary))', link: '/data-clarity', linkLabel: 'Data & Reporting',
   },
   {
-    num: '02',
-    icon: Workflow,
-    title: 'Take the manual work out',
-    desc: 'Connected workflows and applications for everyday work.',
-    body: 'Documents are read and routed instead of retyped. Approvals leave a record. Managers ask questions of live data in plain language. A person still approves anything that posts, pays or commits.',
-    points: [
-      'Supplier invoices read, checked and sent to the right approver',
-      'Approvals and workflows with a record of who agreed to what',
-      'Plain-language questions answered from your own finance data',
-      'Monthly reports and reconciliations that run without being rebuilt by hand',
-    ],
-    hsl: 'hsl(var(--accent-blue))',
-    link: '/ai-automation',
-    linkLabel: 'AI & Automation',
+    num: '02', icon: AppWindow, title: 'Organise daily work',
+    desc: 'Applications for processes that outgrow spreadsheets.',
+    body: 'Bring requests, documents and decisions into a shared workflow, with a clear owner for each next step.',
+    points: ['Requests and approvals in one place', 'Roles, validation and change history', 'Connections to your existing systems'],
+    hsl: 'hsl(var(--accent-blue))', link: '/business-applications', linkLabel: 'Business Applications',
+  },
+  {
+    num: '03', icon: Workflow, title: 'Put AI to work',
+    desc: 'Practical assistance for questions and repetitive tasks.',
+    body: 'Query approved business data in plain language and automate routine document work, with review where it matters.',
+    points: ['AI agents and MCP data connections', 'KPIs, comparisons and charts', 'Document extraction and routing'],
+    hsl: 'hsl(var(--primary))', link: '/ai-automation', linkLabel: 'AI & Automation',
   },
 ];
 
@@ -47,7 +36,7 @@ const ValuePillarsSection = () => (
         What I do
       </h2>
     </AnimatedSection>
-    <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <StaggerChildren className="grid grid-cols-1 lg:grid-cols-3 gap-4">
       {pillars.map((p, i) => (
         <StaggerItem key={i}>
           <Link

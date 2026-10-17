@@ -133,27 +133,12 @@ const AiAutomation = () => (
       </div>
     </section>
 
-    <section className="bg-muted/40 border-y border-border py-20 scroll-mt-24" id="business-applications">
+    <section className="bg-muted/40 border-y border-border py-16 scroll-mt-24" id="business-applications">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <SectionHeading eyebrow="Application Development" heading="When the spreadsheet becomes the process" />
-        <p className="text-[15px] text-ordinal-body leading-relaxed max-w-[760px] mb-8">Several people update the same file. Approvals sit in email, supporting documents live in separate folders, and one person knows which version is current. A shared application can bring the work together—from the first request to the final decision and follow-up.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          {[
-            { title: 'One place to do the work', body: 'Shared records, documents and task ownership. Each person can see what needs attention and what happens next.' },
-            { title: 'Checks built into the process', body: 'Required information, validation and approval rules before a request moves forward. Revised amounts or quotes can trigger a new review.' },
-            { title: 'A record the team can follow', body: 'Role-based access and a history of changes, decisions and supporting documents, connected to relevant business systems.' },
-          ].map((item) => (
-            <div key={item.title} className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-semibold mb-3">{item.title}</h3>
-              <p className="text-sm text-ordinal-body leading-relaxed">{item.body}</p>
-            </div>
-          ))}
-        </div>
-        <div className="bg-card border border-border rounded-xl p-6 md:p-8">
-          <h3 className="text-lg font-semibold mb-3">Example: a purchase request through to approval</h3>
-          <p className="text-[15px] text-ordinal-body leading-relaxed">A colleague submits a request with a quote. The application checks the required information, routes it to the appropriate approver and records the decision against that version. If the quote changes, it returns for review. The requester can follow its status without chasing an email thread.</p>
-          <p className="text-sm text-ordinal-body leading-relaxed mt-4">Other starting points include customer follow-up, budget tracking, document review and operational task management. We check whether an existing tool or a simple automation can meet the need before building a new application. Excel can remain useful for analysis and exports.</p>
-        </div>
+        <p className="text-[15px] text-ordinal-body leading-relaxed max-w-[760px] mb-5">Several people update the same file. Approvals sit in email, documents live in separate folders, and one person knows which version is current. A shared application can bring requests, checks, decisions and follow-up into one place. We first check whether your existing software or a simple automation can meet the need.</p>
+        <Link to="/business-applications" className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">Explore Business Applications <ArrowRight size={16} /></Link>
+        <p className="text-sm text-muted-foreground mt-3">Includes an interactive example of a purchase request, approval and revised quote.</p>
       </div>
     </section>
 
