@@ -6,7 +6,7 @@ import DecorativeShapes from '@/components/DecorativeShapes';
 import { CONTACT_HREF } from '@/lib/contact';
 
 const TITLE = 'How I work · Ensight';
-const DESCRIPTION = 'Process first, technology second: four stages, and a guarantee with a cost attached.';
+const DESCRIPTION = 'Process first, technology second: assessment, an agreed scope, implementation and adoption.';
 
 const patterns: { icon: LucideIcon; title: string; desc: string; iconColor: string }[] = [
   { icon: Brain, title: 'The Human Router', desc: 'One person holds the operation together. When they are out, everything slows or stops.', iconColor: 'hsl(var(--ordinal-cyan))' },
@@ -98,6 +98,7 @@ const HowIWork = () => (
           <div className={eyebrow}>The Method</div>
           <h2 className={`${h2} text-white mb-10`}>Four stages</h2>
         </AnimatedSection>
+        <p className="text-white/80 text-base leading-relaxed mb-8 max-w-[680px]">These ranges describe a larger programme and may overlap. A focused report or workflow can reach a first release in 4–6 weeks once scope and access are agreed. Adoption and ongoing support are planned explicitly.</p>
         <ol className="flex flex-col gap-3 list-none p-0 m-0">
           {stages.map((s) => (
             <li key={s.num} className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-6 grid grid-cols-[auto_1fr] md:grid-cols-[auto_180px_1fr] gap-x-5 gap-y-2 items-baseline">
@@ -122,13 +123,12 @@ const HowIWork = () => (
             <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
               <ShieldCheck className="text-primary" size={22} />
             </div>
-            <div className={`${eyebrow} mb-0`}>My Guarantee</div>
+            <div className={`${eyebrow} mb-0`}>My Commitment</div>
           </div>
-          <h2 className={`${h2} mb-4`}>The Before You Automate guarantee</h2>
+          <h2 className={`${h2} mb-4`}>Agree the scope before implementation</h2>
           <div className="bg-card border border-border rounded-xl px-7 py-5 mb-5 max-w-[640px]">
             <p className="text-[15px] text-foreground leading-relaxed font-medium">
-              I will not recommend a technology solution until the process underneath it has been analysed and redesigned. If I ever do,{' '}
-              <span className="text-primary font-bold">the implementation is free.</span>
+              Before implementation, you receive documented findings, recommended process changes, and an agreed scope with deliverables, responsibilities and acceptance criteria.
             </p>
           </div>
           <p className="text-sm text-ordinal-body leading-relaxed max-w-[600px]">
@@ -170,7 +170,7 @@ const HowIWork = () => (
             href={CONTACT_HREF}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent-blue text-white font-semibold text-[15px] px-8 py-3.5 rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline"
           >
-            Book a call <ArrowRight size={16} />
+            Email George <ArrowRight size={16} />
           </a>
         </div>
       </AnimatedSection>

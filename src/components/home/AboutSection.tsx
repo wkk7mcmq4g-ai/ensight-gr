@@ -4,7 +4,7 @@ import AnimatedSection from './AnimatedSection';
 import georgeAvatar from '@/assets/george-kondylis-avatar.jpg';
 
 const AboutSection = () => (
-  <section className="py-24 relative overflow-hidden" id="about">
+  <section className="py-14 md:py-16 relative overflow-hidden" id="about">
     {/* Abstract background lines */}
     <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden preserveAspectRatio="none">
       <line x1="0%" y1="20%" x2="100%" y2="60%" stroke="hsl(var(--primary))" strokeWidth="0.8" opacity="0.06" />

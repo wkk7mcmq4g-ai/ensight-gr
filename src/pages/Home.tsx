@@ -3,10 +3,7 @@ import SEO from '@/components/SEO';
 import HeroSection from '@/components/home/HeroSection';
 import LogoStripSection from '@/components/home/LogoStripSection';
 import ValuePillarsSection from '@/components/home/ValuePillarsSection';
-import ProblemsSection from '@/components/home/ProblemsSection';
 import HowIWorkTeaser from '@/components/home/HowIWorkTeaser';
-import DataLayerSection from '@/components/sections/DataLayerSection';
-import ErpWorkSection from '@/components/sections/ErpWorkSection';
 import SelectedWorkSection from '@/components/home/SelectedWorkSection';
 import AboutSection from '@/components/home/AboutSection';
 import EngageSection from '@/components/home/EngageSection';
@@ -55,15 +52,9 @@ const Home = () => (
     <ParallaxDivider />
     <LogoStripSection />
     <ParallaxDivider />
+    <SelectedWorkSection ids={['costing-bi-platform', 'softone-receivables-cash', 'invoice-extraction']} />
+    <ParallaxDivider />
     <ValuePillarsSection />
-    <ParallaxDivider />
-    <ErpWorkSection />
-    <ParallaxDivider />
-    <DataLayerSection />
-    <ParallaxDivider />
-    <ProblemsSection />
-    <ParallaxDivider />
-    <SelectedWorkSection ids={['costing-bi-platform', 'financial-reporting', 'invoice-extraction']} />
     <HowIWorkTeaser />
     <ParallaxDivider />
     <AboutSection />

@@ -28,9 +28,11 @@ const CTASection = () => {
           onSubmit={handleSubmit}
           className="max-w-[520px] mx-auto flex flex-col gap-4"
         >
+          <p className="text-sm text-primary-foreground/80">This form prepares an email in your email app. Review it there and send it to complete your enquiry. You can also email <a href="mailto:hello@ensight.gr" className="underline">hello@ensight.gr</a> directly.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               type="text"
+              aria-label="Name"
               placeholder="Name"
               required
               value={name}
@@ -39,6 +41,7 @@ const CTASection = () => {
             />
             <input
               type="text"
+              aria-label="Company"
               placeholder="Company"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
@@ -46,6 +49,7 @@ const CTASection = () => {
             />
             <input
               type="email"
+              aria-label="Email"
               placeholder="Email"
               required
               value={email}
@@ -54,6 +58,7 @@ const CTASection = () => {
             />
           </div>
           <textarea
+            aria-label="Message"
             placeholder="Message"
             required
             rows={4}
@@ -65,7 +70,7 @@ const CTASection = () => {
             type="submit"
             className="bg-gradient-to-r from-primary to-accent-blue text-white text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:opacity-90 hover:-translate-y-1 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.35)] active:translate-y-0 transition-all duration-200 self-start"
           >
-            Send
+            Prepare email
           </button>
         </form>
       </div>

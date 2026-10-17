@@ -207,7 +207,7 @@ const CaseStudyDetail = () => {
           href={CONTACT_HREF}
           className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-lg shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
         >
-          Book a call
+          Email George
         </a>
       </AnimatedSection>
     </div>

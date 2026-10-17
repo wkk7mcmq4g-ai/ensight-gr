@@ -14,10 +14,10 @@ type Props = {
 const SelectedWorkSection = ({
   ids,
   eyebrow = 'Selected Work',
-  heading = 'What clients can now answer',
-  lead = 'The test is not how much time was saved. It is whether management can answer a question the business could not answer before.',
+  heading = 'What this looks like in practice',
+  lead = 'Product profitability, cash planning and invoice automation: examples of the decisions and daily work these systems support.',
 }: Props) => (
-  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="work">
+  <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-14 md:py-16" id="work">
     <AnimatedSection>
       <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
         {eyebrow}
@@ -39,6 +39,7 @@ const SelectedWorkSection = ({
             <div className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-2">
               {cs.sector}
             </div>
+            <p className="text-sm font-semibold text-foreground mb-2">{cs.client}</p>
             <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{cs.title}</h3>
             <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-[11px] font-semibold px-2.5 py-1 rounded-full mb-4">
               {cs.keyResult}

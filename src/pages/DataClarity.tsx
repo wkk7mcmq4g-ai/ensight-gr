@@ -100,9 +100,9 @@ const DataClarity = () => (
           <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">Margin isn't.</span>
         </>
       }
-      subhead="Your ERP records every transaction and still cannot say what a customer earns, why margin moved, or which of two reports is right. I build the data warehouse, the definitions and the reporting that answer those, on the systems you already run."
+      subhead="Your ERP holds the transactions. Your current reports may still leave questions about customer profit, margin movements or conflicting figures. I build the data warehouse, the definitions and the reporting that answer those, on the systems you already run."
     >
-      <a href={CONTACT_HREF} className={heroPrimaryButton}>Book a call</a>
+      <a href={CONTACT_HREF} className={heroPrimaryButton}>Email George</a>
       <Link to="/costing" className={heroSecondaryButton}>See the worked example</Link>
     </DarkHero>
 
@@ -138,7 +138,7 @@ const DataClarity = () => (
           Why the ERP can't answer the margin question
         </h2>
         <p className="text-base text-ordinal-body leading-relaxed mb-6">
-          An ERP is a record of transactions. It does not hold a model of which costs follow volume, which follow order count and which follow one difficult customer. So the standard report stops at gross margin and spreads everything else evenly.
+          Your ERP may support costing, but the reports you use depend on the model and allocations configured behind them. Understanding customer profit can require production, order handling and delivery costs to be brought together and allocated using agreed drivers.
         </p>
         <Link
           to="/costing"

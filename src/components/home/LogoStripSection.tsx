@@ -15,7 +15,7 @@ const logos = [
 const LogoStripSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-12">
     <p className="text-[11px] font-medium tracking-[2px] uppercase text-ordinal-dim text-center mb-8">
-      Where this work has been done
+      Experience across consulting and in-house leadership
     </p>
     <div className="flex items-center justify-center gap-10 md:gap-14 flex-wrap">
       {logos.map((logo, i) => (
@@ -23,7 +23,7 @@ const LogoStripSection = () => (
           key={i}
           src={logo.src}
           alt={logo.alt}
-          className={`${logo.className} w-auto max-w-[160px] md:max-w-[180px] object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-90 transition-all duration-300`}
+          className={`${logo.className} w-auto max-w-[160px] md:max-w-[180px] object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-90 transition-all duration-300`}
           loading="lazy"
         />
       ))}

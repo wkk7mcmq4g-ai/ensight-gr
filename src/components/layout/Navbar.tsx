@@ -45,7 +45,7 @@ const Navbar = () => {
             href={CONTACT_HREF}
             className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 hover:-translate-y-px transition-all no-underline"
           >
-            Book a call
+            Email George
           </a>
         </div>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
             onClick={() => setMobileOpen(false)}
             className="mt-2 block text-center text-[12px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-3 rounded-lg no-underline"
           >
-            Book a call
+            Email George
           </a>
         </div>
       )}

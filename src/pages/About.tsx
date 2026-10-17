@@ -23,7 +23,7 @@ const values = [
   {
     icon: Zap,
     title: 'Speed to impact',
-    desc: 'Engagements are measured in weeks. You see the first real answer before the invoice lands.',
+    desc: 'We agree the first useful deliverable and its timing before work starts, with progress reviewed against that scope.',
   },
   {
     icon: Users,
@@ -142,7 +142,7 @@ const About = () => (
         href={CONTACT_HREF}
         className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-xl shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
       >
-        Book a call
+        Email George
       </a>
     </AnimatedSection>
   </div>
