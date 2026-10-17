@@ -1,4 +1,3 @@
-import GreekCorePage from './pages/GreekCorePage';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -28,7 +27,6 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            {['/el', '/el/data-clarity', '/el/business-applications', '/el/ai-automation', '/el/case-studies/loux-softone-bi', '/el/case-studies/fhl-entersoft-reporting', '/el/enquiry-sent'].map(path => <Route key={path} path={path} element={<GreekCorePage key={path} />} />)}
             <Route path="/enquiry-sent" element={<EnquirySent />} />
             <Route path="/about" element={<About />} />
             <Route path="/case-studies" element={<CaseStudies />} />
