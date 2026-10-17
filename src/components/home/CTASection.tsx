@@ -12,6 +12,8 @@ const CTASection = () => {
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e: FormEvent) => {
+    // Use the provider's hosted spam check when no custom backend is configured.
+    if (!enquiryEndpoint) return;
     e.preventDefault();
     if (status === 'sending') return;
     if (enquiryEndpoint) {
@@ -25,9 +27,7 @@ const CTASection = () => {
       }
       return;
     }
-    const subject = encodeURIComponent(`Message from ${name}${company ? `, ${company}` : ''}`);
-    const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:georgekondylis@msn.com?subject=${subject}&body=${body}`;
+
   };
 
   return (
@@ -41,10 +41,16 @@ const CTASection = () => {
           A clearer report, a simpler workflow or an application your team needs. Tell me where to start; I reply within one working day.
         </p>
         <form
+          action="https://formsubmit.co/georgekondylis@msn.com"
+          method="POST"
           onSubmit={handleSubmit}
           className="max-w-[520px] mx-auto flex flex-col gap-4"
         >
-          <p className="text-sm text-primary-foreground/80">{enquiryEndpoint ? 'Tell me what you need and I will reply by email.' : 'This form opens a draft in your email app. Send it there to complete your enquiry.'} You can also email <a href="mailto:georgekondylis@msn.com" className="underline">georgekondylis@msn.com</a> directly.</p>
+          <input type="hidden" name="_subject" value="New enquiry from Ensight" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://www.ensight.gr/enquiry-sent" />
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+          <p className="text-sm text-primary-foreground/80">{enquiryEndpoint ? 'Tell me what you need and I will reply by email.' : 'Send your enquiry here. You may be asked to complete a spam check before it is submitted.'} You can also email <a href="mailto:georgekondylis@msn.com" className="underline">georgekondylis@msn.com</a> directly.</p>
           {status === 'sent' && <p role="status" className="text-sm text-primary-foreground">Thank you — your enquiry has been received. I will reply within one working day.</p>}
           {status === 'error' && <p role="alert" className="text-sm text-primary-foreground">Your enquiry could not be confirmed. Your message is still here; please retry or email georgekondylis@msn.com.</p>}
           <fieldset disabled={status === 'sending'} className="flex flex-col gap-4">
@@ -93,9 +99,10 @@ const CTASection = () => {
             type="submit"
             className="bg-gradient-to-r from-primary to-accent-blue text-white text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:opacity-90 hover:-translate-y-1 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.35)] active:translate-y-0 transition-all duration-200 self-start"
           >
-            {status === 'sending' ? 'Sending…' : enquiryEndpoint ? 'Send enquiry' : 'Prepare email'}
+            {status === 'sending' ? 'Sending…' : 'Send enquiry'}
           </button>
           </fieldset>
+          <p className="text-xs text-primary-foreground/70 leading-relaxed">George Kondylis uses your details to respond to your enquiry. Please do not include confidential business data.{!enquiryEndpoint && <> Delivery and spam checking are handled by FormSubmit. <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer" className="underline">Provider privacy notice</a>.</>}</p>
         </form>
       </div>
     </section>

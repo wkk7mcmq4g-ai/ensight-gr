@@ -1,11 +1,22 @@
-# Direct enquiry delivery
+# Enquiry delivery
 
-The form keeps its working email-draft flow until a delivery endpoint is configured.
+The contact form posts directly to https://formsubmit.co/georgekondylis@msn.com.
+FormSubmit hosts the spam check (reCAPTCHA remains enabled), delivers the enquiry,
+and returns the visitor to https://www.ensight.gr/enquiry-sent.
+The visitor email field supplies the reply address. No credentials are stored in the frontend.
+A hidden honeypot provides an additional spam signal. The form discloses the processor
+and links its privacy notice.
 
-Set VITE_ENQUIRY_ENDPOINT in the site's build environment and rebuild. Use an HTTPS endpoint you control or an approved form provider. This value is public: never put an API key or other secret in it.
+## One-time activation
+Submit an enquiry from the published website, complete the provider spam check,
+then open the activation email in georgekondylis@msn.com and confirm the form.
+Check junk mail. After activation, submit another clearly labelled test from the
+published website and verify that all four fields arrive and Reply addresses the visitor.
+Delivery is not verified until the mailbox receives that test.
+Do not disable the spam check to automate this step.
 
-The form POSTs JSON with name, company, email and message. The endpoint must validate input, limit spam and request frequency, deliver to georgekondylis@msn.com or persist the enquiry durably, and return HTTP 2xx with {"ok":true} or {"success":true} only once accepted. Configure CORS for https://www.ensight.gr if it is on another origin. Keep email-provider credentials server-side.
-
-Before activation, confirm the provider's data handling and add any required privacy notice. Test successful delivery to the mailbox, invalid input, throttling and service failure. A timeout leaves the visitor's message intact and offers direct email. Do not enable an endpoint that merely returns success without delivering or storing enquiries.
-
-No backend or third-party account is provisioned by this change.
+## Optional custom backend
+VITE_ENQUIRY_ENDPOINT overrides the native provider flow with the existing JSON
+submission adapter. It must return HTTP 2xx and {"ok":true} or {"success":true}
+only when accepted, enforce input validation and spam/rate controls, and keep credentials
+server-side. Failures retain the visitor's message and show a direct email alternative.

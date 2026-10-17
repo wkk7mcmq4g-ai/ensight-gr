@@ -13,6 +13,7 @@ import DataClarity from "./pages/DataClarity";
 import AiAutomation from "./pages/AiAutomation";
 import HowIWork from "./pages/HowIWork";
 import BusinessApplications from "./pages/BusinessApplications";
+import EnquirySent from "./pages/EnquirySent";
 import Costing from "./pages/Costing";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/enquiry-sent" element={<EnquirySent />} />
             <Route path="/about" element={<About />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
