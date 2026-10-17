@@ -32,7 +32,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/ai-automation': {
     title: 'AI & Automation | Ensight',
-    description: 'Invoices read instead of retyped, approvals with a record, and plain-language answers from your own data, with a person approving anything that posts or pays.',
+    description: 'AI agents and MCP connections for business-data queries, KPIs and charts, plus custom applications that replace manual spreadsheet workflows.',
     ogImage: '/og/operational-transformation.jpg',
   },
   '/how-i-work': {
