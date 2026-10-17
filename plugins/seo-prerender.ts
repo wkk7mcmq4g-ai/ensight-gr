@@ -57,7 +57,7 @@ const routes: Record<string, RouteMeta> = {
   },
   '/case-studies/loux-softone-bi': {
     title: 'Business Intelligence Beside SoftOne | Ensight Case Study',
-    description: 'Sales, profitability, orders and stock, receivables, cash and P&L in one Greek-language application that reads SoftOne and never writes to it.',
+    description: 'One place to understand sales and margins, plan stock and orders, and manage receivables and cash — connected to SoftOne.',
     ogImage: '/og/case-studies.jpg',
   },
   '/case-studies/costing-bi-platform': {

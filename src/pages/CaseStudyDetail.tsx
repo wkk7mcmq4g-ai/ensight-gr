@@ -166,7 +166,7 @@ const CaseStudyDetail = () => {
 
       {/* Approach — Visual Timeline */}
       <AnimatedSection className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-8 mb-5">
-        <h2 className="text-lg font-semibold mb-6">Approach</h2>
+        <h2 className="text-lg font-semibold mb-6">{cs.approachHeading ?? 'Approach'}</h2>
         <div className="relative pl-8">
           {/* Vertical line */}
           <div className="absolute left-[11px] top-1 bottom-1 w-[2px] bg-gradient-to-b from-primary to-accent-blue rounded-full" />
@@ -183,6 +183,17 @@ const CaseStudyDetail = () => {
           </div>
         </div>
       </AnimatedSection>
+
+      {cs.deliveryNotes && (
+        <details className="bg-card border border-border rounded-lg p-6 mb-5">
+          <summary className="cursor-pointer font-semibold text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+            How it connects to SoftOne
+          </summary>
+          <div className="mt-4 space-y-3 text-sm text-muted-foreground leading-relaxed">
+            {cs.deliveryNotes.map((note) => <p key={note}>{note}</p>)}
+          </div>
+        </details>
+      )}
 
       {/* Results */}
       <AnimatedSection className="mb-5">

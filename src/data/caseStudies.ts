@@ -24,6 +24,8 @@ export interface CaseStudy {
   outcome: string;
   challenge: string;
   approach: string[];
+  approachHeading?: string;
+  deliveryNotes?: string[];
   tools: string[];
   metrics: { label: string; before: string; after: string }[];
   timeline: string;
@@ -75,23 +77,25 @@ export const caseStudies: CaseStudy[] = [
     clientLogo: logoLoux,
     platform: 'SoftOne',
     title: 'Business Intelligence Beside SoftOne',
-    subtitle: 'Sales, profitability, orders and stock, receivables, cash and P&L in one Greek-language application that reads SoftOne and never writes to it.',
+    subtitle: "One place to understand sales and margins, plan stock and orders, and manage receivables and cash — connected to SoftOne.",
     outcome:
-      'Management, sales, finance and operations now work from the same figures in one application instead of exports. Comparisons with last year are like for like, customer history runs straight through the move from the previous ERP, and the receivables team starts the day with who to call. SoftOne stays the system of record: the application reads it and never writes to it.',
+      'Management, sales, finance and operations share one view of the business. Teams can compare performance across the ERP change, identify collection priorities and plan ahead using the same figures.',
     challenge:
-      'SoftOne records every transaction, but the questions people ask cut across it: how sales compare with the same days last year, what each customer and item really earns, how long stock will last once open orders are taken off, who to chase today and what cash comes in next week. Each answer took an export and Excel, and last year\'s sales sat in the previous ERP.',
+      'Daily decisions depended on separate exports and spreadsheets. Sales history was split across the old ERP and SoftOne, making comparisons harder. Teams needed a shared view of performance, orders, stock and upcoming cash movements.',
+    approachHeading: 'What the team can now do',
     approach: [
-      'Built a separate application beside SoftOne. It reads the ERP through read-only views and nightly snapshots, keeps its own plans, notes and tasks in separate tables, and never writes to SoftOne',
-      'Management: a personal morning briefing, an overview of what changed against the same days last year and who drove it, a 360° view of each customer, and a printable management pack',
-      'Sales and profitability: like-for-like comparisons at any level, monthly sales and open orders, regional and supermarket-chain analysis, growth, ABC and price-volume-mix, profit per customer and item down to profit before tax, and customer benefits measured against sales',
-      "Orders and stock: open orders with loading dates and late flags, orders awaiting approval, stock per warehouse after open orders, cover at this year's and last year's pace, and daily production plans",
-      'Finance: customer and supplier balances with ageing, priorities and reminder emails prepared in Outlook; a weekly cash plan of receipts, payments and cheques; the company P&L with drill-down to its sources; purchases and expenses',
-      'The rules written down and tested: last year capped at the same covered day, old customer and item codes counted under their current code, cheques counted only for the part matched to invoices, percentages calculated from summed totals',
-      'Permissions per report, with customer, region or group restrictions applied to every figure and export. Greek throughout, with Excel export and a layout that works on a phone',
+      'Understand performance: see what changed in sales and profitability, which customers and products drove it, and how results compare with the same period last year — including history from the previous ERP.',
+      'Plan orders and stock: see outstanding orders, loading dates and delays alongside available stock and days of cover. Use that shared picture to support deliveries and daily production planning.',
+      'Manage collections and cash: prioritise customers to contact, review overdue balances and plan receipts, payments and cheques by week. Follow the company P&L back to its supporting figures.',
+    ],
+    deliveryNotes: [
+      'The application reads SoftOne through read-only views and nightly snapshots. Plans, notes and tasks are stored separately; it does not write to the ERP.',
+      'Documented reporting rules align comparison periods, map historical customer and item codes, and calculate totals consistently. Report permissions also restrict the figures and exports each user can access.',
+      'Built in Greek with mobile layouts, Excel exports and a printable management pack, using SQL Server, ASP.NET Core and React.',
     ],
     tools: ['SoftOne ERP', 'SQL Server', 'Read-only Views', 'Nightly Snapshots', 'ASP.NET Core', 'React'],
     metrics: [
-      { label: 'Where the answers are', before: 'Exports and Excel', after: 'One application, 28 pages and workspaces' },
+      { label: 'Where the answers are', before: 'Exports and Excel', after: 'One shared business view' },
       { label: 'Last year vs this year', before: 'Split across two ERPs', after: 'One history, like for like' },
       { label: 'Receivables', before: 'Exports and personal notes', after: 'Who to call today, shared by the team' },
     ],
