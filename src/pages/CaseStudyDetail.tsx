@@ -112,6 +112,29 @@ const CaseStudyDetail = () => {
         </div>
       </AnimatedSection>
 
+      {cs.id === 'fhl-entersoft-reporting' && (
+        <section aria-labelledby="fhl-demo-title" className="bg-card border border-border rounded-lg p-6 md:p-8 mb-8">
+          <h2 id="fhl-demo-title" className="text-lg font-semibold mb-2">Watch the reporting walkthrough</h2>
+          <p id="fhl-demo-description" className="text-sm text-muted-foreground leading-relaxed mb-5">
+            A 36-second tour of the reporting interface, including the management summary, production and profit-and-loss views. Silent video with on-screen captions.
+          </p>
+          <video
+            controls
+            playsInline
+            preload="none"
+            poster="/videos/fhl-demo-poster.jpg"
+            width={1080}
+            height={1080}
+            aria-label="FHL reporting walkthrough"
+            aria-describedby="fhl-demo-description"
+            className="w-full max-w-[640px] aspect-square mx-auto rounded-lg bg-black"
+          >
+            <source src="/videos/fhl-demo.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="/videos/fhl-demo.mp4">Watch the FHL walkthrough</a>.
+          </video>
+        </section>
+      )}
+
       {/* Challenge */}
       <AnimatedSection className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-8 mb-5">
         <h2 className="text-lg font-semibold mb-3">The Challenge</h2>
