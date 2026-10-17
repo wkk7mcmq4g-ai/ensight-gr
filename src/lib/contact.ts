@@ -12,3 +12,5 @@ const body = [
 ].join('\n');
 
 export const CONTACT_HREF = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+export const ENQUIRY_HREF = '/#contact';

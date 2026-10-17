@@ -4,13 +4,13 @@ import DarkHero from '@/components/sections/DarkHero';
 import ClosingCTA from '@/components/sections/ClosingCTA';
 import ApprovalDemo from '@/components/sections/ApprovalDemo';
 import { heroPrimaryButton, heroSecondaryButton } from '@/components/sections/buttonStyles';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 
 export default function BusinessApplications() {
   return <div>
     <SEO title="Business Applications | Ensight" description="Custom applications for shared spreadsheet processes, approvals, requests and operational work, connected to your existing systems." path="/business-applications" ogImage="/og/services.jpg" />
     <DarkHero eyebrow="Business Applications" headline={<>Give your team <span className="text-primary">one place to do the work.</span></>} subhead="When spreadsheets, email and disconnected tools become a shared business process, I build applications that bring the people, information and next actions together.">
-      <a href={CONTACT_HREF} className={heroPrimaryButton}>Discuss your process</a>
+      <a href={ENQUIRY_HREF} className={heroPrimaryButton}>Discuss your project</a>
       <a href="#workflow-example" className={heroSecondaryButton}>Try the workflow example</a>
     </DarkHero>
     <section className="max-w-[1100px] mx-auto px-6 md:px-12 py-16">

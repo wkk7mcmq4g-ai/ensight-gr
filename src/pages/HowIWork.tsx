@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection from '@/components/home/AnimatedSection';
 import DecorativeShapes from '@/components/DecorativeShapes';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 
 const TITLE = 'How I work · Ensight';
 const DESCRIPTION = 'From understanding the business need to an agreed scope, working software, training and handover. A practical approach to reporting, applications and automation.';
@@ -115,10 +115,10 @@ const HowIWork = () => (
             Start with a free 30-minute conversation about the problem, the people involved and what a useful result would look like. We can then decide whether to scope the work directly or start with a review.
           </p>
           <a
-            href={CONTACT_HREF}
+            href={ENQUIRY_HREF}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent-blue text-white font-semibold text-[15px] px-8 py-3.5 rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline"
           >
-            Email George <ArrowRight size={16} />
+            Discuss your project <ArrowRight size={16} />
           </a>
         </div>
       </AnimatedSection>

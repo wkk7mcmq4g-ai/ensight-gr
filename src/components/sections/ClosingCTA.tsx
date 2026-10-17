@@ -1,5 +1,5 @@
 import AnimatedSection from '@/components/home/AnimatedSection';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 import { heroPrimaryButton } from './buttonStyles';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   body: string;
 };
 
-/** Dark closing band with the single "Email George" action. */
+/** Dark closing band with the single "Discuss your project" action. */
 const ClosingCTA = ({ heading, body }: Props) => (
   <section className="bg-[hsl(270,40%,6%)] py-24 text-center" id="contact">
     <div className="max-w-[1200px] mx-auto px-6 md:px-12">
@@ -16,8 +16,8 @@ const ClosingCTA = ({ heading, body }: Props) => (
           {heading}
         </h2>
         <p className="text-base text-white/70 leading-relaxed max-w-[600px] mx-auto mb-10">{body}</p>
-        <a href={CONTACT_HREF} className={`inline-block ${heroPrimaryButton}`}>
-          Email George
+        <a href={ENQUIRY_HREF} className={`inline-block ${heroPrimaryButton}`}>
+          Discuss your project
         </a>
         <div className="text-[10px] text-white/50 tracking-[1px] mt-8">georgekondylis@msn.com · Athens, Greece</div>
       </AnimatedSection>

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 import HeroMarginTable from './HeroMarginTable';
 import DecorativeShapes from '@/components/DecorativeShapes';
 
@@ -54,10 +54,10 @@ const HeroSection = () => {
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">Experience across manufacturing, distribution and financial services.</p>
           <motion.div className="flex gap-3 flex-wrap items-center" style={{ y: noMotion ? 0 : ctaY }}>
             <a
-              href={CONTACT_HREF}
+              href={ENQUIRY_HREF}
               className="bg-gradient-to-r from-primary to-accent-blue text-primary-foreground text-sm md:text-base font-semibold px-6 py-3 md:px-9 md:py-4 rounded-lg shadow-[0_4px_16px_hsl(261_84%_58%/0.25)] hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_hsl(261_84%_58%/0.3)] transition-all no-underline"
             >
-              Email George
+              Discuss your project
             </a>
             <Link
               to="/case-studies"

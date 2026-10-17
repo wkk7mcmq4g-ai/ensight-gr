@@ -9,7 +9,7 @@ import ClosingCTA from '@/components/sections/ClosingCTA';
 import SectionHeading from '@/components/sections/SectionHeading';
 import DataLayerSection from '@/components/sections/DataLayerSection';
 import ErpWorkSection from '@/components/sections/ErpWorkSection';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 
 const TITLE = 'Data & Reporting · Ensight';
 const DESCRIPTION =
@@ -102,7 +102,7 @@ const DataClarity = () => (
       }
       subhead="Your ERP holds the transactions. Your current reports may still leave questions about customer profit, margin movements or conflicting figures. I build the data warehouse, the definitions and the reporting that answer those, on the systems you already run."
     >
-      <a href={CONTACT_HREF} className={heroPrimaryButton}>Email George</a>
+      <a href={ENQUIRY_HREF} className={heroPrimaryButton}>Discuss your project</a>
       <Link to="/costing" className={heroSecondaryButton}>See the worked example</Link>
     </DarkHero>
 

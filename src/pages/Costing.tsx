@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import AnimatedSection from '@/components/home/AnimatedSection';
 import DecorativeShapes from '@/components/DecorativeShapes';
 import { ArrowRight, AlertTriangle } from 'lucide-react';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 
 const layers = [
   {
@@ -244,10 +244,10 @@ const Costing = () => (
             to change before it can support more.
           </p>
           <a
-            href={CONTACT_HREF}
+            href={ENQUIRY_HREF}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent-blue text-white font-semibold text-[15px] px-8 py-3.5 rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all no-underline"
           >
-            Email George <ArrowRight size={16} />
+            Discuss your project <ArrowRight size={16} />
           </a>
         </div>
       </AnimatedSection>

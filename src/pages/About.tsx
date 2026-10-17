@@ -5,7 +5,7 @@ import { Target, Eye, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import georgeAvatar from '@/assets/george-kondylis-avatar.jpg';
 import DecorativeShapes from '@/components/DecorativeShapes';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 
 const DESCRIPTION =
   'George Kondylis, founder of Ensight in Athens. Experience in data leadership, business applications, reporting, automation and applied AI.';
@@ -139,10 +139,10 @@ const About = () => (
         Tell me about the decision, process or application you want to improve. A first conversation takes thirty minutes and costs nothing.
       </p>
       <a
-        href={CONTACT_HREF}
+        href={ENQUIRY_HREF}
         className="inline-block bg-gradient-to-r from-primary to-accent-blue text-white font-bold text-base px-10 py-4 rounded-xl shadow-[0_4px_16px_hsl(261_84%_58%/0.2)] hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 no-underline"
       >
-        Email George
+        Discuss your project
       </a>
     </AnimatedSection>
   </div>

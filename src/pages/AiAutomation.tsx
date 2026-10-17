@@ -10,7 +10,7 @@ import DarkHero from '@/components/sections/DarkHero';
 import { heroPrimaryButton, heroSecondaryButton } from '@/components/sections/buttonStyles';
 import ClosingCTA from '@/components/sections/ClosingCTA';
 import SectionHeading from '@/components/sections/SectionHeading';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 
 const TITLE = 'AI & Automation · Ensight';
 const DESCRIPTION =
@@ -78,7 +78,7 @@ const AiAutomation = () => (
       }
       subhead="I build AI assistants that answer questions from your business data, and applications that bring spreadsheets, approvals and manual tasks into a shared workflow. The solution connects to the systems you already use, with access and responsibilities agreed from the start."
     >
-      <a href={CONTACT_HREF} className={heroPrimaryButton}>Email George</a>
+      <a href={ENQUIRY_HREF} className={heroPrimaryButton}>Discuss your project</a>
       <a href="#what-i-build" className={heroSecondaryButton}>See what I build</a>
     </DarkHero>
 

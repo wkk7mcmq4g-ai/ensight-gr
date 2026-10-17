@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ensightLogo from '@/assets/ensight-logo.png';
-import { CONTACT_HREF } from '@/lib/contact';
+import { ENQUIRY_HREF } from '@/lib/contact';
 
 const navLinks = [
   { label: 'Data & Reporting', href: '/data-clarity' },
@@ -43,10 +43,10 @@ const Navbar = () => {
           ))}
 
           <a
-            href={CONTACT_HREF}
+            href={ENQUIRY_HREF}
             className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 hover:-translate-y-px transition-all no-underline"
           >
-            Email George
+            Discuss your project
           </a>
         </div>
 
@@ -74,11 +74,11 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href={CONTACT_HREF}
+            href={ENQUIRY_HREF}
             onClick={() => setMobileOpen(false)}
             className="mt-2 block text-center text-[12px] font-medium tracking-[1px] text-white bg-gradient-to-r from-primary to-accent-blue px-5 py-3 rounded-lg no-underline"
           >
-            Email George
+            Discuss your project
           </a>
         </div>
       )}

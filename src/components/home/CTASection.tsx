@@ -31,7 +31,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="bg-dark-section py-28 relative overflow-hidden" id="contact">
+    <section className="bg-dark-section py-28 relative overflow-hidden scroll-mt-24" id="contact">
       <DecorativeShapes variant="starburst" className="opacity-[0.08] [&_line]:!stroke-primary-foreground [&_circle]:!stroke-primary-foreground [&_circle]:!fill-primary-foreground" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <h2 className="text-[clamp(28px,4.5vw,44px)] font-bold tracking-tight leading-[1.15] text-primary-foreground mb-3 text-center">
