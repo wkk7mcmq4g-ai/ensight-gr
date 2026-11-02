@@ -113,7 +113,7 @@ const AiAutomation = () => (
           <p>I build agents and MCP connections that let users query approved ERP, finance and warehouse data in plain language. Depending on the agreed scope, the assistant can return KPIs, comparisons, charts and dashboards, with access through a suitable desktop or mobile interface.</p>
           <p>MCP (Model Context Protocol) provides a standard way for an AI assistant to call connected tools. I build the connection and the business logic around it: which sources it can query, how metrics are calculated and what each user may access.</p>
           <p>The integration enforces permissions for each request. Answers show their source, reporting period and data freshness. Ambiguous questions need clarification, and AI-generated analysis still needs review.</p>
-          <Link to="/case-studies/governed-ai-access" className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">See the QSix AI-access case study <ArrowRight size={14} /></Link>
+          <Link to="/case-studies/governed-ai-access" className="inline-flex items-center min-h-[44px] gap-2 font-semibold text-primary hover:underline">See the QSix AI-access case study <ArrowRight size={14} /></Link>
         </div>
       </div>
       <AIDataDemo />
@@ -123,7 +123,7 @@ const AiAutomation = () => (
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <SectionHeading eyebrow="Application Development" heading="When the spreadsheet becomes the process" />
         <p className="text-[15px] text-ordinal-body leading-relaxed max-w-[760px] mb-5">Several people update the same file. Approvals sit in email, documents live in separate folders, and one person knows which version is current. A shared application can bring requests, checks, decisions and follow-up into one place. We first check whether your existing software or a simple automation can meet the need.</p>
-        <Link to="/business-applications" className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">Explore Business Applications <ArrowRight size={16} /></Link>
+        <Link to="/business-applications" className="inline-flex items-center min-h-[44px] gap-2 font-semibold text-primary hover:underline">Explore Business Applications <ArrowRight size={16} /></Link>
         <p className="text-sm text-muted-foreground mt-3">Includes an interactive example of a purchase request, approval and revised quote.</p>
       </div>
     </section>
@@ -132,7 +132,7 @@ const AiAutomation = () => (
     <section className="bg-[hsl(270,40%,6%)] py-24" id="controls">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <AnimatedSection>
-          <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">Controls</div>
+          <div className="text-[11px] font-medium tracking-[3px] uppercase text-violet-300 mb-3">Controls</div>
           <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] text-white mb-12">
             How it stays under control
           </h2>
@@ -161,7 +161,7 @@ const AiAutomation = () => (
               to={p.href}
               className="block bg-card border border-border rounded-lg p-7 h-full no-underline hover:-translate-y-1 hover:shadow-md hover:border-primary/30 transition-all group"
             >
-              <div className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-2">{p.client}</div>
+              <div className="text-[11px] font-medium tracking-[2px] uppercase text-primary mb-2">{p.client}</div>
               <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">{p.title}</h3>
               <p className="text-sm text-ordinal-body leading-relaxed mb-4">{p.desc}</p>
               <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-3 transition-all">

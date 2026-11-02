@@ -25,7 +25,7 @@ const DarkHero = ({ eyebrow, headline, subhead, children }: Props) => (
 
     <div className="relative z-10 max-w-[1200px] mx-auto w-full">
       <div className="max-w-[680px]">
-        <div className="inline-flex items-center gap-2 text-[10px] font-medium tracking-[3px] uppercase text-primary border border-primary/30 px-4 py-1.5 rounded-full mb-6">
+        <div className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[3px] uppercase text-violet-300 border border-primary/30 px-4 py-1.5 rounded-full mb-6">
           <span className="w-[5px] h-[5px] bg-primary rounded-full" />
           {eyebrow}
         </div>

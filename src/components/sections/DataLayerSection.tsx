@@ -40,7 +40,7 @@ const DataLayerSection = ({
 }: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="data-layer">
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">The Data Layer</div>
+      <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">The Data Layer</div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         What sits underneath
       </h2>
@@ -54,7 +54,7 @@ const DataLayerSection = ({
             <div className="w-10 h-10 rounded-md flex items-center justify-center bg-primary/10 text-primary">
               <l.icon size={20} strokeWidth={1.5} />
             </div>
-            <span className="text-[11px] font-mono tracking-widest text-muted-foreground/60">{l.num}</span>
+            <span className="text-[11px] font-mono tracking-widest text-muted-foreground">{l.num}</span>
           </div>
           <h3 className="text-base font-bold mb-1.5">{l.title}</h3>
           <p className="text-sm text-ordinal-body leading-relaxed">{l.desc}</p>

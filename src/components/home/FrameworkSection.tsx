@@ -12,7 +12,7 @@ const barColors = ['bg-primary', 'bg-accent-blue', 'bg-primary', 'bg-secondary']
 const FrameworkSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="method">
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+      <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">
         Our Method
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
@@ -29,7 +29,7 @@ const FrameworkSection = () => (
             <div className={`absolute top-0 left-0 w-full h-[2px] ${barColors[i]}`} />
             <div className="text-xs font-semibold text-muted-foreground mb-3">{s.num}</div>
             <h3 className="text-xl font-semibold mb-1">{s.title}</h3>
-            <div className={`text-[10px] font-medium mb-3 ${s.color}`}>{s.time}</div>
+            <div className={`text-[11px] font-medium mb-3 ${s.color}`}>{s.time}</div>
             <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
           </div>
         </StaggerItem>

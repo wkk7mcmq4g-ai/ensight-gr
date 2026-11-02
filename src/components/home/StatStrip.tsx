@@ -15,7 +15,7 @@ const StatStrip = () => (
         <div className="text-3xl md:text-4xl font-bold text-white leading-none tracking-tight mb-2">
           {s.num}
         </div>
-        <div className="text-[9px] uppercase tracking-[0.5px] text-white/70 leading-snug whitespace-pre-line">
+        <div className="text-[11px] uppercase tracking-[0.5px] text-white/70 leading-snug whitespace-pre-line">
           {s.label}
         </div>
       </div>

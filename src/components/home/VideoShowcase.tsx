@@ -22,7 +22,7 @@ export default function VideoShowcase() {
           <span className="absolute inset-0 flex items-center justify-center"><span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white ring-8 ring-white/15 shadow-[0_0_40px_hsl(var(--primary)/0.4)] motion-safe:transition-transform motion-safe:group-hover:scale-110"><Play size={26} fill="currentColor" aria-hidden="true" /></span></span>
           <span className="absolute bottom-4 left-5 text-white text-xs font-medium">Watch demo · {demo.duration}</span>
         </button>
-        <div className="p-6"><img src={demo.logo} alt={demo.company} className="h-10 w-28 object-contain object-left mb-4" loading="lazy" /><h3 className="text-xl font-semibold mb-2">{demo.title}</h3><p className="text-sm text-muted-foreground mb-4">{demo.description}</p><Link to={demo.href} className="inline-flex gap-2 items-center text-sm font-semibold text-primary hover:underline">Explore the case study <ArrowRight size={15} /></Link></div>
+        <div className="p-6"><img src={demo.logo} alt={demo.company} className="h-10 w-28 object-contain object-left mb-4" loading="lazy" /><h3 className="text-xl font-semibold mb-2">{demo.title}</h3><p className="text-sm text-muted-foreground mb-4">{demo.description}</p><Link to={demo.href} className="inline-flex gap-2 items-center min-h-[44px] text-sm font-semibold text-primary hover:underline">Explore the case study <ArrowRight size={15} /></Link></div>
       </article>)}
     </div>
     <Dialog.Root open={active !== null} onOpenChange={(open) => { if (!open) setActive(null); }}>

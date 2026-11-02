@@ -9,7 +9,7 @@ const HowIWorkTeaser = () => (
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent-blue rounded-t-2xl" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div>
-            <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+            <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">
               How I Work
             </div>
             <h2 className="text-[clamp(22px,3.5vw,34px)] font-semibold tracking-tight leading-[1.15] mb-4">
@@ -20,7 +20,7 @@ const HowIWorkTeaser = () => (
             </p>
             <Link
               to="/how-i-work"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all no-underline"
+              className="inline-flex items-center gap-1.5 min-h-[44px] text-sm font-semibold text-primary hover:gap-3 transition-all no-underline"
             >
               How I work <ArrowRight size={14} />
             </Link>

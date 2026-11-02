@@ -63,7 +63,7 @@ const Costing = () => (
     {/* Hero */}
     <section className="max-w-[900px] mx-auto px-6 md:px-12 pt-28 pb-12 relative overflow-hidden">
       <DecorativeShapes variant="grid" />
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">Worked example · George Kondylis</div>
+      <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">Worked example · George Kondylis</div>
       <h1 className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-[1.1] mb-5">
         What a product{' '}
         <span className="bg-gradient-to-br from-primary to-accent-blue bg-clip-text text-transparent">
@@ -131,7 +131,7 @@ const Costing = () => (
     <section className="bg-dark-section py-20">
       <div className="max-w-[900px] mx-auto px-6 md:px-12">
         <AnimatedSection>
-          <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">Illustrative</div>
+          <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">Illustrative</div>
           <h2 className="text-[clamp(24px,3.5vw,32px)] font-semibold tracking-tight leading-[1.2] mb-4 text-white">
             Same product, same price, two customers
           </h2>

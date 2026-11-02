@@ -16,7 +16,7 @@ const stages = [
 ];
 
 const h2 = 'text-[clamp(24px,3.5vw,32px)] font-semibold tracking-tight leading-[1.2]';
-const eyebrow = 'text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3';
+const eyebrow = 'text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3';
 const prose = 'text-[15px] text-ordinal-body leading-relaxed max-w-[680px]';
 
 const HowIWork = () => (
@@ -54,7 +54,7 @@ const HowIWork = () => (
     <section className="bg-dark-section py-20" id="stages">
       <div className="max-w-[900px] mx-auto px-6 md:px-12">
         <AnimatedSection>
-          <div className={eyebrow}>The Method</div>
+          <div className={`${eyebrow} !text-violet-300`}>The Method</div>
           <h2 className={`${h2} text-white mb-10`}>What working together looks like</h2>
         </AnimatedSection>
         <p className="text-white/80 text-base leading-relaxed mb-8 max-w-[680px]">The depth of each stage depends on the task. A focused report may need a short scoping discussion; a broader project may need a separate review. Timing and milestones are set out in the proposal.</p>

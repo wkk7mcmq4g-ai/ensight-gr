@@ -60,7 +60,7 @@ const CaseStudyDetail = () => {
       <AnimatedSection>
         <Link
           to="/case-studies"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+          className="inline-flex items-center min-h-[44px] gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft size={14} /> All work
         </Link>
@@ -75,7 +75,7 @@ const CaseStudyDetail = () => {
           </div>
           <div className="p-10">
           <div className="flex items-center gap-3 mb-4">
-            <div className="text-[10px] font-medium text-primary tracking-[3px] uppercase">
+            <div className="text-[11px] font-medium text-primary tracking-[3px] uppercase">
               {cs.sector}
             </div>
             <div className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">
@@ -112,7 +112,7 @@ const CaseStudyDetail = () => {
 
         {/* Outcome highlight */}
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
-          <div className="text-[10px] font-medium text-primary tracking-[2px] uppercase mb-2">Outcome</div>
+          <div className="text-[11px] font-medium text-primary tracking-[2px] uppercase mb-2">Outcome</div>
           <p className="text-[15px] font-semibold leading-relaxed">{cs.outcome}</p>
         </div>
       </AnimatedSection>
@@ -134,7 +134,7 @@ const CaseStudyDetail = () => {
               <div key={i} className="relative flex items-start gap-4">
                 {/* Dot */}
                 <div className="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-card border-2 border-primary flex items-center justify-center z-10">
-                  <span className="text-[10px] font-bold text-primary">{i + 1}</span>
+                  <span className="text-[11px] font-bold text-primary">{i + 1}</span>
                 </div>
                 <span className="text-[15px] text-muted-foreground leading-relaxed">{step}</span>
               </div>
@@ -161,7 +161,7 @@ const CaseStudyDetail = () => {
           {cs.metrics.map((m) => (
             <StaggerItem key={m.label}>
               <div className="bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-6">
-                <div className="text-[10px] text-muted-foreground tracking-[1px] uppercase mb-4">
+                <div className="text-[11px] text-muted-foreground tracking-[1px] uppercase mb-4">
                   {m.label}
                 </div>
                 <div className="flex items-center gap-3">

@@ -27,7 +27,7 @@ const SelectedWorkSection = ({
 }: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-14 md:py-16" id="work">
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+      <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">
         {eyebrow}
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
@@ -44,7 +44,7 @@ const SelectedWorkSection = ({
             to={`/case-studies/${cs.id}`}
             className="flex flex-col bg-white/75 backdrop-blur-xl border border-border/60 rounded-lg p-7 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_12px_36px_-8px_hsl(var(--primary)/0.15)] hover:border-primary/30 transition-all duration-300 h-full no-underline group"
           >
-            <div className="text-[10px] font-medium tracking-[2px] uppercase text-primary mb-2">
+            <div className="text-[11px] font-medium tracking-[2px] uppercase text-primary mb-2">
               {cs.sector}
             </div>
             <div className="h-20 flex items-center mb-4">

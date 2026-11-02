@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-blue z-[100]" />
 
       <nav className="fixed top-1 left-0 right-0 z-[99] px-6 xl:px-12 py-4 flex justify-between items-center bg-background/90 backdrop-blur-2xl border-b border-border">
-        <Link to="/">
+        <Link to="/" className="inline-flex items-center min-h-[44px]">
           <img src={ensightLogo} alt="Ensight" className="h-8" />
         </Link>
 

@@ -12,7 +12,7 @@ const HowWeWorkSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24 relative overflow-hidden" id="how-we-work">
     <DecorativeShapes variant="starburst" className="opacity-[0.05]" />
     <AnimatedSection>
-      <div className="font-mono-label text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+      <div className="font-mono-label text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">
         {"// How We Work"}
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-tight leading-[1.15] mb-2">

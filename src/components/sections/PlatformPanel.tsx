@@ -94,7 +94,7 @@ const PlatformPanel = ({ platform, client, className = '' }: Props) => {
       />
 
       <div className="relative h-full flex flex-col justify-end p-6">
-        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-1">Built on</div>
+        <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-1">Built on</div>
         <div className="text-[clamp(26px,3.6vw,38px)] font-bold tracking-tight leading-none text-[hsl(260,45%,18%)]">
           {platform}
         </div>

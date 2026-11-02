@@ -62,7 +62,7 @@ const About = () => (
 
     {/* Hero */}
     <AnimatedSection className="text-center mb-16">
-      <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
+      <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[11px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
         <span className="w-[6px] h-[6px] bg-primary rounded-full" />
         About
       </div>
@@ -128,7 +128,7 @@ const About = () => (
           </StaggerItem>
         ))}
       </StaggerChildren>
-      <Link to="/how-i-work" className="inline-block mt-5 text-sm font-semibold text-primary hover:underline">See how we would work together →</Link>
+      <Link to="/how-i-work" className="inline-flex items-center min-h-[44px] mt-5 text-sm font-semibold text-primary hover:underline">See how we would work together →</Link>
     </AnimatedSection>
 
     {/* CTA */}

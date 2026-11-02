@@ -20,7 +20,7 @@ const AboutSection = () => (
 
     <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative">
       <AnimatedSection className="max-w-[800px]">
-        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">
           About
         </div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-8">
@@ -41,7 +41,7 @@ const AboutSection = () => (
             </p>
             <Link
               to="/about"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all no-underline"
+              className="inline-flex items-center gap-1.5 min-h-[44px] text-sm font-semibold text-primary hover:gap-3 transition-all no-underline"
             >
               About <ArrowRight size={14} />
             </Link>

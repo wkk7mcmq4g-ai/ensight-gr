@@ -54,7 +54,7 @@ const CaseStudies = () => {
       </Helmet>
       <DecorativeShapes variant="minimal" />
       <AnimatedSection className="text-center mb-14">
-        <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[10px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
+        <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-[11px] font-medium tracking-[3px] uppercase px-4 py-2 rounded-full mb-7">
           <span className="w-[6px] h-[6px] bg-primary rounded-full" />
           Work
         </div>
@@ -75,7 +75,7 @@ const CaseStudies = () => {
           <button
             key={s}
             onClick={() => setActiveSector(s)}
-            className={`text-xs font-medium px-4 py-2 rounded-full border transition-all duration-200 ${
+            className={`min-h-[44px] text-xs font-medium px-4 py-2 rounded-full border transition-all duration-200 ${
               activeSector === s
                 ? 'bg-primary text-primary-foreground border-primary'
                 : 'bg-card border-border text-muted-foreground hover:border-primary/40 hover:text-foreground'
@@ -111,7 +111,7 @@ const CaseStudies = () => {
                           <IconComponent size={16} className="text-primary" />
                         </div>
                       )}
-                      <div className="text-[10px] font-medium text-primary tracking-[3px] uppercase">
+                      <div className="text-[11px] font-medium text-primary tracking-[3px] uppercase">
                         {cs.sector}
                       </div>
                     </div>
@@ -135,13 +135,13 @@ const CaseStudies = () => {
                   </div>
 
                   {/* Metrics preview */}
-                  <div className="grid grid-cols-3 gap-2 mb-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-5">
                     {cs.metrics.map((m) => (
-                      <div key={m.label} className="bg-muted/50 border border-border/50 rounded-lg p-2.5 text-center">
-                        <div className="text-[9px] text-muted-foreground tracking-[1px] uppercase mb-1 truncate">
+                      <div key={m.label} className="bg-muted/50 border border-border/50 rounded-lg p-2.5 text-left sm:text-center">
+                        <div className="text-[11px] text-muted-foreground tracking-[1px] uppercase mb-1 sm:truncate">
                           {m.label}
                         </div>
-                        <div className="text-xs font-bold text-primary truncate">{m.after}</div>
+                        <div className="text-xs font-bold text-primary sm:truncate">{m.after}</div>
                       </div>
                     ))}
                   </div>

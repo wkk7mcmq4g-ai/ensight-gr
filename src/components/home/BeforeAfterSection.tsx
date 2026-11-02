@@ -9,10 +9,10 @@ const SpreadsheetChaos = () => (
       <div className="w-3 h-3 rounded-full bg-destructive/60" />
       <div className="w-3 h-3 rounded-full bg-ordinal-amber/60" />
       <div className="w-3 h-3 rounded-full bg-primary/40" />
-      <span className="ml-2 text-[10px] font-mono-label text-muted-foreground">revenue_tracking_FINAL_v3_copy.xlsx</span>
+      <span className="ml-2 text-[11px] font-mono-label text-muted-foreground">revenue_tracking_FINAL_v3_copy.xlsx</span>
     </div>
     {/* Fake spreadsheet grid */}
-    <div className="border border-border rounded overflow-hidden text-[9px] font-mono-label">
+    <div className="border border-border rounded overflow-hidden text-[11px] font-mono-label">
       {/* Header row */}
       <div className="grid grid-cols-5 bg-muted border-b border-border">
         {['A', 'B', 'C', 'D', 'E'].map(c => (
@@ -37,17 +37,17 @@ const SpreadsheetChaos = () => (
               cell.includes('??') || cell === '' ? 'text-ordinal-amber' :
               'text-foreground/70'
             }`}>
-              {cell || <span className="text-muted-foreground/40">—</span>}
+              {cell || <span className="text-muted-foreground">—</span>}
             </div>
           ))}
         </div>
       ))}
     </div>
     {/* Scattered "sticky note" annotations */}
-    <div className="absolute bottom-8 right-6 bg-ordinal-amber/20 border border-ordinal-amber/30 rounded px-2 py-1 text-[8px] text-ordinal-amber rotate-2">
+    <div className="absolute bottom-8 right-6 bg-ordinal-amber/20 border border-ordinal-amber/30 rounded px-2 py-1 text-[11px] text-ordinal-amber rotate-2">
       ⚠ 23 duplicates found
     </div>
-    <div className="absolute top-16 right-8 bg-destructive/10 border border-destructive/20 rounded px-2 py-1 text-[8px] text-destructive -rotate-1">
+    <div className="absolute top-16 right-8 bg-destructive/10 border border-destructive/20 rounded px-2 py-1 text-[11px] text-destructive -rotate-1">
       Last updated: 6 weeks ago
     </div>
   </div>
@@ -64,8 +64,8 @@ const CleanDashboard = () => (
         <span className="text-xs font-semibold text-foreground">Revenue Dashboard</span>
       </div>
       <div className="flex items-center gap-1.5">
-        <div className="h-5 px-2 rounded-full bg-primary/15 text-primary text-[9px] font-semibold flex items-center">Live</div>
-        <div className="h-5 px-2 rounded bg-muted text-[9px] text-muted-foreground">Q1 2025</div>
+        <div className="h-5 px-2 rounded-full bg-primary/15 text-primary text-[11px] font-semibold flex items-center">Live</div>
+        <div className="h-5 px-2 rounded bg-muted text-[11px] text-muted-foreground">Q1 2025</div>
       </div>
     </div>
 
@@ -77,16 +77,16 @@ const CleanDashboard = () => (
         { label: 'Avg Deal Size', value: '£6.0K', change: '+8%', color: 'text-primary' },
       ].map((kpi) => (
         <div key={kpi.label} className="bg-muted/40 rounded-lg p-3 border border-border/50">
-          <div className="text-[8px] text-muted-foreground uppercase tracking-wide mb-1">{kpi.label}</div>
+          <div className="text-[11px] text-muted-foreground uppercase tracking-wide mb-1">{kpi.label}</div>
           <div className="text-sm font-bold text-foreground">{kpi.value}</div>
-          <div className={`text-[9px] font-semibold ${kpi.color}`}>{kpi.change}</div>
+          <div className={`text-[11px] font-semibold ${kpi.color}`}>{kpi.change}</div>
         </div>
       ))}
     </div>
 
     {/* Mini bar chart */}
     <div className="bg-muted/30 rounded-lg p-3 border border-border/50 mb-3">
-      <div className="text-[9px] text-muted-foreground mb-2 font-medium">Monthly Revenue</div>
+      <div className="text-[11px] text-muted-foreground mb-2 font-medium">Monthly Revenue</div>
       <div className="flex items-end gap-1.5 h-14">
         {[40, 55, 45, 65, 58, 72, 68, 80, 75, 88, 82, 94].map((h, i) => (
           <div key={i} className="flex-1 rounded-t" style={{
@@ -101,7 +101,7 @@ const CleanDashboard = () => (
     </div>
 
     {/* Clean table snippet */}
-    <div className="rounded-lg border border-border/50 overflow-hidden text-[9px]">
+    <div className="rounded-lg border border-border/50 overflow-hidden text-[11px]">
       <div className="grid grid-cols-4 bg-muted/50 font-semibold text-muted-foreground">
         {['Client', 'Revenue', 'Status', 'Trend'].map(h => (
           <div key={h} className="px-2 py-1.5">{h}</div>
@@ -115,7 +115,7 @@ const CleanDashboard = () => (
         <div key={i} className="grid grid-cols-4 border-t border-border/30">
           <div className="px-2 py-1.5 text-foreground font-medium">{r.name}</div>
           <div className="px-2 py-1.5 text-foreground">{r.rev}</div>
-          <div className="px-2 py-1.5"><span className="bg-primary/15 text-primary px-1 rounded text-[8px] font-semibold">{r.status}</span></div>
+          <div className="px-2 py-1.5"><span className="bg-primary/15 text-primary px-1 rounded text-[11px] font-semibold">{r.status}</span></div>
           <div className="px-2 py-1.5 text-primary">{r.trend}</div>
         </div>
       ))}
@@ -142,7 +142,7 @@ const BeforeAfterSection = () => {
   return (
     <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24">
       <AnimatedSection>
-        <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+        <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">
           Transformation
         </div>
         <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
@@ -187,10 +187,10 @@ const BeforeAfterSection = () => {
           </div>
 
           {/* Labels */}
-          <div className="absolute top-3 left-3 z-10 bg-destructive/90 text-destructive-foreground px-2.5 py-1 rounded text-[10px] font-semibold uppercase tracking-wider">
+          <div className="absolute top-3 left-3 z-10 bg-destructive/90 text-destructive-foreground px-2.5 py-1 rounded text-[11px] font-semibold uppercase tracking-wider">
             Before
           </div>
-          <div className="absolute top-3 right-3 z-10 bg-primary/90 text-primary-foreground px-2.5 py-1 rounded text-[10px] font-semibold uppercase tracking-wider">
+          <div className="absolute top-3 right-3 z-10 bg-primary/90 text-primary-foreground px-2.5 py-1 rounded text-[11px] font-semibold uppercase tracking-wider">
             After
           </div>
         </div>

@@ -42,7 +42,7 @@ const ErpWorkSection = ({
 }: Props) => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-24" id="erp">
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">On the ERP You Already Run</div>
+      <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">On the ERP You Already Run</div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-4">
         Reporting built on SoftOne and Entersoft
       </h2>
@@ -58,7 +58,7 @@ const ErpWorkSection = ({
           >
             <div className="bg-[hsl(270,40%,6%)] px-7 py-5 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-4">
               <div className="min-w-0">
-                <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-1 whitespace-nowrap">Built on</div>
+                <div className="text-[11px] font-medium tracking-[3px] uppercase text-violet-300 mb-1 whitespace-nowrap">Built on</div>
                 <div className="text-[26px] font-bold tracking-tight leading-none text-white">{b.platform}</div>
               </div>
               <div className="sm:text-right min-w-0">

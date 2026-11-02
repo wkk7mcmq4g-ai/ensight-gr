@@ -19,7 +19,7 @@ const ClosingCTA = ({ heading, body }: Props) => (
         <a href={ENQUIRY_HREF} className={`inline-block ${heroPrimaryButton}`}>
           Discuss your project
         </a>
-        <div className="text-[10px] text-white/50 tracking-[1px] mt-8">georgekondylis@msn.com · Athens, Greece</div>
+        <div className="text-[11px] text-white/50 tracking-[1px] mt-8">georgekondylis@msn.com · Athens, Greece</div>
       </AnimatedSection>
     </div>
   </section>

@@ -55,46 +55,52 @@ const CTASection = () => {
           {status === 'error' && <p role="alert" className="text-sm text-primary-foreground">Your enquiry could not be confirmed. Your message is still here; please retry or email georgekondylis@msn.com.</p>}
           <fieldset disabled={status === 'sending'} className="flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input
-              type="text"
-              aria-label="Name"
-              name="name" autoComplete="name" maxLength={120}
-              placeholder="Name"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm"
-            />
-            <input
-              type="text"
-              aria-label="Company"
-              name="company" autoComplete="organization" maxLength={180}
-              placeholder="Company"
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm"
-            />
-            <input
-              type="email"
-              aria-label="Email"
-              name="email" autoComplete="email" maxLength={254}
-              placeholder="Email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="sm:col-span-2 w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm"
-            />
+            <label className="flex flex-col gap-1.5">
+              <span className="text-xs font-medium text-primary-foreground/85">Name</span>
+              <input
+                type="text"
+                name="name" autoComplete="name" maxLength={120}
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/60 focus-visible:ring-2 focus-visible:ring-violet-300/70 transition-colors text-base sm:text-sm"
+              />
+            </label>
+            <label className="flex flex-col gap-1.5">
+              <span className="text-xs font-medium text-primary-foreground/85">Company <span className="font-normal text-primary-foreground/60">(optional)</span></span>
+              <input
+                type="text"
+                name="company" autoComplete="organization" maxLength={180}
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/60 focus-visible:ring-2 focus-visible:ring-violet-300/70 transition-colors text-base sm:text-sm"
+              />
+            </label>
+            <label className="sm:col-span-2 flex flex-col gap-1.5">
+              <span className="text-xs font-medium text-primary-foreground/85">Email</span>
+              <input
+                type="email"
+                name="email" autoComplete="email" maxLength={254}
+                placeholder="name@company.com"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/60 focus-visible:ring-2 focus-visible:ring-violet-300/70 transition-colors text-base sm:text-sm"
+              />
+            </label>
           </div>
-          <textarea
-            aria-label="Message"
-            name="message" maxLength={5000}
-            placeholder="Message"
-            required
-            rows={4}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/50 transition-colors text-base sm:text-sm resize-none"
-          />
+          <label className="flex flex-col gap-1.5">
+            <span className="text-xs font-medium text-primary-foreground/85">What would you like to improve?</span>
+            <textarea
+              name="message" maxLength={5000}
+              placeholder="A report, a process or a question your team can't answer today"
+              required
+              rows={4}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/60 focus-visible:ring-2 focus-visible:ring-violet-300/70 transition-colors text-base sm:text-sm resize-none"
+            />
+          </label>
           <button
             type="submit"
             className="bg-gradient-to-r from-primary to-accent-blue text-white text-base font-semibold px-9 py-4 rounded-lg shadow-lg hover:opacity-90 hover:-translate-y-1 hover:shadow-[0_8px_32px_hsl(var(--primary)/0.35)] active:translate-y-0 transition-all duration-200 self-start"

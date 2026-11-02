@@ -28,7 +28,7 @@ export default function BusinessApplications() {
     <section className="max-w-[1100px] mx-auto px-6 md:px-12 pb-16">
       <h2 className="text-3xl font-semibold mb-5">Start with one complete workflow</h2>
       <p className="text-muted-foreground leading-relaxed max-w-[760px] mb-5">We agree who uses it, the information they need, the rules and exceptions, and what happens at handover. Working versions let the team test the process before launch. Ownership, hosting, documentation and support are defined in the scope.</p>
-      <Link to="/how-i-work" className="text-primary font-semibold hover:underline">How we work together →</Link>
+      <Link to="/how-i-work" className="inline-flex items-center min-h-[44px] text-primary font-semibold hover:underline">How we work together →</Link>
       <div className="grid md:grid-cols-2 gap-4 mt-8">
         <Link to="/case-studies/loan-servicing" className="border border-border bg-card rounded-lg p-6 hover:border-primary"><h3 className="font-semibold mb-2">HMS · Loan servicing</h3><p className="text-muted-foreground text-sm">Connected servicing workflows and a consolidated operational view.</p></Link>
         <Link to="/case-studies/touro-driver-ux" className="border border-border bg-card rounded-lg p-6 hover:border-primary"><h3 className="font-semibold mb-2">Touro · Driver application</h3><p className="text-muted-foreground text-sm">Transfer details organised around the task a driver needs to complete.</p></Link>

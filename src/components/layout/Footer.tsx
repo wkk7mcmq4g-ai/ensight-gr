@@ -24,12 +24,12 @@ const company = [
 const Footer = () => (
   <footer className="border-t border-border max-w-[1200px] mx-auto px-6 md:px-12">
     <div className="py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-      <Link to="/">
+      <Link to="/" className="inline-flex items-center min-h-[44px]">
         <img src={ensightLogo} alt="Ensight" className="h-6" />
       </Link>
-      <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3" aria-label="Footer">
+      <nav className="flex flex-wrap justify-center gap-x-6" aria-label="Footer">
         {links.map((l) => (
-          <Link key={l.href} to={l.href} className="text-ordinal-dim text-[13px] hover:text-foreground transition-colors">
+          <Link key={l.href} to={l.href} className="inline-flex items-center min-h-[44px] text-ordinal-dim text-[13px] hover:text-foreground transition-colors">
             {l.label}
           </Link>
         ))}
@@ -37,7 +37,7 @@ const Footer = () => (
       <div className="flex items-center gap-4">
         <a
           href="mailto:georgekondylis@msn.com"
-          className="text-[11px] text-ordinal-dim tracking-[1px] hover:text-foreground transition-colors"
+          className="inline-flex items-center min-h-[44px] text-[12px] text-ordinal-dim tracking-[1px] hover:text-foreground transition-colors"
         >
           georgekondylis@msn.com
         </a>
@@ -46,15 +46,15 @@ const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Ensight on LinkedIn"
-          className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-ordinal-dim hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-colors"
+          className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-ordinal-dim hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-colors"
         >
-          <Linkedin size={16} strokeWidth={1.75} />
+          <Linkedin size={18} strokeWidth={1.75} />
         </a>
       </div>
     </div>
 
     <div className="border-t border-border/60 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
-      <address className="not-italic text-[11px] leading-relaxed text-ordinal-faint flex flex-col md:flex-row md:flex-wrap items-center md:justify-start gap-x-2">
+      <address className="not-italic text-[12px] leading-relaxed text-ordinal-faint flex flex-col md:flex-row md:flex-wrap items-center md:justify-start gap-x-2">
         {company.map((line, i) => (
           <span key={line} className="whitespace-nowrap">
             {i > 0 && <span aria-hidden className="mr-2 hidden md:inline">·</span>}
@@ -62,7 +62,7 @@ const Footer = () => (
           </span>
         ))}
       </address>
-      <div className="text-[11px] text-ordinal-faint whitespace-nowrap">
+      <div className="text-[12px] text-ordinal-faint whitespace-nowrap">
         © {new Date().getFullYear()} Ensight · Athens, Greece
       </div>
     </div>

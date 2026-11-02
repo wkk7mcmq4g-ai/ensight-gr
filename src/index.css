@@ -22,7 +22,7 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted-foreground: 220 9% 40%;
 
     --accent: 220 14% 96%;
     --accent-foreground: 220 13% 9%;
@@ -47,8 +47,8 @@
     --ordinal-amber: 261 84% 58%;
     --ordinal-cyan: 261 84% 58%;
     --ordinal-body: 220 9% 34%;
-    --ordinal-dim: 220 9% 46%;
-    --ordinal-faint: 220 9% 58%;
+    --ordinal-dim: 220 9% 40%;
+    --ordinal-faint: 220 9% 45%;
     --stat-accent: 261 84% 65%;
     --dark-section: 222 47% 11%;
     --accent-blue: 217 91% 60%;
@@ -92,6 +92,13 @@
 @layer base {
   * {
     @apply border-border;
+  }
+
+  /* A clear keyboard focus ring everywhere (mouse clicks don't show it) */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 3px;
+    border-radius: 4px;
   }
   body {
     @apply bg-background text-foreground;

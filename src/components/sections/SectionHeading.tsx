@@ -10,7 +10,7 @@ type Props = {
 const SectionHeading = ({ eyebrow, heading, lead }: Props) => (
   <AnimatedSection>
     {eyebrow && (
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">{eyebrow}</div>
+      <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">{eyebrow}</div>
     )}
     <h2 className={`text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] ${lead ? 'mb-4' : 'mb-12'}`}>
       {heading}

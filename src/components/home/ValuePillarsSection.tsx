@@ -29,7 +29,7 @@ const pillars = [
 const ValuePillarsSection = () => (
   <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-14 md:py-16" id="pillars">
     <AnimatedSection>
-      <div className="text-[10px] font-medium tracking-[3px] uppercase text-primary mb-3">
+      <div className="text-[11px] font-medium tracking-[3px] uppercase text-primary mb-3">
         Services
       </div>
       <h2 className="text-[clamp(28px,4vw,40px)] font-semibold tracking-tight leading-[1.15] mb-12">
@@ -51,7 +51,7 @@ const ValuePillarsSection = () => (
               >
                 <p.icon size={20} strokeWidth={1.5} />
               </div>
-              <span className="text-[11px] font-mono tracking-widest text-muted-foreground/60">{p.num}</span>
+              <span className="text-[11px] font-mono tracking-widest text-muted-foreground">{p.num}</span>
             </div>
             <h3 className="text-xl font-semibold mb-1.5 text-foreground">{p.title}</h3>
             <p className="text-sm font-medium text-foreground/80 leading-relaxed mb-2.5">{p.desc}</p>
